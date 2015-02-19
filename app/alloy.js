@@ -9,3 +9,25 @@
 // object. For example:
 //
 // Alloy.Globals.someGlobalFunction = function(){};
+
+var hotspot_trailsCollection = Alloy.Collections.hotspot_trailsModel;
+var hotspotCollection = Alloy.Collections.hotspotModel;
+var imageCollection = Alloy.Collections.imageModel;
+var infospot_trailsCollection = Alloy.Collections.infospot_trailsModel;
+var infospotCollection = Alloy.Collections.infospotModel;
+
+
+//-------------------------------------------------------------------------
+//Adding some data into the models.
+
+var hotspot = Alloy.createModel('hotspotModel', {
+	id : 1,
+	name : 'Kyrka',
+	infoTxt : 'Kyrkan ligger på södra Koster',
+	xkoord : 0,
+	ykoord : 0
+});
+
+// 
+// personsCollection.add(Madde);
+// Madde.save();

@@ -1,7 +1,7 @@
 exports.definition = {
 	config: {
 		columns: {
-		    "id": "int",
+		    "id": "integer",
 		    "name": "text",
 		    "length": "text",
 		    "infoTxt": "text",

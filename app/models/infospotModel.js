@@ -1,11 +1,11 @@
 exports.definition = {
 	config: {
 		columns: {
-		    "id": "int",
+		    "id": "integer",
 		    "name": "text",
-		    "x-koord": "real",
-		    "y-koord": "real",
-		    "icon": "string"
+		    "xkoord": "real",
+		    "ykoord": "real",
+		    "icon": "text"
 		},
 		adapter: {
 			type: "sql",

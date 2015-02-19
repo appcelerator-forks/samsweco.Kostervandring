@@ -1,10 +1,10 @@
 exports.definition = {
 	config: {
 		columns: {
-		    "id": "int",
+		    "id": "integer",
 		    "name": "text",
-		    "trailID": "int",
-		    "hotspotID": "int"
+		    "trailID": "integer",
+		    "hotspotID": "integer"
 		},
 		adapter: {
 			type: "sql",

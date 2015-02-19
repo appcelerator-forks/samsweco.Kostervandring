@@ -1,12 +1,12 @@
 exports.definition = {
 	config: {
 		columns: {
-		    "trailID": "int",
-		    "infoSpotID": "int"
+		    "trailID": "integer",
+		    "infoSpotID": "integer"
 		},
 		adapter: {
 			type: "sql",
-			collection_name: "infospot-trailsModel"
+			collection_name: "infospot_trailsModel"
 		}
 	},
 	extendModel: function(Model) {
