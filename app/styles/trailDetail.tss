@@ -1,0 +1,7 @@
+
+".container" : {
+	top : 20,
+	layout : 'vertical',
+	backgroundColor: 'white'
+  
+}

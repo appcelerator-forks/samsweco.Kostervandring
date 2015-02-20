@@ -1,4 +1,7 @@
-
+"Window" : {
+backgroundColor : 'white'
+}
 ".container" : {
+	
   
 }
