@@ -1,0 +1,41 @@
+".container": {
+	backgroundColor : '#fff',
+	layout: 'vertical'
+}
+
+"#noMap": {
+	top: 20,
+	backgroundColor: "transparent",
+	left: 5
+}
+
+// ".btn":  {
+	// width : 50,
+	// height: 50,
+	// backgroundColor: 'transparent',
+	// top: 10,
+	// right: 7,
+	// bottom: 10,
+	// left: 7
+// }
+
+"#headView": {
+	height : 5,
+	width: Ti.UI.SIZE,
+	backgroundColor : '#00ACCD'
+}
+
+// "#mapview": {
+	// height : 5,
+	// backgroundColor : 'green',
+	// top : 0
+// }
+
+"#menuView": {
+	layout : 'horizontal',
+	top: 450,
+	backgroundColor: "#60a6af",
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL,
+	opacity: 0.7
+}

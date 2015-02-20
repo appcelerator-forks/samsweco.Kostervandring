@@ -6,7 +6,7 @@
 	<Button class="btn" id="btnDetail" backgroundImage="/icons/hikeMenu.png" onClick="toList">
 		<Label class="lbl">Vandring</Label>
 	</Button>	
-	<Button class="btn" id="btnMap" backgroundImage="/icons/mapMenu.png" onClick="toList">
+	<Button class="btn" id="btnMap" backgroundImage="/icons/mapMenu.png" onClick="toMap">
 		<Label class="lbl">Karta</Label>
 	</Button>
 	<Button class="btn" id="btnQuiz" backgroundImage="/icons/quizMenu.png" onClick="toQuiz">
