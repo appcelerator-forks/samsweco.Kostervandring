@@ -3,16 +3,17 @@ var args = arguments[0] || {};
 var trailsCollection = Alloy.Collections.trailsModel;
 trailsCollection.fetch();
 
-function showTrailDetails(trail)
-{
-	var selectedTrail = trail.source;
+function showTrailDetails(event){
+	var selectedTrail = event.row;
 	var args = {
-		name: selectedTrail.name,
+		title: selectedTrail.title,
 		length: selectedTrail.length,
 		infoTxt : selectedTrail.infoTxt,
 		color: selectedTrail.color
 	};
 	
+	alert(JSON.stringify(args));
+
 	var trailDetail = Alloy.createController("trailDetail", args).getView();
 	trailDetail.open();
 	$.trails.close();

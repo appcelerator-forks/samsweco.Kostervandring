@@ -2,7 +2,7 @@
 	<Collection src="trailsModel" />
 	<Window class="container">
 		<TableView id="table" dataCollection="trailsModel">
-			<TableViewRow title="{name}" onClick="showTrailDetails" />
+			<TableViewRow title="{name}" length="{length}" infoTxt="{infoTxt}" color="{color}" onClick="showTrailDetails" />
 		</TableView>			
 	</Window>
 </Alloy>
