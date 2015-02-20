@@ -8,8 +8,9 @@
 
 "#menuView": {
 	layout : 'horizontal',
-	top: 2,
+	top: 500,
 	backgroundColor: "#60a6af",
 	height: Ti.UI.FILL,
-	width: Ti.UI.FILL
+	width: Ti.UI.FILL,
+	opacity: 0.7
 }
