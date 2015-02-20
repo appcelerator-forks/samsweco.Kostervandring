@@ -2,16 +2,16 @@
 backgroundColor : 'white'
 }
 ".container" : {
-
-	layout : 'vertical'
-  
+	layout : 'vertical'  
 }
-
 
 "#menuView": {
 	layout : 'horizontal',
-	top: 2,
+	top: 500,
 	backgroundColor: "#60a6af",
-	height: Ti.UI.FILL,
-	width: Ti.UI.FILL
+	height: '12%',
+	width: Ti.UI.FILL,
+	opacity: 0.7,
+	bottom: 0
 }
+

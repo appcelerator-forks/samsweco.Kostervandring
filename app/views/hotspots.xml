@@ -1,10 +1,16 @@
 <Alloy>
 	<Collection src="hotspotModel" />
-	<Window>
-	<View class="container">
-		<TableView id="table" dataCollection="hotspotModel">
-			<TableViewRow title="{name}" infoTxt="{infoTxt}" xkoord="{xkoord}" ykoord="{ykoord}" onClick="showHotspotDetails" />
-		</TableView>	
-	</View>
-	</Window>
+		<Window>
+			<View class="container">
+				<TableView id="table" dataCollection="hotspotModel">
+					<TableViewRow title="{name}" infoTxt="{infoTxt}" xkoord="{xkoord}" ykoord="{ykoord}" onClick="showHotspotDetails" />
+				</TableView>	
+			</View>
+			
+			<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
+		<View id="menuView">
+			<Widget id="menuBar" src="menuWidget" name="widget"/>
+		</View>	
+		
+		</Window>
 </Alloy>

@@ -13,7 +13,7 @@ backgroundColor : 'white'
 	layout : 'horizontal',
 	top: 500,
 	backgroundColor: "#60a6af",
-	height: Ti.UI.FILL,
+	height: '12%',
 	width: Ti.UI.FILL,
 	opacity: 0.7
 }

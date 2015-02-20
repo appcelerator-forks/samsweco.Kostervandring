@@ -6,3 +6,13 @@ backgroundColor : 'white'
   layout : 'vertical',
   top : 20
 }
+
+"#menuView": {
+	layout : 'horizontal',
+	top: 500,
+	backgroundColor: "#60a6af",
+	height: '12%',
+	width: Ti.UI.FILL,
+	opacity: 0.7,
+	bottom: 0
+}
