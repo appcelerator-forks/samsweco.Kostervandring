@@ -19,23 +19,24 @@
 	// left: 7
 // }
 
-"#headView": {
-	height : 5,
-	width: Ti.UI.SIZE,
-	backgroundColor : '#00ACCD'
-}
+// "#headView": {
+	// height : 5,
+	// width: Ti.UI.SIZE,
+	// backgroundColor : '#00ACCD'
+// }
 
 // "#mapview": {
-	// height : 5,
+	// height : Titanium.UI.SIZE,
 	// backgroundColor : 'green',
 	// top : 0
 // }
 
 "#menuView": {
 	layout : 'horizontal',
-	top: 450,
+	top: 0,
 	backgroundColor: "#60a6af",
-	height: Ti.UI.FILL,
+	height: '12%',
 	width: Ti.UI.FILL,
-	opacity: 0.7
+	opacity: 0.7,
+	bottom: 0
 }

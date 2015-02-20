@@ -1,4 +1,9 @@
 //Funktionerna nedan skickar användaren till rätt sida utifrån navigeringsmeyn
+function toHome(e) {
+  var index = Alloy.createController('index').getView();
+  index.open();
+}
+
 function toList(e) {
   var index = Alloy.createController('index').getView();
   index.open();
@@ -23,9 +28,4 @@ function toMap(e) {
 function toQuiz(e) {
   var trails = Alloy.createController('trails').getView();
   trails.open();
-}
-
-function toHome(e) {
-  var index = Alloy.createController('index').getView();
-  index.open();
 }

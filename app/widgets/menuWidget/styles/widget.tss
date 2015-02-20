@@ -9,8 +9,8 @@
 	layout: 'vertical'
 }
 
-".lbl" : {
-	top: 43,
+".lbl": {
+	top: 44.5,
 	font : { 
 		fontFamily: 'Arial',
 		fontSize: 9

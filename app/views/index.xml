@@ -2,7 +2,7 @@
 	<Collection src="hotspotModel" />
 		<Window class="container">
 			
-			<View id='headView'>
+			<View>
 				
 				<!-- <TableView id="table" dataCollection="hotspotModel">
 					<TableViewRow title="{name}" />
