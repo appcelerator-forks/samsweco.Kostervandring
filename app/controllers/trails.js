@@ -3,8 +3,9 @@ var args = arguments[0] || {};
 var trailsCollection = Alloy.Collections.trailsModel;
 trailsCollection.fetch();
 
-function showTrailDetails(event){
-	var selectedTrail = event.row;
+function showTrailDetails(trail)
+{
+	var selectedTrail = trail.row;
 	var args = {
 		title: selectedTrail.title,
 		length: selectedTrail.length,
@@ -12,8 +13,6 @@ function showTrailDetails(event){
 		color: selectedTrail.color
 	};
 	
-	alert(JSON.stringify(args));
-
 	var trailDetail = Alloy.createController("trailDetail", args).getView();
 	trailDetail.open();
 	$.trails.close();

@@ -4,9 +4,9 @@
 			
 			<View id='headView'>
 				
-				<TableView id="table" dataCollection="hotspotModel">
+				<!-- <TableView id="table" dataCollection="hotspotModel">
 					<TableViewRow title="{name}" />
-				</TableView>	
+				</TableView>	 -->
 				
 				<Button onClick="nextPage">Next page</Button>
 				
