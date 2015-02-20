@@ -1,7 +1,9 @@
 <Alloy>
+	<Collection src="hotspotModel" />
 	<Window class="container">
-		<TableView id="table">
-			<TableViewRow />
-		</TableView>		
+		<TableView id="table" dataCollection="hotspotModel">
+			<TableViewRow title="{name}" />
+		</TableView>	
+		<Button onClick="nextPage">Next page</Button>		
 	</Window>
 </Alloy>

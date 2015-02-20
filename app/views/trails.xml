@@ -1,0 +1,8 @@
+<Alloy>
+	<Collection src="trailsModel" />
+	<Window class="container">
+		<TableView id="table" dataCollection="trailsModel">
+			<TableViewRow title="{name}" />
+		</TableView>			
+	</Window>
+</Alloy>
