@@ -13,3 +13,16 @@
 		fontSize: 12
 	}
 }
+
+"#menuView": {
+	layout : 'horizontal',
+	top: 2,
+	backgroundColor: "#60a6af",
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL
+}
+
+"#headView": {
+	height: "88%",
+	width: Ti.UI.SIZE
+}

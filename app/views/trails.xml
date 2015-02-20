@@ -3,6 +3,12 @@
 	<Window class="container">
 		<TableView id="table" dataCollection="trailsModel">
 			<TableViewRow title="{name}" onClick="showTrailDetails" />
-		</TableView>			
+		</TableView>	
+		
+		 <!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
+		<View id="menuView">
+			<Widget id="menuBar" src="menuWidget" name="widget"/>
+		</View>	
+				
 	</Window>
 </Alloy>

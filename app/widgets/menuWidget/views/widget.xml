@@ -1,0 +1,19 @@
+<Alloy>
+	
+	<Button class="btn" id="btnHome" backgroundImage="/icons/kosterStarMenu.png">
+		<Label class="lbl">Koster</Label>
+	</Button>
+	<Button class="btn" id="btnDetail" backgroundImage="/icons/hikeMenu.png" onClick="toList">
+		<Label class="lbl">Vandring</Label>
+	</Button>	
+	<Button class="btn" id="btnMap" backgroundImage="/icons/mapMenu.png" onClick="toList">
+		<Label class="lbl">Karta</Label>
+	</Button>
+	<Button class="btn" id="btnQuiz" backgroundImage="/icons/quizMenu.png" onClick="toQuiz">
+		<Label class="lbl">Quiz</Label>
+	</Button>
+	<Button class="btn" id="btnInfo" backgroundImage="/icons/infoMenu.png" onClick="toHome">
+		<Label class="lbl">Turistinfo</Label>
+	</Button>
+			
+</Alloy>

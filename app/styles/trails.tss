@@ -5,3 +5,11 @@ backgroundColor : 'white'
 	
   
 }
+
+"#menuView": {
+	layout : 'horizontal',
+	top: 2,
+	backgroundColor: "#60a6af",
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL
+}

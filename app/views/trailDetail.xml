@@ -6,5 +6,11 @@
 		<Label id="lblTrailInfo" class="lbltrailDetail"></Label>
 		<Label id="lblTrailColor" class="lbltrailDetail"></Label>
 	</View>
+	
+	 <!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
+		<View id="menuView">
+			<Widget id="menuBar" src="menuWidget" name="widget"/>
+		</View>	
+		
 	</Window>
 </Alloy>
