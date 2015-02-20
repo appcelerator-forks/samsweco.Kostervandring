@@ -1,3 +1,6 @@
+"Window" : {
+backgroundColor : 'white'
+}
 
 ".container" : {
 	top : 20,

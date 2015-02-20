@@ -1,4 +1,5 @@
 <Alloy>
+<<<<<<< HEAD
 	<Collection src="hotspotModel" />
 		<Window class="container">
 			
@@ -12,6 +13,13 @@
 				
 			</View>
 		
+=======
+		<Window class="container">	
+			<View id='headView'>
+				<Button onClick="nextPage">trails</Button>
+				<Button onClick="hotspotView">hotspots</Button>	
+			</View>	
+>>>>>>> FETCH_HEAD
 		  <!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
 			<View id="menuView">
 				<Widget id="menuBar" src="menuWidget" name="widget"/>
