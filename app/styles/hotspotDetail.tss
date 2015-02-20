@@ -1,0 +1,9 @@
+"Window" : {
+backgroundColor : 'white'
+}
+
+".container" : {
+	layout : 'vertical',
+	top : 20
+  
+}

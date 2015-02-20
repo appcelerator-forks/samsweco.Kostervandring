@@ -1,0 +1,10 @@
+<Alloy>
+	<Collection src="hotspotModel" />
+	<Window>
+	<View class="container">
+		<TableView id="table" dataCollection="hotspotModel">
+			<TableViewRow title="{name}" infoTxt="{infoTxt}" xkoord="{xkoord}" ykoord="{ykoord}" onClick="showHotspotDetails" />
+		</TableView>	
+	</View>
+	</Window>
+</Alloy>

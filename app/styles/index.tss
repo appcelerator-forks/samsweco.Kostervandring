@@ -1,5 +1,6 @@
 ".container": {
-	backgroundColor:"white"
+	backgroundColor:"white",
+	// layout : 'vertical'
 }
 
 "Label": {
@@ -21,4 +22,9 @@
 	height: Ti.UI.FILL,
 	width: Ti.UI.FILL,
 	opacity: 0.7
+}
+
+"#headView": {
+	layout : 'vertical',
+	top : 20
 }

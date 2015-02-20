@@ -1,17 +1,9 @@
 <Alloy>
-	<Collection src="hotspotModel" />
-		<Window class="container">
-			
+		<Window class="container">	
 			<View id='headView'>
-				
-				<!-- <TableView id="table" dataCollection="hotspotModel">
-					<TableViewRow title="{name}" />
-				</TableView>	 -->
-				
-				<Button onClick="nextPage">Next page</Button>
-				
-			</View>
-		
+				<Button onClick="nextPage">trails</Button>
+				<Button onClick="hotspotView">hotspots</Button>	
+			</View>	
 		  <!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
 			<View id="menuView">
 				<Widget id="menuBar" src="menuWidget" name="widget"/>

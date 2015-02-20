@@ -1,0 +1,10 @@
+<Alloy>
+	<Window>
+	<View class="container">
+			<Label id="lblHotspotName" class="lblhotspotDetail"></Label>
+			<Label id="lblHotspotInfoTxt" class="lblhotspotDetail"></Label>
+			<Label id="lblHotspotX" class="lblhotspotDetail"></Label>
+			<Label id="lblHotspotY" class="lblhotspotDetail"></Label>
+	</View>
+	</Window>
+</Alloy>
