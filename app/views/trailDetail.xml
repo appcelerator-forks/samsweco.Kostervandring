@@ -1,11 +1,12 @@
 <Alloy>
 	<Window>
-	<View class="container">
-		<Label id="lblTrailName" class="lbltrailDetail"></Label>
-		<Label id="lblTrailLength" class="lbltrailDetail"></Label>
-		<Label id="lblTrailInfo" class="lbltrailDetail"></Label>
-		<Label id="lblTrailColor" class="lbltrailDetail"></Label>
-	</View>
+		
+		<View class="container">
+			<Label id="lblTrailName" class="lbltrailDetail"></Label>
+			<Label id="lblTrailLength" class="lbltrailDetail"></Label>
+			<Label id="lblTrailInfo" class="lbltrailDetail"></Label>
+			<Label id="lblTrailColor" class="lbltrailDetail"></Label>
+		</View>
 	
 	 <!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
 		<View id="menuView">
