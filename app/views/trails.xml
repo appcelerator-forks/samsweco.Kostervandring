@@ -1,6 +1,6 @@
 <Alloy>
 	<Collection src="trailsModel" />
-	<Window class="container">
+	<Window class="container" onClose="destroyModel">
 		<TableView id="table" dataCollection="trailsModel">
 			<TableViewRow title="{name}" length="{length}" infoTxt="{infoTxt}" color="{color}" onClick="showTrailDetails" />
 		</TableView>					

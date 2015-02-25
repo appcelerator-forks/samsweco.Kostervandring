@@ -4,7 +4,7 @@ exports.definition = {
 		adapter: {
 			type : "sql",
 			collection_name : "hotspotModel",
-			db_file : "dbKostervandring.sqlite"
+			db_file : "/dbKostervandring.sqlite"
 		}
 	},
 	extendModel: function(Model) {

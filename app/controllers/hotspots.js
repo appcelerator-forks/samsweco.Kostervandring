@@ -1,10 +1,15 @@
 var args = arguments[0] || {};
 
 var hotspotCollection = Alloy.Collections.hotspotModel;
+//var hotspotCollection = Alloy.createCollection('hotspotModel');
+//var hotspotCollection = Alloy.Collections.instance('hotspotModel');
 hotspotCollection.fetch();
+
+Titanium.API.info(JSON.stringify(hotspotCollection));
 
 function showHotspotDetails(hotspot)
 {
+	Titanium.API.info(hotspot.name);
 	var selectedHotspot = hotspot.row;
 	var args = {
 		title: selectedHotspot.title,
@@ -15,5 +20,12 @@ function showHotspotDetails(hotspot)
 	
 	var hotspotDetail = Alloy.createController("hotspotDetail", args).getView();
 	hotspotDetail.open();
+	$.hotspots.close();
+}
+
+$.closeWin.addEventListener("click", close);
+
+function close(){
+	$.destroy();
 	$.hotspots.close();
 }
