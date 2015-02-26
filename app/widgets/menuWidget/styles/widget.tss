@@ -4,10 +4,11 @@
 	backgroundColor: 'transparent',
 	top: 2,
 	right: '2.3%',
-	bottom: 2,
 	left: '2.3%',
+	bottom: 2,
 	layout: 'vertical'
 } 
+
 
 ".lbl": {
 	bottom: 2,
