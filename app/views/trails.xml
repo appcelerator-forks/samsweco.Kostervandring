@@ -1,9 +1,11 @@
 <Alloy>
 	<Collection src="trailsModel" />
-	<Window class="container" onClose="destroyModel">
-		<TableView id="table" dataCollection="trailsModel">
-			<TableViewRow title="{name}" length="{length}" infoTxt="{infoTxt}" color="{color}" onClick="showTrailDetails" />
-		</TableView>					
+	<Window onClose="destroyModel">
+		<View class="container">
+			<TableView id="table" dataCollection="trailsModel">
+				<TableViewRow title="{name}" length="{length}" infoTxt="{infoTxt}" color="{color}" onClick="showTrailDetails" />
+			</TableView>					
+		</View>
 		
 		 <!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
 			<View id="menuView">

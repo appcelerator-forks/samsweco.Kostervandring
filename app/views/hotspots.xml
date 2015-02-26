@@ -2,7 +2,6 @@
 	<Collection src="hotspotModel" />
 		<Window>
 			<View class="container">
-				
 				<Button id="closeWin" onClick="close" title="Stäng"></Button>
 				
 				<TableView id="table" dataCollection="hotspotModel">

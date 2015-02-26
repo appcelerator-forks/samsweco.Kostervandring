@@ -1,8 +1,10 @@
 "Window" : {
 backgroundColor : 'white'
 }
+
 ".container" : {
-	layout : 'vertical'  
+	layout : 'vertical',
+	top : 20  
 }
 
 "#menuView": {
