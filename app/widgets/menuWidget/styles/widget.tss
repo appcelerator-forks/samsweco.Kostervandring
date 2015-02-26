@@ -1,16 +1,16 @@
 ".btn": {
-	width : 44,
-	height: 55,
+	width : Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE,
 	backgroundColor: 'transparent',
-	top: 5,
-	right: 10,
-	bottom: 10,
-	left: 10,
+	top: 2,
+	right: '2.3%',
+	bottom: 2,
+	left: '2.3%',
 	layout: 'vertical'
-}
+} 
 
 ".lbl": {
-	top: 44.5,
+	bottom: 2,
 	font : { 
 		fontFamily: 'Arial',
 		fontSize: 9

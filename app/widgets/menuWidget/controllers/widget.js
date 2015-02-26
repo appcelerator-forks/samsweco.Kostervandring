@@ -25,6 +25,7 @@ function toQuiz(e) {
   trails.open();
 }
 
+
 //Olika ikoner för olika skärmar
 //--------------------------------------------------------
 
@@ -32,3 +33,4 @@ if(Titanium.Platform.displayCaps.platformsWidth <= 320){
 	alert('rätt');
 	$.btnHome.backgroundImage = '/icon/logga.png';
 }
+
