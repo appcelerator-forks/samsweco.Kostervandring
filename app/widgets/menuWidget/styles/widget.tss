@@ -7,10 +7,10 @@
 	bottom: 2,
 	left: '2.3%',
 	layout: 'vertical'
-}
+} 
 
 ".lbl": {
-	top: 44.5,
+	bottom: 2,
 	font : { 
 		fontFamily: 'Arial',
 		fontSize: 9
