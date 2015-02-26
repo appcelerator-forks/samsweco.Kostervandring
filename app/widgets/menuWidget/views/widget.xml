@@ -1,7 +1,7 @@
 <Alloy>
-	
-	<Button class="btn" id="btnHome" backgroundImage="/icons/kosterStarMenu.png" onClick="toHome">
-		<Label class="lbl">Koster</Label>
+		
+	<Button class="btn" id="btnHome"  onClick="toHome"> <!-- backgroundImage="/icons/kosterStarMenu.png" -->
+		<Label id="koster" class="lbl">Koster</Label>
 	</Button>
 	<Button class="btn" id="btnDetail" backgroundImage="/icons/hikeMenu.png" onClick="toList">
 		<Label class="lbl">Vandring</Label>
