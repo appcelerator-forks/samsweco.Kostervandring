@@ -53,13 +53,13 @@
             <!-- Specify OpenGL ES 2.0 as a requirement -->
             <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
             <!-- Replace com.domain.appid with your application ID -->
-            <uses-permission android:name="<com.Kostervandring>.permission.MAPS_RECEIVE"/>
-            <permission android:name="<com.domain.appid>.permission.MAPS_RECEIVE"
+            <uses-permission android:name="com.Kostervandring.permission.MAPS_RECEIVE" />
+            <permission android:name="com.Kostervandring.permission.MAPS_RECEIVE"
                 android:protectionLevel="signature"/>
             <application>
                 <!-- Replace "PASTE YOUR GOOGLE MAPS API KEY HERE" with the Google API key you obtained -->
                 <meta-data android:name="com.google.android.maps.v2.API_KEY"
-                    android:value="PASTE YOUR GOOGLE MAPS API KEY HERE"/>
+                    android:value="AIzaSyAvc_MS1OxpuMc-ojkaq2Uzrrr-AwYJybs"/>
             </application>
         </manifest>
     </android>
