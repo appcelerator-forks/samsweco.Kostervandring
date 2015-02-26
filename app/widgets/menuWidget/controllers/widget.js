@@ -17,44 +17,67 @@ function toDetail(e) {
 //Lägger även in kartan på map-sidan när funktionen att gå till kartan anropas. 
 function toMap(e) {
   	var mapWin = Alloy.createController('map').getView();
-  	// var Map = require('ti.map');
-	// var mapview = Map.createView({mapType:Map.NORMAL_TYPE, region: {latitude:58.893333, longitude:11.014444, 
-		// latitudeDelta:0.05, longitudeDelta:0.05}});
 
 var MapModule = require('ti.map');
-// var win = Ti.UI.createWindow({backgroundColor: 'white'});
-// var third = Titanium.Platform.displayCaps.platformHeight / 3;
-// var map1 = MapModule.createView({
-    // userLocation: true,
-    // mapType: MapModule.NORMAL_TYPE,
-    // animate: true,
-    // region: {latitude: 58.893550, longitude: 11.048776, latitudeDelta: 0.1, longitudeDelta: 0.1 },
-    // height: '33%',
-    // top: 0,
-    // width: Ti.UI.FILL
-// });
-// var map2 = MapModule.createView({
-    // userLocation: true,
-    // mapType: MapModule.HYBRID_TYPE,
-    // animate: true,
-    // region: {latitude: 58.893550, longitude: 11.048776, latitudeDelta: 0.1, longitudeDelta: 0.1 },
-    // height: '33%',
-    // top: third,
-    // width: Ti.UI.FILL
-// });
+
+var hamn = MapModule.createAnnotation({
+	latitude : 58.893550,
+	longitude : 11.048776,
+	title : 'Hamn',
+	subtitle : 'Hamnen, här kan du åka båt'
+});
+
+var toalett = MapModule.createAnnotation({
+	latitude : 58.891300,
+	longitude : 11.040732,
+	title : 'Toalett',
+	subtitle : 'Toalett, här kan du...'
+});
+
+var lekpark = MapModule.createAnnotation({
+	//58.894115, 11.040388
+	latitude : 58.894115,
+	longitude : 11.040388,
+	title : 'Lekpark',
+	subtitle : 'Lekpark, här kan du leka!'
+});
+
 var map3 = MapModule.createView({
     userLocation: true,
     mapType: MapModule.SATELLITE_TYPE,
     animate: true,
-    region: {latitude: 58.893550, longitude: 11.048776, latitudeDelta: 0.1, longitudeDelta: 0.1 },
+    //58.893539, 11.012579
+    region: {latitude: 58.893539, 
+    		longitude: 11.012579, 
+    		latitudeDelta: 0.1, 
+    		longitudeDelta: 0.1 },
+    annotations : [hamn, toalett, lekpark],		
     height: '85%',
     width: Ti.UI.FILL
 });
-//win.add(map1);
-//win.add(map2);
+
+var redroute = MapModule.createRoute({
+	width : 4,
+	color : 'red',
+	points : [
+	{latitude : hamn.latitude, longitude : hamn.longitude},
+	{latitude : toalett.latitude, longitude : toalett.longitude},
+	{latitude : lekpark.latitude, longitude : lekpark.longitude}]
+});
+
+var blueroute = MapModule.createRoute({
+	width : 4,
+	color : 'blue',
+	points : [
+	{latitude : 58.885401, longitude : 11.011292},
+	{latitude : 58.874577, longitude : 11.032063},
+	{latitude : 58.883538, longitude : 11.042706}]
+});
+
+map3.addRoute(blueroute);
+map3.addRoute(redroute);
 mapWin.add(map3);
-//win.open();
- 	mapWin.open();
+mapWin.open();
 }
 
 function toQuiz(e) {
