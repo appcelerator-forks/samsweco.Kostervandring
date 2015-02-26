@@ -2,6 +2,8 @@
 	<Window class="container">
 		
 		<Button id="noMap" title="Tillbaka" onClick="goHome"></Button>
+		<View id="mapView" ></View>
+		
 		
 		<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
 		<View id="menuView">
