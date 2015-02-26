@@ -1,19 +1,33 @@
 <Alloy>
 		
 	<Button class="btn" id="btnHome"  onClick="toHome"> <!-- backgroundImage="/icons/kosterStarMenu.png" -->
-		<Label id="koster" class="lbl">Koster</Label>
+		<ImageView image="/Icons/kosterStarMenu.png"> 
+			<Label id="koster" class="lbl">Koster</Label> 
+		</ImageView> 
 	</Button>
-	<Button class="btn" id="btnDetail" backgroundImage="/icons/hikeMenu.png" onClick="toList">
-		<Label class="lbl">Vandring</Label>
+	
+	<Button class="btn" id="btnDetail" onClick="toList"> <!-- backgroundImage="/icons/hikeMenu.png"  -->
+		<ImageView image="/Icons/hikeMenu.png">
+			<Label class="lbl">Vandring</Label>
+		</ImageView>
 	</Button>	
-	<Button class="btn" id="btnMap" backgroundImage="/icons/mapMenu.png" onClick="toMap">
-		<Label class="lbl">Karta</Label>
+	
+	<Button class="btn" id="btnMap" onClick="toMap"> <!-- backgroundImage="/icons/mapMenu.png"  -->
+		<ImageView image="/Icons/mapMenu.png">
+			<Label class="lbl">Karta</Label>
+		</ImageView>
 	</Button>
-	<Button class="btn" id="btnQuiz" backgroundImage="/icons/quizMenu.png" onClick="toQuiz">
-		<Label class="lbl">Quiz</Label>
+	
+	<Button class="btn" id="btnQuiz" onClick="toQuiz"> <!-- backgroundImage="/icons/quizMenu.png" -->
+		<ImageView image="/Icons/quizMenu.png">
+			<Label class="lbl">Quiz</Label>
+		</ImageView>
 	</Button>
-	<Button class="btn" id="btnInfo" backgroundImage="/icons/infoMenu.png" onClick="toHome">
-		<Label class="lbl">Turistinfo</Label>
+	
+	<Button class="btn" id="btnInfo" onClick="toHome">  <!-- backgroundImage="/icons/infoMenu.png" -->
+		<ImageView image="/Icons/infoMenu.png">
+			<Label class="lbl">Turistinfo</Label>
+		</ImageView>
 	</Button>
 			
 </Alloy>
