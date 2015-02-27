@@ -13,9 +13,9 @@
 	bottom: 0,
 	borderTop: true,
 	borderBottom: false,
-	//height: Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE,
 	barColor: '60a6af',
-	opacity: 0.8
+	opacity: 0.9
 }
 
 ".toolButtonTitle": {
