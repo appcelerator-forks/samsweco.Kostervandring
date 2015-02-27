@@ -3,10 +3,10 @@
 	<Toolbar id="navToolbar" platform="ios">
 
             <Items>
-                <Button class="btn" id="btnHome" onClick="toHome"><!-- backgroundImage="/Icons/kosterStarMenu.png" -->
-					<ImageView image="/Icons/kosterStarMenu.png"> 
+                <Button class="btn" id="btnHome" onClick="toHome" backgroundImage="/Icons/kosterStarMenu.png" title="Koster">
+					<!-- <ImageView image="/Icons/kosterStarMenu.png"> 
 						<Label id="koster" class="toolButtonTitle">Koster</Label> 
-					</ImageView> 
+					</ImageView> --> 
 				</Button>
                 <FlexSpace/>
                 <Button class="btn" id="btnDetail" onClick="toList" backgroundImage="/Icons/hikeMenu.png" />

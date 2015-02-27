@@ -10,10 +10,15 @@ backgroundColor : 'white'
 }
 
 "#menuView": {
+	// layout : 'horizontal',
+	// bottom: 0,
+	// backgroundColor: "#60a6af",
+	// height: Titanium.UI.SIZE,
+	// width: Ti.UI.FILL,
+	// opacity: 0.7
 	layout : 'horizontal',
 	bottom: 0,
-	backgroundColor: "#60a6af",
 	height: Titanium.UI.SIZE,
 	width: Ti.UI.FILL,
-	opacity: 0.7
+	backgroundColor: 'transparent'
 }
