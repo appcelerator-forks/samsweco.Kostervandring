@@ -1,10 +1,22 @@
 <Alloy>
 	
-	<!-- <NavigationGroup>
-		<Window></Window>
-	</NavigationGroup> -->
+	<Toolbar id="navToolbar" platform="ios">
+
+            <Items>
+                <Button class="btn" id="btnHome" onClick="toHome" backgroundImage="/Icons/kosterStarMenu.png" />
+                <FlexSpace/>
+                <Button class="btn" id="btnDetail" onClick="toList" backgroundImage="/Icons/hikeMenu.png" />
+                <FlexSpace/>
+                <Button class="btn" id="btnMap" onClick="toMap" backgroundImage="/Icons/mapMenu.png" />
+                <FlexSpace/>
+                <Button class="btn" id="btnQuiz" onClick="toQuiz" backgroundImage="/Icons/quizMenu.png" />
+                <FlexSpace/>
+                <Button class="btn" id="btnInfo" onClick="toHome" backgroundImage="/Icons/infoMenu.png" /> 
+            </Items>
+
+        </Toolbar>
 	
-	<Button class="btn" id="btnHome"  onClick="toHome">
+	<!-- <Button class="btn" id="btnHome"  onClick="toHome">
 		<ImageView image="/Icons/kosterStarMenu.png"> 
 			<Label id="koster" class="lbl">Koster</Label> 
 		</ImageView> 
@@ -32,6 +44,6 @@
 		<ImageView image="/Icons/infoMenu.png">
 			<Label class="lbl">Turistinfo</Label>
 		</ImageView>
-	</Button>
+	</Button> -->
 			
 </Alloy>

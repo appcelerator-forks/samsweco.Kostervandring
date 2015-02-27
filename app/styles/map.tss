@@ -9,7 +9,7 @@
 	left: 5
 }
 
-"#mapView" : {
+"#mapView": {
 	height : '80%',
 	width : Titanium.UI.FILL
 }

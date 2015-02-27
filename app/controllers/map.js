@@ -1,5 +1,7 @@
 var args = arguments[0] || {};
+
 	showMap();
+
 //Funktionerna nedan skickar användaren till rätt sida utifrån navigeringsmeyn
 function goHome(e){
 	$.map.close();
