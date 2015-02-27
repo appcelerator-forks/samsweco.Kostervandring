@@ -1,0 +1,6 @@
+<Alloy>
+	<View id="view">
+		<Label>Hejhej</Label>
+		<!-- <Button id="close">Stäng</Button> -->
+	</View>
+</Alloy>
