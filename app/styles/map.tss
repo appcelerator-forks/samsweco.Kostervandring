@@ -3,25 +3,18 @@
 	layout: 'vertical'
 }
 
-// "#noMap": {
-	// top: 20,
-	// backgroundColor: "transparent",
-	// left: 5
-// }
+"#noMap": {
+	top: 20,
+	backgroundColor: "transparent",
+	left: 5
+}
 
 "#mapView": {
-	height : '80%',
+	height : Titanium.UI.FILL,
 	width : Titanium.UI.FILL
 }
 
 "#menuView": {
-	// layout : 'horizontal',
-	// bottom: 0,
-	// backgroundColor: "#60a6af",
-	// height: Titanium.UI.SIZE,
-	// width: Ti.UI.FILL,
-	// opacity: 0.7,
-	// bottom: 0
 	layout : 'horizontal',
 	bottom: 0,
 	height: Titanium.UI.SIZE,

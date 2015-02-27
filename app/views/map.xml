@@ -1,7 +1,9 @@
 <Alloy>
-	<Window>
+	<Window title="Koster">
+		
+		<!-- <Button id="noMap" title="Tillbaka" onClick="goHome" /> -->
+		
 		<View class="container">
-			<Button id="noMap" title="Tillbaka" onClick="goHome"></Button>
 			<View id="mapView" ></View>
 		</View>
 		

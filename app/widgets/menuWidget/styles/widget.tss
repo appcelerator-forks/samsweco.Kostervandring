@@ -14,7 +14,7 @@
 	borderTop: true,
 	borderBottom: false,
 	height: Titanium.UI.SIZE,
-	barColor: '60a6af',
+	barColor: '#60a6af',
 	opacity: 0.9
 }
 
