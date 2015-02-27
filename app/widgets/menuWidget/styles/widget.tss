@@ -13,7 +13,16 @@
 	bottom: 0,
 	borderTop: true,
 	borderBottom: false,
-	height: Titanium.UI.SIZE
+	height: 100
+}
+
+".toolButtonTitle": {
+	font : { 
+		fontFamily: 'Arial',
+		fontSize: 9
+	},
+	color: '#f5f5f0',
+	textAlign: "center"
 }
 
 ".lbl": {
