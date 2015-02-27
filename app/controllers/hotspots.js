@@ -1,11 +1,9 @@
 var args = arguments[0] || {};
 
 var hotspotCollection = Alloy.Collections.hotspotModel;
-//var hotspotCollection = Alloy.createCollection('hotspotModel');
-//var hotspotCollection = Alloy.Collections.instance('hotspotModel');
 hotspotCollection.fetch();
-
-Titanium.API.info(JSON.stringify(hotspotCollection));
+	Titanium.API.info(JSON.stringify(hotspotCollection));
+	
 
 function showHotspotDetails(hotspot)
 {
