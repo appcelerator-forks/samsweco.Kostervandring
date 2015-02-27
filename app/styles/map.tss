@@ -3,11 +3,11 @@
 	layout: 'vertical'
 }
 
-"#noMap": {
-	top: 20,
-	backgroundColor: "transparent",
-	left: 5
-}
+// "#noMap": {
+	// top: 20,
+	// backgroundColor: "transparent",
+	// left: 5
+// }
 
 "#mapView": {
 	height : '80%',
