@@ -1,5 +1,14 @@
 <Alloy>
-	<Window class="container">
+	<Collection src="quizModel"></Collection>
+	<Window class="container">	
+			<View dataCollection="quizModel">				
+				<Label id="lblQuestion" text="{question}"></Label>
+				<Label id="lblAlt1" text="{alt1}"></Label>
+				<Label id="lblAlt2" text="{alt2}"></Label>
+				<Label id="lblAlt3" text="{alt3}"></Label>
+				
+				<Button title="Svara"></Button>
+			</View>		
 		<View id="menuView">
 			<Widget id="menuBar" src="menuWidget" name="widget"/>
 		</View>	

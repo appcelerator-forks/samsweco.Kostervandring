@@ -1,11 +1,16 @@
 "Window" : {
-backgroundColor : 'white'
+backgroundColor : 'white',
+layout : 'vertical'
 }
 
 ".container" : {
 	layout : 'vertical',
 	top : 20
   
+}
+
+"View" : {
+	layout : 'vertical'
 }
 
 "#menuView": {
