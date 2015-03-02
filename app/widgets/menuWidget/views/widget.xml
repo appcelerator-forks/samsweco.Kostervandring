@@ -15,25 +15,10 @@
    </Toolbar>
     
     <View id="menuandroid" class="navToolbar">
-    	
-    	<Button class="btn" id="btnHome"  onClick="toHome">
-		<ImageView image="/Icons/kosterStarMenu.png"> 
-			<Label id="koster" class="lbl">Koster</Label> 
-		</ImageView> 
-	</Button>
-	
-	<Button class="btn" id="btnDetail" onClick="toList"> 
-		<ImageView image="/Icons/hikeMenu.png">
-			<Label class="lbl">Vandring</Label>
-		</ImageView>
-	</Button>
-    	
-    	
-    	
-    	<!-- <Menu>
+    	<Menu>
             <MenuItem class="menuitem" title="Settings" onClick="toTrails" />
             <MenuItem class="menuitem" title="Search" onClick="toMap" />
-        </Menu> -->
+        </Menu>
     </View>
         
       
