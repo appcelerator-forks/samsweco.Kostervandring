@@ -5,32 +5,35 @@ function goHome(e){
 	$.map.close();
 }
 
-//Visar kartan.
 function showMap(){	  
+//Titanium.API.info()
 var MapModule = require('ti.map');
 
 var map3 = MapModule.createView({
     userLocation: true,
     mapType: MapModule.SATELLITE_TYPE,
     animate: true,
+    //58.893539, 11.012579
     region: {latitude: 58.893539, 
     		longitude: 11.012579, 
     		latitudeDelta: 0.1, 
-    		longitudeDelta: 0.1 },	
+    		longitudeDelta: 0.1 },
+   // annotations : [hamn, toalett, lekpark],		
     height: '85%',
     width: Ti.UI.FILL
 });
 
 var markers = Alloy.Collections.hotspotModel;
-
+// Titanium.API.info(JSON.stringify(markers));
+//hejhej
 markers.fetch({
 	success: displayMarkers,
 	error: Ti.API.error
 });
 
-//Visar alla punkter för hotspots på kartan.
 function displayMarkers()
 { 
+	
 	markers.each(function(marker){
 		var markerAnnotation = MapModule.createAnnotation({
 			latitude : marker.get('xkoord'),
@@ -41,5 +44,6 @@ function displayMarkers()
 		map3.addAnnotation(markerAnnotation);
 	});
 }
+
 $.mapView.add(map3);
 };
