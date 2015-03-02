@@ -6,16 +6,29 @@ $.lblTrailInfo.text = args.infoTxt || 'Default infoText';
 $.lblTrailColor.text = args.color || 'Default Color';
 
 var trailId = args.id;
+Titanium.API.info(JSON.stringify(trailId) + " är ID");
+
+//trailSlideShow(selectedTrailPics);
+selectTrailPics();
 
 //Tanken är att hämta de bilder som hör till en vandringsled med ett visst id och sätta dem i en lista...
-function loadSlideShow(){
+function selectTrailPics(){
+
+	var id = trailId;
 	var mediaCollection = Alloy.Collections.mediaModel;
-	mediaCollection.fetch();
+	mediaCollection.fetch();	
+	var filteredCollection = mediaCollection.where({trail_id: id});
 	
-	//Behöver metod för att hämta namnet på den bildfil som är för en vandringsled med trailId...
-	var trailPics = mediaCollection.where({trail_id:trailId});
+	Titanium.API.info(JSON.stringify(filteredCollection)+ " ska vara bilderna");
+	return filteredCollection;
+}
+
+function trailSlideShow(collection){
+	//Här kommer en collection med de utvalda bilderna...
+	var selected = collection;
 	
-	//Loopa den ovan och sätt ut i bilspelet...
+	
+	//Här skriv hur bilderna ska visas i XML:en.........
 }
 
 $.trailDetail.open();
