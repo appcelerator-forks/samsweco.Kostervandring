@@ -1,9 +1,13 @@
 <Alloy>
 	<!-- <Collection src="hotspotModel" /> -->
 		<Window class="container">	
-			<View id='headView'>
-				<Button onClick="nextPage">trails</Button>
-				<Button onClick="hotspotView">hotspots</Button>	
+			<View id="headView">
+				<ScrollableView id="scrollableView" showPagingControl="true">
+            	<View id="pic1" backgroundImage="/pics/koster.png"></View>
+            	<View id="pic2" backgroundImage="/pics/Nordkoster.png"></View>
+            	<View id="pic3" backgroundImage="/pics/seals.png"></View>
+        	</ScrollableView>
+	
 			</View>	
 			
 			<!-- <Widget id="alert" src="alertWidget" name="alertwidget" /> -->

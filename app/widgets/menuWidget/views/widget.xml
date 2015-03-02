@@ -5,7 +5,7 @@
             <Items>
                 <Button class="btn" id="btnHome" onClick="toHome" backgroundImage="/Icons/kosterStarMenu.png" />
                 <FlexSpace/>
-                <Button class="btn" id="btnDetail" onClick="toList" backgroundImage="/Icons/hikeMenu.png" />
+                <Button class="btn" id="btnDetail" onClick="toTrails" backgroundImage="/Icons/hikeMenu.png" />
                 <FlexSpace/>
                 <Button class="btn" id="btnMap" onClick="toMap" backgroundImage="/Icons/mapMenu.png" />
                 <FlexSpace/>
