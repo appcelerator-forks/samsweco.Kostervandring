@@ -1,26 +1,39 @@
 <Alloy>
 	
-	<Toolbar id="menuiOS" class="navToolbar" platform="ios">
-
-            <Items>
-                <Button class="btn" id="btnHome" onClick="toHome" backgroundImage="/Icons/kosterStarMenu.png" />
-                <FlexSpace/>
-                <Button class="btn" id="btnDetail" onClick="toTrails" backgroundImage="/Icons/hikeMenu.png" />
-                <FlexSpace/>
-                <Button class="btn" id="btnMap" onClick="toMap" backgroundImage="/Icons/mapMenu.png" />
-                <FlexSpace/>
-                <Button class="btn" id="btnQuiz" onClick="toQuiz" backgroundImage="/Icons/quizMenu.png" />
-                <FlexSpace/>
-                <Button class="btn" id="btnInfo" onClick="toHome" backgroundImage="/Icons/infoMenu.png" /> 
-            </Items>
-
+	<Toolbar id="menuios" class="navToolbar" platform="ios">
+        <Items>
+            <Button class="btn" id="btnHome" onClick="toHome" backgroundImage="/Icons/kosterStarMenu.png" />
+            <FlexSpace/>
+            <Button class="btn" id="btnDetail" onClick="toTrails" backgroundImage="/Icons/hikeMenu.png" />
+            <FlexSpace/>
+            <Button class="btn" id="btnMap" onClick="toMap" backgroundImage="/Icons/mapMenu.png" />
+            <FlexSpace/>
+            <Button class="btn" id="btnQuiz" onClick="toQuiz" backgroundImage="/Icons/quizMenu.png" />
+            <FlexSpace/>
+            <Button class="btn" id="btnInfo" onClick="toHome" backgroundImage="/Icons/infoMenu.png" /> 
+        </Items>
    </Toolbar>
     
-    <View id="menuAndroid" class="navToolbar">
-    	<Menu>
-            <MenuItem id="item1" title="Settings" onClick="openSettings" />
-            <MenuItem id="item2" title="Search" onClick="doSearch" />
-        </Menu>
+    <View id="menuandroid" class="navToolbar">
+    	
+    	<Button class="btn" id="btnHome"  onClick="toHome">
+		<ImageView image="/Icons/kosterStarMenu.png"> 
+			<Label id="koster" class="lbl">Koster</Label> 
+		</ImageView> 
+	</Button>
+	
+	<Button class="btn" id="btnDetail" onClick="toList"> 
+		<ImageView image="/Icons/hikeMenu.png">
+			<Label class="lbl">Vandring</Label>
+		</ImageView>
+	</Button>
+    	
+    	
+    	
+    	<!-- <Menu>
+            <MenuItem class="menuitem" title="Settings" onClick="toTrails" />
+            <MenuItem class="menuitem" title="Search" onClick="toMap" />
+        </Menu> -->
     </View>
         
       

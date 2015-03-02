@@ -3,11 +3,11 @@
 //
 
 if(OS_IOS){
-	$.menuiOS.visible = true;
+	$.menuios.visible = true;
 }
 
 if(OS_ANDROID){
-	$.menuAndroid.visible = true;
+	$.menuandroid.visible = true;
 }
 
 //-------------

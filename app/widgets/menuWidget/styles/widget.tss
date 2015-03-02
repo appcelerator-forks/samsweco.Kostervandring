@@ -11,17 +11,22 @@
 
 ".navToolbar": {
 	height: Titanium.UI.SIZE,
-	barColor: '#60a6af',
-	opacity: 0.9
+	opacity: 0.9,
+	bottom: 0
 }
 
-"#menuAndroid": {
-	visible: false
-}
-
-"#menuiOS": {
+"#menuandroid": {
 	visible: false,
-	bottom: 0,
+	backgroundColor: 'pink'
+}
+
+"#menuios": {
+	visible: false,
 	borderTop: true,
 	borderBottom: false,
+	barColor: '#60a6af'
+}
+
+".menuitem": {
+	height: 60
 }
