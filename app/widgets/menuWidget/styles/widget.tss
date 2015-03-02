@@ -10,9 +10,6 @@
 } 
 
 ".navToolbar": {
-	bottom: 0,
-	borderTop: true,
-	borderBottom: false,
 	height: Titanium.UI.SIZE,
 	barColor: '#60a6af',
 	opacity: 0.9
@@ -23,5 +20,8 @@
 }
 
 "#menuiOS": {
-	visible: false
+	visible: false,
+	bottom: 0,
+	borderTop: true,
+	borderBottom: false,
 }
