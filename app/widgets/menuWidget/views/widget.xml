@@ -14,12 +14,11 @@
                 <Button class="btn" id="btnInfo" onClick="toHome" backgroundImage="/Icons/infoMenu.png" /> 
             </Items>
 
-    </Toolbar>
+   </Toolbar>
     
     <View id="menuAndroid" class="navToolbar">
     	<Menu>
             <MenuItem id="item1" title="Settings" onClick="openSettings" />
-            <FlexSpace/>
             <MenuItem id="item2" title="Search" onClick="doSearch" />
         </Menu>
     </View>
