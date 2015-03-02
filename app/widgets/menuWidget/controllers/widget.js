@@ -18,11 +18,6 @@ function toHome(e) {
   index.open();
 }
 
-// function toList(e) {
-  // var index = Alloy.createController('index').getView();
-  // index.open();
-// }
-
 function toDetail(e) {
   var trailDetail = Alloy.createController('trailDetail').getView();
   trailDetail.open();

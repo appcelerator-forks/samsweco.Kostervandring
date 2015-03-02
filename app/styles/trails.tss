@@ -2,6 +2,10 @@
 backgroundColor : 'white'
 }
 
+".listItem" : {
+	layout : 'vertical'
+}
+
 ".container" : {
 	layout : 'vertical',
 	top : 20  
@@ -13,5 +17,34 @@ backgroundColor : 'white'
 	height: Titanium.UI.SIZE,
 	width: Ti.UI.FILL,
 	backgroundColor: 'transparent'
+}
+
+".listItem" : {
+	height : 60,
+	layout : 'horizontal',
+	top : 10
+}
+
+".listImg" : {
+	left : 10,
+	height : 60,
+	width : 90
+}
+
+".lblView" : {
+	layout : 'vertical'
+}
+
+".lblListTitle" : {
+	right : 10,
+	top : 0
+}
+
+".lblListKm" : {
+	top : 0
+}
+
+".row" : {
+	layout : 'vertical'
 }
 

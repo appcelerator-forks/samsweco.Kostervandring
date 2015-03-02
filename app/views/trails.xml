@@ -2,8 +2,27 @@
 	<Collection src="trailsModel" />
 	<Window onClose="destroyModel">
 		<View class="container">
+			
+	        	<!-- <TableView dataCollection="ledModel">
+				<TableViewRow class="row" text ="{name}" km="{km}" infoTxt="{infoTxt}" image="{image}" onClick="showLed">
+					<View class="listItem">
+						  <ImageView class="imgSrc" image="{image}"/>
+							<Label class="lblListTitle" text="{name}"/>
+							<Label class="lblListKm" text="{km}"/>  
+					</View>			
+				</TableViewRow>
+			</TableView> -->		
 			<TableView id="table" dataCollection="trailsModel">
-				<TableViewRow title="{name}" length="{length}" infoTxt="{infoTxt}" color="{color}" onClick="showTrailDetails" />
+				<TableViewRow class="row" title="{name}" length="{length}" infoTxt="{infoTxt}" color="{color}" onClick="showTrailDetails">
+				<View class="listItem">
+					<ImageView class="listImg" image="seals.png"/>
+					<View id="lblView">
+						<Label class="lblListTitle" text="{name}"/>
+						<Label class="lblListKm" text="{length}"/>
+						<Label class="lblListInfo" text="{infoTxt}"/>    
+					</View>	
+					</View>
+				</TableViewRow>
 			</TableView>					
 		</View>
 		

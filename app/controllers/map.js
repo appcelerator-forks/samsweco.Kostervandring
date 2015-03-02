@@ -33,7 +33,6 @@ markers.fetch({
 
 function displayMarkers()
 { 
-	
 	markers.each(function(marker){
 		var markerAnnotation = MapModule.createAnnotation({
 			latitude : marker.get('xkoord'),
