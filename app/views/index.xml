@@ -3,11 +3,10 @@
 		<Window class="container">	
 			<View id="headView">
 				<ScrollableView id="scrollableView" showPagingControl="true">
-            	<View id="pic1" backgroundImage="/pics/koster.png"></View>
-            	<View id="pic2" backgroundImage="/pics/Nordkoster.png"></View>
-            	<View id="pic3" backgroundImage="/pics/seals.png"></View>
-        	</ScrollableView>
-	
+            		<View class="pic" backgroundImage="/pics/Seal_Fotor.png"></View>
+            		<View class="pic" backgroundImage="/pics/Nordkoster.png"></View>
+            		<View class="pic" backgroundImage="/pics/seals.png"></View>
+        		</ScrollableView>
 			</View>	
 			
 			<!-- <Widget id="alert" src="alertWidget" name="alertwidget" /> -->
