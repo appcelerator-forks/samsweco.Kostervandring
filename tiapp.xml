@@ -16,6 +16,10 @@
     <ios>
         <plist>
             <dict>
+            	<key>NSLocationAlwaysUsageDescription</key>
+                <string>
+					Godkänn användandet av platstjänster för att kunna använda appen.
+                </string>
                 <key>UISupportedInterfaceOrientations~iphone</key>
                 <array>
                     <string>UIInterfaceOrientationPortrait</string>

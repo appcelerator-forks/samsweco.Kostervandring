@@ -1,4 +1,5 @@
 <Alloy>
+	<Collection src="hotspotModel" />
 	<Window class="container">
 		
 		<Button id="noMap" title="Tillbaka" onClick="goHome"></Button>
