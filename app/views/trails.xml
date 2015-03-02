@@ -13,7 +13,7 @@
 				</TableViewRow>
 			</TableView> -->		
 			<TableView id="table" dataCollection="trailsModel">
-				<TableViewRow class="row" title="{name}" length="{length}" infoTxt="{infoTxt}" color="{color}" onClick="showTrailDetails">
+				<TableViewRow class="row" id="{id}" title="{name}" length="{length}" infoTxt="{infoTxt}" color="{color}" onClick="showTrailDetails">
 				<View class="listItem">
 					<ImageView class="listImg" image="seals.png"/>
 					<View id="lblView">
