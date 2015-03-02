@@ -1,12 +1,9 @@
 <Alloy>
-	<Collection src="hotspotModel"></Collection>
-	<Window title="Koster">
+	<Window class="container">
 		
-		<!-- <Button id="noMap" title="Tillbaka" onClick="goHome" /> -->
+		<Button id="noMap" title="Tillbaka" onClick="goHome"></Button>
+		<View id="mapView" ></View>
 		
-		<View class="container">
-			<View id="mapView" ></View>
-		</View>
 		
 		<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
 		<View id="menuView">
