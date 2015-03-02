@@ -1,0 +1,7 @@
+<Alloy>
+	<Window class="container">
+		<View id="menuView">
+			<Widget id="menuBar" src="menuWidget" name="widget"/>
+		</View>	
+	</Window>
+</Alloy>

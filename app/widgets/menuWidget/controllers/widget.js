@@ -33,6 +33,6 @@ mapWin.open();
 }
 
 function toQuiz(e) {
-  var trails = Alloy.createController('trails').getView();
-  trails.open();
+  var quizDetail = Alloy.createController('quizDetail').getView();
+  quizDetail.open();
 }
