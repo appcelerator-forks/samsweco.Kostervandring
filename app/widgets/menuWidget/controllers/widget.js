@@ -1,3 +1,15 @@
+//
+// Funktion för att visa android eller ios-meny
+//
+
+if(OS_IOS){
+	$.menuiOS.visible = true;
+}
+
+if(OS_ANDROID){
+	$.menuAndroid.visible = true;
+}
+
 //Funktionerna nedan skickar användaren till rätt sida utifrån navigeringsmeyn
 function toHome(e) {
   var index = Alloy.createController('index').getView();

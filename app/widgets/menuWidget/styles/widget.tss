@@ -9,7 +9,7 @@
 	layout: 'vertical'
 } 
 
-"#navToolbar": {
+".navToolbar": {
 	bottom: 0,
 	borderTop: true,
 	borderBottom: false,
@@ -18,20 +18,10 @@
 	opacity: 0.9
 }
 
-".toolButtonTitle": {
-	font : { 
-		fontFamily: 'Arial',
-		fontSize: 9
-	},
-	color: '#f5f5f0',
-	textAlign: "center"
+"#menuAndroid": {
+	visible: false
 }
 
-".lbl": {
-	bottom: 2,
-	font : { 
-		fontFamily: 'Arial',
-		fontSize: 9
-	},
-	color: '#f5f5f0'
+"#menuiOS": {
+	visible: false
 }
