@@ -7,3 +7,19 @@
 	height: Ti.UI.SIZE,
 	width: Ti.UI.SIZE
 }
+
+"#view": {
+	layout: 'vertical',
+	top: '40%',
+	backgroundColor: '#d9d9d9',
+	borderRadius: 10,
+	opacity: 0.9,
+	width: '70%',
+	height: Titanium.UI.SIZE,
+	visible: false
+}
+
+"#image": {
+	height: 100,
+	width: 200
+}

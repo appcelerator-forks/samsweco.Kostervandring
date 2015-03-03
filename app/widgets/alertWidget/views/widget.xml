@@ -1,6 +1,10 @@
 <Alloy>
+	<Button onClick="showDialog" title="Click">Click me</Button>
+	
 	<View id="view">
-		<Label>Hejhej</Label>
-		<!-- <Button id="close">Stäng</Button> -->
+		<Label>En liten kisse</Label>
+		<ImageView id="image" image="cat.jpg"></ImageView>
+		<Button onClick="closeDialog">Close</Button>
+		<Button onClick="closeDialog">Show</Button>
 	</View>
 </Alloy>
