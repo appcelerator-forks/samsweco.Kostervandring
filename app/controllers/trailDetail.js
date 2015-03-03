@@ -72,6 +72,7 @@ function selectTrailPics(){
 	var id = trailId;
 	var mediaCollection = Alloy.Collections.mediaModel;
 	mediaCollection.fetch({query: 'SELECT filename from mediaModel where trail_id="'+trailId+'"'});
+	//mediaCollection.fetch();
 
 	// var filename = mediaCollection.fetch('filename');
 	 Titanium.API.info(JSON.stringify(mediaCollection));
