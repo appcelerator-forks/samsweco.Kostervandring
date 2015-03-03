@@ -3,33 +3,89 @@ var args = arguments[0] || {};
 $.lblTrailName.text = "Vandringsled : " + args.title || 'Default Name';
 $.lblTrailLength.text = "Distans: " + args.length  + " kilometer"|| 'Default Length';
 $.lblTrailColor.text = "Färgmarkering: " + args.color || 'Default Color';
-
 $.lblTrailInfo.text = "Beskrivning : " + args.infoTxt || 'Default infoText';
 
 var trailId = args.id;
 Titanium.API.info(JSON.stringify(trailId) + " är ID");
 
-//trailSlideShow(selectedTrailPics);
 selectTrailPics();
+//testArray();
 
-//Tanken är att hämta de bilder som hör till en vandringsled med ett visst id och sätta dem i en lista...
+// function testArray(){
+	// var people = [
+	// {
+		// name : 'Anna',
+		// town : 'Nora'
+	// },
+// 	
+	// {
+		// name : 'Madde',
+		// town : 'Örebro'
+	// },
+// 	
+	// {
+		// name : 'Sandra',
+		// town : 'Örebro'
+	// }];
+// 	
+	// var results = [];
+	// people.forEach(function(person){
+		// results.push(person.name);
+	// });
+// 	
+	// Titanium.API.info(JSON.stringify(results));
+// }
+
 function selectTrailPics(){
+	
+	
+	//DETTA EXEMPEL FUNKAR! GRRRRRRRRRRRRRRRRRRRRRRR!!!!!!!
+		// var people = [
+	// {
+		// name : 'Anna',
+		// town : 'Nora'
+	// },
+// 	
+	// {
+		// name : 'Madde',
+		// town : 'Örebro'
+	// },
+// 	
+	// {
+		// name : 'Sandra',
+		// town : 'Örebro'
+	// }];
+// 	
+	// var results = [];
+	// people.forEach(function(person){
+		// results.push(person.name);
+	// });
+// 	
+	// Titanium.API.info(JSON.stringify(results));
+
+	// for(var i = 0; i < results.length; i++){
+		// var view_args = {
+		 // backgroundImage : results[i]
+	// };
+	// Titanium.API.info(JSON.stringify(results[i]));
 
 	var id = trailId;
 	var mediaCollection = Alloy.Collections.mediaModel;
-	mediaCollection.fetch();	
-	var filteredCollection = mediaCollection.where({trail_id: id});
-	
-	Titanium.API.info(JSON.stringify(filteredCollection)+ " ska vara bilderna");
-	return filteredCollection;
-}
+	mediaCollection.fetch({query: 'SELECT filename from mediaModel where trail_id="'+trailId+'"'});
 
-function trailSlideShow(collection){
-	//Här kommer en collection med de utvalda bilderna...
-	var selected = collection;
+	// var filename = mediaCollection.fetch('filename');
+	 Titanium.API.info(JSON.stringify(mediaCollection));
 	
+	for(var i = 0; i < mediaCollection.length; i++){	
+		var view_args = {
+		 backgroundImage : mediaCollection[0]
+	};
+	Titanium.API.info(JSON.stringify(mediaCollection[i]));
 	
-	//Här skriv hur bilderna ska visas i XML:en.........
+	var img_view = Ti.UI.createView(view_args);
+	
+	$.slideShowTrails.addView(img_view);
+}
 }
 
 $.trailDetail.open();

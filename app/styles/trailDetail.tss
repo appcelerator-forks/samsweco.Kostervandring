@@ -3,7 +3,7 @@ backgroundColor : 'white',
 layout : 'vertical'
 }
 
-"#slideShow" : {
+"#slideShowTrails" : {
 	height : '40%'
 }
 

@@ -16,6 +16,8 @@ function showTrailDetails(trail)
 		color: selectedTrail.color
 	};
 	
+	
+	
 	var trailDetail = Alloy.createController("trailDetail", args).getView();
 	trailDetail.open();
 	$.trails.close();
