@@ -1,6 +1,14 @@
 <Alloy>
 	<Collection src="mediaModel"></Collection>
 	<Window>
+	
+		<View id="headView">
+			<ScrollableView id="scrollableView" showPagingControl="true">
+            	<View class="pic" backgroundImage="/pics/Fyr.png"></View>
+            	<View class="pic" backgroundImage="/pics/Klippa.png"></View>
+            	<View class="pic" backgroundImage="/pics/Vandring.png"></View>
+        	</ScrollableView>
+		</View>	
 		
 		<View class="container">
 			<Label id="lblTrailName" class="lbltrailDetail"></Label>

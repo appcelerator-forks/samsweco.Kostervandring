@@ -1,5 +1,6 @@
 "Window" : {
-backgroundColor : 'white'
+backgroundColor : 'white',
+layout : 'vertical'
 }
 
 ".container" : {
@@ -7,6 +8,10 @@ backgroundColor : 'white'
 	layout : 'vertical',
 	backgroundColor: 'white'
   
+}
+
+"#headView" : {
+	height : '40%'
 }
 
 "#menuView": {
