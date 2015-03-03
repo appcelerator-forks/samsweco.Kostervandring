@@ -25,11 +25,6 @@ backgroundColor : 'white'
 	top : 10
 }
 
-".lblListTitle" : {
-	color : "red"
-	
-}
-
 ".listImg" : {
 	left : 10,
 	height : 60,
@@ -37,17 +32,19 @@ backgroundColor : 'white'
 }
 
 ".lblView" : {
-	layout : 'vertical',
-	backgroundColor : "red"
+	layout : 'horizontal'
 }
 
 ".lblListTitle" : {
-	right : 10,
-	top : 0
+	right : 20,
+	top : 0,
+	color : '#FF9966'
 }
 
 ".lblListKm" : {
-	top : 0
+	top : 15,
+	right : 20,
+	color : '#FF9966'
 }
 
 ".row" : {
