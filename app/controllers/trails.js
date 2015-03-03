@@ -10,7 +10,7 @@ function showTrailDetails(trail)
 	var selectedTrail = trail.row;
 	var args = {
 		id : selectedTrail.trailNo,
-		title: selectedTrail.title,
+		title: selectedTrail.name,
 		length: selectedTrail.length,
 		infoTxt : selectedTrail.infoTxt,
 		color: selectedTrail.color
