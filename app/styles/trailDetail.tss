@@ -3,6 +3,14 @@ backgroundColor : 'white',
 layout : 'vertical'
 }
 
+"Label" : {
+	left : 10,
+	font: {
+		fontSize: 12
+	}
+	
+}
+
 ".container" : {
 	top : 20,
 	layout : 'vertical',
@@ -12,6 +20,20 @@ layout : 'vertical'
 
 "#headView" : {
 	height : '40%'
+}
+
+"#lblTrailInfo" : {
+	left : 10,
+	font: {
+		fontSize: 12
+	}
+}
+
+"#lblTrailName" : {
+	left : 10,
+	font: {
+		fontSize: 14
+	}
 }
 
 "#menuView": {

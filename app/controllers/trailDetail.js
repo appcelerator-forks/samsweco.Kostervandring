@@ -1,9 +1,10 @@
 var args = arguments[0] || {};
 
-$.lblTrailName.text = args.title || 'Default Name';
-$.lblTrailLength.text = "Distans: "+ args.length || 'Default Length';
-$.lblTrailInfo.text = args.infoTxt || 'Default infoText';
-$.lblTrailColor.text = args.color || 'Default Color';
+$.lblTrailName.text = "Vandringsled : " + args.title || 'Default Name';
+$.lblTrailLength.text = "Distans: " + args.length  + " kilometer"|| 'Default Length';
+$.lblTrailColor.text = "Färgmarkering: " + args.color || 'Default Color';
+
+$.lblTrailInfo.text = "Beskrivning : " + args.infoTxt || 'Default infoText';
 
 var trailId = args.id;
 Titanium.API.info(JSON.stringify(trailId) + " är ID");
