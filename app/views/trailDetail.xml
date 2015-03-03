@@ -1,21 +1,23 @@
 <Alloy>
 	<Collection src="mediaModel"></Collection>
-	<Window>
+	<Window class="container">
 	
-		<View id="headView">
-			<ScrollableView id="scrollableView" showPagingControl="true">
-            	<View class="pic" backgroundImage="/pics/Fyr.png"></View>
-            	<View class="pic" backgroundImage="/pics/Klippa.png"></View>
-            	<View class="pic" backgroundImage="/pics/Vandring.png"></View>
-        	</ScrollableView>
-		</View>	
-		
-		<View class="container">
+	<View id="headView">
+		<ScrollableView id="slideShow" showPagingControl="true">
+            <View class="pic" backgroundImage="/pics/Fyr.png"></View>
+           	<View class="pic" backgroundImage="/pics/Klippa.png"></View>
+           	<View class="pic" backgroundImage="/pics/Vandring.png"></View>
+        </ScrollableView>
+        	
+        <View class="lbls">
 			<Label id="lblTrailName" class="lbltrailDetail"></Label>
 			<Label id="lblTrailLength" class="lbltrailDetail"></Label>
 			<Label id="lblTrailColor" class="lbltrailDetail"></Label>
 			<Label id="lblTrailInfo" class="lbltrailDetail"></Label>
 		</View>
+	</View>	
+		
+
 	
 	 <!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
 		<View id="menuView">

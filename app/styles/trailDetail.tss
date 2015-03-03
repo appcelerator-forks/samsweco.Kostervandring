@@ -3,12 +3,15 @@ backgroundColor : 'white',
 layout : 'vertical'
 }
 
+"#slideShow" : {
+	height : '40%'
+}
+
 "Label" : {
 	left : 10,
 	font: {
 		fontSize: 12
 	}
-	
 }
 
 ".container" : {
@@ -18,8 +21,15 @@ layout : 'vertical'
   
 }
 
+".lbls" : {
+	layout : 'vertical',
+	right : 10
+}
+
 "#headView" : {
-	height : '40%'
+	height : '80%',
+	layout : 'vertical',
+	backgroundColor : 'white'
 }
 
 "#lblTrailInfo" : {
