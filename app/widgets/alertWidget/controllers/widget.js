@@ -21,35 +21,34 @@ function doClick(e){
 
 
 
-function showLoc(myPos){	
-	var loc = Ti.Geolocation.getCurrentPosition(getLoc);
+
+
+// function getLoc(e){
+    // var place;
+//     
+    // if(e.success){
+        // Ti.API.info("Hittade dig!");
+//         
+        // latitude = e.coords.latitude;
+    	// longitude = e.coords.longitude;
+//     
+    	// // place = [lat, lon];
+//     
+    	// Ti.API.info(latitude, longitude);
+    // } else {
+    	// alert("Tusan");
+    // }  
+//     
+    // // return place;
+// };
+
+//var loc = Ti.Geolocation.getCurrentPosition(getLoc);
+
+function showLoc(){	
 	
-	myPos[loc];
-	
-	var latitude = myPos[0];
-	var longitude = myPos[1];
-	
-	Ti.API.info(latitude, longitude);
+	// var lat = Alloy.Globals.latitude;
+	// var lon = Alloy.Globals.longitude;
+// 	
+	// Ti.API.info(Alloy.Globals.getLoc());
 }
-
-function getLoc(e){
-    var place;
-    
-    if(e.success){
-        Ti.API.info("Hittade dig!");
-        
-        var lat = e.coords.latitude;
-    	var lon = e.coords.longitude;
-    
-    	place = [lat, lon];
-    
-    	Ti.API.info(place);
-    } else {
-    	alert("Tusan");
-    }   
-    
-	return place;	
-};
-
-
 

@@ -11,4 +11,21 @@
 // Alloy.Globals.someGlobalFunction = function(){};
 
 
+var latitude = " ";
+var longitude = " ";
+
+function getLoc(e){    
+    // try{
+    	if(e.success){
+        Ti.API.info("Hittade dig!");
+       }
+        latitude = e.coords.latitude;
+    	longitude = e.coords.longitude;
+    
+    	Ti.API.info(latitude, longitude);
+    // }catch{
+    	alert("Tusan");
+    // }
+};
+
 
