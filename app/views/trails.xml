@@ -3,8 +3,9 @@
 	<Window onClose="destroyModel">
 		<View class="container">
 					
+					<!--Fungerar nu, visar rätt bild. Är beroende av pics mappen dock. -->
 			<TableView id="table" dataCollection="trailsModel">
-				<TableViewRow class="row" trailNo="{id}" title="{name}" pic="{cover_pic}" length="{length}" infoTxt="{infoTxt}" color="{color}" onClick="showTrailDetails">
+				<TableViewRow class="row" trailNo="{id}" title="{name}" image="{cover_pic}" length="{length}" infoTxt="{infoTxt}" color="{color}" onClick="showTrailDetails">
 				<View class="listItem">
 					<ImageView class="listImg" image="{cover_pic}"/>
 					<View id="lblView">
