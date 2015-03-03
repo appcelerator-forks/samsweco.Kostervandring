@@ -9,6 +9,8 @@
         		</ScrollableView>
 			</View>	
 			
+			<Label id="lblHeader" text="Välkommen till Kosterhavets nationalpark!"></Label>
+			<Label text="Kosterhavet är Sveriges första marina nationalpark och invigdes i september 2009. I Kosterhavets nationalpark finns 12 000 arter."></Label>
 			<!-- <Widget id="alert" src="alertWidget" name="alertwidget" /> -->
 			
 		  <!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
