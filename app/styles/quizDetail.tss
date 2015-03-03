@@ -6,7 +6,6 @@ layout : 'vertical'
 ".container" : {
 	layout : 'vertical',
 	top : 20
-  
 }
 
 "View" : {
@@ -19,4 +18,13 @@ layout : 'vertical'
 	height: Titanium.UI.SIZE,
 	width: Ti.UI.FILL,
 	backgroundColor: 'transparent'
+}
+
+"#headView": {
+	layout : 'vertical',
+	top : 20,
+	height : Titanium.UI.SIZE,
+	width: Titanium.UI.FILL,
+	showHorizontalScrollIndicator: true,
+	height: '80%'
 }

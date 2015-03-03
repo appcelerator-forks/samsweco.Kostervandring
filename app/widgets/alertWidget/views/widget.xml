@@ -1,10 +1,14 @@
 <Alloy>
-	<Button onClick="showDialog" title="Click">Click me</Button>
 	
-	<View id="view">
+	<Button onClick="showDialog" title="Click">Ska funka</Button>
+	<Button onClick="showDialog" title="Click">Funkar inte</Button>
+	<Button onClick="showLoc" title="Click">Funkar inte</Button>
+	
+	<View id="alertView">
 		<Label>En liten kisse</Label>
-		<ImageView id="image" image="cat.jpg"></ImageView>
+		<ImageView id="image" image="/pics/cat.jpg"></ImageView>
 		<Button onClick="closeDialog">Close</Button>
 		<Button onClick="closeDialog">Show</Button>
 	</View>
+	
 </Alloy>
