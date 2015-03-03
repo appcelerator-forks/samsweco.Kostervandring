@@ -1,17 +1,21 @@
 <Alloy>
 	<!-- <Collection src="hotspotModel" /> -->
-		<Window class="container">	
-			<View id="headView">
-				<ScrollableView id="scrollableView" showPagingControl="true">
-            		<View class="pic" backgroundImage="/pics/Seal_Fotor.png"></View>
-            		<View class="pic" backgroundImage="/pics/Nordkoster.png"></View>
-            		<View class="pic" backgroundImage="/pics/seals.png"></View>
-        		</ScrollableView>
-			</View>	
+		<Window class="container" backgroundImage = "/pics/vaxt.png">	
 			
-			<Label id="lblHeader" text="Välkommen till Kosterhavets nationalpark!"></Label>
-			<Label text="Kosterhavet är Sveriges första marina nationalpark och invigdes i september 2009. I Kosterhavets nationalpark finns 12 000 arter."></Label>
-			<!-- <Widget id="alert" src="alertWidget" name="alertwidget" /> -->
+		<View class="headView">
+			<ImageView class="imgKoster" image="/pics/logga"></ImageView>
+				<Label class="lblheadInfo">Välkommen till Sveriges största marina nationalpark! Kosterhavet är sveriges artrikaste havsområde med mer än 6000 marina växt- och djurarter.
+				</Label>
+			<View class="buttonView">
+				<Button class="btnNationalpark"> Mer om Nationalparken ></Button>
+				<Button class="btnNaturum">Mer om Naturum       ></Button>
+		</View>
+		</View>
+			
+		<!-- <View class="buttonView">
+			<Button class="btnNationalpark"> Mer om Nationalparken ></Button>
+			<Button class="btnNaturum">Mer om Naturum       ></Button>
+		</View> -->
 			
 		  <!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
 			<View id="menuView">
