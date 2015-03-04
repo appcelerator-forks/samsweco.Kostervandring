@@ -22,8 +22,7 @@ function selectTrailPics(){
 		 backgroundImage : 'pics/'+jsonObj[i].filename
 	};
 	
-	var img_view = Ti.UI.createView(view_args);
-	
+	var img_view = Ti.UI.createView(view_args);	
 	$.slideShowTrails.addView(img_view);
 }
 }

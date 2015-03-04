@@ -6,17 +6,10 @@
 			<ImageView class="imgKoster" image="/pics/logga"></ImageView>
 				<Label id="lblheadInfo"></Label>
 			<View class="buttonView">
-				<Button class="btnNationalpark" onClick="aboutKoster"> Mer om Nationalparken ></Button>
-				<Button class="btnNaturum">Mer om Naturum       ></Button>
+				<Button class="btnNationalpark" onClick="aboutKoster"> Mer om Nationalparken </Button>
+				<Button class="btnNaturum" onClick="aboutNaturum">Mer om Naturum</Button>
 		</View>
 		</View>
-			
-		<!-- <View class="buttonView">
-			<Button class="btnNationalpark"> Mer om Nationalparken ></Button>
-			<Button class="btnNaturum">Mer om Naturum       ></Button>
-		</View> -->
-			
-		  <!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
 			<View id="menuView">
 				<Widget id="menuBar" src="menuWidget" name="widget" />
 			</View>	

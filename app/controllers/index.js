@@ -9,36 +9,38 @@ function hotspotView(){
 	hotspots.open();
 }
 
-// var infoTxtCollection = Alloy.Collections.infoTxtModel;
-// infoTxtCollection.fetch({query: 'SELECT infoTxt from infoTxtModel where id= 1'});
-// var jsonObj = infoTxtCollection.toJSON();	
-// $.lblheadInfo.text = jsonObj[0].infoTxt;
-
-function aboutKoster(){
-	
+function aboutNaturum(){
 	
 	var hotspotCollection = Alloy.Collections.hotspotModel;
-	hotspotCollection.fetch({query: 'SELECT infoTxt from hotspotModel where id= 13'});
-	
+	//OBS OBS id't nedan måste vara det för Kosterhavets Nationalpark i hotspotModel i DB för att detta ska funka!
+	hotspotCollection.fetch({query: 'SELECT infoTxt from hotspotModel where id = 13'});
 	var jsonObj = hotspotCollection.toJSON();	
-	
 	var txt = JSON.stringify(jsonObj[0].infoTxt);
 	Titanium.API.info(txt);
 	
-		var infoTxt = {
-		information : txt
-	};
+		var infoTxtNaturum = {
+		informationNaturum : txt
+		};
+
+	var hotspotDetail = Alloy.createController("hotspotDetail", infoTxtNaturum).getView();
+	hotspotDetail.open();
+	$.index.close();
+}
+
+function aboutKoster(){
 	
-	//$.lblHotspotName.text = "Hej";
-	// $.lblTrailLength.text = "Distans: " + args.length  + " kilometer"|| 'Default Length';
-	// $.lblTrailColor.text = "Färgmarkering: " + args.color || 'Default Color';
-	// $.lblTrailInfo.text = "Beskrivning : " + args.infoTxt || 'Default infoText';
+	var hotspotCollection = Alloy.Collections.hotspotModel;
+	//OBS OBS id't nedan måste vara det för Naturum i db för hotspotModel i DB för att detta ska funka!
+	hotspotCollection.fetch({query: 'SELECT infoTxt from hotspotModel where id= 14'});
+	var jsonObj = hotspotCollection.toJSON();	
+	var txt = JSON.stringify(jsonObj[0].infoTxt);
+	Titanium.API.info(txt);
 	
-	// var trailDetail = Alloy.createController("trailDetail", args).getView();
-	// trailDetail.open();
-	// $.trails.close();
-// }
-	var hotspotDetail = Alloy.createController("hotspotDetail", infoTxt).getView();
+		var infoTxtKoster = {
+		informationKoster : txt
+		};
+
+	var hotspotDetail = Alloy.createController("hotspotDetail", infoTxtKoster).getView();
 	hotspotDetail.open();
 	$.index.close();
 }

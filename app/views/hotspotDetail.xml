@@ -1,13 +1,16 @@
 <Alloy>
-	<Window>
-	<View class="container">
+	<Collection src="mediaModel"></Collection>
+	<Window class="container">
+		<View id="headView">
+		<ScrollableView id="slideShowHotspotDetail" showPagingControl="true"> </ScrollableView>
+		
 			<Label id="lblHotspotName" class="lblhotspotDetail"></Label>
 			<Label id="lblHotspotInfoTxt" class="lblhotspotDetail"></Label>
 			<Label id="lblHotspotX" class="lblhotspotDetail"></Label>
 			<Label id="lblHotspotY" class="lblhotspotDetail"></Label>
 			
 			<Label id="lblTest"></Label>
-	</View>
+		</View>
 	
 	<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
 		<View id="menuView">

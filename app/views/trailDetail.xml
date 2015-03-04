@@ -3,11 +3,7 @@
 	<Window class="container">
 	
 	<View id="headView">
-		<ScrollableView id="slideShowTrails" showPagingControl="true">
-            <!-- <View class="pic" backgroundImage="/pics/Fyr.png"></View>
-           	<View class="pic" backgroundImage="/pics/Klippa.png"></View>
-           	<View class="pic" backgroundImage="/pics/Vandring.png"></View> -->
-        </ScrollableView>
+		<ScrollableView id="slideShowTrails" showPagingControl="true" />
         	
         <View class="lbls">
 			<Label id="lblTrailName" class="lbltrailDetail"></Label>

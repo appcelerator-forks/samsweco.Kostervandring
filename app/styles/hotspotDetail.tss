@@ -1,11 +1,20 @@
 "Window" : {
-backgroundColor : 'white'
+backgroundColor : 'white',
+layout : 'vertical'
 }
 
 ".container" : {
 	layout : 'vertical',
 	top : 20
-  
+}
+
+"#slideShowHotspotDetail" : {
+	height : '50%'
+}
+
+"#headView" : {
+	height : '80%',
+	layout : 'vertical'
 }
 
 "#menuView": {
