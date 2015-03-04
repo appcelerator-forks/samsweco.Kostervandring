@@ -2,7 +2,10 @@
 	
 	<Button onClick="showDialog" title="Click">Ska funka</Button>
 	<Button onClick="showDialog" title="Click">Funkar inte</Button>
-	<Button onClick="showLoc" title="Click">Funkar inte</Button>
+	<Button onClick="showDialog" title="Click">Funkar inte</Button>
+	
+	<Label id="lblLat"></Label>
+	<Label id="lblLon"></Label>
 	
 	<View id="alertView">
 		<Label>En liten kisse</Label>
