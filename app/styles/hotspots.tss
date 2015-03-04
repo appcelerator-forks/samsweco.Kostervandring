@@ -9,6 +9,17 @@ backgroundColor : 'white'
 ".table" : {
 	layout : 'vertical'
 }
+".listItem" : {
+	height : 60,
+	layout : 'horizontal',
+	top : 10
+}
+
+".listImg" : {
+	left : 10,
+	height : 60,
+	width : 90
+}
 
 "#menuView": {
 	layout : 'horizontal',

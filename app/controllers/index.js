@@ -16,7 +16,6 @@ function aboutNaturum(){
 	hotspotCollection.fetch({query: 'SELECT infoTxt from hotspotModel where id = 13'});
 	var jsonObj = hotspotCollection.toJSON();	
 	var txt = jsonObj[0].infoTxt;
-	Titanium.API.info(txt);
 	
 		var infoTxtNaturum = {
 		informationNaturum : txt
@@ -34,8 +33,7 @@ function aboutKoster(){
 	hotspotCollection.fetch({query: 'SELECT infoTxt from hotspotModel where id= 14'});
 	var jsonObj = hotspotCollection.toJSON();	
 	var txt = jsonObj[0].infoTxt;
-	Titanium.API.info(txt);
-	
+
 		var infoTxtKoster = {
 		informationKoster : txt
 		};
@@ -44,8 +42,6 @@ function aboutKoster(){
 	hotspotDetail.open();
 	$.index.close();
 }
-
-
 
 $.index.open();
 
