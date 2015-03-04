@@ -6,9 +6,6 @@ backgroundColor : 'white'
   layout : 'vertical',
 }
 
-".table" : {
-	layout : 'vertical'
-}
 ".listItem" : {
 	height : 60,
 	layout : 'horizontal',
