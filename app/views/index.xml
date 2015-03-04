@@ -1,13 +1,12 @@
 <Alloy>
-	<!-- <Collection src="hotspotModel" /> -->
+	<Collection src="hotspotModel" />
 		<Window class="container" backgroundImage = "/pics/vaxt.png">	
 			
 		<View class="headView">
 			<ImageView class="imgKoster" image="/pics/logga"></ImageView>
-				<Label class="lblheadInfo">Välkommen till Sveriges största marina nationalpark! Kosterhavet är sveriges artrikaste havsområde med mer än 6000 marina växt- och djurarter.
-				</Label>
+				<Label id="lblheadInfo"></Label>
 			<View class="buttonView">
-				<Button class="btnNationalpark"> Mer om Nationalparken ></Button>
+				<Button class="btnNationalpark" onClick="aboutKoster"> Mer om Nationalparken ></Button>
 				<Button class="btnNaturum">Mer om Naturum       ></Button>
 		</View>
 		</View>

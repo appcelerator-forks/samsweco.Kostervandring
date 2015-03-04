@@ -42,13 +42,16 @@
 }
 
 ".headView" : {
-	layout: 'horizontal',
+	layout: 'vertical',
 	backgroundColor: 'transparent',
 	height: '90%'
 }
 
-".lblheadInfo" : {
+"#lblheadInfo" : {
 	color: '#FFFFFF',
 	width: 275,
-	left: 30
+	left: 30,
+	font: {
+		fontSize: 12
+	}
 }

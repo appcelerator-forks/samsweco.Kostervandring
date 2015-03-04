@@ -1,10 +1,10 @@
 var args = arguments[0] || {};
 
-$.lblHotspotName.text = args.title || 'Default Name';
-$.lblHotspotInfoTxt.text = args.infoTxt || 'Default infoTxt';
-$.lblHotspotX.text = args.xkoord || 'Default X';
-$.lblHotspotY.text = args.ykoord || 'Default Y';
+$.lblHotspotName.text = args.title || "";
+$.lblHotspotInfoTxt.text = args.infoTxt || "";
+$.lblHotspotX.text = args.xkoord || "";
+$.lblHotspotY.text = args.ykoord || "";
 
-
+$.lblHotspotInfoTxt.text = args.information;
 
 $.hotspotDetail.open();
