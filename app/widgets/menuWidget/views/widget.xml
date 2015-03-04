@@ -10,7 +10,7 @@
             <FlexSpace/>
             <Button class="btn" id="btnQuiz" onClick="toQuiz" backgroundImage="/Icons/quizMenu.png" />
             <FlexSpace/>
-            <Button class="btn" id="btnInfo" onClick="toHome" backgroundImage="/Icons/infoMenu.png" /> 
+            <Button class="btn" id="btnInfo" onClick="toHotspots" backgroundImage="/Icons/infoMenu.png" /> 
         </Items>
    </Toolbar>
     
