@@ -27,3 +27,5 @@ function close(){
 	$.destroy();
 	$.hotspots.close();
 }
+
+$.hotspots.open();

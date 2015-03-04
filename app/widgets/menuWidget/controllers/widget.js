@@ -19,8 +19,8 @@ function toHome(e) {
 }
 
 function toDetail(e) {
-  var trailDetail = Alloy.createController('trailDetail').getView();
-  trailDetail.open();
+  var hotspots = Alloy.createController('hotspots').getView();
+  hotspots.open();
 }
 
 //Lägger även in kartan på map-sidan när funktionen att gå till kartan anropas. 
