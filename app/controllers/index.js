@@ -15,7 +15,7 @@ function aboutNaturum(){
 	//OBS OBS id't nedan måste vara det för Kosterhavets Nationalpark i hotspotModel i DB för att detta ska funka!
 	hotspotCollection.fetch({query: 'SELECT infoTxt from hotspotModel where id = 13'});
 	var jsonObj = hotspotCollection.toJSON();	
-	var txt = JSON.stringify(jsonObj[0].infoTxt);
+	var txt = jsonObj[0].infoTxt;
 	Titanium.API.info(txt);
 	
 		var infoTxtNaturum = {
@@ -33,7 +33,7 @@ function aboutKoster(){
 	//OBS OBS id't nedan måste vara det för Naturum i db för hotspotModel i DB för att detta ska funka!
 	hotspotCollection.fetch({query: 'SELECT infoTxt from hotspotModel where id= 14'});
 	var jsonObj = hotspotCollection.toJSON();	
-	var txt = JSON.stringify(jsonObj[0].infoTxt);
+	var txt = jsonObj[0].infoTxt;
 	Titanium.API.info(txt);
 	
 		var infoTxtKoster = {

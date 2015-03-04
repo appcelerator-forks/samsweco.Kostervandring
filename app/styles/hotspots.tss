@@ -4,7 +4,10 @@ backgroundColor : 'white'
 
 ".container" : {
   layout : 'vertical',
+}
 
+".table" : {
+	layout : 'vertical'
 }
 
 "#menuView": {

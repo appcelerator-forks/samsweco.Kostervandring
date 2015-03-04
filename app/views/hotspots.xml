@@ -5,7 +5,14 @@
 				<Button id="closeWin" onClick="close" title="Stäng"></Button>
 				
 				<TableView id="table" dataCollection="hotspotModel">
-					<TableViewRow title="{name}" infoTxt="{infoTxt}" xkoord="{xkoord}" ykoord="{ykoord}" onClick="showHotspotDetails" />
+					<TableViewRow title="{name}" infoTxt="{infoTxt}" xkoord="{xkoord}" ykoord="{ykoord}" onClick="showHotspotDetails">
+					<View class="listItem">
+					<ImageView class="listImg" image="{cover_img}"/>
+					<View id="lblView">
+						<Label class="lblListTitle" text="{name}"/>
+					</View>	
+					</View>
+				</TableViewRow>
 				</TableView>	
 			</View>
 			
