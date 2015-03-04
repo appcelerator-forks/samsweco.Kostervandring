@@ -7,7 +7,7 @@
 			<TableView id="table" dataCollection="trailsModel">
 				<TableViewRow class="row" trailNo="{id}" name="{name}" image="{cover_pic}" length="{length}" infoTxt="{infoTxt}" color="{color}" onClick="showTrailDetails">
 				<View class="listItem">
-					<ImageView class="listImg" image="{cover_pic}"/>
+					<ImageView class="listImg" image="{cover_img}"/>
 					<View id="lblView">
 						<Label class="lblListTitle" text="{name}"/>
 						<Label class="lblListKm" text="{length}"/>
