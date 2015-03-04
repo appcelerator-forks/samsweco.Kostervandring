@@ -9,7 +9,7 @@
 				<View class="listItem">
 					<ImageView class="listImg" image="{cover_img}"/>
 					<View id="lblView">
-						<Label class="lblListTitle" text="{name}"/>
+						<Label class="lblListTitle" text="{name}"/> <Label id="lblKm">Km</Label>
 						<Label class="lblListKm" text="{length}"/>
 					</View>	
 					</View>
