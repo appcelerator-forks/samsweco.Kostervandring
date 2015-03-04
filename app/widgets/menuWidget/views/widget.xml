@@ -15,7 +15,7 @@
    </Toolbar>
     
     <View id="menuandroid" class="navToolbar">
-    	<Menu>
+    	<Menu platform="android">
             <MenuItem class="menuitem" title="Settings" onClick="toTrails" />
             <MenuItem class="menuitem" title="Search" onClick="toMap" />
         </Menu>
