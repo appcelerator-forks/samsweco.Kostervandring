@@ -1,6 +1,6 @@
 <Alloy>
 	
-	<Toolbar id="menuios" class="navToolbar" platform="ios">
+	<Toolbar id="menuios" platform="ios">
         <Items>
             <Button class="btn" id="btnHome" onClick="toHome" backgroundImage="/Icons/kosterStarMenu.png" />
             <FlexSpace/>
@@ -13,16 +13,7 @@
             <Button class="btn" id="btnInfo" onClick="toHome" backgroundImage="/Icons/infoMenu.png" /> 
         </Items>
    </Toolbar>
-    
-    <View id="menuandroid" class="navToolbar">
-    	<Menu platform="android">
-            <MenuItem class="menuitem" title="Settings" onClick="toTrails" />
-            <MenuItem class="menuitem" title="Search" onClick="toMap" />
-        </Menu>
-    </View>
-        
-      
-	
+   
 	<!-- <Button class="btn" id="btnHome"  onClick="toHome">
 		<ImageView image="/Icons/kosterStarMenu.png"> 
 			<Label id="koster" class="lbl">Koster</Label> 

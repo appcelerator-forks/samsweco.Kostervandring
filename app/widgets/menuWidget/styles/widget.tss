@@ -9,22 +9,13 @@
 	layout: 'vertical'
 } 
 
-".navToolbar": {
+"#menuios": {
+	borderTop: true,
+	borderBottom: false,
+	barColor: '#60a6af',
 	height: Titanium.UI.SIZE,
 	opacity: 0.9,
 	bottom: 0
-}
-
-"#menuandroid": {
-	visible: false,
-	backgroundColor: 'pink'
-}
-
-"#menuios": {
-	visible: false,
-	borderTop: true,
-	borderBottom: false,
-	barColor: '#60a6af'
 }
 
 ".menuitem": {
