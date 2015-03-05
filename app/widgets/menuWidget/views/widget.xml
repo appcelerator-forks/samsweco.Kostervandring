@@ -10,9 +10,10 @@
             <FlexSpace/>
             <Button class="btn" id="btnQuiz" onClick="toQuiz" backgroundImage="/Icons/quizMenu.png" />
             <FlexSpace/>
-            <Button class="btn" id="btnInfo" onClick="toHome" backgroundImage="/Icons/infoMenu.png" /> 
+            <Button class="btn" id="btnInfo" onClick="toHotspots" backgroundImage="/Icons/infoMenu.png" /> 
         </Items>
    </Toolbar>
+<<<<<<< HEAD
    
 	<!-- <Button class="btn" id="btnHome"  onClick="toHome">
 		<ImageView image="/Icons/kosterStarMenu.png"> 
@@ -43,5 +44,14 @@
 			<Label class="lbl">Turistinfo</Label>
 		</ImageView>
 	</Button> -->
+=======
+    
+    <View id="menuandroid" class="navToolbar">
+    	<Menu platform="android">
+            <MenuItem class="menuitem" title="Settings" onClick="toTrails" />
+            <MenuItem class="menuitem" title="Search" onClick="toMap" />
+        </Menu>
+    </View>
+>>>>>>> origin/master
 			
 </Alloy>
