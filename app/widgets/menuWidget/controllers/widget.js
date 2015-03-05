@@ -4,7 +4,7 @@ function toHome(e) {
   index.open();
 }
 
-function toDetail(e) {
+function toHotspots(e) {
   var hotspots = Alloy.createController('hotspots').getView();
   hotspots.open();
 }
