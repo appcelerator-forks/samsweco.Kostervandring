@@ -15,9 +15,10 @@
 	barColor: '#60a6af',
 	height: Titanium.UI.SIZE,
 	opacity: 0.9,
-	bottom: 0
+	bottom: 0,
+	layout: 'composite'
 }
 
-".menuitem": {
-	height: 60
-}
+// ".menuitem": {
+	// height: 60
+// }
