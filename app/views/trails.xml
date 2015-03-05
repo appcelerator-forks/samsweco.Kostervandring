@@ -2,25 +2,25 @@
 	<Collection src="trailsModel" />
 	<Window onClose="destroyModel">
 		<View class="container">
-					
-					<!--Fungerar nu, visar rätt bild. Är beroende av pics mappen dock. -->
+
+			<!--Fungerar nu, visar rätt bild. Är beroende av pics mappen dock. -->
 			<TableView id="table" dataCollection="trailsModel">
 				<TableViewRow class="row" trailNo="{id}" name="{name}" image="{cover_pic}" length="{length}" infoTxt="{infoTxt}" color="{color}" onClick="showTrailDetails">
-				<View class="listItem">
-					<ImageView class="listImg" image="{cover_img}"/>
-					<View id="lblView">
-						<Label class="lblListTitle" text="{name}"/>
-						<Label class="lblListKm" text="{length}"/>
-					</View>	
+					<View class="listItem">
+						<ImageView class="listImg" image="{cover_img}"/>
+						<View id="lblView">
+							<Label class="lblListTitle" text="{name}"/>
+							<Label class="lblListKm" text="{length}"/>
+						</View>
 					</View>
 				</TableViewRow>
-			</TableView>					
+			</TableView>
 		</View>
-		
-		 <!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
-			<View id="menuView">
-				<Widget id="menuBar" src="menuWidget" name="widget"/>
-			</View>	
-				
-		</Window>
+
+		<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
+		<View id="menuView">
+			<Widget id="menuBar" src="menuWidget" name="widget"/>
+		</View>
+
+	</Window>
 </Alloy>

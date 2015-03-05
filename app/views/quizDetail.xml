@@ -1,27 +1,26 @@
 <Alloy>
-	<Collection src="quizModel"></Collection>
-		<Window class="container">	
-			<ScrollView id="headView">			
-				<!-- <View dataCollection="quizModel">
-				<Label id="lblQuestion" text="{question}"></Label>
-				<Label id="lblAlt1" text="{alt1}"></Label>
-				<Label id="lblAlt2" text="{alt2}"></Label>
-				<Label id="lblAlt3" text="{alt3}"></Label> -->
-				<ListView id="lista">
-				<ListSection id="section">
-                <ListItem title="Take Out the Trash"/>
-                <ListItem title="Do the Dishes"/>
-                <ListItem title="Walk the Dog"/>
-            </ListSection>
-        </ListView>
-					<Button title="Svara"></Button>
-				
-				<Widget id="alert" src="alertWidget" name="widget" />
-					
-			</ScrollView>
-			
-			<View id="menuView">
-				<Widget id="menuBar" src="menuWidget" name="widget"/>
-			</View>	
-		</Window>
+	<Collection src="quizModel"/>
+	<Window class="container">
+		<ScrollView id="headView">
+			<!-- <View dataCollection="quizModel">
+			<Label id="lblQuestion" text="{question}"></Label>
+			<Label id="lblAlt1" text="{alt1}"></Label>
+			<Label id="lblAlt2" text="{alt2}"></Label>
+			<Label id="lblAlt3" text="{alt3}"></Label> -->
+			<ListView id="lista">
+				<ListSection id="section" dataCollection="quizModel" >
+					<ListItem title="{question}"></ListItem>
+					<ListItem title="{alt1}"/>
+					<ListItem title="{alt2}"/>
+					<ListItem title="{alt3}"/>
+				</ListSection>
+			</ListView>
+			<Button title="Svara"></Button>
+			<Widget id="alert" src="alertWidget" name="widget" />
+
+		</ScrollView>
+		<View id="menuView">
+			<Widget id="menuBar" src="menuWidget" name="widget"/>
+		</View>
+	</Window>
 </Alloy>
