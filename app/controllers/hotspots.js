@@ -2,16 +2,16 @@ var args = arguments[0] || {};
 
 var hotspotCollection = Alloy.Collections.hotspotModel;
 hotspotCollection.fetch();
-	Titanium.API.info(JSON.stringify(hotspotCollection));
+	//Titanium.API.info(JSON.stringify(hotspotCollection));
 	
 
 function showHotspotDetails(hotspot)
 {
-	Titanium.API.info(hotspot.name);
+	//Titanium.API.info(hotspot.name);
 	var selectedHotspot = hotspot.row;
 	var args = {
-		id : selectedHotspot.id,
-		title: selectedHotspot.title,
+		id : selectedHotspot.hotspotNo,
+		name: selectedHotspot.name,
 		infoTxt: selectedHotspot.infoTxt,
 		xkoord : selectedHotspot.xkoord,
 		ykoord: selectedHotspot.ykoord
