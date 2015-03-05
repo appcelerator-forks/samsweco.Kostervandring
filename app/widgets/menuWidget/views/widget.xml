@@ -13,7 +13,7 @@
             <Button class="btn" id="btnInfo" onClick="toHotspots" backgroundImage="/Icons/infoMenu.png" /> 
         </Items>
    </Toolbar>
-<<<<<<< HEAD
+
    
 	<!-- <Button class="btn" id="btnHome"  onClick="toHome">
 		<ImageView image="/Icons/kosterStarMenu.png"> 
