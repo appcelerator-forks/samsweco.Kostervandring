@@ -44,14 +44,5 @@
 			<Label class="lbl">Turistinfo</Label>
 		</ImageView>
 	</Button> -->
-=======
-    
-    <View id="menuandroid" class="navToolbar">
-    	<Menu platform="android">
-            <MenuItem class="menuitem" title="Settings" onClick="toTrails" />
-            <MenuItem class="menuitem" title="Search" onClick="toMap" />
-        </Menu>
-    </View>
->>>>>>> origin/master
 			
 </Alloy>
