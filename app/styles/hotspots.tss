@@ -4,7 +4,18 @@ backgroundColor : 'white'
 
 ".container" : {
   layout : 'vertical',
+}
 
+".listItem" : {
+	height : 60,
+	layout : 'horizontal',
+	top : 10
+}
+
+".listImg" : {
+	left : 10,
+	height : 60,
+	width : 90
 }
 
 "#menuView": {
@@ -13,4 +24,9 @@ backgroundColor : 'white'
 	height: Titanium.UI.SIZE,
 	width: Ti.UI.FILL,
 	backgroundColor: 'transparent'
+}
+
+".row" : {
+	layout : 'vertical',
+	backgroundColor : '#fff3e5'
 }

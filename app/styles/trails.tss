@@ -2,10 +2,6 @@
 backgroundColor : 'white'
 }
 
-".listItem" : {
-	layout : 'vertical'
-}
-
 ".container" : {
 	layout : 'vertical',
 	top : 20  
@@ -48,6 +44,7 @@ backgroundColor : 'white'
 }
 
 ".row" : {
-	layout : 'vertical'
+	layout : 'vertical',
+	backgroundColor : '#fff3e5'
 }
 

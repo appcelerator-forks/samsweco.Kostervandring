@@ -10,7 +10,8 @@ function showHotspotDetails(hotspot)
 	Titanium.API.info(hotspot.name);
 	var selectedHotspot = hotspot.row;
 	var args = {
-		title: selectedHotspot.title,
+		//id in här?
+		title: selectedHotspot.name,
 		infoTxt: selectedHotspot.infoTxt,
 		xkoord : selectedHotspot.xkoord,
 		ykoord: selectedHotspot.ykoord

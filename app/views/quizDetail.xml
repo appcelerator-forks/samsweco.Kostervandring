@@ -9,10 +9,10 @@
 			<Label id="lblAlt3" text="{alt3}"></Label> -->
 			<ListView id="lista">
 				<ListSection id="section" dataCollection="quizModel" >
-					<ListItem title="{question}"></ListItem>
-					<ListItem title="{alt1}"/>
-					<ListItem title="{alt2}"/>
-					<ListItem title="{alt3}"/>
+					<ListItem class="row" title="{question}"></ListItem>
+					<ListItem class="row" title="{alt1}"/>
+					<ListItem class="row" title="{alt2}"/>
+					<ListItem class="row" title="{alt3}"/>
 				</ListSection>
 			</ListView>
 			<Button title="Svara"></Button>
