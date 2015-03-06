@@ -1,11 +1,22 @@
 "Window" : {
-backgroundColor : 'white',
-layout : 'vertical'
+backgroundColor : '#fff3e5',
+layout : 'vertical',
+backgroundColor : '#fff3e5',
 }
 
 ".container" : {
 	layout : 'vertical',
-	top : 20
+	top : 20,
+	backgroundColor : '#fff3e5',
+}
+
+"#lista" : {
+	backgroundColor : '#fff3e5'
+}
+
+".row" : {
+	layout : 'vertical',
+	backgroundColor : '#fff3e5'
 }
 
 "View" : {
@@ -26,6 +37,7 @@ layout : 'vertical'
 	height : Titanium.UI.SIZE,
 	width: Titanium.UI.FILL,
 	showHorizontalScrollIndicator: true,
+<<<<<<< HEAD
 	height: '80%'
 }
 
@@ -39,3 +51,8 @@ layout : 'vertical'
 	height : '50%',
 	width : Titanium.UI.FILL
 }
+=======
+	height: '80%',
+	backgroundColor : '#fff3e5'
+}
+>>>>>>> origin/master

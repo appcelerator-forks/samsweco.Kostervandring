@@ -5,8 +5,8 @@ $.lblHotspotInfoTxt.text = args.infoTxt || "Info";
 $.lblHotspotX.text = args.xkoord || "x";
 $.lblHotspotY.text = args.ykoord || "y";
 
-Titanium.API.info("Naturum : "+args.informationNaturum);
-Titanium.API.info("Koster : "+args.informationKoster);
+//Titanium.API.info("Naturum : "+args.informationNaturum);
+//Titanium.API.info("Koster : "+args.informationKoster);
 
 if(args.informationNaturum != null){
 	setNaturumInfo();
