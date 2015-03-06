@@ -1,9 +1,9 @@
 <Alloy>
 	
-	<Button onClick="showDialog" title="Click">Ska funka</Button>
+	<!-- <Button onClick="showDialog" title="Click">Ska funka</Button>
 	<Button onClick="showDialog" title="Click">Funkar inte</Button>
 	<Button onClick="showDialog" title="Click">Funkar inte</Button>
-	
+	 -->
 	<Label id="lblLat"></Label>
 	<Label id="lblLon"></Label>
 	

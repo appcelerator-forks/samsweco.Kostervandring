@@ -2,20 +2,28 @@
 	<Collection src="quizModel"/>
 	<Window class="container">
 		<ScrollView id="headView">
-			<!-- <View dataCollection="quizModel">
-			<Label id="lblQuestion" text="{question}"></Label>
-			<Label id="lblAlt1" text="{alt1}"></Label>
-			<Label id="lblAlt2" text="{alt2}"></Label>
-			<Label id="lblAlt3" text="{alt3}"></Label> -->
+
+
+<View dataCollection="quizModel">
+<Label id="lblQuestion" text="{question}"></Label>
+</View>
+<!-- <Label id="lblAlt1" text="{alt1}"></Label>
+<Label id="lblAlt2" text="{alt2}"></Label>
+<Label id="lblAlt3" text="{alt3}"></Label> -->
+
+<!-- <Label id="lblQuestion" text="{question}"></Label> -->
+
 			<ListView id="lista">
 				<ListSection id="section" dataCollection="quizModel" >
-					<ListItem title="{question}"></ListItem>
+					<!-- <ListItem title="{question}"></ListItem> -->
 					<ListItem title="{alt1}"/>
 					<ListItem title="{alt2}"/>
 					<ListItem title="{alt3}"/>
 				</ListSection>
 			</ListView>
-			<Button title="Svara"></Button>
+		
+		<Button id="Svara">Svara</Button>
+			
 			<Widget id="alert" src="alertWidget" name="widget" />
 
 		</ScrollView>

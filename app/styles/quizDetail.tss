@@ -28,3 +28,14 @@ layout : 'vertical'
 	showHorizontalScrollIndicator: true,
 	height: '80%'
 }
+
+'#Svara' : {
+	height: 25,
+	width: 40
+}
+
+'#lista' : {
+	top: '30%',
+	height : '50%',
+	width : Titanium.UI.FILL
+}
