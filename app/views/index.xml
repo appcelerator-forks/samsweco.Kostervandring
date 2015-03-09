@@ -1,9 +1,9 @@
 <Alloy>
 	<Collection src="hotspotModel" />
-	<Window class="container" backgroundImage = "/pics/vaxt.png">
+	<Window class="container" backgroundImage = "/pics/front.png">
 
 		<ScrollView class="headView">
-			<ImageView class="imgKoster" image="/pics/logga"></ImageView>
+			<ImageView class="imgKoster" image="/pics/logga.png"></ImageView>
 			<Label id="lblheadInfo"></Label>
 			<View class="buttonView">
 				<Button class="btnNationalpark" onClick="aboutKoster">Mer om Nationalparken</Button>
