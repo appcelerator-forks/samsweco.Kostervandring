@@ -1,3 +1,17 @@
+//--------------------------------------
+//Visar olika menyer för iOS och Android
+//--------------------------------------
+
+if(OS_IOS){
+	$.menuios.visible = true;
+}
+
+if(OS_ANDROID){
+	$.menuandroid.visible = true;
+}
+
+//--------------------------------------
+
 //Funktionerna nedan skickar användaren till rätt sida utifrån navigeringsmeyn
 function toHome(e) {
   var index = Alloy.createController('index').getView();

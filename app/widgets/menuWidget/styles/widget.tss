@@ -16,6 +16,16 @@
 	height: Titanium.UI.SIZE,
 	opacity: 0.9,
 	bottom: 0,
+	visible: false,
+	layout: 'composite'
+}
+
+"#menuandroid": {
+	barColor: '#60a6af',
+	height: Titanium.UI.SIZE,
+	opacity: 0.9,
+	bottom: 0,
+	visible: false,
 	layout: 'composite'
 }
 

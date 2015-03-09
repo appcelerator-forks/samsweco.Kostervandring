@@ -1,48 +1,45 @@
 <Alloy>
-	
-	<Toolbar id="menuios" platform="ios">
-        <Items>
-            <Button class="btn" id="btnHome" onClick="toHome" backgroundImage="/Icons/kosterStarMenu.png" />
-            <FlexSpace/>
-            <Button class="btn" id="btnDetail" onClick="toTrails" backgroundImage="/Icons/hikeMenu.png" />
-            <FlexSpace/>
-            <Button class="btn" id="btnMap" onClick="toMap" backgroundImage="/Icons/mapMenu.png" />
-            <FlexSpace/>
-            <Button class="btn" id="btnQuiz" onClick="toQuiz" backgroundImage="/Icons/quizMenu.png" />
-            <FlexSpace/>
-            <Button class="btn" id="btnInfo" onClick="toHotspots" backgroundImage="/Icons/infoMenu.png" /> 
-        </Items>
-   </Toolbar>
 
-   
-	<!-- <Button class="btn" id="btnHome"  onClick="toHome">
-		<ImageView image="/Icons/kosterStarMenu.png"> 
-			<Label id="koster" class="lbl">Koster</Label> 
-		</ImageView> 
-	</Button>
+	<Toolbar id="menuios" platform="ios">
+		<Items>
+			<Button class="btn" id="btnHome" onClick="toHome" backgroundImage="/Icons/kosterStarMenu.png" />
+			<FlexSpace/>
+			<Button class="btn" id="btnDetail" onClick="toTrails" backgroundImage="/Icons/hikeMenu.png" />
+			<FlexSpace/>
+			<Button class="btn" id="btnMap" onClick="toMap" backgroundImage="/Icons/mapMenu.png" />
+			<FlexSpace/>
+			<Button class="btn" id="btnQuiz" onClick="toQuiz" backgroundImage="/Icons/quizMenu.png" />
+			<FlexSpace/>
+			<Button class="btn" id="btnInfo" onClick="toHotspots" backgroundImage="/Icons/infoMenu.png" />
+		</Items>
+	</Toolbar>
 	
-	<Button class="btn" id="btnDetail" onClick="toList"> 
-		<ImageView image="/Icons/hikeMenu.png">
-			<Label class="lbl">Vandring</Label>
-		</ImageView>
-	</Button>	
-	
-	<Button class="btn" id="btnMap" onClick="toMap"> 
-		<ImageView image="/Icons/mapMenu.png">
-			<Label class="lbl">Karta</Label>
-		</ImageView>
-	</Button>
-	
-	<Button class="btn" id="btnQuiz" onClick="toQuiz">
-		<ImageView image="/Icons/quizMenu.png">
-			<Label class="lbl">Quiz</Label>
-		</ImageView>
-	</Button>
-	
-	<Button class="btn" id="btnInfo" onClick="toHome">  
-		<ImageView image="/Icons/infoMenu.png">
-			<Label class="lbl">Turistinfo</Label>
-		</ImageView>
-	</Button> -->
-			
+	<View id="menuandroid">
+		<Button class="btn" id="btnHome"  onClick="toHome">
+			<ImageView image="/Icons/kosterStarMenu.png">
+				<Label id="koster" class="lbl">Koster</Label>
+			</ImageView>
+		</Button>
+		<Button class="btn" id="btnDetail" onClick="toHotspots">
+			<ImageView image="/Icons/hikeMenu.png">
+				<Label class="lbl">Vandring</Label>
+			</ImageView>
+		</Button>
+		<Button class="btn" id="btnMap" onClick="toMap">
+			<ImageView image="/Icons/mapMenu.png">
+				<Label class="lbl">Karta</Label>
+			</ImageView>
+		</Button>
+		<Button class="btn" id="btnQuiz" onClick="toQuiz">
+			<ImageView image="/Icons/quizMenu.png">
+				<Label class="lbl">Quiz</Label>
+			</ImageView>
+		</Button>
+		<Button class="btn" id="btnInfo" onClick="toHome">
+			<ImageView image="/Icons/infoMenu.png">
+				<Label class="lbl">Turistinfo</Label>
+			</ImageView>
+		</Button>
+	</View>
+
 </Alloy>
