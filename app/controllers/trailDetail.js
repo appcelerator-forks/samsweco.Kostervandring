@@ -20,7 +20,7 @@ function selectTrailPics() {
 	var jsonObj = mediaCollection.toJSON();
 	for (var i = 0; i < jsonObj.length; i++) {
 		var view_args = {
-			backgroundImage : 'pics/' + jsonObj[i].filename
+			backgroundImage : '/pics/' + jsonObj[i].filename
 		};
 
 		var img_view = Ti.UI.createView(view_args);
