@@ -1,52 +1,47 @@
-".btnAndroid": {
+".btnAndroid" : {
 	width : '32dp',
 	height: '37dp',
 	top: 2,
-	right: '2.3%',
-	left: '2.3%',
+	left: '5dp',
 	bottom: 2,
 	layout: 'vertical'
+	// title
 } 
 
-".btniOS": {
+".btniOS" : {
 	width : Titanium.UI.SIZE,
 	height: Titanium.UI.SIZE,
-	//backgroundColor: 'transparent',
 	top: 2,
 	bottom: 2
+	// backgroundColor: 'transparent'
 }
 
-"title": {
-	font: {
-		fontSize: '3dp',
-		fontFamily: 'Gotham Rounded'
-	}
-}
-
-"#menuios": {
+"#menuios" : {
 	borderTop: true,
 	borderBottom: false,
 	barColor: '#60a6af',
 	height: Titanium.UI.SIZE,
 	opacity: 0.9,
 	bottom: 0,
-	visible: false,
-	layout: 'horizontal'
+	visible: false
+	// layout: 'horizontal'
 }
 
-"#menuandroid": {
+"#menuandroid" : {
 	backgroundColor: '#60a6af',
 	height: Titanium.UI.SIZE,
 	width: Titanium.UI.FILL,
 	opacity: 0.9,
 	bottom: 0,
-	visible: false,
-	layout: 'horizontal'
+	visible: false
+	// layout: 'horizontal'
 }
 
-".btnView": {
+".btnView" : {
 	height: Titanium.UI.SIZE,
-	width: '19%',
-	left: 2,
-	layout: 'horizontal'
+	layout: 'horizontal',
+	// width: Titanium.UI.SIZE,
+	// left: 2,
+	// center: {x: '50%', y: '50%'}
+	// verticalAlign: 'center'
 }

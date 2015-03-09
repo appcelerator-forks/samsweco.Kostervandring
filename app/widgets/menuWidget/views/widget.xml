@@ -17,17 +17,17 @@
 	<View id="menuandroid">
 		<View class="btnView" >
 			<Button class="btnAndroid" backgroundImage="/images/kosterStarMenu.png" onClick="toHome" />
-		</View>
-		<View class="btnView">
+		<!-- </View>
+		<View class="btnView"> -->
 			<Button class="btnAndroid" backgroundImage="/images/hikeMenu.png" onClick="toTrails" />
-		</View>
-		<View class="btnView">
+		<!-- </View>
+		<View class="btnView"> -->
 			<Button class="btnAndroid" backgroundImage="/images/mapMenu.png" onClick="toMap" />
-		</View>
-		<View class="btnView">
+		<!-- </View>
+		<View class="btnView"> -->
 			<Button class="btnAndroid" backgroundImage="/images/quizMenu.png" onClick="toQuiz" />
-		</View>
-		<View class="btnView">
+		<!-- </View>
+		<View class="btnView"> -->
 			<Button class="btnAndroid" backgroundImage="/images/infoMenu.png" onClick="toHotspots" />
 		</View>
 	</View>
