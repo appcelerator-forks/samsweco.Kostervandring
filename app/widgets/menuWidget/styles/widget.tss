@@ -1,17 +1,19 @@
-".btn": {
+".btnAndroid": {
 	width : '32dp',
 	height: '37dp',
 	top: 2,
-	left: '12%',
+	right: '2.3%',
+	left: '2.3%',
 	bottom: 2,
 	layout: 'vertical'
 } 
 
-"#home": {
-	left: 10
-}
-"#info": {
-	right: 10
+".btniOS": {
+	width : Titanium.UI.SIZE,
+	height: Titanium.UI.SIZE,
+	//backgroundColor: 'transparent',
+	top: 2,
+	bottom: 2
 }
 
 "title": {
@@ -44,11 +46,7 @@
 
 ".btnView": {
 	height: Titanium.UI.SIZE,
-	width: '17%',
-	left: 5,
+	width: '19%',
+	left: 2,
 	layout: 'horizontal'
 }
-
-// ".menuitem": {
-	// height: 60
-// }
