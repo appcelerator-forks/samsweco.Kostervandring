@@ -37,7 +37,6 @@ backgroundColor : '#fff3e5',
 	height : Titanium.UI.SIZE,
 	width: Titanium.UI.FILL,
 	showHorizontalScrollIndicator: true,
-<<<<<<< HEAD
 	height: '80%'
 }
 
@@ -51,8 +50,4 @@ backgroundColor : '#fff3e5',
 	height : '50%',
 	width : Titanium.UI.FILL
 }
-=======
-	height: '80%',
-	backgroundColor : '#fff3e5'
-}
->>>>>>> origin/master
+

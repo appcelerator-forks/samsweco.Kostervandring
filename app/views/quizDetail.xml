@@ -15,17 +15,15 @@
 
 			<ListView id="lista">
 				<ListSection id="section" dataCollection="quizModel" >
-<<<<<<< HEAD
+
 					<!-- <ListItem title="{question}"></ListItem> -->
 					<ListItem title="{alt1}"/>
 					<ListItem title="{alt2}"/>
 					<ListItem title="{alt3}"/>
-=======
 					<ListItem class="row" title="{question}"></ListItem>
 					<ListItem class="row" title="{alt1}"/>
 					<ListItem class="row" title="{alt2}"/>
 					<ListItem class="row" title="{alt3}"/>
->>>>>>> origin/master
 				</ListSection>
 			</ListView>
 		
