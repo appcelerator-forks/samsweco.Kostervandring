@@ -1,53 +1,52 @@
-"Window" : {
-backgroundColor : 'white',
-layout : 'vertical'
+"Window": {
+	backgroundColor: 'white',
+	layout: 'vertical'
 }
 
-"#slideShowTrails" : {
-	height : '40%'
+"#slideShowTrails": {
+	height: '40%'
 }
 
-"Label" : {
-	left : 10,
+"Label": {
+	left: 10,
 	font: {
 		fontSize: 12
 	}
 }
 
-".container" : {
-	top : 20,
-	layout : 'vertical',
+".container": {
+	top: 20,
+	layout: 'vertical',
 	backgroundColor: 'white'
-  
 }
 
-".lbls" : {
-	layout : 'vertical',
-	right : 10
+".lbls": {
+	layout: 'vertical',
+	right: 10
 }
 
-"#headView" : {
-	height : '80%',
-	layout : 'vertical',
-	backgroundColor : 'white'
+".headView": {
+	height: '80%',
+	layout: 'vertical',
+	backgroundColor: 'white'
 }
 
-"#lblTrailInfo" : {
-	left : 10,
+"#lblTrailInfo": {
+	left: 10,
 	font: {
 		fontSize: 12
 	}
 }
 
-"#lblTrailName" : {
-	left : 10,
+"#lblTrailName": {
+	left: 10,
 	font: {
 		fontSize: 14
 	}
 }
 
 "#menuView": {
-	layout : 'horizontal',
+	layout: 'horizontal',
 	bottom: 0,
 	height: Titanium.UI.SIZE,
 	width: Ti.UI.FILL,

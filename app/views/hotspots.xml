@@ -1,26 +1,25 @@
 <Alloy>
 	<Collection src="hotspotModel" />
-		<Window>
-			<View class="container">
-				<Button id="closeWin" onClick="close" title="Stäng"></Button>
-				
-				<TableView id="table" dataCollection="hotspotModel">
-					<TableViewRow class="row" name="{name}" infoTxt="{infoTxt}" xkoord="{xkoord}" ykoord="{ykoord}" image="{cover_img}" onClick="showHotspotDetails">
-						<View class="listItem">
+	<Window class="container">
+		<ScrollView class="headView">
+			<Button id="closeWin" onClick="close" title="Stäng"></Button>
+			<TableView id="table" dataCollection="hotspotModel">
+				<TableViewRow class="row" name="{name}" infoTxt="{infoTxt}" xkoord="{xkoord}" ykoord="{ykoord}" image="{cover_img}" onClick="showHotspotDetails">
+					<View class="listItem">
 						<ImageView class="listImg" image="{cover_img}"/>
 						<View id="lblView">
 							<Label class="lblListTitle" text="{name}"/>
 							<Label class="lblListKm" text="{length}"/>
 						</View>
 					</View>
-					</TableViewRow>
-				</TableView>	
-			</View>
-			
-			<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
+				</TableViewRow>
+			</TableView>
+		</ScrollView>
+
+		<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
 		<View id="menuView">
 			<Widget id="menuBar" src="menuWidget" name="widget"/>
-		</View>	
-		
-		</Window>
+		</View>
+
+	</Window>
 </Alloy>

@@ -1,18 +1,18 @@
 <Alloy>
 	<Collection src="hotspotModel" />
-		<Window class="container" backgroundImage = "/pics/vaxt.png">	
-			
-		<View class="headView">
+	<Window class="container" backgroundImage = "/pics/vaxt.png">
+
+		<ScrollView class="headView">
 			<ImageView class="imgKoster" image="/pics/logga"></ImageView>
-				<Label id="lblheadInfo"></Label>
+			<Label id="lblheadInfo"></Label>
 			<View class="buttonView">
-				<Button class="btnNationalpark" onClick="aboutKoster"> Mer om Nationalparken </Button>
+				<Button class="btnNationalpark" onClick="aboutKoster">Mer om Nationalparken</Button>
 				<Button class="btnNaturum" onClick="aboutNaturum">Mer om Naturum</Button>
+			</View>
+		</ScrollView>
+		<View id="menuView">
+			<Widget id="menuBar" src="menuWidget" name="widget" />
 		</View>
-		</View>
-			<View id="menuView">
-				<Widget id="menuBar" src="menuWidget" name="widget" />
-			</View>	
-			
-		</Window>
+
+	</Window>
 </Alloy>

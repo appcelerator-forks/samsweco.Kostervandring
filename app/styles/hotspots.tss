@@ -1,32 +1,36 @@
-"Window" : {
-backgroundColor : 'white'
+"Window": {
+	backgroundColor: 'white'
 }
 
-".container" : {
-  layout : 'vertical',
+".container": {
+	layout: 'vertical'
 }
 
-".listItem" : {
-	height : 60,
-	layout : 'horizontal',
-	top : 10
+".headView": {
+	layout: 'vertical'
 }
 
-".listImg" : {
-	left : 10,
-	height : 60,
-	width : 90
+".listItem": {
+	height: 60,
+	layout: 'horizontal',
+	top: 10
+}
+
+".listImg": {
+	left: 10,
+	height: 60,
+	width: 90
 }
 
 "#menuView": {
-	layout : 'horizontal',
+	layout: 'horizontal',
 	bottom: 0,
 	height: Titanium.UI.SIZE,
 	width: Ti.UI.FILL,
 	backgroundColor: 'transparent'
 }
 
-".row" : {
-	layout : 'vertical',
-	backgroundColor : '#fff3e5'
+".row": {
+	layout: 'vertical',
+	backgroundColor: '#fff3e5'
 }

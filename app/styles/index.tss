@@ -1,53 +1,51 @@
 ".container": {
-	//backgroundColor:"white",dfghjkjhgfdfghjkjhgfd
-	 layout: 'vertical'
+	layout: 'vertical'
 }
 
-".btnNationalpark" : {
+".btnNationalpark": {
 	backgroundColor: '#7FFFD4',
 	opacity: 0.7,
 	color: 'black',
 	top: 10,
 	borderRadius: 7.5,
-	height : 40,
+	height: 40,
 	width: 200
 }
 
-".btnNaturum" : {
+".btnNaturum": {
 	backgroundColor: '#7FFFD4',
 	opacity: 0.7,
 	top: 60,
 	color: 'black',
 	borderRadius: 7.5,
-	height : 40,
+	height: 40,
 	width: 200
 }
 
-".buttonView" : {
-	bottom: 0,
-
+".buttonView": {
+	bottom: 0
 }
 
-".imgKoster" : {
+".imgKoster": {
 	top: 20,
 	left: '25%'
 }
 
 "#menuView": {
-	layout : 'horizontal',
+	layout: 'horizontal',
 	bottom: 0,
 	height: Titanium.UI.SIZE,
 	width: Ti.UI.FILL,
 	backgroundColor: 'transparent'
 }
 
-".headView" : {
+".headView": {
 	layout: 'vertical',
 	backgroundColor: 'transparent',
 	height: '90%'
 }
 
-"#lblheadInfo" : {
+"#lblheadInfo": {
 	color: '#FFFFFF',
 	width: 275,
 	left: 30,

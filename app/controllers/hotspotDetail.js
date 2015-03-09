@@ -8,55 +8,58 @@ $.lblHotspotY.text = args.ykoord || "y";
 //Titanium.API.info("Naturum : "+args.informationNaturum);
 //Titanium.API.info("Koster : "+args.informationKoster);
 
-if(args.informationNaturum != null){
+if (args.informationNaturum != null) {
 	setNaturumInfo();
 	selectNaturumPics();
 }
 
-if(args.informationKoster != null){
+if (args.informationKoster != null) {
 	setKosterInfo();
 	selectKosterPics();
 }
 
-function selectNaturumPics(){
+function selectNaturumPics() {
 
 	var mediaCollection = Alloy.Collections.mediaModel;
-	mediaCollection.fetch({query: 'SELECT filename from mediaModel where other="naturum"'});
-	
-	
-	var jsonObj = mediaCollection.toJSON();	
-	for(var i = 0; i < jsonObj.length; i++){
+	mediaCollection.fetch({
+		query : 'SELECT filename from mediaModel where other="naturum"'
+	});
+
+	var jsonObj = mediaCollection.toJSON();
+	for (var i = 0; i < jsonObj.length; i++) {
 		var view_args = {
-		 backgroundImage : 'pics/'+jsonObj[i].filename
-	};
-	
-	var img_view = Ti.UI.createView(view_args);	
-	$.slideShowHotspotDetail.addView(img_view);
-}
+			backgroundImage : 'pics/' + jsonObj[i].filename
+		};
+
+		var img_view = Ti.UI.createView(view_args);
+		$.slideShowHotspotDetail.addView(img_view);
+	}
 }
 
-function selectKosterPics(){
+function selectKosterPics() {
 
 	var mediaCollection = Alloy.Collections.mediaModel;
-	mediaCollection.fetch({query: 'SELECT filename from mediaModel where other="koster"'});
-	
-	
-	var jsonObj = mediaCollection.toJSON();	
-	for(var i = 0; i < jsonObj.length; i++){
+	mediaCollection.fetch({
+		query : 'SELECT filename from mediaModel where other="koster"'
+	});
+
+	var jsonObj = mediaCollection.toJSON();
+	for (var i = 0; i < jsonObj.length; i++) {
 		var view_args = {
-		 backgroundImage : 'pics/'+jsonObj[i].filename
-	};
-	
-	var img_view = Ti.UI.createView(view_args);	
-	$.slideShowHotspotDetail.addView(img_view);
-}
+			backgroundImage : 'pics/' + jsonObj[i].filename
+		};
+
+		var img_view = Ti.UI.createView(view_args);
+		$.slideShowHotspotDetail.addView(img_view);
+	}
 }
 
-function setNaturumInfo(){
+function setNaturumInfo() {
 	$.lblHotspotInfoTxt.text = args.informationNaturum;
 }
 
-function setKosterInfo(){
+function setKosterInfo() {
 	$.lblHotspotInfoTxt.text = args.informationKoster;
 }
+
 $.hotspotDetail.open();

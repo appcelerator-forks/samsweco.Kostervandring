@@ -1,6 +1,10 @@
 ".container": {
-	backgroundColor : '#fff',
+	backgroundColor: '#fff',
 	layout: 'vertical'
+}
+
+".headView": {
+	height: '80%'
 }
 
 "#noMap": {
@@ -10,12 +14,12 @@
 }
 
 "#mapView": {
-	height : Titanium.UI.FILL,
-	width : Titanium.UI.FILL
+	height: Titanium.UI.FILL,
+	width: Titanium.UI.FILL
 }
 
 "#menuView": {
-	layout : 'horizontal',
+	layout: 'horizontal',
 	bottom: 0,
 	height: Titanium.UI.SIZE,
 	width: Ti.UI.FILL,

@@ -2,21 +2,19 @@ var args = arguments[0] || {};
 
 var hotspotCollection = Alloy.Collections.hotspotModel;
 hotspotCollection.fetch();
-	Titanium.API.info(JSON.stringify(hotspotCollection));
-	
+Titanium.API.info(JSON.stringify(hotspotCollection));
 
-function showHotspotDetails(hotspot)
-{
+function showHotspotDetails(hotspot) {
 	Titanium.API.info(hotspot.name);
 	var selectedHotspot = hotspot.row;
 	var args = {
 		//id in här?
-		title: selectedHotspot.name,
-		infoTxt: selectedHotspot.infoTxt,
+		title : selectedHotspot.name,
+		infoTxt : selectedHotspot.infoTxt,
 		xkoord : selectedHotspot.xkoord,
-		ykoord: selectedHotspot.ykoord
+		ykoord : selectedHotspot.ykoord
 	};
-	
+
 	var hotspotDetail = Alloy.createController("hotspotDetail", args).getView();
 	hotspotDetail.open();
 	$.hotspots.close();
@@ -24,7 +22,7 @@ function showHotspotDetails(hotspot)
 
 $.closeWin.addEventListener("click", close);
 
-function close(){
+function close() {
 	$.destroy();
 	$.hotspots.close();
 }

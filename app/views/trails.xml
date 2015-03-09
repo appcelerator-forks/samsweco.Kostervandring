@@ -1,7 +1,7 @@
 <Alloy>
 	<Collection src="trailsModel" />
-	<Window onClose="destroyModel">
-		<View class="container">
+	<Window class="container" onClose="destroyModel">
+		<ScrollView class="headView">
 
 			<!--Fungerar nu, visar rätt bild. Är beroende av pics mappen dock. -->
 			<TableView id="table" dataCollection="trailsModel">
@@ -15,7 +15,7 @@
 					</View>
 				</TableViewRow>
 			</TableView>
-		</View>
+		</ScrollView>
 
 		<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
 		<View id="menuView">
