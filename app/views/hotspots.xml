@@ -1,6 +1,7 @@
 <Alloy>
 	<Collection src="hotspotModel" />
 	<Window class="container">
+
 		<ScrollView class="headView">
 			<Button id="closeWin" onClick="close" title="Stäng"></Button>
 			<TableView id="table" dataCollection="hotspotModel">

@@ -35,3 +35,9 @@
 	layout: 'vertical',
 	backgroundColor: '#fff3e5'
 }
+
+".lblListTitle": {
+	right: 10,
+	top: 0,
+	color: '#FF9966'
+}

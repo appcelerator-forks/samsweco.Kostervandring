@@ -1,7 +1,7 @@
 <Alloy>
 	<Collection src="mediaModel"></Collection>
 	<Window class="container">
-		
+
 		<ScrollView class="headView">
 			<ScrollableView id="slideShowHotspotDetail" showPagingControl="true"/>
 			<Label id="lblHotspotName" class="lblhotspotDetail"></Label>
@@ -9,7 +9,7 @@
 			<Label id="lblHotspotX" class="lblhotspotDetail"></Label>
 			<Label id="lblHotspotY" class="lblhotspotDetail"></Label>
 			<Label id="lblTest"></Label>
-	
+
 		</ScrollView>
 
 		<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
