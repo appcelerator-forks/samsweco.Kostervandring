@@ -2,34 +2,34 @@
 
 	<Toolbar platform="ios" id="menuios">
 		<Items>
-			<Button class="btn" id="btnHome" onClick="toHome" backgroundImage="/Icons/kosterStarMenu.png" />
+			<Button class="btn" onClick="toHome" backgroundImage="/Icons/kosterStarMenu.png" />
 			<FlexSpace/>
-			<Button class="btn" id="btnDetail" onClick="toTrails" backgroundImage="/Icons/hikeMenu.png" />
+			<Button class="btn" onClick="toTrails" backgroundImage="/Icons/hikeMenu.png" />
 			<FlexSpace/>
-			<Button class="btn" id="btnMap" onClick="toMap" backgroundImage="/Icons/mapMenu.png" />
+			<Button class="btn" onClick="toMap" backgroundImage="/Icons/mapMenu.png" />
 			<FlexSpace/>
-			<Button class="btn" id="btnQuiz" onClick="toQuiz" backgroundImage="/Icons/quizMenu.png" />
+			<Button class="btn" onClick="toQuiz" backgroundImage="/Icons/quizMenu.png" />
 			<FlexSpace/>
-			<Button class="btn" id="btnInfo" onClick="toHotspots" backgroundImage="/Icons/infoMenu.png" />
+			<Button class="btn" onClick="toHotspots" backgroundImage="/Icons/infoMenu.png" />
 		</Items>
 	</Toolbar>
 	
 	<View id="menuandroid">
-		<!-- <View class="btnView" > -->
-			<Button class="btn" id="home" backgroundImage="/Icons/kosterStarMenu.png" onClick="toHome" />
-		<!-- </View>
-		<View class="btnView"> -->
-			<Button class="btn" id="hike" backgroundImage="/Icons/hikeMenu.png" onClick="toTrails" />
-		<!-- </View>
-		<View class="btnView"> -->
-			<Button class="btn" id="map" backgroundImage="/Icons/mapMenu.png" onClick="toMap" />
-		<!-- </View>
-		<View class="btnView"> -->
-			<Button class="btn" id="quiz" backgroundImage="/Icons/quizMenu.png" onClick="toQuiz" />
-		<!-- </View>
-		<View class="btnView"> -->
-			<Button class="btn" id="info" backgroundImage="/Icons/infoMenu.png" onClick="toHotspots" />
-		<!-- </View> -->
+		<View class="btnView" >
+			<Button class="btn" title="Koster" backgroundImage="/../kosterStarMenu.png" onClick="toHome" />
+		</View>
+		<View class="btnView">
+			<Button class="btn" title="Vandring" backgroundImage="/Icons/hikeMenu.png" onClick="toTrails" />
+		</View>
+		<View class="btnView">
+			<Button class="btn" backgroundImage="/Icons/mapMenu.png" onClick="toMap" />
+		</View>
+		<View class="btnView">
+			<Button class="btn" backgroundImage="/Icons/quizMenu.png" onClick="toQuiz" />
+		</View>
+		<View class="btnView">
+			<Button class="btn" backgroundImage="/Icons/infoMenu.png" onClick="toHotspots" />
+		</View>
 	</View>
 
 </Alloy>
