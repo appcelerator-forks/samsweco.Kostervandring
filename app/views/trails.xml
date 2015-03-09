@@ -10,7 +10,7 @@
 						<ImageView class="listImg" image="{cover_img}"/>
 						<View id="lblView">
 							<Label class="lblListTitle" text="{name}"/>
-							<Label class="lblListKm" text="{length}"/>
+							<Label class="lblListKm" text="{length}"/> <Label id="lblKm">Km</Label>
 						</View>
 					</View>
 				</TableViewRow>

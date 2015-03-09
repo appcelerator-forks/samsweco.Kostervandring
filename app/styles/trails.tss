@@ -36,14 +36,14 @@
 }
 
 ".lblListTitle": {
-	right: 20,
+	right: 10,
 	top: 0,
 	color: '#FF9966'
 }
 
 ".lblListKm": {
-	top: 15,
-	right: 20,
+	top: 20,
+	right: 40,
 	color: '#FF9966'
 }
 
@@ -52,3 +52,8 @@
 	backgroundColor: '#fff3e5'
 }
 
+"#lblKm" : {
+	top: 20,
+	right: 10,
+	color: '#FF9966'
+}
