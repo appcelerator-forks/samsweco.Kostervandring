@@ -14,7 +14,7 @@
 ".listItem": {
 	height: '60dp',
 	layout: 'horizontal',
-	top: 10
+	top: 0
 }
 
 ".listImg": {
