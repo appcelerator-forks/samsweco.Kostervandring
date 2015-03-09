@@ -28,7 +28,9 @@
 
 ".imgKoster": {
 	top: 20,
-	left: '25%'
+	center: '50%',
+	height : '80dp',
+	width : '80dp'
 }
 
 "#menuView": {
