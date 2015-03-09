@@ -4,7 +4,7 @@
 		<ScrollView class="headView">
 			<Button id="closeWin" onClick="close" title="Stäng"></Button>
 			<TableView id="table" dataCollection="hotspotModel">
-				<TableViewRow class="row" name="{name}" infoTxt="{infoTxt}" xkoord="{xkoord}" ykoord="{ykoord}" image="{cover_img}" onClick="showHotspotDetails">
+				<TableViewRow class="row" number="{id}" name="{name}" infoTxt="{infoTxt}" xkoord="{xkoord}" ykoord="{ykoord}" image="{cover_img}" onClick="showHotspotDetails">
 					<View class="listItem">
 						<ImageView class="listImg" image="{cover_img}"/>
 						<View id="lblView">

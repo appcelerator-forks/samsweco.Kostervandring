@@ -7,6 +7,8 @@ $.lblHotspotY.text = args.ykoord || "y";
 
 var hotspotId = args.id;
 
+Titanium.API.info("HotspotID :" + hotspotId);
+
 setPics();
 
 function setPics(){
