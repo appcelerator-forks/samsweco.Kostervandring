@@ -2,33 +2,33 @@
 
 	<Toolbar platform="ios" id="menuios">
 		<Items>
-			<Button class="btn" onClick="toHome" backgroundImage="/Icons/kosterStarMenu.png" />
+			<Button class="btn" onClick="toHome" backgroundImage="/images/kosterStarMenu.png" />
 			<FlexSpace/>
-			<Button class="btn" onClick="toTrails" backgroundImage="/Icons/hikeMenu.png" />
+			<Button class="btn" onClick="toTrails" backgroundImage="/images/hikeMenu.png" />
 			<FlexSpace/>
-			<Button class="btn" onClick="toMap" backgroundImage="/Icons/mapMenu.png" />
+			<Button class="btn" onClick="toMap" backgroundImage="/images/mapMenu.png" />
 			<FlexSpace/>
-			<Button class="btn" onClick="toQuiz" backgroundImage="/Icons/quizMenu.png" />
+			<Button class="btn" onClick="toQuiz" backgroundImage="/images/quizMenu.png" />
 			<FlexSpace/>
-			<Button class="btn" onClick="toHotspots" backgroundImage="/Icons/infoMenu.png" />
+			<Button class="btn" onClick="toHotspots" backgroundImage="/images/infoMenu.png" />
 		</Items>
 	</Toolbar>
 	
 	<View id="menuandroid">
 		<View class="btnView" >
-			<Button class="btn" title="Koster" backgroundImage="/../kosterStarMenu.png" onClick="toHome" />
+			<Button class="btn" backgroundImage="/images/kosterStarMenu.png" onClick="toHome" />
 		</View>
 		<View class="btnView">
-			<Button class="btn" title="Vandring" backgroundImage="/Icons/hikeMenu.png" onClick="toTrails" />
+			<Button class="btn" backgroundImage="/images/hikeMenu.png" onClick="toTrails" />
 		</View>
 		<View class="btnView">
-			<Button class="btn" backgroundImage="/Icons/mapMenu.png" onClick="toMap" />
+			<Button class="btn" backgroundImage="/images/mapMenu.png" onClick="toMap" />
 		</View>
 		<View class="btnView">
-			<Button class="btn" backgroundImage="/Icons/quizMenu.png" onClick="toQuiz" />
+			<Button class="btn" backgroundImage="/images/quizMenu.png" onClick="toQuiz" />
 		</View>
 		<View class="btnView">
-			<Button class="btn" backgroundImage="/Icons/infoMenu.png" onClick="toHotspots" />
+			<Button class="btn" backgroundImage="/images/infoMenu.png" onClick="toHotspots" />
 		</View>
 	</View>
 
