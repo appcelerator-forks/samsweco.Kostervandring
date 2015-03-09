@@ -11,6 +11,7 @@
 						<View id="lblView">
 							<Label class="lblListTitle" text="{name}"/>
 							<Label class="lblListKm" text="{length}"/>
+
 						</View>
 					</View>
 				</TableViewRow>

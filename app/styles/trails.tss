@@ -19,6 +19,20 @@
 	backgroundColor: 'transparent'
 }
 
+"#bild1" : {
+	height: 20,
+	width: 20,
+	right: 10,
+	top: 40	
+}
+
+"#bild2" : {
+	height: 20,
+	width: 20,
+	right: 40,
+	top: 40	
+}
+
 ".listItem": {
 	height: 60,
 	layout: 'horizontal',
