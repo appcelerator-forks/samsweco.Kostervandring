@@ -15,31 +15,21 @@
 	</Toolbar>
 	
 	<View id="menuandroid">
-		<Button class="btn" id="btnHome"  onClick="toHome">
-			<ImageView id="src" image="kosterStarMenu.png">
-				<!-- <Label class="lbl">Koster</Label> -->
-			</ImageView>
-		</Button>
-		<Button class="btn" id="btnDetail" onClick="toHotspots">
-			<ImageView image="/Icons/hikeMenu.png">
-				<!-- <Label class="lbl">Vandring</Label> -->
-			</ImageView>
-		</Button>
-		<Button class="btn" id="btnMap" onClick="toMap">
-			<ImageView image="/Icons/mapMenu.png">
-				<!-- <Label class="lbl">Karta</Label> -->
-			</ImageView>
-		</Button>
-		<Button class="btn" id="btnQuiz" onClick="toQuiz">
-			<ImageView image="/Icons/quizMenu.png">
-				<!-- <Label class="lbl">Quiz</Label> -->
-			</ImageView>
-		</Button>
-		<Button class="btn" id="btnInfo" onClick="toHome">
-			<ImageView image="/Icons/infoMenu.png">
-				<!-- <Label class="lbl">Turistinfo</Label> -->
-			</ImageView>
-		</Button>
+		<View class="btnView" >
+			<Button class="btn" title="Koster" backgroundImage="/Icons/kosterStarMenu.png" onClick="toHome" />
+		</View>
+		<View class="btnView">
+			<Button class="btn" title="Vandring" backgroundImage="/Icons/hikeMenu.png" onClick="toTrails" />
+		</View>
+		<View class="btnView">
+			<Button class="btn" backgroundImage="/Icons/mapMenu.png" onClick="toMap" />
+		</View>
+		<View class="btnView">
+			<Button class="btn" backgroundImage="/Icons/quizMenu.png" onClick="toQuiz" />
+		</View>
+		<View class="btnView">
+			<Button class="btn" backgroundImage="/Icons/infoMenu.png" onClick="toHotspots" />
+		</View>
 	</View>
 
 </Alloy>
