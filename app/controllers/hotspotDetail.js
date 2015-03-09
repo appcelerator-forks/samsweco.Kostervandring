@@ -5,17 +5,44 @@ $.lblHotspotInfoTxt.text = args.infoTxt || "Info";
 $.lblHotspotX.text = args.xkoord || "x";
 $.lblHotspotY.text = args.ykoord || "y";
 
-//Titanium.API.info("Naturum : "+args.informationNaturum);
-//Titanium.API.info("Koster : "+args.informationKoster);
+var hotspotId = args.id;
 
+setPics();
+
+function setPics(){
+	
 if (args.informationNaturum != null) {
 	setNaturumInfo();
 	selectNaturumPics();
 }
 
-if (args.informationKoster != null) {
+else if (args.informationKoster != null) {
 	setKosterInfo();
 	selectKosterPics();
+}
+
+else {
+	selectHotspotPics();
+}
+}
+
+
+function selectHotspotPics() {
+
+	var mediaCollection = Alloy.Collections.mediaModel;
+	mediaCollection.fetch({
+		query : 'SELECT filename from mediaModel where id="' + hotspotId + '"'
+	});
+
+	var jsonObj = mediaCollection.toJSON();
+	for (var i = 0; i < jsonObj.length; i++) {
+		var view_args = {
+			backgroundImage : 'pics/' + jsonObj[i].filename
+		};
+
+		var img_view = Ti.UI.createView(view_args);
+		$.slideShowHotspotDetail.addView(img_view);
+	}
 }
 
 function selectNaturumPics() {
