@@ -16,7 +16,7 @@
 	
 	<View id="menuandroid">
 		<Button class="btn" id="btnHome"  onClick="toHome">
-			<ImageView image="kosterStarMenu.png">
+			<ImageView id="src" image="kosterStarMenu.png">
 				<!-- <Label class="lbl">Koster</Label> -->
 			</ImageView>
 		</Button>

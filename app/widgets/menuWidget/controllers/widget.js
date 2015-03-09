@@ -7,6 +7,7 @@ if(OS_IOS){
 }
 
 if(OS_ANDROID){
+	alert($.src);
 	$.menuandroid.visible = true;
 }
 

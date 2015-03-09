@@ -1,7 +1,7 @@
 ".btn": {
 	width : Titanium.UI.SIZE,
 	height: Titanium.UI.SIZE,
-	backgroundColor: 'transparent',
+	// backgroundColor: 'transparent',
 	top: 2,
 	right: '2.3%',
 	left: '2.3%',
