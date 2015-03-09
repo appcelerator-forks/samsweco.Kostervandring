@@ -1,13 +1,18 @@
 ".btn": {
 	width : '32dp',
 	height: '37dp',
-	//backgroundColor: 'transparent',
 	top: 2,
-	right: '2.3%',
-	left: '2.3%',
+	left: '12%',
 	bottom: 2,
 	layout: 'vertical'
 } 
+
+"#home": {
+	left: 10
+}
+"#info": {
+	right: 10
+}
 
 "title": {
 	font: {
@@ -39,8 +44,8 @@
 
 ".btnView": {
 	height: Titanium.UI.SIZE,
-	width: '19%',
-	left: 2,
+	width: '17%',
+	left: 5,
 	layout: 'horizontal'
 }
 
