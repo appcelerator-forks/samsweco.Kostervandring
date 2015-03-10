@@ -1,5 +1,5 @@
 "Window": {
-	backgroundColor: '#fff3e5',
+	backgroundColor: 'white',
 	layout: 'vertical'
 }
 
@@ -14,9 +14,9 @@
 }
 
 ".headView": {
-	height: '80%',
+	height: '92%',
 	layout: 'vertical',
-	backgroundColor: '#fff3e5'
+	backgroundColor: 'white'
 }
 
 "#menuView": {
@@ -25,4 +25,25 @@
 	height: Titanium.UI.SIZE,
 	width: Ti.UI.FILL,
 	backgroundColor: 'transparent'
+}
+
+"Label": {
+	left: 10,
+	font: {
+		fontSize: 12
+	}
+}
+
+// "#lblhotspotDetail": {
+	// left: 10,
+	// font: {
+		// fontSize: 12
+	// }
+// }
+
+"#lblHotspotName": {
+	left: 10,
+	font: {
+		fontSize: 14
+	}
 }

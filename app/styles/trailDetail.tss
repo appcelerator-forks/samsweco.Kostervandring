@@ -26,7 +26,7 @@
 }
 
 ".headView": {
-	height: '80%',
+	height: '90%',
 	layout: 'vertical',
 	backgroundColor: 'white'
 }
