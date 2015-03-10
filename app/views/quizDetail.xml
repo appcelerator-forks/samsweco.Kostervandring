@@ -11,15 +11,15 @@
 			<!-- <Label id="lblAlt1" text="{alt1}"></Label>
 			<Label id="lblAlt2" text="{alt2}"></Label>
 			<Label id="lblAlt3" text="{alt3}"></Label> -->
-
+<Button id="svar">visa svar</Button>
 			<!-- <Label id="lblQuestion" text="{question}"></Label> -->
 			<ListView id="lista">
 				<ListSection id="section" dataCollection="quizModel" >
 
 					<!-- <ListItem title="{question}"></ListItem> -->
-					<ListItem title="{alt1}"/>
-					<ListItem title="{alt2}"/>
-					<ListItem title="{alt3}"/>
+					<ListItem title="{alt1}"> </ListItem>
+					<ListItem title="{alt2}"> </ListItem>
+					<ListItem title="{alt3}"> </ListItem>
 					<!-- <ListItem class="row" title="{question}"></ListItem>
 					<ListItem class="row" title="{alt1}"/>
 					<ListItem class="row" title="{alt2}"/>

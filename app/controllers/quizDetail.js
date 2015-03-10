@@ -34,7 +34,12 @@ function showQuestion()
 	Titanium.API.info(jsonObj);
 	
 	$.visaFraga.text = ques;
+}
+
+function showAnswer()
+{
+	var answerCollection = Alloy.Collections.quizModel;
+	answerCollection.fetch();
 	
-	
-	
+	query : 'SELECT alt1, alt2. alt3 FROM quizModel WHERE id = 2';
 }
