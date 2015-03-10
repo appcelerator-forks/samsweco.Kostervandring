@@ -6,10 +6,9 @@ $.lblHotspotX.text = args.xkoord || "x";
 $.lblHotspotY.text = args.ykoord || "y";
 
 var hotspotId = args.id;
-
-Titanium.API.info("HotspotID :" + hotspotId);
-
 setPics();
+
+
 
 function setPics(){
 	
@@ -33,7 +32,7 @@ function selectHotspotPics() {
 
 	var mediaCollection = Alloy.Collections.mediaModel;
 	mediaCollection.fetch({
-		query : 'SELECT filename from mediaModel where id="' + hotspotId + '"'
+		query : 'SELECT filename from mediaModel where hotspot_id="' + hotspotId + '"'
 	});
 
 	var jsonObj = mediaCollection.toJSON();
@@ -45,6 +44,8 @@ function selectHotspotPics() {
 		var img_view = Ti.UI.createView(view_args);
 		$.slideShowHotspotDetail.addView(img_view);
 	}
+	
+	Titanium.API.info(img_view);
 }
 
 function selectNaturumPics() {
