@@ -4,8 +4,10 @@
 		<ScrollView class="headView">
 
 			<View class="question" dataCollection="quizModel">
-				<Label id="lblQuestion" text="{question}"></Label>
+			<!--	<Label id="lblQuestion" text="{question}"></Label> -->
 			</View>
+			<Button id="fraga" onClick="showQuestion">Se första frågan</Button>
+			<Label id="visaFraga"></Label>
 			<!-- <Label id="lblAlt1" text="{alt1}"></Label>
 			<Label id="lblAlt2" text="{alt2}"></Label>
 			<Label id="lblAlt3" text="{alt3}"></Label> -->
@@ -18,10 +20,10 @@
 					<ListItem title="{alt1}"/>
 					<ListItem title="{alt2}"/>
 					<ListItem title="{alt3}"/>
-					<ListItem class="row" title="{question}"></ListItem>
+					<!-- <ListItem class="row" title="{question}"></ListItem>
 					<ListItem class="row" title="{alt1}"/>
 					<ListItem class="row" title="{alt2}"/>
-					<ListItem class="row" title="{alt3}"/>
+					<ListItem class="row" title="{alt3}"/> -->
 				</ListSection>
 			</ListView>
 			<Button id="Svara">Svara</Button>
