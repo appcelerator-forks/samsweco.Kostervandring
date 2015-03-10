@@ -39,3 +39,8 @@ function toTrails(e) {
   trails.open();
 }
 
+function toInfo(e) {
+  var trails = Alloy.createController('infoList').getView();
+  trails.open();
+}
+
