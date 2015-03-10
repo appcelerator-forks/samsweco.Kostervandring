@@ -14,14 +14,14 @@
 	<Button onClick="closeDialog">Show</Button>
 	</View> -->
 	
-	<Window id="win" backgroundColor="transparent" exitOnClose="true" fullscreen="false" >
+	<!-- <Window id="win" backgroundColor="transparent" exitOnClose="true" fullscreen="false" > -->
 		<AlertDialog id="dialog" onClick="doClick" title="Qiuz" message="Du närmar dig fråga 2!" cancel="1">
 			<ButtonNames>
 				<ButtonName>Stäng</ButtonName>
 				<ButtonName>Gå till fråga</ButtonName>
 			</ButtonNames>
 		</AlertDialog>
-	</Window>
+	<!-- </Window> -->
 	
 	
 	
