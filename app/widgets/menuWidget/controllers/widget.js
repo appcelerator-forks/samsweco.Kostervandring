@@ -32,7 +32,6 @@ mapWin.open();
 function toQuiz(e) {
   var quizDetail = Alloy.createController('quizDetail').getView();
   quizDetail.open();
-  showQuiz();
 }
 
 function toTrails(e) {
