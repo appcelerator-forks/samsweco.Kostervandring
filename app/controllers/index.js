@@ -8,6 +8,11 @@ function hotspotView() {
 	hotspots.open();
 }
 
+function quizView() {
+	var quiz = Alloy.createController("quizDetail").getView();
+	quiz.open();
+}
+
 function aboutNaturum() {
 
 	var hotspotCollection = Alloy.Collections.hotspotModel;

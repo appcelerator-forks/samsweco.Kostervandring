@@ -4,7 +4,7 @@
 
 		<ScrollView class="headView">
 			<TableView id="table" dataCollection="infoModel">
-				<TableViewRow class="row" number="{id}" name="{name}" infoTxt="{infoTxt}" image="{cover_img}">
+				<TableViewRow class="row" number="{id}" name="{name}" infoTxt="{infoTxt}" image="{cover_img}" onClick="showinfoDetails">
 					<View class="listItem">
 						<ImageView class="listImg" image="{cover_img}"/>
 						<View id="lblView">
