@@ -3,7 +3,6 @@
 	<Window class="container">
 
 		<ScrollView class="headView">
-			infoDetail
 		</ScrollView>
 
 		<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
