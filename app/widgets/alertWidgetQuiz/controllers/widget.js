@@ -1,15 +1,14 @@
 function showDialog(){
-    $.alertView.show();
+    $.dialog.show();
 };
 
 function closeDialog(){
-	$.alertView.visible = false;
+	$.dialog.close();
 };
 
 function doClick(e){
     Ti.API.info('e.text: ' + e.text);
 };
-
 
 
 

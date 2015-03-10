@@ -16,7 +16,7 @@
     <ios>
         <plist>
             <dict>
-            	<key>NSLocationAlwaysUsageDescription</key>
+                <key>NSLocationAlwaysUsageDescription</key>
                 <string>
 					Godkänn användandet av platstjänster för att kunna använda appen.
                 </string>
@@ -42,7 +42,7 @@
             </dict>
         </plist>
     </ios>
-   <android xmlns:android="http://schemas.android.com/apk/res/android">
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
         <manifest>
             <!-- Allows the API to download data from Google Map servers -->
             <uses-permission android:name="android.permission.INTERNET"/>
@@ -57,13 +57,16 @@
             <!-- Specify OpenGL ES 2.0 as a requirement -->
             <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
             <!-- Replace com.domain.appid with your application ID -->
-            <uses-permission android:name="com.Kostervandring.permission.MAPS_RECEIVE" />
-            <permission android:name="com.Kostervandring.permission.MAPS_RECEIVE"
-                android:protectionLevel="signature"/>
+            <uses-permission android:name="com.Kostervandring.permission.MAPS_RECEIVE"/>
+            
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <permission
+                android:name="com.Kostervandring.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
             <application>
                 <!-- Replace "PASTE YOUR GOOGLE MAPS API KEY HERE" with the Google API key you obtained -->
-                <meta-data android:name="com.google.android.maps.v2.API_KEY"
-                    android:value="AIzaSyAvc_MS1OxpuMc-ojkaq2Uzrrr-AwYJybs"/>
+                <meta-data
+                    android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAvc_MS1OxpuMc-ojkaq2Uzrrr-AwYJybs"/>
             </application>
         </manifest>
     </android>
@@ -86,7 +89,7 @@
         <target device="iphone">true</target>
         <target device="mobileweb">false</target>
     </deployment-targets>
-    <sdk-version>3.5.0.GA</sdk-version>
+    <sdk-version>3.5.1.GA</sdk-version>
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>
