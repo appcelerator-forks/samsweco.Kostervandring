@@ -12,15 +12,15 @@
 }
 
 ".listItem": {
-	height: '60dp',
+	height: '90dp',
 	layout: 'horizontal',
 	top: 0
 }
 
 ".listImg": {
 	left: 10,
-	height: '60dp',
-	width: '90dp'
+	height: '90dp',
+	width: '110dp'
 }
 
 "#menuView": {
@@ -34,7 +34,7 @@
 ".row": {
 	layout: 'vertical',
 	backgroundColor: '#fff3e5',
-	height: '60dp',
+	height: '90dp',
 	width: Ti.UI.FILL
 }
 
