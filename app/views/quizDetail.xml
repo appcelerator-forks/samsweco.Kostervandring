@@ -4,15 +4,9 @@
 		<ScrollView class="headView">
 
 			<View class="question" dataCollection="quizModel"></View>
-			<Button id="fraga" onClick="showQuestion">Se första frågan</Button>
+			<Button id="fraga" onClick="showQuiz">Se första frågan</Button>
 			<Label id="visaFraga"></Label>
-			<Button id="svar" onClick="showAnswer">visa svar</Button>
-			
-			<!-- <Label id="alternativEtt"></Label>
-			<Label id="alternativTvå"></Label>
-			<Label id="alternativTre"></Label> -->
-			<!-- <Label id="lblQuestion" text="{question}"></Label> -->
-			
+			<Button id="svar">visa svar</Button>
 			<ListView id="lista">
 				<ListSection id="section" dataCollection="quizModel" >
 

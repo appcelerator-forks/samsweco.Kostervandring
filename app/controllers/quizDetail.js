@@ -33,7 +33,7 @@ function showQuestion() {
 	$.visaFraga.text = ques;
 }
 
-function showAnswer() {
+function showQuiz() {
 	var answerCollection = Alloy.Collections.quizModel;
 	answerCollection.fetch({
 		query : 'SELECT alt1, alt2, alt3, question, answer FROM quizModel WHERE id = 2;'
@@ -44,8 +44,9 @@ function showAnswer() {
 	var alt2 = jsonObj[0].alt2;
 	var alt3 = jsonObj[0].alt3;
 	var answer = jsonObj[0].answer;
-	var question=jsonObj[0].answer;
+	var question=jsonObj[0].question;
 
+$.visaFraga.text = question;
 	Titanium.API.info(jsonObj);
 
 }
