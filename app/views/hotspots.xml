@@ -7,7 +7,7 @@
 			<TableView id="table" dataCollection="hotspotModel">
 				<TableViewRow class="row" number="{id}" name="{name}" infoTxt="{infoTxt}" xkoord="{xkoord}" ykoord="{ykoord}" image="{cover_pic}" onClick="showHotspotDetails">
 					<View class="listItem">
-						<ImageView class="listImg" image="{cover}"/>
+						<ImageView class="listImg" image="{cover_pic}"/>
 						<View id="lblView">
 							<Label class="lblListTitle" text="{name}"/>
 							<Label class="lblListKm" text="{length}"/>
