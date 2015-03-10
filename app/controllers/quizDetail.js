@@ -16,22 +16,6 @@ $.lista.addEventListener('itemclick', function(e) {
 	$.section.updateItemAt(e.itemIndex, item);
 });
 
-// var quizCollection = Alloy.Collections.quizModel;
-// quizCollection fetch();
-//
-// Titanium.API.info(JSON.stringify(quizCollection));
-
-function showQuestion() {
-	var quizCollection = Alloy.Collections.quizModel;
-	quizCollection.fetch(); query :'SELECT question FROM quizModel where id=2';
-
-	var jsonObj = quizCollection.toJSON();
-	var ques = JSON.stringify(jsonObj[0].question);
-
-	Titanium.API.info(jsonObj);
-
-	$.visaFraga.text = ques;
-}
 
 function showQuiz() {
 	var answerCollection = Alloy.Collections.quizModel;
