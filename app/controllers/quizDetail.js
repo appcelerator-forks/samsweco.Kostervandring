@@ -39,7 +39,20 @@ function showQuestion()
 function showAnswer()
 {
 	var answerCollection = Alloy.Collections.quizModel;
-	answerCollection.fetch();
+	answerCollection.fetch({
+		query : 'SELECT alt1, alt2, alt3 FROM quizModel WHERE id = 2;'});
 	
-	query : 'SELECT alt1, alt2. alt3 FROM quizModel WHERE id = 2';
+	
+	var jsonObj = answerCollection.toJSON();
+	var alt1=jsonObj[0].alt1;
+	var alt2=jsonObj[0].alt2;
+	var alt3=jsonObj[0].alt3;
+	
+	Titanium.API.info(jsonObj);
+// 	
+	// $.alternativEtt.title = alt1;
+	// $.alternativTvå.title = alt2;
+	// $.alternativTre.title = alt3;
+	
+	
 }

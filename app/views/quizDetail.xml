@@ -3,27 +3,22 @@
 	<Window class="container">
 		<ScrollView class="headView">
 
-			<View class="question" dataCollection="quizModel">
-			<!--	<Label id="lblQuestion" text="{question}"></Label> -->
-			</View>
+			<View class="question" dataCollection="quizModel"></View>
 			<Button id="fraga" onClick="showQuestion">Se första frågan</Button>
 			<Label id="visaFraga"></Label>
-			<!-- <Label id="lblAlt1" text="{alt1}"></Label>
-			<Label id="lblAlt2" text="{alt2}"></Label>
-			<Label id="lblAlt3" text="{alt3}"></Label> -->
-<Button id="svar">visa svar</Button>
+			<Button id="svar" onClick="showAnswer">visa svar</Button>
+			
+			<!-- <Label id="alternativEtt"></Label>
+			<Label id="alternativTvå"></Label>
+			<Label id="alternativTre"></Label> -->
 			<!-- <Label id="lblQuestion" text="{question}"></Label> -->
+			
 			<ListView id="lista">
 				<ListSection id="section" dataCollection="quizModel" >
 
-					<!-- <ListItem title="{question}"></ListItem> -->
-					<ListItem title="{alt1}"> </ListItem>
-					<ListItem title="{alt2}"> </ListItem>
-					<ListItem title="{alt3}"> </ListItem>
-					<!-- <ListItem class="row" title="{question}"></ListItem>
 					<ListItem class="row" title="{alt1}"/>
 					<ListItem class="row" title="{alt2}"/>
-					<ListItem class="row" title="{alt3}"/> -->
+					<ListItem class="row" title="{alt3}"/>
 				</ListSection>
 			</ListView>
 			<Button id="Svara">Svara</Button>
