@@ -16,6 +16,13 @@ $.lista.addEventListener('itemclick', function(e) {
 	$.section.updateItemAt(e.itemIndex, item);
 });
 
+function openQuiz()
+{
+	$.viewFraga.visible = true;
+	$.spela.visible= false;
+	showQuiz();
+}
+
 
 function showQuiz() {
 	var answerCollection = Alloy.Collections.quizModel;

@@ -3,8 +3,12 @@
 	<Window class="container">
 		<ScrollView class="headView">
 
-			<!-- <View class="question" dataCollection="quizModel"></View> -->
-			<Button id="fraga" onClick="showQuiz">Se första frågan</Button>
+			<View id="spela" visible="true">
+				<Label>Välkommen till quizet!!</Label>
+				<Button id="fraga" onClick="openQuiz">Se första frågan</Button>
+				
+			</View>
+			<View id="viewFraga" visible="false">
 			<Label id="visaFraga"></Label>
 			<Button id="svar">visa svar</Button>
 			<ListView id="lista">
@@ -16,7 +20,7 @@
 				</ListSection>
 			</ListView>
 			<Button id="Svara">Svara</Button>
-			
+			</View>
 			<Widget id="alert" src="alertWidgetQuiz" name="widget" />
 
 		</ScrollView>
