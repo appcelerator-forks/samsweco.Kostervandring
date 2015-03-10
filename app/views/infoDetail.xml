@@ -1,0 +1,15 @@
+<Alloy>
+	<Collection src="infoModel" />
+	<Window class="container">
+
+		<ScrollView class="headView">
+			infoDetail
+		</ScrollView>
+
+		<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
+		<View id="menuView">
+			<Widget id="menuBar" src="menuWidget" name="widget"/>
+		</View>
+
+	</Window>
+</Alloy>
