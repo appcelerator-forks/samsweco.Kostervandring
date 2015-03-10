@@ -43,3 +43,9 @@
 	}
 }
 
+"#lblInfoTitle" : {
+	left: 10,
+	font: {
+		fontSize: 16
+	}
+}
