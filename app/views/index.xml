@@ -9,7 +9,10 @@
 				<Button class="btnNationalpark" onClick="aboutKoster">Mer om Nationalparken</Button>
 				<Button class="btnNaturum" onClick="aboutNaturum">Mer om Naturum</Button>
 			</View>
+			
+			<Widget id="alertHotspot" src="alertWidgetHotspot" name="widget" />
 		</ScrollView>
+		
 		<View id="menuView">
 			<Widget id="menuBar" src="menuWidget" name="widget" />
 		</View>

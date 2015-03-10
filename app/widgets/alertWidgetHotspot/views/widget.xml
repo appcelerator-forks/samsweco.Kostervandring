@@ -1,3 +1,12 @@
 <Alloy>
-	<Label>I'm the default widget</Label>
+	
+	<Button onClick="showDialog" title="Click">Öppna alert</Button>
+
+		<AlertDialog id="dialog" onClick="doClick" title="Hotspot" message="Du närmar dig någonting intressant!" cancel="1">
+			<ButtonNames>
+				<ButtonName>Stäng</ButtonName>
+				<ButtonName>Läs mer</ButtonName>
+			</ButtonNames>
+		</AlertDialog>
+	
 </Alloy>
