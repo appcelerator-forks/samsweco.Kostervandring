@@ -18,41 +18,34 @@ $.lista.addEventListener('itemclick', function(e) {
 
 // var quizCollection = Alloy.Collections.quizModel;
 // quizCollection fetch();
-// 
+//
 // Titanium.API.info(JSON.stringify(quizCollection));
 
-function showQuestion()
-{
+function showQuestion() {
 	var quizCollection = Alloy.Collections.quizModel;
-	quizCollection.fetch();
-	
-	query : 'SELECT question FROM quizModel where id=2';
-	
+	quizCollection.fetch(); query :'SELECT question FROM quizModel where id=2';
+
 	var jsonObj = quizCollection.toJSON();
 	var ques = JSON.stringify(jsonObj[0].question);
-	
+
 	Titanium.API.info(jsonObj);
-	
+
 	$.visaFraga.text = ques;
 }
 
-function showAnswer()
-{
+function showAnswer() {
 	var answerCollection = Alloy.Collections.quizModel;
 	answerCollection.fetch({
-		query : 'SELECT alt1, alt2, alt3 FROM quizModel WHERE id = 2;'});
-	
-	
+		query : 'SELECT alt1, alt2, alt3, question, answer FROM quizModel WHERE id = 2;'
+	});
+
 	var jsonObj = answerCollection.toJSON();
-	var alt1=jsonObj[0].alt1;
-	var alt2=jsonObj[0].alt2;
-	var alt3=jsonObj[0].alt3;
-	
+	var alt1 = jsonObj[0].alt1;
+	var alt2 = jsonObj[0].alt2;
+	var alt3 = jsonObj[0].alt3;
+	var answer = jsonObj[0].answer;
+	var question=jsonObj[0].answer;
+
 	Titanium.API.info(jsonObj);
-// 	
-	// $.alternativEtt.title = alt1;
-	// $.alternativTvå.title = alt2;
-	// $.alternativTre.title = alt3;
-	
-	
+
 }
