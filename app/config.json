@@ -9,11 +9,8 @@
     "os:mobileweb": {},
     "dependencies": {
         "menuWidget": "1.0",
-<<<<<<< HEAD
-        "alertWidget": "1.0",
-        "alertWidgetHotspot": "1.0"
-=======
+        "alertWidgetHotspot": "1.0",
         "alertWidgetQuiz": "1.0"
->>>>>>> origin/master
+
     }
 }
