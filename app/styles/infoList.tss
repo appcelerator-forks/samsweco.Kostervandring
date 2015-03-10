@@ -43,3 +43,7 @@
 	top: 0,
 	color: '#FF9966'
 }
+
+"#table" : {
+	top : 20
+}
