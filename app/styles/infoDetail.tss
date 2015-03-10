@@ -1,26 +1,13 @@
 "Window": {
-	backgroundColor: 'white'
-}
-
-".container": {
+	backgroundColor: 'white',
 	layout: 'vertical'
 }
 
-".headView": {
+".container": {
 	layout: 'vertical',
-	height : '80%'
-}
-
-".listItem": {
-	height: '60dp',
-	layout: 'horizontal',
-	top: 0
-}
-
-".listImg": {
-	left: 10,
-	height: '60dp',
-	width: '90dp'
+	top: 20,
+	backgroundColor: '#fff3e5',
+	height: '100%'
 }
 
 "#menuView": {
@@ -31,15 +18,28 @@
 	backgroundColor: 'transparent'
 }
 
-".row": {
-	layout: 'vertical',
-	backgroundColor: '#fff3e5',
-	height: '60dp',
-	width: Ti.UI.FILL
+"#infoImg": {
+	height: '50%'
 }
 
-".lblListTitle": {
-	right: 10,
-	top: 0,
-	color: '#FF9966'
+".headView": {
+	height: '90%',
+	layout: 'vertical',
+	backgroundColor: 'white'
 }
+
+"#menuView": {
+	layout: 'horizontal',
+	bottom: 0,
+	height: Titanium.UI.SIZE,
+	width: Ti.UI.FILL,
+	backgroundColor: 'transparent'
+}
+
+"Label": {
+	left: 10,
+	font: {
+		fontSize: 12
+	}
+}
+

@@ -1,7 +1,8 @@
 var args = arguments[0] || {};
 
 
-$.lblHotspotName.text = args.title || "Name";
-$.lblHotspotInfoTxt.text = args.infoTxt || "Info";
-$.lblHotspotX.text = args.xkoord || "x";
-$.lblHotspotY.text = args.ykoord || "y";
+$.lblInfoTitle.text = args.name || "Title";
+$.lblInfoText.text = args.infoTxt || "Info";
+$.lblInfoLink.text = args.link || "url";
+
+$.infoImg.image = args.img;
