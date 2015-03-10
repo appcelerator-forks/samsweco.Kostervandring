@@ -22,7 +22,18 @@
 
 ".lbls": {
 	layout: 'vertical',
-	right: 10
+	right: 10,
+	top: 5,
+	height: Titanium.UI.SIZE
+}
+
+"#hotspotView": {
+	layout: 'vertical',
+	backgroundColor: "#white",
+	borderColor: "#c2c2c2",
+	borderWidth: 1,
+	top: 10,
+	height: Titanium.UI.SIZE
 }
 
 ".headView": {
@@ -38,11 +49,12 @@
 	}
 }
 
-"#lblTrailName": {
+".lblTitle": {
 	left: 10,
 	font: {
 		fontSize: 14
-	}
+	},
+	top: 7
 }
 
 "#menuView": {
@@ -51,4 +63,34 @@
 	height: Titanium.UI.SIZE,
 	width: Ti.UI.FILL,
 	backgroundColor: 'transparent'
+}
+
+"#table": {
+	height: Titanium.UI.SIZE,
+	width: Ti.UI.FILL
+}
+
+".row": {
+	layout: 'vertical',
+	backgroundColor: '#white',
+	height: Titanium.UI.SIZE,
+	width: Ti.UI.FILL
+}
+
+".listItem": {
+	height: '60dp',
+	layout: 'horizontal',
+	top: 0
+}
+
+".listImg": {
+	left: 10,
+	height: '60dp',
+	width: '90dp'
+}
+
+".lblListTitle": {
+	right: 10,
+	top: 0,
+	color: 'black'
 }

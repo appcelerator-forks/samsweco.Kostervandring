@@ -11,18 +11,6 @@
 	height : '80%'
 }
 
-".listItem": {
-	height: '60dp',
-	layout: 'horizontal',
-	top: 0
-}
-
-".listImg": {
-	left: 10,
-	height: '60dp',
-	width: '90dp'
-}
-
 "#menuView": {
 	layout: 'horizontal',
 	bottom: 0,
@@ -36,6 +24,18 @@
 	backgroundColor: '#fff3e5',
 	height: '60dp',
 	width: Ti.UI.FILL
+}
+
+".listItem": {
+	height: '60dp',
+	layout: 'horizontal',
+	top: 0
+}
+
+".listImg": {
+	left: 10,
+	height: '60dp',
+	width: '90dp'
 }
 
 ".lblListTitle": {

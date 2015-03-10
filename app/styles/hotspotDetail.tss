@@ -6,7 +6,8 @@
 ".container": {
 	layout: 'vertical',
 	top: 20,
-	backgroundColor: '#fff3e5'
+	backgroundColor: '#fff3e5',
+	height: '100%'
 }
 
 "#slideShowHotspotDetail": {
@@ -14,7 +15,7 @@
 }
 
 ".headView": {
-	height: '92%',
+	height: '90%',
 	layout: 'vertical',
 	backgroundColor: 'white'
 }

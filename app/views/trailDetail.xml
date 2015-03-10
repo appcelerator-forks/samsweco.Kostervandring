@@ -5,11 +5,31 @@
 		<ScrollView class="headView">
 			<ScrollableView id="slideShowTrails" showPagingControl="true" />
 			<View class="lbls">
-				<Label id="lblTrailName" class="lbltrailDetail"></Label>
+				<Label id="lblTrailName" class="lbltrailDetail"></Label> 
 				<Label id="lblTrailLength" class="lbltrailDetail"></Label>
 				<Label id="lblTrailColor" class="lbltrailDetail"></Label>
 				<Label id="lblTrailInfo" class="lbltrailDetail"></Label>
 			</View>
+			
+			
+			
+			<View id="hotspotView">
+				<Label class="lblTitle">Det här kan du se längs vägen:</Label>
+
+					<TableView id="table">
+						<TableViewRow class="row">
+							<!-- number="{id}" name="{name}" infoTxt="{infoTxt}" xkoord="{xkoord}" ykoord="{ykoord}" image="{cover_pic}" onClick="showHotspotDetails"> -->
+							<View class="listItem">
+								<ImageView class="listImg" image="/pics/fyr.png"/>
+								<View id="lblView">
+									<Label class="lblListTitle" text="Fyren"/>
+								</View>
+							</View>
+						</TableViewRow>
+					</TableView>
+
+			</View>
+
 		</ScrollView>
 
 		<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
