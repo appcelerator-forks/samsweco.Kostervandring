@@ -3,15 +3,15 @@ var args = arguments[0] || {};
 var hotspotCollection = Alloy.Collections.hotspotModel;
 hotspotCollection.fetch();
 
-//transformFunction(hotspotModel);
-
-function transformFunction(model){
-	var transform = model.toJSON();
-	transform.cover = "/pics/" + transform.filename;
-	
-	Titanium.API.info(transform.cover);
-	return transform;
-}
+// transformFunction(hotspotCollection);
+// 
+// function transformFunction(model){
+// 	
+	// transform.cover = "/pics/" + transform.cover_pic;
+		// Titanium.API.info(JSON.stringify(transform.cover));
+// 	
+	// return transform;
+// }
 
 function showHotspotDetails(hotspot) {
 	Titanium.API.info(hotspot.name);

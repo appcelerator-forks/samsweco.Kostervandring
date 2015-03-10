@@ -9,6 +9,7 @@
     "os:mobileweb": {},
     "dependencies": {
         "menuWidget": "1.0",
-        "alertWidget": "1.0"
+        "alertWidget": "1.0",
+        "alertWidgetHotspot": "1.0"
     }
 }
