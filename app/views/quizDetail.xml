@@ -27,7 +27,7 @@
 				</ListSection>
 			</ListView>
 			<Button id="Svara">Svara</Button>
-			<Widget id="alert" src="alertWidget" name="widget" />
+			<Widget id="alert" src="alertWidgetQuiz" name="widget" />
 
 		</ScrollView>
 		<View id="menuView">
