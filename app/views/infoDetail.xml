@@ -3,6 +3,7 @@
 	<Window class="container">
 
 		<ScrollView class="headView">
+			<Label class="lblInfoDetail"></Label>
 		</ScrollView>
 
 		<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
