@@ -20,9 +20,9 @@
 						<TableViewRow class="row">
 							<!-- number="{id}" name="{name}" infoTxt="{infoTxt}" xkoord="{xkoord}" ykoord="{ykoord}" image="{cover_pic}" onClick="showHotspotDetails"> -->
 							<View class="listItem">
-								<ImageView class="listImg" image="/pics/fyr.png"/>
+								<ImageView id="listImageview" class="listImg" image="/pics/fyr.png"/>
 								<View id="lblView">
-									<Label class="lblListTitle" text="Fyren"/>
+									<Label id="lblHotName" class="lblListTitle" text="Fyren"/>
 								</View>
 							</View>
 						</TableViewRow>
