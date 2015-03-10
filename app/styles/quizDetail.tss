@@ -10,17 +10,10 @@
 	backgroundColor: '#fff3e5'
 }
 
-".question" : {
-	height: '10%'
-}
-
-"#lista": {
-	backgroundColor: '#fff3e5'
-}
-
 ".row": {
 	layout: 'vertical',
-	backgroundColor: '#fff3e5'
+	backgroundColor: '#fff3e5',
+	height: Titanium.UI.SIZE
 }
 
 "View": {
@@ -43,14 +36,19 @@
 	height: '80%'
 }
 
+".views": {
+	top: '20%'
+}
+
 '#Svara': {
 	height: 25,
 	width: 40
 }
 
 '#lista': {
-	top: '30%',
-	height: '50%',
-	width: Titanium.UI.FILL
+	top: 10,
+	width: Titanium.UI.FILL,
+	height: Titanium.UI.SIZE,
+	backgroundColor: '#fff3e5'
 }
 

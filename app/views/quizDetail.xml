@@ -3,27 +3,29 @@
 	<Window class="container">
 		<ScrollView class="headView">
 
-			<View id="spela" visible="true">
+			<View id="spela" class="views" visible="true">
 				<Label>Välkommen till quizet!!</Label>
 				<Button id="fraga" onClick="openQuiz">Se första frågan</Button>
-				
-			</View>
-			<View id="viewFraga" visible="false">
-			<Label id="visaFraga"></Label>
-			<Button id="svar">visa svar</Button>
-			<ListView id="lista">
-				<ListSection id="section" dataCollection="quizModel" >
 
-					<ListItem class="row" title="{alt1}"/>
-					<ListItem class="row" title="{alt2}"/>
-					<ListItem class="row" title="{alt3}"/>
-				</ListSection>
-			</ListView>
-			<Button id="Svara">Svara</Button>
 			</View>
-			<Widget id="alert" src="alertWidgetQuiz" name="widget" />
+			<View id="viewFraga" class="views" visible="false">
+				<Label id="visaFraga"></Label>
+				
+				<ListView id="lista">
+					<ListSection id="section" dataCollection="quizModel" >
+
+						<ListItem class="row" title="{alt1}"/>
+						<ListItem class="row" title="{alt2}"/>
+						<ListItem class="row" title="{alt3}"/>
+					</ListSection>
+				</ListView>
+				<Button id="Svara">Svara</Button>
+			</View>
 
 		</ScrollView>
+		
+		<Widget id="alert" src="alertWidgetQuiz" name="widget" />
+		
 		<View id="menuView">
 			<Widget id="menuBar" src="menuWidget" name="widget"/>
 		</View>
