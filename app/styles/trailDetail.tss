@@ -15,7 +15,7 @@
 }
 
 ".container": {
-	top: 20,
+	top: 0,
 	layout: 'vertical',
 	backgroundColor: 'white'
 }
