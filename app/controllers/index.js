@@ -12,9 +12,10 @@ function nextPage() {
 
 function hotspotView() {
 	try {
+		
 		var hotspots = Alloy.createController("hotspots").getView();
 		hotspots.open();
-		$.index.close();
+		
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "Index - hotspotView");
 	}

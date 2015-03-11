@@ -7,12 +7,6 @@ try {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "Hotspots - create hotspotCollection");
 }
 
-// function sendHotspots(){
-	// var hotspotList = $.table;
-// 	
-	// return hotspotList;
-// }
-
 function showHotspotDetails(hotspot) {
 	try {
 		var selectedHotspot = hotspot.row;
@@ -26,12 +20,9 @@ function showHotspotDetails(hotspot) {
 
 		var hotspotDetail = Alloy.createController("hotspotDetail", args).getView();
 		hotspotDetail.open();
-		$.hotspots.close();
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "HotspotDetail - showHotspotDetails");
 	}
-
 }
-
 
 $.hotspots.open();
