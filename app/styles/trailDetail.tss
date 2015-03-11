@@ -32,7 +32,11 @@
 	backgroundColor: "#white",
 	borderColor: "#c2c2c2",
 	borderWidth: 1,
-	top: 10,
+	top: 3
+	//height: Titanium.UI.SIZE
+}
+
+"#hotspotTable": {
 	height: Titanium.UI.SIZE
 }
 
@@ -63,10 +67,5 @@
 	height: Titanium.UI.SIZE,
 	width: Ti.UI.FILL,
 	backgroundColor: 'transparent'
-}
-
-".space": {
-	height : '10dp',
-	backgroudColor : 'blue'
 }
 

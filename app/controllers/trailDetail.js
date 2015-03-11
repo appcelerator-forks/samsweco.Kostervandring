@@ -45,13 +45,17 @@ function showHotspots() {
 		for (var i = 0; i < rows.length; i++) {
 			var row = Ti.UI.createTableViewRow({
 				layout : 'horizontal',
-				height : '60dp'
+				height : '60dp',
+				top: 5
 				});
 			var coverimg = Ti.UI.createImageView({
 				height : '60dp',
-				width : '90dp'
-			});
-			var lblName = Ti.UI.createLabel();
+				width : '90dp',
+				left: 10
+				});
+			var lblName = Ti.UI.createLabel({
+				left: 10
+				});
 
 			coverimg.image = rows[i].cover_pic;
 			lblName.text = rows[i].name;

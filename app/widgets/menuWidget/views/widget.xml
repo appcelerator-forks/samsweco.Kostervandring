@@ -14,7 +14,7 @@
 		</Items>
 	</Toolbar>
 	
-	<View id="menuandroid">
+	<View id="menuandroid" platform="android">
 		<View class="btnView" >
 			<Button class="btnAndroid" backgroundImage="/images/kosterStarMenu.png" onClick="toHome" />
 		<!-- </View>

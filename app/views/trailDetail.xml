@@ -12,15 +12,13 @@
 				<Label id="lblTrailInfo" class="lbltrailDetail"></Label>
 			</View>
 			
-			<View class="space"></View>
-			
-			<View id="trail_hotspotView">
+			<View id="hotspotView">
 				<Label class="lblTitle">Det här kan du se längs vägen:</Label>
-				<TableView id="hotspotTable">
-					
-				</TableView>
+				<View id="trail_hotspotView">
+					<TableView id="hotspotTable" />
+				</View>
 			</View>
-
+			
 		</ScrollView>
 
 		<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
