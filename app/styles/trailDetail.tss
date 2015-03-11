@@ -65,33 +65,8 @@
 	backgroundColor: 'transparent'
 }
 
-"#table": {
-	height: Titanium.UI.SIZE,
-	width: Ti.UI.FILL
+".space": {
+	height : '10dp',
+	backgroudColor : 'blue'
 }
 
-".row": {
-	layout: 'vertical',
-	backgroundColor: 'white',
-	height: Titanium.UI.SIZE,
-	width: Ti.UI.FILL
-}
-
-".listItem": {
-	height: '60dp',
-	layout: 'horizontal',
-	top: 5,
-	bottom: 5
-}
-
-".listImg": {
-	left: 10,
-	height: '60dp',
-	width: '90dp'
-}
-
-".lblListTitle": {
-	right: 10,
-	top: 0,
-	color: 'black'
-}

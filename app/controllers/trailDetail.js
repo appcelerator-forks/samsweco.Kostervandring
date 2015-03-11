@@ -39,29 +39,39 @@ function selectTrailPics() {
 
 function showHotspots() {
 	try {
-		var data = getHotspotData();
+		var tableViewData = [];
+		var rows = getHotspotData();
 
-		for (var i = 0; i < data.length; i++) {
-			var image_args = {
-				image : data[i].cover_pic
-			};
-			var text_args = {
-				text : data[i].name
-			};
+		for (var i = 0; i < rows.length; i++) {
+			var row = Ti.UI.createTableViewRow({
+				layout : 'horizontal',
+				height : '60dp'
+				});
+			var coverimg = Ti.UI.createImageView({
+				height : '60dp',
+				width : '90dp'
+			});
+			var lblName = Ti.UI.createLabel();
 
-			var image_view = Ti.UI.createImageView(image_args);
-			var text_lbl = Ti.UI.createLabel(text_args);
+			coverimg.image = rows[i].cover_pic;
+			lblName.text = rows[i].name;
 
-			$.listImageview.add(image_view);
-			$.lblView.add(text_lbl);
-		};
+			//tableViewData.push(row.add(coverimg), row.add(lblName));
+			row.add(coverimg);
+			row.add(lblName);
+			
+			tableViewData.push(row);
+		}
 
-		alert(data);
+		$.hotspotTable.data = tableViewData;
+
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - showHotspots");
 	}
-
 }
+
+//
+// }
 
 function getHotspotData() {
 	try {

@@ -6,28 +6,19 @@
 		<ScrollView class="headView">
 			<ScrollableView id="slideShowTrails" showPagingControl="true" />
 			<View class="lbls">
-				<Label id="lblTrailName" class="lbltrailDetail"></Label> 
+				<Label id="lblTrailName" class="lbltrailDetail"></Label>
 				<Label id="lblTrailLength" class="lbltrailDetail"></Label>
 				<Label id="lblTrailColor" class="lbltrailDetail"></Label>
 				<Label id="lblTrailInfo" class="lbltrailDetail"></Label>
 			</View>
 			
+			<View class="space"></View>
 			
-			
-			<View id="hotspotView">
+			<View id="trail_hotspotView">
 				<Label class="lblTitle">Det här kan du se längs vägen:</Label>
-
-					<TableView id="table">
-						<!-- <TableViewRow id="tableRow" class="row">
-							<View id="listItem" class="listItem">
-								<ImageView id="listImageview" class="listImg" image=""/>
-								<View id="lblView">
-									<Label id="lblHotName" class="lblListTitle" text=""/>
-								</View>
-							</View>
-						</TableViewRow> -->
-					</TableView>
-
+				<TableView id="hotspotTable">
+					
+				</TableView>
 			</View>
 
 		</ScrollView>

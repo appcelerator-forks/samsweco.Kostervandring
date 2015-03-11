@@ -7,14 +7,10 @@ try {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "Hotspots - create hotspotCollection");
 }
 
-// transformFunction(hotspotCollection);
-//
-// function transformFunction(model){
-//
-// transform.cover = "/pics/" + transform.cover_pic;
-// Titanium.API.info(JSON.stringify(transform.cover));
-//
-// return transform;
+// function sendHotspots(){
+	// var hotspotList = $.table;
+// 	
+	// return hotspotList;
 // }
 
 function showHotspotDetails(hotspot) {
@@ -37,11 +33,5 @@ function showHotspotDetails(hotspot) {
 
 }
 
-// $.closeWin.addEventListener("click", close);
-//
-// function close() {
-// $.destroy();
-// $.hotspots.close();
-// }
 
 $.hotspots.open();
