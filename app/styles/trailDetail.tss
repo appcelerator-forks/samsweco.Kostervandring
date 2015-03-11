@@ -72,7 +72,7 @@
 
 ".row": {
 	layout: 'vertical',
-	backgroundColor: '#white',
+	backgroundColor: 'white',
 	height: Titanium.UI.SIZE,
 	width: Ti.UI.FILL
 }

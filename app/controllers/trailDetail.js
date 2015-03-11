@@ -31,17 +31,20 @@ function selectTrailPics() {
 
 function showHotspots() {
 	var data = getHotspotData();
-
-	// var hotCollection = Alloy.Collections.hotspotModel;
-	// hotCollection.fetch({
-	// query : 'SELECT name, cover_pic from hotspotModel where id="' + id + '"'
-	// });
-
-	// var hotTrails = data.toJSON();
 	
 	for (var i = 0; i < data.length; i++) {
-		$.listImageview.image = '/pics/' + data[i].cover_pic; 
-		$.lblHotName.text = data[i].name;
+		var image_args = {
+			image : data[i].cover_pic
+		};
+		var text_args = {
+			text : data[i].name
+		};
+		
+		var image_view = Ti.UI.createImageView(image_args);
+		var text_lbl = Ti.UI.createLabel(text_args);
+		
+		$.listImageview.add(image_view);
+		$.lblView.add(text_lbl);
 	};
 	
 	alert(data);

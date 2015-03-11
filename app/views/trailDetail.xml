@@ -18,11 +18,11 @@
 				<Label class="lblTitle">Det här kan du se längs vägen:</Label>
 
 					<TableView id="table">
-						<TableViewRow class="row">
-							<View class="listItem">
-								<ImageView id="listImageview" class="listImg" image="/pics/fyr.png"/>
+						<TableViewRow id="tableRow" class="row">
+							<View id="listItem" class="listItem">
+								<ImageView id="listImageview" class="listImg" image=""/>
 								<View id="lblView">
-									<Label id="lblHotName" class="lblListTitle" text="Fyren"/>
+									<Label id="lblHotName" class="lblListTitle" text=""/>
 								</View>
 							</View>
 						</TableViewRow>
