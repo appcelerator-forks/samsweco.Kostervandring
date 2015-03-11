@@ -10,7 +10,14 @@
 //
 // Alloy.Globals.someGlobalFunction = function(){};
 
+function newError(errorMsg, pageName) {
+	try {
+		var er = new Error(errorMsg);
+		er.myObject = pageName;
+		throw er;
+	} catch (e) {
 
-
-
+		alert("An Error:[" + e.message + "] has occured in line " + e.line + " SourceID : " + " \nsourceID:" + e.sourceId + "\nsourceURL:" + e.sourceURL);
+	}
+}
 
