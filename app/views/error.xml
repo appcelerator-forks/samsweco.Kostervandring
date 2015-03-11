@@ -1,9 +1,0 @@
-<Alloy>
-	<Window class="container">
-		<View class="headView">
-			<Label id="lblError">
-				Ursäkta, något gick fel! Prova igen!
-			</Label>
-		</View>
-	</Window>
-</Alloy>
