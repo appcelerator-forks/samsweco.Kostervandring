@@ -8,80 +8,93 @@ $.lblHotspotY.text = args.ykoord || "y";
 var hotspotId = args.id;
 setPics();
 
+function setPics() {
 
+	try {
+		if (args.informationNaturum != null) {
+			setNaturumInfo();
+			selectNaturumPics();
+		} else if (args.informationKoster != null) {
+			setKosterInfo();
+			selectKosterPics();
+		} else {
+			selectHotspotPics();
+		}
+	} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "HotspotDetail - setPics");
+	}
 
-function setPics(){
-	
-if (args.informationNaturum != null) {
-	setNaturumInfo();
-	selectNaturumPics();
 }
-
-else if (args.informationKoster != null) {
-	setKosterInfo();
-	selectKosterPics();
-}
-
-else {
-	selectHotspotPics();
-}
-}
-
 
 function selectHotspotPics() {
+	try {
 
-	var mediaCollection = Alloy.Collections.mediaModel;
-	mediaCollection.fetch({
-		query : 'SELECT filename from mediaModel where hotspot_id="' + hotspotId + '"'
-	});
+		var mediaCollection = Alloy.Collections.mediaModel;
+		mediaCollection.fetch({
+			query : 'SELECT filename from mediaModel where hotspot_id="' + hotspotId + '"'
+		});
 
-	var jsonObj = mediaCollection.toJSON();
-	for (var i = 0; i < jsonObj.length; i++) {
-		var view_args = {
-			backgroundImage : '/pics/' + jsonObj[i].filename
-		};
+		var jsonObj = mediaCollection.toJSON();
+		for (var i = 0; i < jsonObj.length; i++) {
+			var view_args = {
+				backgroundImage : '/pics/' + jsonObj[i].filename
+			};
 
-		var img_view = Ti.UI.createView(view_args);
-		$.slideShowHotspotDetail.addView(img_view);
+			var img_view = Ti.UI.createView(view_args);
+			$.slideShowHotspotDetail.addView(img_view);
+		}
+
+		Titanium.API.info(img_view);
+	} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "HotspotDetail - selectHotspotPics");
 	}
-	
-	Titanium.API.info(img_view);
+
 }
 
 function selectNaturumPics() {
+	try {
+		var mediaCollection = Alloy.Collections.mediaModel;
+		mediaCollection.fetch({
+			query : 'SELECT filename from mediaModel where other="naturum"'
+		});
 
-	var mediaCollection = Alloy.Collections.mediaModel;
-	mediaCollection.fetch({
-		query : 'SELECT filename from mediaModel where other="naturum"'
-	});
+		var jsonObj = mediaCollection.toJSON();
+		for (var i = 0; i < jsonObj.length; i++) {
+			var view_args = {
+				backgroundImage : '/pics/' + jsonObj[i].filename
+			};
 
-	var jsonObj = mediaCollection.toJSON();
-	for (var i = 0; i < jsonObj.length; i++) {
-		var view_args = {
-			backgroundImage : '/pics/' + jsonObj[i].filename
-		};
+			var img_view = Ti.UI.createView(view_args);
+			$.slideShowHotspotDetail.addView(img_view);
+		}
 
-		var img_view = Ti.UI.createView(view_args);
-		$.slideShowHotspotDetail.addView(img_view);
+	} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "HotspotDetail - selectNaturumPics");
 	}
+
 }
 
 function selectKosterPics() {
+	try {
+		var mediaCollection = Alloy.Collections.mediaModel;
+		mediaCollection.fetch({
+			query : 'SELECT filename from mediaModel where other="koster"'
+		});
 
-	var mediaCollection = Alloy.Collections.mediaModel;
-	mediaCollection.fetch({
-		query : 'SELECT filename from mediaModel where other="koster"'
-	});
+		var jsonObj = mediaCollection.toJSON();
+		for (var i = 0; i < jsonObj.length; i++) {
+			var view_args = {
+				backgroundImage : '/pics/' + jsonObj[i].filename
+			};
 
-	var jsonObj = mediaCollection.toJSON();
-	for (var i = 0; i < jsonObj.length; i++) {
-		var view_args = {
-			backgroundImage : '/pics/' + jsonObj[i].filename
-		};
+			var img_view = Ti.UI.createView(view_args);
+			$.slideShowHotspotDetail.addView(img_view);
+		}
 
-		var img_view = Ti.UI.createView(view_args);
-		$.slideShowHotspotDetail.addView(img_view);
+	} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "HotspotDetail - selectKosterPics");
 	}
+
 }
 
 function setNaturumInfo() {
