@@ -1,6 +1,8 @@
 <Alloy>
-	<Collection src="mediaModel"></Collection>
 	<Collection src="hotspotModel"></Collection>
+	<Collection src="mediaModel"></Collection>
+	<Collection src="hotspot_trailsModel"></Collection>
+	
 	<Window class="container">
 
 		<ScrollView class="headView">
@@ -21,9 +23,9 @@
 						<TableViewRow class="row">
 							<!-- number="{id}" name="{name}" infoTxt="{infoTxt}" xkoord="{xkoord}" ykoord="{ykoord}" image="{cover_pic}" onClick="showHotspotDetails"> -->
 							<View class="listItem">
-								<ImageView id="listImageview" class="listImg" image="/pics/fyr.png"/>
+								<ImageView id="listImageview" class="listImg" image=""/>
 								<View id="lblView">
-									<Label id="lblHotName" class="lblListTitle" text="Fyren"/>
+									<Label id="lblHotName" class="lblListTitle" text=""/>
 								</View>
 							</View>
 						</TableViewRow>
