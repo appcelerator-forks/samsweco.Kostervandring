@@ -1,5 +1,6 @@
 <Alloy>
 	<Collection src="mediaModel"></Collection>
+	<Collection src="hotspotModel"></Collection>
 	<Window class="container">
 
 		<ScrollView class="headView">

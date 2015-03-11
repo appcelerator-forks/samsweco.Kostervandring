@@ -19,13 +19,14 @@
 }
 
 "#infoImg": {
-	height: '50%'
+	width : '100%'
 }
 
 ".headView": {
 	height: '90%',
 	layout: 'vertical',
-	backgroundColor: 'white'
+	backgroundColor: 'white',
+	width: '100%'
 }
 
 "Label": {

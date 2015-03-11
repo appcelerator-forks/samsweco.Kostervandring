@@ -1,8 +1,7 @@
 <Alloy>
-	<Collection src="infoModel" />
 	<Window class="container">
 
-		<ScrollView class="headView">
+		<ScrollView class="headView" showVerticalScrollIndicator="true">
 			<ImageView id="infoImg"></ImageView>
 			<Label class="lblInfoDetail" id="lblInfoTitle"></Label>
 			<Label class="lblInfoDetail" id="lblInfoText"></Label>

@@ -8,7 +8,7 @@ $.lblTrailInfo.text = "Beskrivning : " + args.infoTxt || 'Default infoText';
 var trailId = args.id;
 
 selectTrailPics();
-//showHotspots();
+showHotspots();
 
 function selectTrailPics() {
 
@@ -36,25 +36,24 @@ function selectTrailPics() {
 
 //ERROR: message = "undefined is not an object (evaluating 'hotstrailCollection.fetch')";
 
-// function showHotspots(){
-	// var id = getHotspotId();
-	// var hotCollection = Alloy.Collections.hotspotModel;
-	// hotCollection.fetch({
-		// query: 'SELECT name,image from hotspotModel where id="' + id + '"'
-	// });
-// 	
-	// var hot = hotCollection.toJSON();
-	// for (var i = 0; i < hotTrails.length; i++) {
-		// //var view_args = {
-			// $.listImageview.image = '/pics/' + hotTrails[i].cover_pic;
-			// $.lblHotName.text = name;
-// 			
-			// //text : name,
-			// //image : '/pics/' + hotTrails[i].cover_pic
-		// };
-// }
+function showHotspots(){
+	var id = getHotspotId();
+	var hotCollection = Alloy.Collections.hotspotModel;
+	hotCollection.fetch({
+		query: 'SELECT name, cover_pic from hotspotModel where id="' + id + '"'
+	});
+	var hotTrails = hotCollection.toJSON();
+	for (var i = 0; i < hotTrails.length; i++) {
+		//var view_args = {
+			$.listImageview.image = '/pics/' + hotTrails[i].cover_pic;
+			$.lblHotName.text = hotTrails[i].name;
+			
+			//text : name,
+			//image : '/pics/' + hotTrails[i].cover_pic
+		};
+}
 // 
-// function getHotspotId(){
+function getHotspotId(){
 	// var id = trailId;
 	// var hotstrailCollection = Alloy.Collections.hotspot_trailModel;
 	// hotstrailCollection.fetch({
@@ -64,8 +63,9 @@ function selectTrailPics() {
 	// var hotTrails = hotstrailCollection.toJSON();
 // 	
 	// Ti.API.info(hotTrails);
-	// return hotTrails;
-// }
+	return 3;
+	//	return hotTrails;
+}
 
 
 $.trailDetail.open();
