@@ -1,7 +1,15 @@
 var args = arguments[0] || {};
 
-var hotspotCollection = Alloy.Collections.hotspotModel;
+try{
+	var hotspotCollection = Alloy.Collections.hotspotModel;
 hotspotCollection.fetch();
+}
+
+		catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "Hotspots - create hotspotCollection");
+	}
+
+
 
 // transformFunction(hotspotCollection);
 // 
@@ -14,7 +22,7 @@ hotspotCollection.fetch();
 // }
 
 function showHotspotDetails(hotspot) {
-	Titanium.API.info(hotspot.name);
+	try{
 	var selectedHotspot = hotspot.row;
 	var args = {
 		id : selectedHotspot.number,
@@ -27,13 +35,18 @@ function showHotspotDetails(hotspot) {
 	var hotspotDetail = Alloy.createController("hotspotDetail", args).getView();
 	hotspotDetail.open();
 	$.hotspots.close();
+	}
+			catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "HotspotDetail - showHotspotDetails");
+	}
+
 }
 
-$.closeWin.addEventListener("click", close);
-
-function close() {
-	$.destroy();
-	$.hotspots.close();
-}
+// $.closeWin.addEventListener("click", close);
+// 
+// function close() {
+	// $.destroy();
+	// $.hotspots.close();
+// }
 
 $.hotspots.open();
