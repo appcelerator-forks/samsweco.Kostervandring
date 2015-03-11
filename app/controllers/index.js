@@ -13,6 +13,12 @@ function quizView() {
 	quiz.open();
 }
 
+function showError() {
+	var errorView = Alloy.createController("error").getView();
+	errorView.open();
+	$.index.close();
+}
+
 function aboutNaturum() {
 
 	var hotspotCollection = Alloy.Collections.hotspotModel;
