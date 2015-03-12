@@ -11,9 +11,8 @@
 				<Label id="lblTrailColor" class="lbltrailDetail"></Label>
 				<Label id="lblTrailInfo" class="lbltrailDetail"></Label>
 			</View>
-			
+			<Label id="lblLangsVagen">Det här kan du se längs vägen:</Label>
 			<View id="hotspotView">
-				<Label class="lblTitle">Det här kan du se längs vägen:</Label>
 				<View id="trail_hotspotView">
 					<TableView id="hotspotTable" />
 				</View>

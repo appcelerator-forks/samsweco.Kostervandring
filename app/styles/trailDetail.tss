@@ -24,19 +24,15 @@
 	layout: 'vertical',
 	right: 10,
 	top: 5,
-	height: Titanium.UI.SIZE
-}
+	height : Titanium.UI.SIZE
+	}
 
 "#hotspotView": {
 	layout: 'vertical',
 	backgroundColor: "#white",
 	borderColor: "#c2c2c2",
 	borderWidth: 1,
-	top: 3
-	//height: Titanium.UI.SIZE
-}
-
-"#hotspotTable": {
+	top: 0,
 	height: Titanium.UI.SIZE
 }
 
@@ -53,12 +49,13 @@
 	}
 }
 
-".lblTitle": {
+"#lblLangsVagen": {
+	top : 20,
 	left: 10,
 	font: {
-		fontSize: 14
+		fontSize: 16
 	},
-	top: 7
+	top: 0
 }
 
 "#menuView": {

@@ -46,7 +46,7 @@ function showHotspots() {
 			var row = Ti.UI.createTableViewRow({
 				layout : 'horizontal',
 				height : '60dp',
-				top: 5
+				top: 0
 				});
 			var coverimg = Ti.UI.createImageView({
 				height : '60dp',
