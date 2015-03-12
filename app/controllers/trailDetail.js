@@ -103,12 +103,12 @@ function showIcons() {
 		for (var i = 0; i < selectedIcons.length; i++) {
 			
 				var covericon = Ti.UI.createImageView({
-				height : '20dp',
-				width : '20dp',
+				height : '30dp',
+				width : '30dp',
 				left: 10
 				});
 				
-				covericon.image = "/icons/" + selectedIcons[i].icon;
+				covericon.image = "/piktogram/" + selectedIcons[i].icon;
 
 			$.iconrow.add(covericon);
 		}
