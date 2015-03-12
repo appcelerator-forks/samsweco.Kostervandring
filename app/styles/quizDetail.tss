@@ -29,11 +29,10 @@
 }
 
 ".headView": {
-	top: 20,
-	height: Titanium.UI.SIZE,
-	width: Titanium.UI.FILL,
+height: Titanium.UI.SIZE,
+width: Titanium.UI.FILL,
 	showHorizontalScrollIndicator: true,
-	height: '80%'
+	height: '88%'
 }
 
 ".views": {
@@ -46,7 +45,6 @@
 }
 
 '#lista': {
-	top: 10,
 	width: Titanium.UI.FILL,
 	height: Titanium.UI.SIZE,
 	backgroundColor: '#fff3e5'

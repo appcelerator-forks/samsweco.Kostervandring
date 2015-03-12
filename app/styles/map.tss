@@ -4,7 +4,7 @@
 }
 
 ".headView": {
-	height: '80%'
+	height: '93%'
 }
 
 "#noMap": {

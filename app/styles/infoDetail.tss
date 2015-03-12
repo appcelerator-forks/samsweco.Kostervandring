@@ -23,10 +23,9 @@
 }
 
 ".headView": {
-	height: '90%',
+	height: '93%',
 	layout: 'vertical',
-	backgroundColor: 'white',
-	width: '100%'
+	backgroundColor: 'white'
 }
 
 "Label": {

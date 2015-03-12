@@ -79,8 +79,7 @@
 
 "#iconrow": {
 	layout: 'horizontal',
-	height: '40dp',
-	left: '10dp'
+	height: '40dp'
 }
 
 "#lblTrailLength" : {

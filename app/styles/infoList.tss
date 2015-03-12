@@ -8,7 +8,7 @@
 
 ".headView": {
 	layout: 'vertical',
-	height : '80%',
+	height : '93%',
 	width : Titanium.UI.FILL
 }
 
