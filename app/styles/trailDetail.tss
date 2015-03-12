@@ -20,12 +20,19 @@
 	backgroundColor: 'white'
 }
 
+"#lblTrailName": {
+	left: 10,
+	font: {
+		fontSize: 16
+	}
+}
+
 ".lbls": {
 	layout: 'vertical',
 	right: 10,
 	top: 5,
-	height : Titanium.UI.SIZE
-	}
+	height: Titanium.UI.SIZE
+}
 
 "#hotspotView": {
 	layout: 'vertical',
@@ -50,7 +57,7 @@
 }
 
 "#lblLangsVagen": {
-	top : 20,
+	top: 20,
 	left: 10,
 	font: {
 		fontSize: 16
@@ -65,4 +72,11 @@
 	width: Ti.UI.FILL,
 	backgroundColor: 'transparent'
 }
+
+"#iconrow": {
+	layout: 'horizontal',
+	height: '40dp',
+	left: '10dp'
+}
+
 

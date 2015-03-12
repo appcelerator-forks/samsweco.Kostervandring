@@ -14,7 +14,7 @@ try {
 selectTrailPics();
 showHotspots();
 
-getIcons();
+showIcons();
 
 function selectTrailPics() {
 	try {
@@ -56,7 +56,10 @@ function showHotspots() {
 				left: 10
 				});
 			var lblName = Ti.UI.createLabel({
-				left: 10
+				left: 10,	
+				font: {
+				fontSize: 12
+				}
 				});
 
 			coverimg.image = rows[i].cover_pic;
@@ -94,60 +97,47 @@ function getHotspotData() {
 
 }
 
-// function showIcons() {
-	// try {
-		// var icons = [];
-		// var filenames = getHotspotData();
-// 
-		// for (var i = 0; i < rows.length; i++) {
-			// var row = Ti.UI.createTableViewRow({
-				// layout : 'horizontal',
-				// height : '60dp',
-				// top: 0
-				// });
-			// var coverimg = Ti.UI.createImageView({
-				// height : '60dp',
-				// width : '90dp',
-				// left: 10
-				// });
-			// var lblName = Ti.UI.createLabel({
-				// left: 10
-				// });
-// 
-			// coverimg.image = rows[i].cover_pic;
-			// lblName.text = rows[i].name;
-// 
-			// //tableViewData.push(row.add(coverimg), row.add(lblName));
-			// row.add(coverimg);
-			// row.add(lblName);
-// 			
-			// tableViewData.push(row);
-		// }
-// 
-		// $.hotspotTable.data = tableViewData;
-// 
-	// } catch(e) {
-		// newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - showIcons");
-	// }
-// }
-// 
+function showIcons() {
+	try {
+		var selectedIcons = getIcons();
+		
+		Titanium.API.info(selectedIcons);
+				
+		for (var i = 0; i < selectedIcons.length; i++) {
+			
+				var covericon = Ti.UI.createImageView({
+				height : '20dp',
+				width : '20dp',
+				left: 10
+				});
+				
+				covericon.image = "/icons/" + selectedIcons[i].icon;
+
+			$.iconrow.add(covericon);
+		}
+
+
+	} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - showIcons");
+	}
+}
+
 function getIcons() {
-//	try {
+	try {
 		var id = trailId;
 		Titanium.API.info(id);
 
 		var infotrailCollection = Alloy.Collections.infospotModel;
 		infotrailCollection.fetch({
-			query : 'SELECT icon from infospotModel where id = 1'
-			//join infospot_trailsModel on infospot_trailsModel.infospotID = infospotModel.id 
+			query : 'SELECT icon from infospotModel join infospot_trailsModel on infospot_trailsModel.infospotID = infospotModel.id where trailsID ="' + id + '"'
 		});
 		
 		var infoTrails = infotrailCollection.toJSON();
 		Titanium.API.info(JSON.stringify(infoTrails));
 		return infoTrails;
-	//} catch(e) {
-		//newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - getIcons");
-	//}
+	} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - getIcons");
+	}
 
 }
 
