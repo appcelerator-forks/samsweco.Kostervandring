@@ -65,7 +65,6 @@ function showHotspots() {
 			coverimg.image = rows[i].cover_pic;
 			lblName.text = rows[i].name;
 
-			//tableViewData.push(row.add(coverimg), row.add(lblName));
 			row.add(coverimg);
 			row.add(lblName);
 			
@@ -100,8 +99,6 @@ function getHotspotData() {
 function showIcons() {
 	try {
 		var selectedIcons = getIcons();
-		
-		Titanium.API.info(selectedIcons);
 				
 		for (var i = 0; i < selectedIcons.length; i++) {
 			
@@ -125,7 +122,6 @@ function showIcons() {
 function getIcons() {
 	try {
 		var id = trailId;
-		Titanium.API.info(id);
 
 		var infotrailCollection = Alloy.Collections.infospotModel;
 		infotrailCollection.fetch({
