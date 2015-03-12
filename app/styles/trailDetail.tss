@@ -23,7 +23,8 @@
 "#lblTrailName": {
 	left: 10,
 	font: {
-		fontSize: 16
+		fontSize: 16,
+		fontWeight: 'bold'
 	},
 	color: '#FF9966'
 }
@@ -54,16 +55,18 @@
 	left: 10,
 	font: {
 		fontSize: 12
-	}
+	},
+	top: 10
 }
 
 "#lblLangsVagen": {
 	top: 20,
 	left: 10,
 	font: {
-		fontSize: 16
+		fontSize: 13,
+		fontWeight: 'bold'
 	},
-	top: 0
+	top: 10
 }
 
 "#menuView": {
@@ -80,4 +83,9 @@
 	left: '10dp'
 }
 
-
+"#lblTrailLength" : {
+	font : {
+		fontStyle: 'Italic'
+	},
+	top: 10
+}
