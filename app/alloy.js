@@ -17,7 +17,9 @@ function newError(errorMsg, pageName) {
 		throw er;
 	} catch (e) {
 
-		alert("Error:[" + e.message + "] has occured on " + e.myObject+ " page. On line " + e.line + " SourceID : " + " \nsourceID:" + e.sourceId + "\nsourceURL:" + e.sourceURL);
+		alert("Error:[" + e.message + "] has occured on " + e.myObject+ " page." 
+		//On line " + e.line + " SourceID : " + " \nsourceID:" + e.sourceId + "\nsourceURL:" + e.sourceURL
+		);
 	}
 }
 
