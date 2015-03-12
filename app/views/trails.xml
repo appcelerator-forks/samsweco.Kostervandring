@@ -1,5 +1,6 @@
 <Alloy>
 	<Collection src="trailsModel" />
+	<Collection src="infospotModel"></Collection>
 	<Window class="container" onClose="destroyModel">
 		<ScrollView class="headView">
 
@@ -11,8 +12,9 @@
 						<View id="lblView">
 							<Label class="lblListTitle" text="{name}"/>
 							<Label class="lblListKm" text="{length}"/> <Label id="lblKm">Km</Label>
-							<ImageView id="bild1" image="pics/toa.png"></ImageView>
-							<ImageView id="bild2" image="pics/fire.png"></ImageView>
+							<View id="iconView"></View>
+							<!-- <ImageView id="bild1" image="pics/toa.png"></ImageView>
+							<ImageView id="bild2" image="pics/fire.png"></ImageView> -->
 						</View>
 					</View>
 				</TableViewRow>

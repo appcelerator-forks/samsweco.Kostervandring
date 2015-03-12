@@ -19,6 +19,13 @@
 	backgroundColor: 'transparent'
 }
 
+"#iconView": {
+	layout: 'horizontal',
+	height: '40dp',
+	left: '10dp',
+	backgroundColor : 'green'
+}
+
 "#bild1" : {
 	height: 20,
 	width: 20,
