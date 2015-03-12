@@ -51,6 +51,27 @@ function showMap() {
 
 	}
 
+	//----------------------------------------------------------------
+	// GeoJSON - test
+	//----------------------------------------------------------------
+	// function geoJSONTest() {
+		// var geojsonFeature = {
+			// "type" : "Feature",
+			// "properties" : {
+				// "name" : "GEOJSON",
+				// "amenity" : "Test",
+				// "popupContent" : "TestTestTest!"
+			// },
+			// "geometry" : {
+				// "type" : "Point",
+				// "coordinates" : [58.881189, 10.992495]
+			// }
+		// };
+// 
+		// var myLayer = L.geoJson().addTo(map);
+		// myLayer.addData(geojsonFeature);
+	// }
 
+	//geoJSONTest();
 	$.mapView.add(map3);
 };

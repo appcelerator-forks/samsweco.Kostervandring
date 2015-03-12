@@ -45,6 +45,7 @@ function selectHotspotPics() {
 		}
 
 		Titanium.API.info(img_view);
+		
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "HotspotDetail - selectHotspotPics");
 	}
