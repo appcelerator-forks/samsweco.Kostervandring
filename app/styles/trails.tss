@@ -8,7 +8,7 @@
 }
 
 ".headView": {
-	height: '80%'
+	height: '93%'
 }
 
 "#menuView": {
@@ -23,7 +23,7 @@
 	layout: 'horizontal',
 	height: '40dp',
 	left: '10dp',
-	backgroundColor : 'green'
+	//backgroundColor : 'green'
 }
 
 "#bild1" : {

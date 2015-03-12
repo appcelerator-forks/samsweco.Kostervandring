@@ -24,7 +24,8 @@
 	left: 10,
 	font: {
 		fontSize: 16
-	}
+	},
+	color: '#FF9966'
 }
 
 ".lbls": {
@@ -44,7 +45,7 @@
 }
 
 ".headView": {
-	height: '90%',
+	height: '93%',
 	layout: 'vertical',
 	backgroundColor: 'white'
 }

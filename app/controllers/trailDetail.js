@@ -1,10 +1,10 @@
 var args = arguments[0] || {};
 
 try {
-	$.lblTrailName.text = "Vandringsled : " + args.title || 'Default Name';
-	$.lblTrailLength.text = "Distans: " + args.length + " kilometer" || 'Default Length';
-	$.lblTrailColor.text = "Färgmarkering: " + args.color || 'Default Color';
-	$.lblTrailInfo.text = "Beskrivning : " + args.infoTxt || 'Default infoText';
+	$.lblTrailName.text = args.title || 'Default Name'; //"Vandringsled : " + 
+	$.lblTrailLength.text = args.length + " kilometer" || 'Default Length'; //"Distans: " + 
+	$.lblTrailColor.text = args.color || 'Default Color'; //"Färgmarkering: " + 
+	$.lblTrailInfo.text = args.infoTxt || 'Default infoText'; // "Beskrivning : " + 
 
 	var trailId = args.id;
 } catch(e) {
