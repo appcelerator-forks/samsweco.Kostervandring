@@ -4,8 +4,8 @@
 
 		<AlertDialog id="dialog" onClick="doClick" title="Hotspot" message="Du närmar dig någonting intressant!" cancel="1">
 			<ButtonNames>
-				<ButtonName>Stäng</ButtonName>
-				<ButtonName>Läs mer</ButtonName>
+				<ButtonName id="btnClose">Stäng</ButtonName>
+				<ButtonName id="btnOpen">Läs mer</ButtonName>
 			</ButtonNames>
 		</AlertDialog>
 	
