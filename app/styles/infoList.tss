@@ -3,13 +3,15 @@
 }
 
 ".container": {
-	layout: 'vertical'
+	layout: 'vertical',
+	top:0
 }
 
 ".headView": {
 	layout: 'vertical',
 	height : '93%',
-	width : Titanium.UI.FILL
+	width : Titanium.UI.FILL,
+	top: 0
 }
 
 ".listItem": {
@@ -36,7 +38,8 @@
 	layout: 'vertical',
 	backgroundColor: '#fff3e5',
 	height: '90dp',
-	width: Ti.UI.FILL
+	width: Ti.UI.FILL,
+	right: 10
 }
 
 ".lblListTitle": {
