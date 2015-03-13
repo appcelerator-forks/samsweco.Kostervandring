@@ -59,7 +59,6 @@ function aboutNaturum() {
 
 		var hotspotDetail = Alloy.createController("hotspotDetail", infoTxtNaturum).getView();
 		hotspotDetail.open();
-		$.index.close();
 
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "Index");
@@ -92,10 +91,10 @@ function aboutKoster() {
 	}
 }
 
-function toHome(e) {
-	var index = Alloy.createController('index').getView();
-	index.open();
-}
+// function toHome(e) {
+	// var index = Alloy.createController('index').getView();
+	// index.open();
+// }
 
 function toHotspots(e) {
 	var hotspots = Alloy.createController('hotspots').getView();
