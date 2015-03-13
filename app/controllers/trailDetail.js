@@ -62,7 +62,7 @@ function showHotspots() {
 				}
 				});
 
-			coverimg.image = rows[i].cover_pic;
+			coverimg.image = "/pics/" + rows[i].cover_pic;
 			lblName.text = rows[i].name;
 
 			row.add(coverimg);
