@@ -1,5 +1,7 @@
 var args = arguments[0] || {};
 
+//$.trailDetail.open();
+
 try {
 	$.lblTrailName.text = args.title || 'Default Name'; //"Vandringsled : " + 
 	$.lblTrailLength.text = args.length + " kilometer" || 'Default Length'; //"Distans: " + 
@@ -137,4 +139,4 @@ function getIcons() {
 
 }
 
-$.trailDetail.open();
+
