@@ -1,19 +1,18 @@
 <Alloy>
 	<Collection src="mediaModel"></Collection>
-	<View class="container">
+		<View class="container">
 
-		<ScrollView class="headView">
-			<ScrollableView id="slideShowHotspotDetail" showPagingControl="true"/>
-			<Label id="lblHotspotName" class="lblhotspotDetail"></Label>
-			<Label id="lblHotspotInfoTxt" class="lblhotspotDetail"></Label>
-			<Label id="lblTest"></Label>
+			<ScrollView class="headView">
+				<ScrollableView id="slideShowHotspotDetail" showPagingControl="true"/>
+				<Label id="lblHotspotName" class="lblhotspotDetail"></Label>
+				<Label id="lblHotspotInfoTxt" class="lblhotspotDetail"></Label>
+				<Label id="lblTest"></Label>
+			</ScrollView>
 
-		</ScrollView>
-
-		<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
-		<!-- <View id="menuView">
+			<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
+			<!-- <View id="menuView">
 			<Widget id="menuBar" src="menuWidget" name="widget"/>
-		</View> -->
+			</View> -->
 
-	</View>
+		</View>
 </Alloy>

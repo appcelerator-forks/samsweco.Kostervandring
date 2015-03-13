@@ -6,7 +6,6 @@ function nextPage() {
 	try {
 		var trails = Alloy.createController("trails").getView();
 		trails.open();
-		$.index.close();
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "Index - nextPage");
 	}
@@ -29,7 +28,6 @@ function quizView() {
 	try {
 		var quiz = Alloy.createController("quizDetail").getView();
 		quiz.open();
-		$.index.close();
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "Index - quizView");
 	}
@@ -87,8 +85,8 @@ function aboutKoster() {
 		};
 
 		var hotspotDetail = Alloy.createController("hotspotDetail", infoTxtKoster).getView();
-		hotspotDetail.open();
-		$.index.close();
+		// hotspotDetail.open();
+		$.koster.add(hotspotDetail);
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "Index - aboutKoster");
 	}
