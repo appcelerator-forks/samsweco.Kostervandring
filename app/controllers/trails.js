@@ -9,7 +9,8 @@ try {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "trails - create trailsCollection");
 }
 
-//setIconsTrails(); FUNKAR EJ!!
+setIconsTrails(); 
+//FUNKAR EJ!!
 
 function showTrailDetails(trail) {
 	try {
@@ -32,6 +33,8 @@ function showTrailDetails(trail) {
 }
 
 function setIconsTrails(){
+	var trailsCollection = Alloy.Collections.trailsModel;
+	trailsCollection.fetch();
 	
 	for (var i = 0; i < trailsCollection.length; i++){
 		showIcons(i+1);
@@ -39,31 +42,38 @@ function setIconsTrails(){
 }
 
 function showIcons(id) {
-	try {
-		var selectedIcons = getIcons(id);
-				
+	//try {
+		trail_id = id;
+		var selectedIcons = getIcons();
+		
+		Ti.API.info("Selected icons: "+JSON.stringify(selectedIcons));	
+		
+		selectedIcons.toJSON();
+						
 		for (var i = 0; i < selectedIcons.length; i++) {
-			
-				var covericon = Ti.UI.createImageView({
+					Ti.API.info(JSON.stringify(selectedIcons));	
+							Ti.API.info("i : "+i);	
+				
+				var icon = Ti.UI.createImageView({
 				height : '30dp',
 				width : '30dp',
 				left: 10
 				});
 				
-				covericon.image = "/piktogram/" + selectedIcons[i].icon;
+				icon.image = "/piktogram/" + selectedIcons[i].icon;
 
 			$.iconView.add(covericon);
 		}
 
 
-	} catch(e) {
-		newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - showIcons");
-	}
+	// } catch(e) {
+		// newError("Något gick fel när sidan skulle laddas, prova igen!", "trails - showIcons");
+	// }
 }
 
-function getIcons(id) {
+function getIcons() {
 	try {
-		//var id = trailId;
+		var id = 3;
 
 		var infotrailCollection = Alloy.Collections.infospotModel;
 		infotrailCollection.fetch({
@@ -71,8 +81,11 @@ function getIcons(id) {
 		});
 		
 		var infoTrails = infotrailCollection.toJSON();
-		Titanium.API.info(JSON.stringify(infoTrails));
+		
+		Ti.API.info(JSON.stringify(infoTrails));
+		
 		return infoTrails;
+		
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - getIcons");
 	}

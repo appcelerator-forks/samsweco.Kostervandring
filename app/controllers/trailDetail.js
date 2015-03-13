@@ -129,8 +129,8 @@ function getIcons() {
 		});
 		
 		var infoTrails = infotrailCollection.toJSON();
-		Titanium.API.info(JSON.stringify(infoTrails));
 		return infoTrails;
+		
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - getIcons");
 	}

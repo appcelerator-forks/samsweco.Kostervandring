@@ -1,6 +1,7 @@
 <Alloy>
 	<Collection src="trailsModel" />
 	<Collection src="infospotModel"></Collection>
+	<Collection src="infospot_trailsModel"></Collection>
 	<Window class="container" onClose="destroyModel">
 		<ScrollView class="headView">
 
