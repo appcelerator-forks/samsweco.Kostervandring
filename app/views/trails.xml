@@ -4,28 +4,10 @@
 	<Collection src="infospot_trailsModel"></Collection>
 	<View class="container" onClose="destroyModel">
 		<ScrollView class="headView">
-			<TableView id="table" dataCollection="trailsModel">
-				<TableViewRow class="row" trailNo="{id}" name="{name}" image="{cover_pic}" length="{length}" infoTxt="{infoTxt}" color="{color}" onClick="showTrailDetails">
-					<View class="listItem">
-						<ImageView class="listImg" image="{cover_img}"/>
-						<View id="lblView">
-							<Label class="lblListTitle" text="{name}"/>
-							<Label class="lblListKm" text="{length}"/> <Label id="lblKm">Km</Label>
-							<View id="iconView"></View>
-							
-							<!-- Här är iconView.... -->
-
-						</View>
-					</View>
+			<TableView id="table">
+				<TableViewRow class="row" onClick="showTrailDetails">
 				</TableViewRow>
 			</TableView>
-
 		</ScrollView>
-
-		<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
-		<!-- <View id="menuView">
-			<Widget id="menuBar" src="menuWidget" name="widget"/>
-		</View> -->
-
 	</View>
 </Alloy>

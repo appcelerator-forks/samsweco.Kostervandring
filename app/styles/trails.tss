@@ -38,17 +38,17 @@
 	width: 90
 }
 
-".lblView": {
+"#lblView": {
 	layout: 'horizontal'
 }
 
-".lblListTitle": {
+"#lblListTitle": {
 	right: 10,
 	top: 0,
 	color: '#FF9966'
 }
 
-".lblListKm": {
+"#lblListKm": {
 	top: 20,
 	right: 40,
 	color: '#FF9966'
