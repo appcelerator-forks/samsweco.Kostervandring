@@ -23,21 +23,7 @@
 	layout: 'horizontal',
 	height: '40dp',
 	left: '10dp',
-	//backgroundColor : 'green'
-}
-
-"#bild1" : {
-	height: 20,
-	width: 20,
-	right: 10,
-	top: 40	
-}
-
-"#bild2" : {
-	height: 20,
-	width: 20,
-	right: 40,
-	top: 40	
+	backgroundColor: 'blue'
 }
 
 ".listItem": {
@@ -73,7 +59,7 @@
 	backgroundColor: '#fff3e5'
 }
 
-"#lblKm" : {
+"#lblKm": {
 	top: 20,
 	right: 10,
 	color: '#FF9966'

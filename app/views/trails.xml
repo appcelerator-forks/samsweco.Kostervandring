@@ -11,14 +11,15 @@
 						<View id="lblView">
 							<Label class="lblListTitle" text="{name}"/>
 							<Label class="lblListKm" text="{length}"/> <Label id="lblKm">Km</Label>
-							
 							<View id="iconView"></View>
+							
 							<!-- Här är iconView.... -->
 
 						</View>
 					</View>
 				</TableViewRow>
 			</TableView>
+
 		</ScrollView>
 
 		<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->

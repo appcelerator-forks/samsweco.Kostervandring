@@ -46,13 +46,13 @@ function showIcons(id) {
 		var trail_id = id;
 		var selectedIcons = getIcons(trail_id);
 		
-	//	Ti.API.info("Selected icons ---> "+JSON.stringify(selectedIcons));	
+	//Ti.API.info("Selected icons ---> "+JSON.stringify(selectedIcons));	
 		
 		//selectedIcons.toJSON();
 						
 		for (var i = 0; i < selectedIcons.length; i++) {
 	//				Ti.API.info("I loopen -->"+JSON.stringify(selectedIcons));	
-							Ti.API.info(selectedIcons);	
+							//Ti.API.info(selectedIcons);	
 				
 				var iconImgView = Ti.UI.createImageView({
 				height : '30dp',
@@ -61,8 +61,10 @@ function showIcons(id) {
 				});
 				
 				iconImgView.image = "/piktogram/" + selectedIcons[i].icon;
-
-			$.iconView.add(iconImgView);
+ Ti.API.info(iconImgView.image);
+ 
+// $.lblView.add(iconView);
+$.iconView.add(iconImgView);
 		}
 // function showIcons() {
 	// try {
