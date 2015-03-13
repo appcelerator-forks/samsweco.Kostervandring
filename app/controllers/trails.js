@@ -77,7 +77,7 @@ function setRowData() {
 
 		tableViewData.push(row);
 	}
-		Ti.API.info(JSON.stringify(tableViewData));
+
 	$.table.data = tableViewData;
 
 }
@@ -105,7 +105,6 @@ function showTrailDetails(trail) {
 function showIcons(id) {
 	var trail_id = id;
 	var selectedIcons = getIcons(trail_id);
-		Ti.API.info(trail_id);
 	
 	var iconView = Ti.UI.createView({
 			layout : 'horizontal',
