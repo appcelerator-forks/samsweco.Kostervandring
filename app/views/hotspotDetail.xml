@@ -6,8 +6,6 @@
 			<ScrollableView id="slideShowHotspotDetail" showPagingControl="true"/>
 			<Label id="lblHotspotName" class="lblhotspotDetail"></Label>
 			<Label id="lblHotspotInfoTxt" class="lblhotspotDetail"></Label>
-			<Label id="lblHotspotX" class="lblhotspotDetail"></Label>
-			<Label id="lblHotspotY" class="lblhotspotDetail"></Label>
 			<Label id="lblTest"></Label>
 
 		</ScrollView>

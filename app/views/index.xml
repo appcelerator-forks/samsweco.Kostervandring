@@ -1,5 +1,6 @@
 <Alloy>
 	<Collection src="hotspotModel" />
+		<Collection src="infoModel" />
 	<Window class="container" backgroundImage = "/pics/front.png">
 
 		<ScrollView class="headView">
@@ -10,7 +11,6 @@
 				<Button class="btnIndex" onClick="aboutNaturum">Mer om Naturum</Button>
 				<Button class="btnIndex" onClick="hotspotView">Mer om Hotspots</Button>
 				<Button class="btnIndex" onClick="quizView">Starta vårt quiz!</Button>
-				<Button class="btnIndex" onClick="showError">Felmeddelande!</Button>
 			</View>
 			
 			<Widget id="alertHotspot" src="alertWidgetHotspot" name="widget" />

@@ -9,7 +9,7 @@ try {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "trails - create trailsCollection");
 }
 
-setIconsTrails(); 
+//setIconsTrails(); 
 //FUNKAR EJ!!
 
 function showTrailDetails(trail) {
@@ -43,37 +43,55 @@ function setIconsTrails(){
 
 function showIcons(id) {
 	//try {
-		trail_id = id;
-		var selectedIcons = getIcons();
+		var trail_id = id;
+		var selectedIcons = getIcons(trail_id);
 		
-		Ti.API.info("Selected icons: "+JSON.stringify(selectedIcons));	
+	//	Ti.API.info("Selected icons ---> "+JSON.stringify(selectedIcons));	
 		
-		selectedIcons.toJSON();
+		//selectedIcons.toJSON();
 						
 		for (var i = 0; i < selectedIcons.length; i++) {
-					Ti.API.info(JSON.stringify(selectedIcons));	
-							Ti.API.info("i : "+i);	
+	//				Ti.API.info("I loopen -->"+JSON.stringify(selectedIcons));	
+							Ti.API.info(selectedIcons);	
 				
-				var icon = Ti.UI.createImageView({
+				var iconImgView = Ti.UI.createImageView({
 				height : '30dp',
 				width : '30dp',
 				left: 10
 				});
 				
-				icon.image = "/piktogram/" + selectedIcons[i].icon;
+				iconImgView.image = "/piktogram/" + selectedIcons[i].icon;
 
-			$.iconView.add(covericon);
+			$.iconView.add(iconImgView);
 		}
-
-
+// function showIcons() {
+	// try {
+		// var selectedIcons = getIcons();
+// 				
+		// for (var i = 0; i < selectedIcons.length; i++) {
+// 			
+				// var covericon = Ti.UI.createImageView({
+				// height : '30dp',
+				// width : '30dp',
+				// left: 10
+				// });
+// 				
+				// covericon.image = "/piktogram/" + selectedIcons[i].icon;
+// 
+			// $.iconrow.add(covericon);
+		// }
+// 
+// 
 	// } catch(e) {
-		// newError("Något gick fel när sidan skulle laddas, prova igen!", "trails - showIcons");
+		// newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - showIcons");
 	// }
+// }
+
 }
 
-function getIcons() {
+function getIcons(trail_id) {
 	try {
-		var id = 3;
+		var id = trail_id;
 
 		var infotrailCollection = Alloy.Collections.infospotModel;
 		infotrailCollection.fetch({
@@ -82,7 +100,7 @@ function getIcons() {
 		
 		var infoTrails = infotrailCollection.toJSON();
 		
-		Ti.API.info(JSON.stringify(infoTrails));
+		//Ti.API.info(JSON.stringify(infoTrails));
 		
 		return infoTrails;
 		

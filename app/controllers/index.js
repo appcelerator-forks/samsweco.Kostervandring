@@ -12,10 +12,10 @@ function nextPage() {
 
 function hotspotView() {
 	try {
-		
+
 		var hotspots = Alloy.createController("hotspots").getView();
 		hotspots.open();
-		
+
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "Index - hotspotView");
 	}
@@ -40,16 +40,19 @@ function showError() {
 function aboutNaturum() {
 
 	try {
-		var hotspotCollection = Alloy.Collections.hotspotModel;
-		//OBS OBS id't nedan måste vara det för Kosterhavets Nationalpark i hotspotModel i DB för att detta ska funka!
-		hotspotCollection.fetch({
-			query : 'SELECT infoTxt from hotspotModel where id = 13'
+
+		var infoCollection = Alloy.Collections.infoModel;
+		infoCollection.fetch({
+			query : 'SELECT name, infoTxt from infoModel where id = 5'
 		});
-		var jsonObj = hotspotCollection.toJSON();
-		var txt = JSON.stringify(jsonObj[0].infoTxt);
-		Titanium.API.info(txt);
+		//OBS OBS id't nedan måste vara det för Kosterhavets Nationalpark i infoModel i DB för att detta ska funka!
+
+		var jsonObj = infoCollection.toJSON();
+		var txt = jsonObj[0].infoTxt;
+		var name = jsonObj[0].name;
 
 		var infoTxtNaturum = {
+			title : name,
 			informationNaturum : txt
 		};
 
@@ -67,16 +70,16 @@ function aboutKoster() {
 
 	try {
 
-		var hotspotCollection = Alloy.Collections.hotspotModel;
-		//OBS OBS id't nedan måste vara det för Naturum i db för hotspotModel i DB för att detta ska funka!
-		hotspotCollection.fetch({
-			query : 'SELECT infoTxt from hotspotModel where id= 14'
+		var infoCollection = Alloy.Collections.infoModel;
+		infoCollection.fetch({
+			query : 'SELECT name, infoTxt from infoModel where id = 1'
 		});
-		var jsonObj = hotspotCollection.toJSON();
-		var txt = JSON.stringify(jsonObj[0].infoTxt);
-		Titanium.API.info(txt);
+		var jsonObj = infoCollection.toJSON();
+		var txt = jsonObj[0].infoTxt;
+		var name = jsonObj[0].name;
 
 		var infoTxtKoster = {
+			title : name,
 			informationKoster : txt
 		};
 

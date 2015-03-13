@@ -4,8 +4,6 @@
 	<Collection src="infospot_trailsModel"></Collection>
 	<Window class="container" onClose="destroyModel">
 		<ScrollView class="headView">
-
-			<!--Fungerar nu, visar rätt bild. Är beroende av pics mappen dock. -->
 			<TableView id="table" dataCollection="trailsModel">
 				<TableViewRow class="row" trailNo="{id}" name="{name}" image="{cover_pic}" length="{length}" infoTxt="{infoTxt}" color="{color}" onClick="showTrailDetails">
 					<View class="listItem">
@@ -13,9 +11,10 @@
 						<View id="lblView">
 							<Label class="lblListTitle" text="{name}"/>
 							<Label class="lblListKm" text="{length}"/> <Label id="lblKm">Km</Label>
+							
 							<View id="iconView"></View>
-							<!-- <ImageView id="bild1" image="pics/toa.png"></ImageView>
-							<ImageView id="bild2" image="pics/fire.png"></ImageView> -->
+							<!-- Här är iconView.... -->
+
 						</View>
 					</View>
 				</TableViewRow>
