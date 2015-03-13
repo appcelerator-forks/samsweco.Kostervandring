@@ -84,22 +84,15 @@ function aboutKoster() {
 		};
 
 		var hotspotDetail = Alloy.createController("hotspotDetail", infoTxtKoster).getView();
-		// hotspotDetail.open();
-		$.koster.add(hotspotDetail);
+		hotspotDetail.open();
+		// $.koster.add(hotspotDetail);
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "Index - aboutKoster");
 	}
 }
 
-// function toHome(e) {
-	// var index = Alloy.createController('index').getView();
-	// index.open();
-// }
-
-function toHotspots(e) {
-	var hotspots = Alloy.createController('hotspots').getView();
-	hotspots.open();
-}
+//------------------
+//Knapparna i menyn
 
 function toMap(e) {
 	var mapWind = Alloy.createController('map').getView();
