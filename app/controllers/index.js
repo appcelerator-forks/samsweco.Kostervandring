@@ -1,3 +1,6 @@
+
+$.index.open();
+
 function nextPage() {
 
 	try {
@@ -91,5 +94,36 @@ function aboutKoster() {
 	}
 }
 
-$.index.open();
+function toHome(e) {
+	var index = Alloy.createController('index').getView();
+	index.open();
+}
+
+function toHotspots(e) {
+	var hotspots = Alloy.createController('hotspots').getView();
+	hotspots.open();
+}
+
+function toMap(e) {
+	var mapWind = Alloy.createController('map').getView();
+	$.mapWin.add(mapWind);
+}
+
+function toQuiz(e) {
+	var quizDetail = Alloy.createController('quizDetail').getView();
+	$.quizWin.add(quizDetail);
+}
+
+function toTrails() {
+	var trails = Alloy.createController('trails').getView();
+	$.hikeWin.add(trails);
+}
+
+function toInfo(e) {
+	var info = Alloy.createController('infoList').getView();
+	$.infoWin.add(info);
+}
+
+
+
 

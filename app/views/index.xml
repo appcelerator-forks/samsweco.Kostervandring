@@ -1,24 +1,34 @@
 <Alloy>
 	<Collection src="hotspotModel" />
-		<Collection src="infoModel" />
-	<Window class="container" backgroundImage = "/pics/front.png">
+	<TabGroup backgroundColor="#fff" height="100%" tabsTintColor="#FF9966">
+		<Tab id="koster" class="btn" title="Koster" icon="/images/kosterStarMenuCopy.png" >
+			<Window id="koster" class="container" backgroundImage = "/pics/front.png" >
+				<ScrollView class="headView">
+					<ImageView class="imgKoster" image="/pics/logga.png"></ImageView>
+					<Label id="lblheadInfo"></Label>
+					<View class="buttonView">
+						<Button class="btnIndex" onClick="aboutKoster">Mer om Nationalparken</Button>
+						<Button class="btnIndex" onClick="aboutNaturum">Mer om Naturum</Button>
+						<Button class="btnIndex" onClick="hotspotView">Mer om Hotspots</Button>
+						<Button class="btnIndex" onClick="quizView">Starta vårt quiz!</Button>
+						<Button class="btnIndex" onClick="showError">Felmeddelande!</Button>
+					</View>
+					<Widget id="alertHotspot" src="alertWidgetHotspot" name="widget" />
+				</ScrollView>
+			</Window>
+		</Tab>
+		<Tab id="hike" title="Vandring" icon="/images/hikeMenuCopy.png" onClick="toTrails">
+			<Window id="hikeWin" onOpen="toTrails" />
+		</Tab>
+		<Tab id="map" title="Karta" icon="/images/mapMenuCopy.png">
+			<Window id="mapWin" onOpen="toMap" />
+		</Tab>
+		<Tab id="quiz" title="Quiz" icon="/images/quizMenuCopy.png">
+			<Window id="quizWin" onOpen="toQuiz" />
+		</Tab>
+		<Tab id="info" title="Info" icon="/images/infoMenuCopy.png">
+			<Window id="infoWin" onOpen="toInfo" />
+		</Tab>
+	</TabGroup>
 
-		<ScrollView class="headView">
-			<ImageView class="imgKoster" image="/pics/logga.png"></ImageView>
-			<Label id="lblheadInfo"></Label>
-			<View class="buttonView">
-				<Button class="btnIndex" onClick="aboutKoster">Mer om Nationalparken</Button>
-				<Button class="btnIndex" onClick="aboutNaturum">Mer om Naturum</Button>
-				<Button class="btnIndex" onClick="hotspotView">Mer om Hotspots</Button>
-				<Button class="btnIndex" onClick="quizView">Starta vårt quiz!</Button>
-			</View>
-			
-			<Widget id="alertHotspot" src="alertWidgetHotspot" name="widget" />
-		</ScrollView>
-		
-		<View id="menuView">
-			<Widget id="menuBar" src="menuWidget" name="widget" />
-		</View>
-
-	</Window>
 </Alloy>
