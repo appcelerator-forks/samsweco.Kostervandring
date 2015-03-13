@@ -2,7 +2,7 @@
 	<Collection src="trailsModel" />
 	<Collection src="infospotModel"></Collection>
 	<Collection src="infospot_trailsModel"></Collection>
-	<Window class="container" onClose="destroyModel">
+	<View class="container" onClose="destroyModel">
 		<ScrollView class="headView">
 			<TableView id="table" dataCollection="trailsModel">
 				<TableViewRow class="row" trailNo="{id}" name="{name}" image="{cover_pic}" length="{length}" infoTxt="{infoTxt}" color="{color}" onClick="showTrailDetails">
@@ -23,9 +23,9 @@
 		</ScrollView>
 
 		<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
-		<View id="menuView">
+		<!-- <View id="menuView">
 			<Widget id="menuBar" src="menuWidget" name="widget"/>
-		</View>
+		</View> -->
 
-	</Window>
+	</View>
 </Alloy>

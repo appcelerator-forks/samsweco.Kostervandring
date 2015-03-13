@@ -1,6 +1,6 @@
 <Alloy>
 	<Collection src="hotspotModel" />
-	<Window class="container">
+	<View class="container">
 		<ScrollView class="headView">
 			<TableView id="table" dataCollection="hotspotModel">
 				<TableViewRow class="row" number="{id}" name="{name}" infoTxt="{infoTxt}" xkoord="{xkoord}" ykoord="{ykoord}" image="{cover_pic}" onClick="showHotspotDetails">
@@ -15,9 +15,8 @@
 		</ScrollView>
 
 		<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
-		<View id="menuView">
+		<!-- <View id="menuView">
 			<Widget id="menuBar" src="menuWidget" name="widget"/>
-		</View>
-
-	</Window>
+		</View> -->
+	</View>
 </Alloy>

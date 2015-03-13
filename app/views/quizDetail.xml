@@ -1,6 +1,6 @@
 <Alloy>
 	<Collection src="quizModel"/>
-	<Window class="container">
+	<View class="container">
 		<ScrollView class="headView">
 
 			<View id="spela" class="views" visible="true">
@@ -24,8 +24,8 @@
 
 		</ScrollView>
 		<Widget id="alert" src="alertWidgetQuiz" name="widget" />
-		<View id="menuView">
+		<!-- <View id="menuView">
 			<Widget id="menuBar" src="menuWidget" name="widget"/>
-		</View>
-	</Window>
+		</View> -->
+	</View>
 </Alloy>
