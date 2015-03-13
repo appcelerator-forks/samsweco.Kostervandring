@@ -2,7 +2,7 @@
 	<Collection src="hotspotModel" />
 	<TabGroup backgroundColor="#fff" height="100%" tabsTintColor="#FF9966">
 		<Tab id="koster" class="btn" title="Koster" icon="/images/kosterStarMenuCopy.png" >
-			<Window id="koster" class="container" backgroundImage = "/pics/front.png" >
+			<Window id="koster" title="Kosterhavets nationalpark" class="container" backgroundImage = "/pics/front.png" >
 				<ScrollView class="headView">
 					<ImageView class="imgKoster" image="/pics/logga.png"></ImageView>
 					<Label id="lblheadInfo"></Label>
@@ -18,16 +18,16 @@
 			</Window>
 		</Tab>
 		<Tab id="hike" title="Vandring" icon="/images/hikeMenuCopy.png" onClick="toTrails">
-			<Window id="hikeWin" onOpen="toTrails" />
+			<Window id="hikeWin" title="Vandringsleder" onOpen="toTrails" />
 		</Tab>
 		<Tab id="map" title="Karta" icon="/images/mapMenuCopy.png">
-			<Window id="mapWin" onOpen="toMap" />
+			<Window id="mapWin" title="Karta" onOpen="toMap" />
 		</Tab>
 		<Tab id="quiz" title="Quiz" icon="/images/quizMenuCopy.png">
-			<Window id="quizWin" onOpen="toQuiz" />
+			<Window id="quizWin" title="Quiz" onOpen="toQuiz" />
 		</Tab>
 		<Tab id="info" title="Info" icon="/images/infoMenuCopy.png">
-			<Window id="infoWin" onOpen="toInfo" />
+			<Window id="infoWin" title="Turistinformation" onOpen="toInfo" />
 		</Tab>
 	</TabGroup>
 
