@@ -123,7 +123,7 @@ function showTrailDetails(e) {
 		};
 
 		var trailDetail = Alloy.createController("trailDetail", args).getView();
-		// $.navWinHike.openWindow(trailDetail);
+		$.navWinHike.openWindow(trailDetail);
 
 	// } catch(e) {
 		// newError("Något gick fel när sidan skulle laddas, prova igen!", "Trails - showTrailDetails");
