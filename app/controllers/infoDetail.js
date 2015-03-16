@@ -4,6 +4,7 @@ try {
 	$.lblInfoText.text = args.infoTxt || "Info";
 	$.lblInfoLink.text = args.link || "url";
 	$.infoImg.image = args.img;
+	var infoid = args.id;
 
 	var url = args.link;
 

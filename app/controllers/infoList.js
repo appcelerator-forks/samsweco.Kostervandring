@@ -38,6 +38,7 @@ function setRowData() {
 
 	for (var i = 0; i < rows.length; i++) {
 		var row = Ti.UI.createTableViewRow({
+			id : i + 1,
 			height : '80dp',
 			top : 0,
 			hasChild : true
@@ -48,7 +49,7 @@ function setRowData() {
 			layout : 'horizontal'
 
 		});
-		
+
 		var verticalView = Ti.UI.createView({
 			layout : 'vertical'
 		});
@@ -58,15 +59,15 @@ function setRowData() {
 			width : '90dp',
 			left : 10
 		});
-		
+
 		var lblName = Ti.UI.createLabel({
 			left : 10,
 			font : {
 				fontSize : 12
 			}
 		});
-		
-		coverimg.image = "/pics/"+rows[i].cover_img;
+
+		coverimg.image = "/pics/" + rows[i].cover_img;
 		lblName.text = rows[i].name;
 
 		verticalView.add(lblName);
@@ -79,5 +80,41 @@ function setRowData() {
 	}
 
 	$.table.data = tableViewData;
+
+}
+
+function getInfoDetails(e) {
+
+	// try {
+		var id = e.rowData.id;
+		Ti.API.info("infoid : " + id);
+
+		var infoCollection = Alloy.Collections.infoModel;
+		infoCollection.fetch({
+			query : 'SELECT * from infoModel where id = "' + id + '"'
+		});
+
+		var jsonObj = infoCollection.toJSON();
+		var txt = jsonObj[0].infoTxt;
+		var name = jsonObj[0].name;
+		var image = jsonObj[0].cover_img;
+		var urllink = jsonObj[0].url;
+
+		var infoText = {
+			title : name,
+			infoTxt : txt,
+			id : id,
+			img : image,
+			link : urllink
+		};
+		
+		Ti.API.info("infodetaljer : " + infoText);
+
+		var infoDetail = Alloy.createController("infoDetail", infoText).getView();
+		// $.navWinInfo.openWindow(infoDetail);
+
+	// } catch(e) {
+		// newError("Något gick fel när sidan skulle laddas, prova igen!", "infoList - getInfoDetails");
+	// }
 
 }

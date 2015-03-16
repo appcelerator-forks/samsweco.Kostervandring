@@ -29,7 +29,9 @@
 			<Window id="quizWin" onOpen="toQuiz" navBarHidden="true" />
 		</Tab>
 		<Tab id="info" title="Info" icon="/images/infoMenuCopy.png">
-			<Window id="infoWin" onOpen="toInfo" navBarHidden="true" />
+			<NavigationWindow id="navWinInfo" platform="ios">
+				<Window id="infoWin" onOpen="toInfo" navBarHidden="true" />
+			</NavigationWindow>
 		</Tab>
 	</TabGroup>
 
