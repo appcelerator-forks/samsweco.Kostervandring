@@ -47,13 +47,13 @@ function setRowData() {
 			var lblName = Ti.UI.createLabel({
 				left : 10,
 				font : {
-					fontSize : 14
+					fontSize : 13
 				}
 			});
 			var lblDistance = Ti.UI.createLabel({
 				left : 10,
 				font : {
-					fontSize : 12
+					fontSize : 11
 				}
 			});
 

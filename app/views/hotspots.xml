@@ -1,22 +1,12 @@
 <Alloy>
 	<Collection src="hotspotModel" />
-	<Window class="container">
-		<ScrollView class="headView">
-			<TableView id="table">
-				<TableViewRow class="row" onClick="showHotspotDetails" hasChild="true"> <!-- class="row" number="{id}" name="{name}" infoTxt="{infoTxt}" xkoord="{xkoord}" ykoord="{ykoord}" image="{cover_pic}" onClick="showHotspotDetails"> -->
-					<!-- <View class="listItem">
-						<ImageView class="listImg" image="{cover_pic}"/>
-						<View id="lblView">
-							<Label class="lblListTitle" text="{name}"/>				
-						</View>
-					</View> -->
-				</TableViewRow>
-			</TableView>
-		</ScrollView>
-
-		<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
-		<!-- <View id="menuView">
-			<Widget id="menuBar" src="menuWidget" name="widget"/>
-		</View> -->
-	</Window>
+	<NavigationWindow id="navwin" platform="ios">
+		<Window title="Hotspots" class="container">
+			<ScrollView class="headView">
+				<TableView id="table" onClick="getHotspotInfo">
+					<TableViewRow class="row"></TableViewRow> 
+				</TableView>
+			</ScrollView>
+		</Window>
+	</NavigationWindow>
 </Alloy>

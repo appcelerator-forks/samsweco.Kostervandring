@@ -1,6 +1,6 @@
 var args = arguments[0] || {};
 
-$.hotspots.open();
+// $.hotspots.open();
 setRowData();
 
 try {
@@ -16,9 +16,9 @@ function showHotspotDetails(hotspot) {
 		var args = {
 			id : selectedHotspot.number,
 			title : selectedHotspot.name,
-			infoTxt : selectedHotspot.infoTxt,
-			xkoord : selectedHotspot.xkoord,
-			ykoord : selectedHotspot.ykoord
+			infoTxt : selectedHotspot.infoTxt
+			// xkoord : selectedHotspot.xkoord,
+			// ykoord : selectedHotspot.ykoord
 		};
 
 		var hotspotDetail = Alloy.createController("hotspotDetail", args).getView();
@@ -35,6 +35,8 @@ function setRowData() {
 
 	var tableViewData = [];
 	var rows = hotspotCollection.toJSON();
+	
+	Titanium.API.info("Rows : " + JSON.stringify(rows));
 
 	for (var i = 0; i < rows.length; i++) {
 		var row = Ti.UI.createTableViewRow({
@@ -42,13 +44,18 @@ function setRowData() {
 			top : 0,
 			hasChild : true
 		});
-
+		
+		// row.onClick(getHotspotInfo());
+		
+		// row.addEventListener('click', function(e) {
+			// getHotspotInfo();
+		// }); 
+		
 		var listItem = Ti.UI.createView({
 			height : '60dp',
 			layout : 'horizontal'
-
 		});
-		
+
 		var verticalView = Ti.UI.createView({
 			layout : 'vertical'
 		});
@@ -58,18 +65,18 @@ function setRowData() {
 			width : '90dp',
 			left : 10
 		});
-		
+
 		var lblName = Ti.UI.createLabel({
 			left : 10,
 			font : {
-				fontSize : 12
+				fontSize : 13
 			}
 		});
-		
+
 		var lblPlace = Ti.UI.createLabel({
 			left : 10,
 			font : {
-				fontSize : 12
+				fontSize : 11
 			}
 		});
 
@@ -90,3 +97,35 @@ function setRowData() {
 
 }
 
+// function openWindow(e) {
+// var hotspotDetail = Alloy.createController("hotspotDetail", showHotspotDetails()).getView();
+// $.navwin.openWindow(hotspotDetail);
+// }
+
+function getHotspotInfo(e) {
+
+	try {
+		var id = e.rowData.index;
+		
+		var hotspotCollection = Alloy.Collections.hotspotModel;
+		hotspotCollection.fetch({
+			query : 'SELECT name, infoTxt from hotspotModel where id = "' + id + '"'
+		});
+
+		var jsonObj = hotspotCollection.toJSON();
+		var txt = jsonObj[0].infoTxt;
+		var name = jsonObj[0].name;
+
+		var hotspotTxt = {
+			title : name,
+			infoTxt : txt
+		};
+
+		var hotspotDetail = Alloy.createController("hotspotDetail", hotspotTxt).getView();
+		$.navwin.openWindow(hotspotDetail);
+		
+	} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "Index");
+	}
+
+}

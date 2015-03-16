@@ -6,7 +6,7 @@
 ".container": {
 	layout: 'vertical',
 	top: 0,
-	backgroundColor: '#fff3e5',
+	backgroundColor: 'white',
 	height: '100%'
 }
 

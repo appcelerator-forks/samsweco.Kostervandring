@@ -104,4 +104,4 @@ function setKosterInfo() {
 	$.lblHotspotInfoTxt.text = args.informationKoster;
 }
 
-$.hotspotDetail.open();
+// $.hotspotDetail.open();

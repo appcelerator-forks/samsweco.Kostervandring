@@ -1,15 +1,12 @@
-
 $.index.open();
 
 function nextPage() {
-
 	try {
 		var trails = Alloy.createController("trails").getView();
 		trails.open();
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "Index - nextPage");
 	}
-
 }
 
 function hotspotView() {
@@ -19,16 +16,13 @@ function hotspotView() {
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "Index - hotspotView");
 	}
-
 }
 
 function showError() {
-
 	newError("Nu gick något fel när du tryckte på knappen!", "Index - showError");
 }
 
 function aboutNaturum() {
-
 	try {
 
 		var infoCollection = Alloy.Collections.infoModel;
