@@ -1,6 +1,6 @@
 <Alloy>
 	<Collection src="mediaModel"></Collection>
-		<View class="container">
+		<Window class="container">
 
 			<ScrollView class="headView">
 				<ScrollableView id="slideShowHotspotDetail" showPagingControl="true"/>
@@ -14,5 +14,5 @@
 			<Widget id="menuBar" src="menuWidget" name="widget"/>
 			</View> -->
 
-		</View>
+		</Window>
 </Alloy>

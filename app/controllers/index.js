@@ -14,24 +14,12 @@ function nextPage() {
 
 function hotspotView() {
 	try {
-
 		var hotspots = Alloy.createController("hotspots").getView();
-		// hotspots.open();
-		$.koster.add(hotspots);
-
+		hotspots.open();
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "Index - hotspotView");
 	}
 
-}
-
-function quizView() {
-	try {
-		var quiz = Alloy.createController("quizDetail").getView();
-		quiz.open();
-	} catch(e) {
-		newError("Något gick fel när sidan skulle laddas, prova igen!", "Index - quizView");
-	}
 }
 
 function showError() {
@@ -86,7 +74,6 @@ function aboutKoster() {
 
 		var hotspotDetail = Alloy.createController("hotspotDetail", infoTxtKoster).getView();
 		hotspotDetail.open();
-		// $.koster.add(hotspotDetail);
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "Index - aboutKoster");
 	}
