@@ -3,7 +3,8 @@ var args = arguments[0] || {};
 $.lblHotspotName.text = args.title || "Name";
 $.lblHotspotInfoTxt.text = args.infoTxt || "Info";
 
-var hotspotId = args.id;
+var hotspotId = args.id || "Id";
+
 setPics();
 
 function setPics() {
@@ -33,16 +34,15 @@ function selectHotspotPics() {
 		});
 
 		var jsonObj = mediaCollection.toJSON();
+		
 		for (var i = 0; i < jsonObj.length; i++) {
 			var view_args = {
-				backgroundImage : '/pics/' + jsonObj[i].filename
+				backgroundImage : "/pics/" + jsonObj[i].filename
 			};
 
 			var img_view = Ti.UI.createView(view_args);
 			$.slideShowHotspotDetail.addView(img_view);
 		}
-
-		Titanium.API.info(img_view);
 		
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "HotspotDetail - selectHotspotPics");

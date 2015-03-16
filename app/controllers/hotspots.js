@@ -35,22 +35,21 @@ function setRowData() {
 
 	var tableViewData = [];
 	var rows = hotspotCollection.toJSON();
-	
-	Titanium.API.info("Rows : " + JSON.stringify(rows));
 
 	for (var i = 0; i < rows.length; i++) {
 		var row = Ti.UI.createTableViewRow({
+			id : i + 1,
 			height : '80dp',
 			top : 0,
 			hasChild : true
 		});
-		
+
 		// row.onClick(getHotspotInfo());
-		
+
 		// row.addEventListener('click', function(e) {
-			// getHotspotInfo();
-		// }); 
-		
+		// getHotspotInfo();
+		// });
+
 		var listItem = Ti.UI.createView({
 			height : '60dp',
 			layout : 'horizontal'
@@ -80,6 +79,7 @@ function setRowData() {
 			}
 		});
 
+		var id = rows[i].id;
 		coverimg.image = rows[i].cover_pic;
 		lblName.text = rows[i].name;
 		lblPlace.text = "Nordkoster";
@@ -94,7 +94,6 @@ function setRowData() {
 	}
 
 	$.table.data = tableViewData;
-
 }
 
 // function openWindow(e) {
@@ -105,8 +104,8 @@ function setRowData() {
 function getHotspotInfo(e) {
 
 	try {
-		var id = e.rowData.index;
-		
+		var id = e.rowData.id;
+
 		var hotspotCollection = Alloy.Collections.hotspotModel;
 		hotspotCollection.fetch({
 			query : 'SELECT name, infoTxt from hotspotModel where id = "' + id + '"'
@@ -118,12 +117,14 @@ function getHotspotInfo(e) {
 
 		var hotspotTxt = {
 			title : name,
-			infoTxt : txt
+			infoTxt : txt,
+			id : id
 		};
 
+		Ti.API.info(hotspotTxt);
 		var hotspotDetail = Alloy.createController("hotspotDetail", hotspotTxt).getView();
 		$.navwin.openWindow(hotspotDetail);
-		
+
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "Index");
 	}
