@@ -1,6 +1,6 @@
 var args = arguments[0] || {};
 
-setRowData()
+setRowData();
 
 try {
 	var infoCollection = Alloy.Collections.infoModel;
