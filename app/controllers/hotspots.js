@@ -1,6 +1,5 @@
 var args = arguments[0] || {};
 
-// $.hotspots.open();
 setRowData();
 
 try {
@@ -17,8 +16,6 @@ function showHotspotDetails(hotspot) {
 			id : selectedHotspot.number,
 			title : selectedHotspot.name,
 			infoTxt : selectedHotspot.infoTxt
-			// xkoord : selectedHotspot.xkoord,
-			// ykoord : selectedHotspot.ykoord
 		};
 
 		var hotspotDetail = Alloy.createController("hotspotDetail", args).getView();
@@ -43,12 +40,6 @@ function setRowData() {
 			top : 0,
 			hasChild : true
 		});
-
-		// row.onClick(getHotspotInfo());
-
-		// row.addEventListener('click', function(e) {
-		// getHotspotInfo();
-		// });
 
 		var listItem = Ti.UI.createView({
 			height : '60dp',
@@ -96,11 +87,6 @@ function setRowData() {
 	$.table.data = tableViewData;
 }
 
-// function openWindow(e) {
-// var hotspotDetail = Alloy.createController("hotspotDetail", showHotspotDetails()).getView();
-// $.navwin.openWindow(hotspotDetail);
-// }
-
 function getHotspotInfo(e) {
 
 	try {
@@ -121,7 +107,6 @@ function getHotspotInfo(e) {
 			id : id
 		};
 
-		Ti.API.info(hotspotTxt);
 		var hotspotDetail = Alloy.createController("hotspotDetail", hotspotTxt).getView();
 		$.navwin.openWindow(hotspotDetail);
 
