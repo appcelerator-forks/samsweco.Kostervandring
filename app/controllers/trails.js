@@ -32,7 +32,8 @@ function setRowData() {
 	for (var i = 0; i < rows.length; i++) {
 		var row = Ti.UI.createTableViewRow({
 			height : '80dp',
-			top : 0
+			top : 0,
+			hasChild : true
 		});
 
 		var listItem = Ti.UI.createView({
@@ -40,6 +41,7 @@ function setRowData() {
 			layout : 'horizontal'
 
 		});
+		
 		var verticalView = Ti.UI.createView({
 			layout : 'vertical'
 		});
@@ -49,12 +51,14 @@ function setRowData() {
 			width : '90dp',
 			left : 10
 		});
+		
 		var lblName = Ti.UI.createLabel({
 			left : 10,
 			font : {
 				fontSize : 12
 			}
 		});
+		
 		var lblDistance = Ti.UI.createLabel({
 			left : 10,
 			font : {
@@ -66,6 +70,7 @@ function setRowData() {
 		coverimg.image = "/pics/"+rows[i].cover_img;
 		lblName.text = rows[i].name;
 		lblDistance.text = rows[i].length +" km";
+		var trailid = rows[i].id;
 
 		verticalView.add(lblName);
 		verticalView.add(lblDistance);
@@ -75,6 +80,7 @@ function setRowData() {
 
 		row.add(listItem);
 
+		// tableViewData.push(row, {hasChild:true, id:trailid});
 		tableViewData.push(row);
 	}
 

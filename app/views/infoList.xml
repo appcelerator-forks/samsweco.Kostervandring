@@ -3,14 +3,14 @@
 	<View class="container">
 
 		<ScrollView class="headView">
-			<TableView id="table" dataCollection="infoModel">
-				<TableViewRow class="row" name="{name}" infoTxt="{infoTxt}" image="{cover_img}" link="{url}" onClick="showinfoDetails">
-					<View class="listItem">
+			<TableView id="table">
+				<TableViewRow class="row" onClick="showinfoDetails"> <!-- name="{name}" infoTxt="{infoTxt}" image="{cover_img}" link="{url}" > -->
+					<!-- <View class="listItem">
 						<ImageView class="listImg" image="{cover_img}"/>
 						<View id="lblView">
 							<Label class="lblListTitle" text="{name}"/>
 						</View>
-					</View>
+					</View> -->
 				</TableViewRow>
 			</TableView>
 		</ScrollView>

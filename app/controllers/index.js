@@ -16,7 +16,8 @@ function hotspotView() {
 	try {
 
 		var hotspots = Alloy.createController("hotspots").getView();
-		hotspots.open();
+		// hotspots.open();
+		$.koster.add(hotspots);
 
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "Index - hotspotView");
@@ -94,12 +95,12 @@ function aboutKoster() {
 //------------------
 //Knapparna i menyn
 
-function toMap(e) {
+function toMap() {
 	var mapWind = Alloy.createController('map').getView();
 	$.mapWin.add(mapWind);
 }
 
-function toQuiz(e) {
+function toQuiz() {
 	var quizDetail = Alloy.createController('quizDetail').getView();
 	$.quizWin.add(quizDetail);
 }
@@ -109,7 +110,7 @@ function toTrails() {
 	$.hikeWin.add(trails);
 }
 
-function toInfo(e) {
+function toInfo() {
 	var info = Alloy.createController('infoList').getView();
 	$.infoWin.add(info);
 }

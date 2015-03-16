@@ -5,7 +5,7 @@
 	<View class="container" onClose="destroyModel">
 		<ScrollView class="headView">
 			<TableView id="table">
-				<TableViewRow class="row" onClick="showTrailDetails">
+				<TableViewRow class="row" onClick="showTrailDetails" hasChild="true">
 				</TableViewRow>
 			</TableView>
 		</ScrollView>

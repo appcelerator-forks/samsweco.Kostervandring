@@ -2,14 +2,14 @@
 	<Collection src="hotspotModel" />
 	<View class="container">
 		<ScrollView class="headView">
-			<TableView id="table" dataCollection="hotspotModel">
-				<TableViewRow class="row" number="{id}" name="{name}" infoTxt="{infoTxt}" xkoord="{xkoord}" ykoord="{ykoord}" image="{cover_pic}" onClick="showHotspotDetails">
-					<View class="listItem">
+			<TableView id="table">
+				<TableViewRow class="row" onClick="showHotspotDetails" hasChild="true"> <!-- class="row" number="{id}" name="{name}" infoTxt="{infoTxt}" xkoord="{xkoord}" ykoord="{ykoord}" image="{cover_pic}" onClick="showHotspotDetails"> -->
+					<!-- <View class="listItem">
 						<ImageView class="listImg" image="{cover_pic}"/>
 						<View id="lblView">
 							<Label class="lblListTitle" text="{name}"/>				
 						</View>
-					</View>
+					</View> -->
 				</TableViewRow>
 			</TableView>
 		</ScrollView>
