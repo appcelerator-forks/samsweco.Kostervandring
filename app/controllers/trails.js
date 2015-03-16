@@ -9,20 +9,9 @@ try {
 
 setRowData();
 
-//setIconsTrails();
-//FUNKAR EJ!!
-
-// function setIconsTrails() {
-	// var trailsCollection = Alloy.Collections.trailsModel;
-	// trailsCollection.fetch();
-// 
-	// for (var i = 0; i < trailsCollection.length; i++) {
-		// showIcons(i + 1);
-	// }
-// }
-
 function setRowData() {
 
+<<<<<<< HEAD
 	var trailsCollection = Alloy.Collections.trailsModel;
 	trailsCollection.fetch();
 
@@ -82,41 +71,112 @@ function setRowData() {
 
 		// tableViewData.push(row, {hasChild:true, id:trailid});
 		tableViewData.push(row);
-	}
+=======
+	try {
 
-	$.table.data = tableViewData;
+		var trailsCollection = Alloy.Collections.trailsModel;
+		trailsCollection.fetch();
+
+		var tableViewData = [];
+		var rows = trailsCollection.toJSON();
+
+		for (var i = 0; i < rows.length; i++) {
+			var row = Ti.UI.createTableViewRow({
+				height : '80dp',
+				top : 0
+			});
+			
+			row.addEventListener('click', function(e){
+				showTrailDetails(rows[i]+1);
+			});
+
+			var listItem = Ti.UI.createView({
+				height : '60dp',
+				layout : 'horizontal'
+
+			});
+			var verticalView = Ti.UI.createView({
+				layout : 'vertical'
+			});
+
+			var coverimg = Ti.UI.createImageView({
+				height : '60dp',
+				width : '90dp',
+				left : 10
+			});
+			var lblName = Ti.UI.createLabel({
+				left : 10,
+				font : {
+					fontSize : 14
+				}
+			});
+			var lblDistance = Ti.UI.createLabel({
+				left : 10,
+				font : {
+					fontSize : 12
+				}
+			});
+
+			var iconView = showIcons(rows[i].id);
+			coverimg.image = "/pics/" + rows[i].cover_img;
+			lblName.text = rows[i].name;
+			lblDistance.text = rows[i].length + " km";
+
+			verticalView.add(lblName);
+			verticalView.add(lblDistance);
+			listItem.add(coverimg);
+			verticalView.add(iconView);
+			listItem.add(verticalView);
+
+			row.add(listItem);
+
+			tableViewData.push(row);
+		}
+
+		$.table.data = tableViewData;
+	} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "trails - setRowData");
+>>>>>>> origin/master
+	}
 
 }
 
-function showTrailDetails(trail) {
-	try {
-		var selectedTrail = trail.row;
+function showTrailDetails(trail_id) {
+	// try {
+		var trailsCollection = Alloy.Collections.trailsModel;
+		trailsCollection.fetch({
+			query : 'SELECT *  FROM trailsModel where id ="' + trail_id + '"'
+		});
+		
+		//trailsCollection.JSON();
+		
 		var args = {
-			id : selectedTrail.trailNo,
-			title : selectedTrail.name,
-			length : selectedTrail.length,
-			infoTxt : selectedTrail.infoTxt,
-			color : selectedTrail.color
+			id : trailsCollection.id,
+			title : trailsCollection.name,
+			length : trailsCollection.length,
+			infoTxt : trailsCollection.infoTxt,
+			color : trailsCollection.color
 		};
 
+
 		var trailDetail = Alloy.createController("trailDetail", args).getView();
-		trailDetail.open();
-		$.trails.close();
-	} catch(e) {
-		newError("Något gick fel när sidan skulle laddas, prova igen!", "trails - showTrailDetail");
-	}
+		$.hikeWin.add(trailDetail);
+		$.hikeWin.open();
+	// } catch(e) {
+		// newError("Något gick fel när sidan skulle laddas, prova igen!", "trails - showTrailDetail");
+	// }
 
 }
 
 function showIcons(id) {
 	var trail_id = id;
 	var selectedIcons = getIcons(trail_id);
-	
-	var iconView = Ti.UI.createView({
-			layout : 'horizontal',
-			height : '40dp'
 
-		});
+	var iconView = Ti.UI.createView({
+		layout : 'horizontal',
+		height : '40dp'
+
+	});
 
 	for (var i = 0; i < selectedIcons.length; i++) {
 
@@ -128,9 +188,9 @@ function showIcons(id) {
 
 		iconImgView.image = "/piktogram/" + selectedIcons[i].icon;
 		iconView.add(iconImgView);
-		
+
 	}
-		Ti.API.info(JSON.stringify(iconView));
+
 	return iconView;
 }
 
@@ -144,8 +204,6 @@ function getIcons(trail_id) {
 		});
 
 		var infoTrails = infotrailCollection.toJSON();
-
-		Ti.API.info(JSON.stringify(infoTrails));
 
 		return infoTrails;
 
