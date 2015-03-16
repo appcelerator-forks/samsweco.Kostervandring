@@ -9,6 +9,7 @@ try {
 	$.lblTrailInfo.text = args.infoTxt || 'Default infoText'; // "Beskrivning : " + 
 
 	var trailId = args.id;
+	
 } catch(e) {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - set labels");
 }
@@ -48,6 +49,7 @@ function showHotspots() {
 
 		for (var i = 0; i < rows.length; i++) {
 			var row = Ti.UI.createTableViewRow({
+				id : i + 1,
 				layout : 'horizontal',
 				height : '60dp',
 				top: 0

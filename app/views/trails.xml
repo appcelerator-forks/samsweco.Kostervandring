@@ -2,12 +2,12 @@
 	<Collection src="trailsModel" />
 	<Collection src="infospotModel"></Collection>
 	<Collection src="infospot_trailsModel"></Collection>
-	<View class="container" onClose="destroyModel">
+	<!-- <View class="container" onClose="destroyModel"> -->
 		<ScrollView class="headView">
-			<TableView id="table">
-				<TableViewRow class="row" onClick="showTrailDetails" hasChild="true">
+			<TableView id="table" onClick="showTrailDetails">
+				<TableViewRow class="row">
 				</TableViewRow>
 			</TableView>
 		</ScrollView>
-	</View>
+	<!-- </View> -->
 </Alloy>

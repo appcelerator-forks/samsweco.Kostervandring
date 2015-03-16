@@ -18,7 +18,9 @@
 			</Window>
 		</Tab>
 		<Tab id="hike" title="Vandring" icon="/images/hikeMenuCopy.png" onClick="toTrails">
-			<Window id="hikeWin" title="Vandringsleder" onOpen="toTrails" />
+			<NavigationWindow id="navWinHike">
+				<Window id="hikeWin" onOpen="toTrails" />
+			</NavigationWindow>
 		</Tab>
 		<Tab id="map" title="Karta" icon="/images/mapMenuCopy.png">
 			<Window id="mapWin" title="Karta" onOpen="toMap" />
