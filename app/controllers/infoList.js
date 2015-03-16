@@ -109,6 +109,7 @@ function getInfoDetails(e) {
 		};
 		
 		Ti.API.info("infodetaljer : " + infoText);
+		// = "infodetaljer : [object Object]"
 
 		var infoDetail = Alloy.createController("infoDetail", infoText).getView();
 		// $.navWinInfo.openWindow(infoDetail);
