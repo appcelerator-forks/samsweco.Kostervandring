@@ -66,28 +66,15 @@ function setRowData() {
 			}
 		});
 		
-		// var lblPlace = Ti.UI.createLabel({
-			// left : 10,
-			// font : {
-				// fontSize : 12
-			// }
-		// });
-
-		// var iconView = showIcons(rows[i].id);
 		coverimg.image = "/pics/"+rows[i].cover_img;
 		lblName.text = rows[i].name;
-		// lblPlace.text = "Nordkoster";
-		// var hotsid = rows[i].id;
 
 		verticalView.add(lblName);
-		// verticalView.add(lblPlace);
 		listItem.add(coverimg);
-		// verticalView.add(iconView);
 		listItem.add(verticalView);
 
 		row.add(listItem);
 
-		// tableViewData.push(row, {hasChild:true, id:trailid});
 		tableViewData.push(row);
 	}
 

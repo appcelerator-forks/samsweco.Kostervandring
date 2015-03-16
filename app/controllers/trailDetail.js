@@ -52,11 +52,13 @@ function showHotspots() {
 				height : '60dp',
 				top: 0
 				});
+				
 			var coverimg = Ti.UI.createImageView({
 				height : '60dp',
 				width : '90dp',
 				left: 10
 				});
+				
 			var lblName = Ti.UI.createLabel({
 				left: 10,	
 				font: {
