@@ -26,10 +26,6 @@ function setRowData() {
 				hasChild : true
 			});
 
-			row.addEventListener('click', function(e) {
-				showTrailDetails(rows[i] + 1);
-			});
-
 			var listItem = Ti.UI.createView({
 				height : '60dp',
 				layout : 'horizontal'
