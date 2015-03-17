@@ -96,7 +96,6 @@ function getInfoDetails(e) {
 
 	// try {
 		var id = e.rowData.id;
-		Ti.API.info("infoid : " + id);
 
 		var infoCollection = Alloy.Collections.infoModel;
 		infoCollection.fetch({
@@ -116,9 +115,6 @@ function getInfoDetails(e) {
 			img : image,
 			link : urllink
 		};
-		
-		
-		Ti.API.info("infodetaljer : " + JSON.stringify(infoText));
 
 		var infoDetail = Alloy.createController("infoDetail", infoText).getView();
 		infoDetail.open();
