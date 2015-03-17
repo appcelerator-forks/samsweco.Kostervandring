@@ -103,7 +103,33 @@ function getHotspotData() {
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - getHotspotData");
 	}
+}
 
+function showHotspot(e){
+	// try {
+		var id = e.rowData.id;
+
+		var hotspotCollection = Alloy.Collections.hotspotModel;
+		hotspotCollection.fetch({
+			query : 'SELECT name, infoTxt from hotspotModel where id = "' + id + '"'
+		});
+
+		var jsonObj = hotspotCollection.toJSON();
+		var txt = jsonObj[0].infoTxt;
+		var name = jsonObj[0].name;
+
+		var hotspotTxt = {
+			title : name,
+			infoTxt : txt,
+			id : id
+		};
+
+		var hotspotDetail = Alloy.createController("hotspotDetail", hotspotTxt).getView();
+		Alloy.CFG.tabs.activeTab.open(hotspotDetail);
+
+	// } catch(e) {
+		// newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - showHotspot");
+	// }
 }
 
 function showIcons() {

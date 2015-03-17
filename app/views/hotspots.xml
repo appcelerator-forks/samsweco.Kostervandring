@@ -2,12 +2,12 @@
 	<Collection src="hotspotModel" />
 	<NavigationWindow id="navwin" platform="ios">
 		<Window id="hotspotList" title="Hotspots" class="container">
-			
-			<Button id="btnBack" onClick="close">Tillbaka</Button>
-			
+			<LeftNavButton>
+				<Button id="btnNav">Tillbaka</Button>
+			</LeftNavButton>
 			<ScrollView class="headView">
 				<TableView id="table" onClick="getHotspotInfo">
-					<TableViewRow class="row"></TableViewRow> 
+					<TableViewRow class="row"></TableViewRow>
 				</TableView>
 			</ScrollView>
 		</Window>

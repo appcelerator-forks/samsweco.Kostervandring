@@ -16,7 +16,7 @@
 			<Label id="lblLangsVagen">Det här kan du se längs vägen:</Label>
 			<View id="hotspotView">
 				<View id="trail_hotspotView">
-					<TableView id="hotspotTable" />
+					<TableView id="hotspotTable" onClick="showHotspot" />
 				</View>
 			</View>
 			
