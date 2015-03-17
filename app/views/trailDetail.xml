@@ -6,7 +6,6 @@
 		<ScrollView class="headView">
 			<ScrollableView id="slideShowTrails" showPagingControl="true" />
 			<View id="iconrow"></View>
-			<!-- Här är iconrow.... -->
 			<View class="lbls">
 				<Label id="lblTrailName" class="lbltrailDetail"></Label>
 				<Label id="lblTrailLength" class="lbltrailDetail"></Label>

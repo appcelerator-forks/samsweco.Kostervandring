@@ -20,7 +20,6 @@ try {
 
 selectTrailPics();
 showHotspots();
-// setNavBar();
 showIcons();
 
 function selectTrailPics() {
@@ -106,7 +105,7 @@ function getHotspotData() {
 }
 
 function showHotspot(e){
-	// try {
+	try {
 		var id = e.rowData.id;
 
 		var hotspotCollection = Alloy.Collections.hotspotModel;
@@ -127,9 +126,9 @@ function showHotspot(e){
 		var hotspotDetail = Alloy.createController("hotspotDetail", hotspotTxt).getView();
 		Alloy.CFG.tabs.activeTab.open(hotspotDetail);
 
-	// } catch(e) {
-		// newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - showHotspot");
-	// }
+	} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - showHotspot");
+	}
 }
 
 function showIcons() {
@@ -171,18 +170,4 @@ function getIcons() {
 	}
 
 }
-
-// function setNavBar() {
-	// var b = $.UI.create('Button', {
-		// title : "< Vandringsleder",
-		// systemButton : Ti.UI.iPhone.SystemButton.DONE,
-		// top : 2,
-		// left : 0,
-		// backgroundColor : "red"
-	// });
-// 
-	// $.hikeDetailWin.setLeftNavButton(b);
-	// $.hikeDetailWin.add(b);
-// 
-// }
 
