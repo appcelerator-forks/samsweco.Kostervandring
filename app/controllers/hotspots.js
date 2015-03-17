@@ -112,7 +112,8 @@ function getHotspotInfo(e) {
 		};
 
 		var hotspotDetail = Alloy.createController("hotspotDetail", hotspotTxt).getView();
-		hotspotDetail.open();
+		// hotspotDetail.open();
+		$.navwin.openWindow(hotspotDetail);
 
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "Index");

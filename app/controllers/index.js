@@ -80,9 +80,7 @@ function aboutKoster() {
 
 function toMap() {
 	var mapWind = Alloy.createController('map').getView();
-	// $.maptab.open($.map);
 	$.mapWin.add(mapWind);
-	// $.tabs.open(mapWind);
 }
 
 function toQuiz() {

@@ -7,10 +7,6 @@ var hotspotId = args.id || "Id";
 
 setPics();
 
-function close(){
-	$.hotspotDetail.close();
-}
-
 function setPics() {
 
 	try {

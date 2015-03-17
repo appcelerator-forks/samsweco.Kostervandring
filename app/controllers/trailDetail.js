@@ -22,10 +22,6 @@ selectTrailPics();
 showHotspots();
 // setNavBar();
 showIcons();
- 
-function close(){
-	$.hikeDetailWin.close();
-}
 
 function selectTrailPics() {
 	try {

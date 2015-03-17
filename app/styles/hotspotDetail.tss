@@ -10,11 +10,6 @@
 	height: '100%'
 }
 
-"#btnBack": {
-	top: 15,
-	left: 2
-}
-
 "#slideShowHotspotDetail": {
 	height: '50%'
 }
