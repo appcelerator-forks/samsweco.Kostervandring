@@ -100,13 +100,6 @@ function showTrailDetails(e) {
 		var infoText = jsonObj[0].infoTxt;
 		var trailcolor = jsonObj[0].color;
 
-<<<<<<< HEAD
-	var jsonObj = trailsCollection.toJSON();
-	var name = jsonObj[0].name;
-	var traillength = jsonObj[0].length;
-	var infoText = jsonObj[0].infoTxt;
-	var trailcolor = jsonObj[0].color;
-
 	var args = {
 		id : id,
 		title : name,
@@ -124,8 +117,8 @@ function showTrailDetails(e) {
 	// } catch(e) {
 	// newError("Något gick fel när sidan skulle laddas, prova igen!", "Trails - showTrailDetails");
 	// }
-=======
-		var args = {
+	
+	var args = {
 			id : id,
 			title : name,
 			length : traillength,
@@ -143,7 +136,6 @@ function showTrailDetails(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "Trails - showTrailDetails");
 	}
 
->>>>>>> origin/master
 }
 
 function showIcons(id) {

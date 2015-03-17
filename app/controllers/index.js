@@ -76,10 +76,6 @@ function aboutKoster() {
 //------------------
 //Knapparna i menyn
 
-// Alloy.CFG = {
-	// tabGroup : $.tabs
-// };
-
 function toMap() {
 	var mapWind = Alloy.createController('map').getView();
 	// $.maptab.open($.map);
