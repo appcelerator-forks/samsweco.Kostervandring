@@ -16,10 +16,6 @@ try {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "infoDetail - load data into labels");
 }
 
-function close(){
-	$.infoDetail.close();
-}
-
 function openLink(link) {
 	try {
 		var webview = Titanium.UI.createWebView({

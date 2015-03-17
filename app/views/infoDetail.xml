@@ -1,8 +1,6 @@
 <Alloy>
 	<Window id="infoDetail" class="container">
 
-		<Button id="btnBack" onClick="close">Tillbaka</Button>
-
 		<ScrollView class="headView" showVerticalScrollIndicator="true">
 			<ImageView id="infoImg"></ImageView>
 			<Label class="lblInfoDetail" id="lblInfoTitle"></Label>
