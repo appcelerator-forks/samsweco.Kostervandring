@@ -33,9 +33,13 @@
 	}
 }
 
-"#lblInfoTitle" : {
+"#lblInfoTitle": {
 	left: 10,
+	top : 2,
+	color : '#FF9966', 
 	font: {
-		fontSize: 16
+		fontSize: 16,
+		fontWeight : 'bold'
 	}
 }
+

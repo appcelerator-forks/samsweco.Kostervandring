@@ -10,7 +10,6 @@ try {
 
 	var link = $.lblInfoLink;
 	link.addEventListener('click', function(e) {
-		// Titanium.Platform.openURL(args.link);
 		openLink(url);
 	});
 } catch(e) {
