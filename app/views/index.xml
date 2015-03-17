@@ -1,6 +1,7 @@
 <Alloy>
 	<Collection src="hotspotModel" />
-	<TabGroup id="tabs" backgroundColor="#fff" height="100%" tintColor="#FF9966">  <!-- id="tabs" -->
+	<TabGroup id="tabs" backgroundColor="#fff" height="100%" tintColor="#FF9966">
+		<!-- id="tabs" -->
 		<Tab id="koster" class="btn" title="Koster" icon="/images/kosterStarMenuCopy.png" >
 			<Window id="koster" class="container" backgroundImage="/pics/front.png" navBarHidden="true">
 				<ScrollView class="headView">
@@ -16,9 +17,7 @@
 			</Window>
 		</Tab>
 		<Tab id="hikeTab" title="Vandringleder" icon="/images/hikeMenuCopy.png" onClick="toTrails">
-			<!-- <NavigationWindow id="navWinHike" platform="ios"> -->
-				<Window id="hikeWin" title="Vandringleder" onOpen="toTrails" /> <!-- navBarHidden="true" -->
-			<!-- </NavigationWindow> -->
+			<Window id="hikeWin" title="Vandringleder" onOpen="toTrails" />
 		</Tab>
 		<Tab id="maptab" title="Karta" icon="/images/mapMenuCopy.png">
 			<Window id="mapWin" onOpen="toMap" navBarHidden="true" />
@@ -27,9 +26,7 @@
 			<Window id="quizWin" onOpen="toQuiz" navBarHidden="true" />
 		</Tab>
 		<Tab id="info" title="Info" icon="/images/infoMenuCopy.png">
-			<NavigationWindow id="navWinInfo" platform="ios">
-				<Window id="infoWin" onOpen="toInfo" navBarHidden="true" />
-			</NavigationWindow>
+			<Window id="infoWin" onOpen="toInfo" navBarHidden="true" />
 		</Tab>
 	</TabGroup>
 
