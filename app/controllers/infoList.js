@@ -111,9 +111,8 @@ function getInfoDetails(e) {
 		
 		Ti.API.info("infodetaljer : " + JSON.stringify(infoText));
 
-		var infoDetail = Alloy.createController("infoDetail", JSON.stringify(infoText)).getView();
-		Ti.API.info("Skickas : " + JSON.stringify(infoDetail));
-		// $.navWinInfo.openWindow(infoDetail);
+		var infoDetail = Alloy.createController("infoDetail", infoText).getView();
+		infoDetail.open();
 
 	// } catch(e) {
 		// newError("Något gick fel när sidan skulle laddas, prova igen!", "infoList - getInfoDetails");

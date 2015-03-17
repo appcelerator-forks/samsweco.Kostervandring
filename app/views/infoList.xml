@@ -4,7 +4,7 @@
 
 		<ScrollView class="headView">
 			<TableView id="table" onClick="getInfoDetails">
-				<TableViewRow class="row" onClick="showinfoDetails" />
+				<TableViewRow class="row" onClick="getInfoDetails" />
 			</TableView>
 		</ScrollView>
 

@@ -1,5 +1,5 @@
 <Alloy>
-	<View class="container">
+	<Window id="infoDetail" class="container">
 
 		<Button id="btnBack" onClick="close">Tillbaka</Button>
 
@@ -10,10 +10,5 @@
 			<Label class="lblInfoDetail" id="lblInfoLink"></Label>
 		</ScrollView>
 
-		<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
-		<!-- <View id="menuView">
-			<Widget id="menuBar" src="menuWidget" name="widget"/>
-		</View> -->
-
-	</View>
+	</Window>
 </Alloy>
