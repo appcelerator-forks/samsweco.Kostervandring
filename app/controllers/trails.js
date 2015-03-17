@@ -40,7 +40,7 @@ function setRowData() {
 			});
 			var lblName = Ti.UI.createLabel({
 				left : 10,
-				top : '2dp'
+				top : '2dp',
 				color : '#FF9966',
 				font : {
 					fontSize : 13,

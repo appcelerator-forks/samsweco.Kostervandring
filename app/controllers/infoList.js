@@ -61,11 +61,14 @@ function setRowData() {
 		});
 
 		var lblName = Ti.UI.createLabel({
-			left : 10,
-			font : {
-				fontSize : 12
-			}
-		});
+				left : 10,
+				top : '2dp',
+				color : '#FF9966',
+				font : {
+					fontSize : 13,
+					fontWeight : 'bold'
+				}
+			});
 
 		coverimg.image = "/pics/" + rows[i].cover_img;
 		lblName.text = rows[i].name;
