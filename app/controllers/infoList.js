@@ -47,7 +47,6 @@ function setRowData() {
 		var listItem = Ti.UI.createView({
 			height : '80dp',
 			layout : 'horizontal'
-
 		});
 
 		var verticalView = Ti.UI.createView({
@@ -77,7 +76,7 @@ function setRowData() {
 					fontSize : 11,
 				}
 			});
-
+			
 		coverimg.image = "/pics/" + rows[i].cover_img;
 		lblName.text = rows[i].name;
 		lblDesc.text = rows[i].desc;
@@ -90,9 +89,7 @@ function setRowData() {
 		row.add(listItem);
 		tableViewData.push(row);
 	}
-
 	$.table.data = tableViewData;
-
 }
 
 function getInfoDetails(e) {
