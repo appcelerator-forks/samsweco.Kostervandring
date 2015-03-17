@@ -95,7 +95,3 @@ function toInfo() {
 	var info = Alloy.createController('infoList').getView();
 	$.infoWin.add(info);
 }
-
-
-
-
