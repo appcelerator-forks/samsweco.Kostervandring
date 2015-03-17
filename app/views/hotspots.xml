@@ -1,7 +1,10 @@
 <Alloy>
 	<Collection src="hotspotModel" />
 	<!-- <NavigationWindow id="navwin" platform="ios"> -->
-		<Window title="Hotspots" class="container">
+		<Window id="hotspotList" title="Hotspots" class="container">
+			
+			<Button id="btnBack" onClick="close">Tillbaka</Button>
+			
 			<ScrollView class="headView">
 				<TableView id="table" onClick="getHotspotInfo">
 					<TableViewRow class="row"></TableViewRow> 

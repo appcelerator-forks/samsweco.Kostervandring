@@ -22,9 +22,7 @@ selectTrailPics();
 showHotspots();
 // setNavBar();
 showIcons();
-
-// $.btn.addEventListner('click', close);
-// 
+ 
 function close(){
 	$.hikeDetailWin.close();
 }

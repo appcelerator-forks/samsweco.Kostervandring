@@ -1,6 +1,9 @@
 <Alloy>
 	<Collection src="mediaModel"></Collection>
-	<Window class="container">
+	<Window id="hotspotDetail" class="container">
+		
+		<Button id="btnBack" onClick="close">Tillbaka</Button>
+		
 		<ScrollView class="headView">
 			<ScrollableView id="slideShowHotspotDetail" showPagingControl="true"/>
 			<Label id="lblHotspotName" class="lblhotspotDetail"></Label>

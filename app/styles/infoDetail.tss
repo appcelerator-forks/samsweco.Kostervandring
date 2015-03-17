@@ -10,6 +10,11 @@
 	height: '100%'
 }
 
+"#btnBack": {
+	top: 15,
+	left: 2
+}
+
 "#menuView": {
 	layout: 'horizontal',
 	bottom: 0,
