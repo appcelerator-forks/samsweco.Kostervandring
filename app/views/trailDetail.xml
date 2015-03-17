@@ -2,7 +2,7 @@
 	<Collection src="mediaModel"></Collection>
 	<Collection src="hotspotModel"></Collection>
 	<Collection src="infospotModel"></Collection>
-	<View class="container">
+	<Window id="hikeDetailWin" class="container" title="Vandring">
 
 		<ScrollView class="headView">
 			<ScrollableView id="slideShowTrails" showPagingControl="true" />
@@ -33,5 +33,5 @@
 			<Widget id="menuBar" src="menuWidget" name="widget"/>
 		</View> -->
 
-	</View>
+	</Window>
 </Alloy>

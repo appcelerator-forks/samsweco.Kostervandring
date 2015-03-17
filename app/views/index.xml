@@ -17,10 +17,10 @@
 				</ScrollView>
 			</Window>
 		</Tab>
-		<Tab id="hike" title="Vandring" icon="/images/hikeMenuCopy.png" onClick="toTrails">
-			<NavigationWindow id="navWinHike" platform="ios">
-				<Window id="hikeWin" onOpen="toTrails" navBarHidden="true" />
-			</NavigationWindow>
+		<Tab id="hike" title="Vandringleder" icon="/images/hikeMenuCopy.png" onClick="toTrails">
+			<!-- <NavigationWindow id="navWinHike" platform="ios"> -->
+				<Window id="hikeWin" title="Vandringleder" onOpen="toTrails" /> <!-- navBarHidden="true" -->
+			<!-- </NavigationWindow> -->
 		</Tab>
 		<Tab id="map" title="Karta" icon="/images/mapMenuCopy.png">
 			<Window id="mapWin" onOpen="toMap" navBarHidden="true" />

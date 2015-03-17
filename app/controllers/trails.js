@@ -83,9 +83,9 @@ function setRowData() {
 // trailsCollection.fetch({
 // query : 'SELECT *  FROM trailsModel where id ="' + trail_id + '"'
 // });
-// 
+//
 // //trailsCollection.JSON();
-// 
+//
 // var args = {
 // id : trailsCollection.id,
 // title : trailsCollection.name,
@@ -93,48 +93,49 @@ function setRowData() {
 // infoTxt : trailsCollection.infoTxt,
 // color : trailsCollection.color
 // };
-// 
+//
 // var trailDetail = Alloy.createController("trailDetail", args).getView();
 // $.hikeWin.add(trailDetail);
 // $.hikeWin.open();
 // // } catch(e) {
 // // newError("Något gick fel när sidan skulle laddas, prova igen!", "trails - showTrailDetail");
 // // }
-// 
+//
 // }
 
 function showTrailDetails(e) {
 
 	// try {
-		var id = e.rowData.id;
-		Ti.API.info("trailid : " + id);
-		
-		var trailsCollection = Alloy.Collections.trailsModel;
-		trailsCollection.fetch({
-			query : 'SELECT * FROM trailsModel where id ="' + id + '"'
-		});
+	var id = e.rowData.id;
+	Ti.API.info("trailid : " + id);
 
-		var jsonObj = trailsCollection.toJSON();
-		var name = jsonObj[0].name;
-		var traillength = jsonObj[0].length;
-		var infoText = jsonObj[0].infoTxt;
-		var trailcolor = jsonObj[0].color;
+	var trailsCollection = Alloy.Collections.trailsModel;
+	trailsCollection.fetch({
+		query : 'SELECT * FROM trailsModel where id ="' + id + '"'
+	});
 
-		var args = {
-			id : id,
-			title : name,
-			length : traillength,
-			infoTxt : infoText,
-			color : trailcolor
-		};
+	var jsonObj = trailsCollection.toJSON();
+	var name = jsonObj[0].name;
+	var traillength = jsonObj[0].length;
+	var infoText = jsonObj[0].infoTxt;
+	var trailcolor = jsonObj[0].color;
 
-		Ti.API.info("Traildetaljer : " + args);
+	var args = {
+		id : id,
+		title : name,
+		length : traillength,
+		infoTxt : infoText,
+		color : trailcolor
+	};
 
-		var trailDetail = Alloy.createController("trailDetail", args).getView();
-		// $.navWinHike.openWindow(trailDetail);
+	Ti.API.info("Traildetaljer : " + JSON.stringify(args));
+
+	var trailDetail = Alloy.createController("trailDetail", args).getView();
+	// $.hikeWin.add(trailDetail);
+	trailDetail.open();
 
 	// } catch(e) {
-		// newError("Något gick fel när sidan skulle laddas, prova igen!", "Trails - showTrailDetails");
+	// newError("Något gick fel när sidan skulle laddas, prova igen!", "Trails - showTrailDetails");
 	// }
 
 }

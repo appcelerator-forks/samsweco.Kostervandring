@@ -108,10 +108,11 @@ function getInfoDetails(e) {
 			link : urllink
 		};
 		
-		Ti.API.info("infodetaljer : " + infoText);
-		// = "infodetaljer : [object Object]"
+		
+		Ti.API.info("infodetaljer : " + JSON.stringify(infoText));
 
-		var infoDetail = Alloy.createController("infoDetail", infoText).getView();
+		var infoDetail = Alloy.createController("infoDetail", JSON.stringify(infoText)).getView();
+		Ti.API.info("Skickas : " + JSON.stringify(infoDetail));
 		// $.navWinInfo.openWindow(infoDetail);
 
 	// } catch(e) {

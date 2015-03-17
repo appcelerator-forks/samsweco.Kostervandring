@@ -1,5 +1,6 @@
 var args = arguments[0] || {};
 
+setNavBar();
 //$.trailDetail.open();
 
 try {
@@ -141,6 +142,12 @@ function getIcons() {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - getIcons");
 	}
 
+}
+
+function setNavBar() {
+	$.hikeDetailWin.leftNavButton = $.UI.create('Button', {
+		title : '< Vandringsleder'
+	});
 }
 
 
