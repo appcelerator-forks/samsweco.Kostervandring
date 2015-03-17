@@ -45,7 +45,7 @@ function setRowData() {
 		});
 
 		var listItem = Ti.UI.createView({
-			height : '60dp',
+			height : '80dp',
 			layout : 'horizontal'
 
 		});
@@ -55,7 +55,7 @@ function setRowData() {
 		});
 
 		var coverimg = Ti.UI.createImageView({
-			height : '60dp',
+			height : '80dp',
 			width : '90dp',
 			left : 10
 		});

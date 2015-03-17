@@ -12,7 +12,6 @@ setRowData();
 function setRowData() {
 
 	try {
-
 		var trailsCollection = Alloy.Collections.trailsModel;
 		trailsCollection.fetch();
 
@@ -28,7 +27,6 @@ function setRowData() {
 			});
 
 			var listItem = Ti.UI.createView({
-				height : '60dp',
 				layout : 'horizontal'
 
 			});
@@ -37,18 +35,28 @@ function setRowData() {
 			});
 
 			var coverimg = Ti.UI.createImageView({
-				height : '60dp',
-				width : '90dp',
+				width : '110dp',
 				left : 10
 			});
 			var lblName = Ti.UI.createLabel({
 				left : 10,
+				top : '2dp'
+				color : '#FF9966',
 				font : {
-					fontSize : 13
+					fontSize : 13,
+					fontWeight : 'bold'
 				}
 			});
 			var lblDistance = Ti.UI.createLabel({
 				left : 10,
+				top : 0,
+				font : {
+					fontSize : 11
+				}
+			});
+			var lblColor = Ti.UI.createLabel({
+				left : 10,
+				top : 0,
 				font : {
 					fontSize : 11
 				}
@@ -57,51 +65,23 @@ function setRowData() {
 			var iconView = showIcons(rows[i].id);
 			coverimg.image = "/pics/" + rows[i].cover_img;
 			lblName.text = rows[i].name;
-			lblDistance.text = rows[i].length + " km";
+			lblDistance.text = 'Sträcka : ' + rows[i].length + " km";
+			lblColor.text = 'Färgmarkering : ' + rows[i].color;
 
 			verticalView.add(lblName);
+			verticalView.add(lblColor);
 			verticalView.add(lblDistance);
 			listItem.add(coverimg);
 			verticalView.add(iconView);
 			listItem.add(verticalView);
-
 			row.add(listItem);
-
 			tableViewData.push(row);
 		}
-
 		$.table.data = tableViewData;
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "trails - setRowData");
 	}
-
 }
-
-// function showTrailDetails(trail_id) {
-// // try {
-// var trailsCollection = Alloy.Collections.trailsModel;
-// trailsCollection.fetch({
-// query : 'SELECT *  FROM trailsModel where id ="' + trail_id + '"'
-// });
-//
-// //trailsCollection.JSON();
-//
-// var args = {
-// id : trailsCollection.id,
-// title : trailsCollection.name,
-// length : trailsCollection.length,
-// infoTxt : trailsCollection.infoTxt,
-// color : trailsCollection.color
-// };
-//
-// var trailDetail = Alloy.createController("trailDetail", args).getView();
-// $.hikeWin.add(trailDetail);
-// $.hikeWin.open();
-// // } catch(e) {
-// // newError("Något gick fel när sidan skulle laddas, prova igen!", "trails - showTrailDetail");
-// // }
-//
-// }
 
 function showTrailDetails(e) {
 
@@ -133,11 +113,10 @@ function showTrailDetails(e) {
 	var trailDetail = Alloy.createController("trailDetail", args).getView();
 	// $.tabGroup.hikeTab.open(trailDetail);
 	trailDetail.open();
-	
+
 	// } catch(e) {
 	// newError("Något gick fel när sidan skulle laddas, prova igen!", "Trails - showTrailDetails");
 	// }
-
 }
 
 function showIcons(id) {
@@ -146,15 +125,16 @@ function showIcons(id) {
 
 	var iconView = Ti.UI.createView({
 		layout : 'horizontal',
-		height : '40dp'
+		height : '30dp',
+		top : '5dp'
 
 	});
 
 	for (var i = 0; i < selectedIcons.length; i++) {
 
 		var iconImgView = Ti.UI.createImageView({
-			height : '30dp',
-			width : '30dp',
+			height : '25dp',
+			width : '25dp',
 			left : 10
 		});
 

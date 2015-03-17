@@ -11,56 +11,8 @@
 	height: '93%'
 }
 
-"#menuView": {
-	layout: 'horizontal',
-	bottom: 0,
-	height: Titanium.UI.SIZE,
-	width: Ti.UI.FILL,
-	backgroundColor: 'transparent'
-}
-
-"#iconView": {
-	layout: 'horizontal',
-	height: '40dp',
-	left: '10dp',
-	backgroundColor: 'blue'
-}
-
-".listItem": {
-	height: 60,
-	layout: 'horizontal',
-	top: 10
-}
-
-".listImg": {
-	left: 10,
-	height: 60,
-	width: 90
-}
-
-"#lblView": {
-	layout: 'horizontal'
-}
-
-"#lblListTitle": {
-	right: 10,
-	top: 0,
-	color: '#FF9966'
-}
-
-"#lblListKm": {
-	top: 20,
-	right: 40,
-	color: '#FF9966'
-}
-
 ".row": {
 	layout: 'vertical',
 	backgroundColor: '#fff3e5'
 }
 
-"#lblKm": {
-	top: 20,
-	right: 10,
-	color: '#FF9966'
-}
