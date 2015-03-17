@@ -69,16 +69,25 @@ function setRowData() {
 					fontWeight : 'bold'
 				}
 			});
+			
+			var lblDesc = Ti.UI.createLabel({
+				left : 10,
+				top : '2dp',
+				font : {
+					fontSize : 11,
+				}
+			});
 
 		coverimg.image = "/pics/" + rows[i].cover_img;
 		lblName.text = rows[i].name;
+		lblDesc.text = rows[i].desc;
 
 		verticalView.add(lblName);
+		verticalView.add(lblDesc);
 		listItem.add(coverimg);
 		listItem.add(verticalView);
 
 		row.add(listItem);
-
 		tableViewData.push(row);
 	}
 
