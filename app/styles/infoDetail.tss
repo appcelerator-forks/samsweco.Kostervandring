@@ -26,6 +26,7 @@
 }
 
 "Label": {
+	top : '2dp',
 	left: 10,
 	right: 10,
 	font: {
@@ -41,5 +42,10 @@
 		fontSize: 16,
 		fontWeight : 'bold'
 	}
+}
+
+"#lblInfoLink" : {
+	left : '10dp',
+	top : '5dp'
 }
 
