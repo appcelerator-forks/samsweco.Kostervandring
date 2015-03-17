@@ -16,7 +16,8 @@ function showinfoDetails(info) {
 			name : selectedInfo.name,
 			infoTxt : selectedInfo.infoTxt,
 			link : selectedInfo.link,
-			img : selectedInfo.image
+			img : selectedInfo.image,
+			desc : selectedInfo.desc
 		};
 
 		var infoDetail = Alloy.createController("infoDetail", args).getView();
@@ -107,13 +108,15 @@ function getInfoDetails(e) {
 		var name = jsonObj[0].name;
 		var image = jsonObj[0].cover_img;
 		var urllink = jsonObj[0].url;
+		var desc = jsonObj[0].desc;
 
 		var infoText = {
 			name : name,
 			infoTxt : txt,
 			id : id,
 			img : image,
-			link : urllink
+			link : urllink,
+			desc : desc
 		};
 
 		var infoDetail = Alloy.createController("infoDetail", infoText).getView();

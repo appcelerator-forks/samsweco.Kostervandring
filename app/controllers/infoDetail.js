@@ -2,7 +2,7 @@ var args = arguments[0] || {};
 try {
 	$.lblInfoTitle.text = args.name || "Title";
 	$.lblInfoText.text = args.infoTxt || "Info";
-	$.lblInfoLink.text = args.link || "url";
+	$.lblInfoLink.text = args.desc || "url";
 	$.infoImg.image = "/pics/" + args.img;
 	var infoid = args.id;
 
