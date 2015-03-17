@@ -3,6 +3,7 @@ var args = arguments[0] || {};
 // $.trailDetail.open();
 
 try {
+	// $.hikeDetailWin.title = args.title;
 	$.lblTrailName.text = args.title || 'Default Name';
 	//"Vandringsled : " +
 	$.lblTrailLength.text = args.length + " kilometer" || 'Default Length';

@@ -37,13 +37,18 @@
 	height: Titanium.UI.SIZE
 }
 
-"#hotspotView": {
+"#trail_hotspotView": {
 	layout: 'vertical',
-	backgroundColor: "#white",
-	borderColor: "#c2c2c2",
+	backgroundColor: "white",
+	borderColor: "#e8e8e8",
 	borderWidth: 1,
 	top: 0,
 	height: Titanium.UI.SIZE
+}
+
+"#hotspotTable": {
+	height: Titanium.UI.SIZE,
+	footerTitle:''
 }
 
 ".headView": {
