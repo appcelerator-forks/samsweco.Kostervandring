@@ -109,7 +109,7 @@ function getInfoDetails(e) {
 		var urllink = jsonObj[0].url;
 
 		var infoText = {
-			title : name,
+			name : name,
 			infoTxt : txt,
 			id : id,
 			img : image,

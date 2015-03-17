@@ -85,7 +85,7 @@ function setRowData() {
 
 function showTrailDetails(e) {
 
-	try {
+	// try {
 		var id = e.rowData.id;
 		Ti.API.info("trailid : " + id);
 
@@ -111,32 +111,13 @@ function showTrailDetails(e) {
 	Ti.API.info("Traildetaljer : " + JSON.stringify(args));
 
 	var trailDetail = Alloy.createController("trailDetail", args).getView();
-	// $.tabGroup.hikeTab.open(trailDetail);
-	trailDetail.open();
+	Alloy.CFG.tabs.activeTab.open(trailDetail);
 
 	// } catch(e) {
 	// newError("Något gick fel när sidan skulle laddas, prova igen!", "Trails - showTrailDetails");
 	// }
-	
-	var args = {
-			id : id,
-			title : name,
-			length : traillength,
-			infoTxt : infoText,
-			color : trailcolor
-		};
-
-		Ti.API.info("Traildetaljer : " + JSON.stringify(args));
-
-		var trailDetail = Alloy.createController("trailDetail", args).getView();
-		// $.tabGroup.hikeTab.open(trailDetail);
-		trailDetail.open();
-
-	} catch(e) {
-		newError("Något gick fel när sidan skulle laddas, prova igen!", "Trails - showTrailDetails");
-	}
-
 }
+
 
 function showIcons(id) {
 	var trail_id = id;

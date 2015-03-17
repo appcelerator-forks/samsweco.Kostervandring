@@ -1,5 +1,7 @@
 $.tabs.open();
 
+Alloy.CFG.tabs = $.tabs;
+
 function nextPage() {
 	try {
 		var trails = Alloy.createController("trails").getView();
