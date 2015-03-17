@@ -21,6 +21,11 @@
 	backgroundColor: 'white'
 }
 
+"#btnBack": {
+	top: 15,
+	left: 2
+}
+
 "#lblTrailName": {
 	left: 10,
 	font: {

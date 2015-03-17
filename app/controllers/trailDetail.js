@@ -23,10 +23,10 @@ showHotspots();
 // setNavBar();
 showIcons();
 
-$.btn.addEventListner('click', close);
-
+// $.btn.addEventListner('click', close);
+// 
 function close(){
-	$.trailDetail.close();
+	$.hikeDetailWin.close();
 }
 
 function selectTrailPics() {
@@ -62,7 +62,8 @@ function showHotspots() {
 				id : i + 1,
 				layout : 'horizontal',
 				height : '60dp',
-				top : 0
+				top : 0,
+				hasChild : true
 			});
 
 			var coverimg = Ti.UI.createImageView({
@@ -78,7 +79,7 @@ function showHotspots() {
 				}
 			});
 
-			coverimg.image = "/pics/" + rows[i].cover_pic;
+			coverimg.image = rows[i].cover_pic;
 			lblName.text = rows[i].name;
 
 			row.add(coverimg);

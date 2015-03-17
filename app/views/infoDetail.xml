@@ -1,6 +1,7 @@
 <Alloy>
 	<View class="container">
 
+
 		<ScrollView class="headView" showVerticalScrollIndicator="true">
 			<ImageView id="infoImg"></ImageView>
 			<Label class="lblInfoDetail" id="lblInfoTitle"></Label>

@@ -85,15 +85,22 @@ function setRowData() {
 
 function showTrailDetails(e) {
 
-	// try {
-	var id = e.rowData.id;
-	Ti.API.info("trailid : " + id);
+	try {
+		var id = e.rowData.id;
+		Ti.API.info("trailid : " + id);
 
-	var trailsCollection = Alloy.Collections.trailsModel;
-	trailsCollection.fetch({
-		query : 'SELECT * FROM trailsModel where id ="' + id + '"'
-	});
+		var trailsCollection = Alloy.Collections.trailsModel;
+		trailsCollection.fetch({
+			query : 'SELECT * FROM trailsModel where id ="' + id + '"'
+		});
 
+		var jsonObj = trailsCollection.toJSON();
+		var name = jsonObj[0].name;
+		var traillength = jsonObj[0].length;
+		var infoText = jsonObj[0].infoTxt;
+		var trailcolor = jsonObj[0].color;
+
+<<<<<<< HEAD
 	var jsonObj = trailsCollection.toJSON();
 	var name = jsonObj[0].name;
 	var traillength = jsonObj[0].length;
@@ -117,6 +124,26 @@ function showTrailDetails(e) {
 	// } catch(e) {
 	// newError("Något gick fel när sidan skulle laddas, prova igen!", "Trails - showTrailDetails");
 	// }
+=======
+		var args = {
+			id : id,
+			title : name,
+			length : traillength,
+			infoTxt : infoText,
+			color : trailcolor
+		};
+
+		Ti.API.info("Traildetaljer : " + JSON.stringify(args));
+
+		var trailDetail = Alloy.createController("trailDetail", args).getView();
+		// $.tabGroup.hikeTab.open(trailDetail);
+		trailDetail.open();
+
+	} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "Trails - showTrailDetails");
+	}
+
+>>>>>>> origin/master
 }
 
 function showIcons(id) {
