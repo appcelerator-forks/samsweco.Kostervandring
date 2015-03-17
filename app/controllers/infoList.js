@@ -120,7 +120,7 @@ function getInfoDetails(e) {
 		};
 
 		var infoDetail = Alloy.createController("infoDetail", infoText).getView();
-		infoDetail.open();
+		Alloy.CFG.tabs.activeTab.open(infoDetail);
 
 	// } catch(e) {
 		// newError("Något gick fel när sidan skulle laddas, prova igen!", "infoList - getInfoDetails");

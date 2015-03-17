@@ -25,8 +25,8 @@
 		<Tab id="quiz" title="Quiz" icon="/images/quizMenuCopy.png">
 			<Window id="quizWin" onOpen="toQuiz" navBarHidden="true" />
 		</Tab>
-		<Tab id="info" title="Info" icon="/images/infoMenuCopy.png">
-			<Window id="infoWin" onOpen="toInfo" navBarHidden="true" />
+		<Tab id="info" title="Turistinformation" icon="/images/infoMenuCopy.png">
+			<Window id="infoWin" title="Turistinformation" onOpen="toInfo" />
 		</Tab>
 	</TabGroup>
 
