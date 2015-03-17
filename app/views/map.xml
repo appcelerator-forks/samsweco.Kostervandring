@@ -8,4 +8,5 @@
 			<Label id="lblLat"></Label>
 		</View>
 	</View>
+	<Widget id="question" src="alertWidgetQuiz" name="widget"></Widget>
 </Alloy>

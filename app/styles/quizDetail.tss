@@ -20,14 +20,6 @@
 	layout: 'vertical'
 }
 
-"#menuView": {
-	layout: 'horizontal',
-	bottom: 0,
-	height: Titanium.UI.SIZE,
-	width: Ti.UI.FILL,
-	backgroundColor: 'transparent'
-}
-
 ".headView": {
 	height: Titanium.UI.SIZE,
 	width: Titanium.UI.FILL,
