@@ -23,5 +23,5 @@ function newError(errorMsg, pageName) {
 	}
 }
 
-var lat = "";
-var lon = "";
+var gLat = 0;
+var gLon = 0;

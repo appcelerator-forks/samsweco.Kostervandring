@@ -1,5 +1,10 @@
 <Alloy>
 	<Collection src="hotspotModel" />
-		<View id="mapView">
-		</View>
+	<Collection src="coordinates"></Collection>
+	<View id="visaKoord">
+		<Label id="lblLong"></Label>
+		<Label id="lblLat"></Label>
+	</View>
+	<View id="mapView"></View>
+
 </Alloy>
