@@ -1,24 +1,33 @@
 var args = arguments[0] || {};
 
-setNavBar();
-//$.trailDetail.open();
+// $.trailDetail.open();
 
 try {
-	$.lblTrailName.text = args.title || 'Default Name'; //"Vandringsled : " + 
-	$.lblTrailLength.text = args.length + " kilometer" || 'Default Length'; //"Distans: " + 
-	$.lblTrailColor.text = args.color || 'Default Color'; //"Färgmarkering: " + 
-	$.lblTrailInfo.text = args.infoTxt || 'Default infoText'; // "Beskrivning : " + 
+	$.lblTrailName.text = args.title || 'Default Name';
+	//"Vandringsled : " +
+	$.lblTrailLength.text = args.length + " kilometer" || 'Default Length';
+	//"Distans: " +
+	$.lblTrailColor.text = args.color || 'Default Color';
+	//"Färgmarkering: " +
+	$.lblTrailInfo.text = args.infoTxt || 'Default infoText';
+	// "Beskrivning : " +
 
 	var trailId = args.id;
-	
+
 } catch(e) {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - set labels");
 }
 
 selectTrailPics();
 showHotspots();
-
+// setNavBar();
 showIcons();
+
+$.btn.addEventListner('click', close);
+
+function close(){
+	$.trailDetail.close();
+}
 
 function selectTrailPics() {
 	try {
@@ -53,28 +62,28 @@ function showHotspots() {
 				id : i + 1,
 				layout : 'horizontal',
 				height : '60dp',
-				top: 0
-				});
-				
+				top : 0
+			});
+
 			var coverimg = Ti.UI.createImageView({
 				height : '60dp',
 				width : '90dp',
-				left: 10
-				});
-				
+				left : 10
+			});
+
 			var lblName = Ti.UI.createLabel({
-				left: 10,	
-				font: {
-				fontSize: 12
+				left : 10,
+				font : {
+					fontSize : 12
 				}
-				});
+			});
 
 			coverimg.image = "/pics/" + rows[i].cover_pic;
 			lblName.text = rows[i].name;
 
 			row.add(coverimg);
 			row.add(lblName);
-			
+
 			tableViewData.push(row);
 		}
 
@@ -84,7 +93,6 @@ function showHotspots() {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - showHotspots");
 	}
 }
-
 
 function getHotspotData() {
 	try {
@@ -106,20 +114,19 @@ function getHotspotData() {
 function showIcons() {
 	try {
 		var selectedIcons = getIcons();
-				
+
 		for (var i = 0; i < selectedIcons.length; i++) {
-			
-				var covericon = Ti.UI.createImageView({
+
+			var covericon = Ti.UI.createImageView({
 				height : '30dp',
 				width : '30dp',
-				left: 10
-				});
-				
-				covericon.image = "/piktogram/" + selectedIcons[i].icon;
+				left : 10
+			});
+
+			covericon.image = "/piktogram/" + selectedIcons[i].icon;
 
 			$.iconrow.add(covericon);
 		}
-
 
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - showIcons");
@@ -134,20 +141,27 @@ function getIcons() {
 		infotrailCollection.fetch({
 			query : 'SELECT icon from infospotModel join infospot_trailsModel on infospot_trailsModel.infospotID = infospotModel.id where trailsID ="' + id + '"'
 		});
-		
+
 		var infoTrails = infotrailCollection.toJSON();
 		return infoTrails;
-		
+
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - getIcons");
 	}
 
 }
 
-function setNavBar() {
-	$.hikeDetailWin.leftNavButton = $.UI.create('Button', {
-		title : '< Vandringsleder'
-	});
-}
-
+// function setNavBar() {
+	// var b = $.UI.create('Button', {
+		// title : "< Vandringsleder",
+		// systemButton : Ti.UI.iPhone.SystemButton.DONE,
+		// top : 2,
+		// left : 0,
+		// backgroundColor : "red"
+	// });
+// 
+	// $.hikeDetailWin.setLeftNavButton(b);
+	// $.hikeDetailWin.add(b);
+// 
+// }
 

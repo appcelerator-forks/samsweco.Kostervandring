@@ -131,9 +131,9 @@ function showTrailDetails(e) {
 	Ti.API.info("Traildetaljer : " + JSON.stringify(args));
 
 	var trailDetail = Alloy.createController("trailDetail", args).getView();
-	// $.hikeWin.add(trailDetail);
+	// $.tabGroup.hikeTab.open(trailDetail);
 	trailDetail.open();
-
+	
 	// } catch(e) {
 	// newError("Något gick fel när sidan skulle laddas, prova igen!", "Trails - showTrailDetails");
 	// }

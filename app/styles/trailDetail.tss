@@ -1,6 +1,7 @@
 "Window": {
 	backgroundColor: 'white',
-	layout: 'vertical'
+	layout: 'vertical',
+	navBarHidden: "false"
 }
 
 "#slideShowTrails": {
@@ -69,21 +70,13 @@
 	top: 10
 }
 
-"#menuView": {
-	layout: 'horizontal',
-	bottom: 0,
-	height: Titanium.UI.SIZE,
-	width: Ti.UI.FILL,
-	backgroundColor: 'transparent'
-}
-
 "#iconrow": {
 	layout: 'horizontal',
 	height: '40dp'
 }
 
-"#lblTrailLength" : {
-	font : {
+"#lblTrailLength": {
+	font: {
 		fontStyle: 'Italic'
 	},
 	top: 10

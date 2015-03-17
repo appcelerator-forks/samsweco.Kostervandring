@@ -3,22 +3,22 @@
 	<Collection src="hotspotModel"></Collection>
 	<Collection src="infospotModel"></Collection>
 	<Window id="hikeDetailWin" class="container" title="Vandring">
-
+		<!-- <RightNavButton platform="ios">
+			<Button title="Back" />
+		</RightNavButton> -->
 		<ScrollView class="headView">
+			
+			<Button id="btn" title="Bakåt" top="10">Tillbaka</Button>
+			
 			<ScrollableView id="slideShowTrails" showPagingControl="true" />
-			
-			
-				<View id="iconrow"></View> 
-				<!-- Här är iconrow.... -->
-				
-				
+			<View id="iconrow"></View>
+			<!-- Här är iconrow.... -->
 			<View class="lbls">
 				<Label id="lblTrailName" class="lbltrailDetail"></Label>
 				<Label id="lblTrailLength" class="lbltrailDetail"></Label>
 				<Label id="lblTrailColor" class="lbltrailDetail"></Label>
 				<Label id="lblTrailInfo" class="lbltrailDetail"></Label>
 			</View>
-		
 			<Label id="lblLangsVagen">Det här kan du se längs vägen:</Label>
 			<View id="hotspotView">
 				<View id="trail_hotspotView">
@@ -27,11 +27,6 @@
 			</View>
 			
 		</ScrollView>
-
-		<!-- Navigeringsmenyn med knappar längst ner på sidan som skickar användaren till vald sida -->
-		<!-- <View id="menuView">
-			<Widget id="menuBar" src="menuWidget" name="widget"/>
-		</View> -->
 
 	</Window>
 </Alloy>

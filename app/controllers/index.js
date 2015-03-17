@@ -1,19 +1,5 @@
 $.index.open();
 
-setNavBar();
-
-function setNavBar() {
-	// var b = Ti.UI.createButton({
-		// title : 'Vandringsleder',
-		// style : Titanium.UI.iPhone.SystemButtonStyle.PLAIN,
-		// left : 0
-	// });
-// 
-	// $.hikeWin.setToolbar([b]);
-	
-	$.hikeWin.leftNavButton = $.UI.create('Button', { title: 'Vandringsleder' });
-}
-
 function nextPage() {
 	try {
 		var trails = Alloy.createController("trails").getView();
@@ -92,6 +78,7 @@ function aboutKoster() {
 
 function toMap() {
 	var mapWind = Alloy.createController('map').getView();
+	// $.maptab.open($.map);
 	$.mapWin.add(mapWind);
 }
 
