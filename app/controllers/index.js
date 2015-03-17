@@ -1,4 +1,4 @@
-$.index.open();
+$.tabs.open();
 
 function nextPage() {
 	try {

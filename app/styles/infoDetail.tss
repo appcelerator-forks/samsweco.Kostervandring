@@ -6,21 +6,13 @@
 ".container": {
 	layout: 'vertical',
 	top: 0,
-	backgroundColor: '#fff3e5',
+	backgroundColor: 'white',
 	height: '100%'
 }
 
 "#btnBack": {
 	top: 15,
 	left: 2
-}
-
-"#menuView": {
-	layout: 'horizontal',
-	bottom: 0,
-	height: Titanium.UI.SIZE,
-	width: Ti.UI.FILL,
-	backgroundColor: 'transparent'
 }
 
 "#infoImg": {
