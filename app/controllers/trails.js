@@ -87,7 +87,7 @@ function showTrailDetails(e) {
 
 	// try {
 		var id = e.rowData.id;
-		Ti.API.info("trailid : " + id);
+		// Ti.API.info("trailid : " + id);
 
 		var trailsCollection = Alloy.Collections.trailsModel;
 		trailsCollection.fetch({
@@ -108,7 +108,7 @@ function showTrailDetails(e) {
 		color : trailcolor
 	};
 
-	Ti.API.info("Traildetaljer : " + JSON.stringify(args));
+	// Ti.API.info("Traildetaljer : " + JSON.stringify(args));
 
 	var trailDetail = Alloy.createController("trailDetail", args).getView();
 	Alloy.CFG.tabs.activeTab.open(trailDetail);

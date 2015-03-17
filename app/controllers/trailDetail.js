@@ -47,13 +47,13 @@ function selectTrailPics() {
 }
 
 function showHotspots() {
-	try {
+	// try {
 		var tableViewData = [];
 		var rows = getHotspotData();
 
 		for (var i = 0; i < rows.length; i++) {
 			var row = Ti.UI.createTableViewRow({
-				id : i + 1,
+				id : rows[i].name,
 				layout : 'horizontal',
 				height : '60dp',
 				top : 0,
@@ -84,9 +84,9 @@ function showHotspots() {
 
 		$.hotspotTable.data = tableViewData;
 
-	} catch(e) {
-		newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - showHotspots");
-	}
+	// } catch(e) {
+		// newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - showHotspots");
+	// }
 }
 
 function getHotspotData() {
@@ -100,36 +100,39 @@ function getHotspotData() {
 
 		var hotTrails = hotstrailCollection.toJSON();
 		return hotTrails;
+		
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - getHotspotData");
 	}
 }
 
 function showHotspot(e){
-	try {
-		var id = e.rowData.id;
+	// try {
+		var name = e.rowData.id;
 
 		var hotspotCollection = Alloy.Collections.hotspotModel;
 		hotspotCollection.fetch({
-			query : 'SELECT name, infoTxt from hotspotModel where id = "' + id + '"'
+			query : 'SELECT id, infoTxt from hotspotModel where name = "' + name + '"'
 		});
 
 		var jsonObj = hotspotCollection.toJSON();
 		var txt = jsonObj[0].infoTxt;
-		var name = jsonObj[0].name;
+		var idnr = jsonObj[0].id;
+
+		Ti.API.info("hotspot : " + JSON.stringify(jsonObj));
 
 		var hotspotTxt = {
 			title : name,
 			infoTxt : txt,
-			id : id
+			id : idnr
 		};
 
 		var hotspotDetail = Alloy.createController("hotspotDetail", hotspotTxt).getView();
 		Alloy.CFG.tabs.activeTab.open(hotspotDetail);
 
-	} catch(e) {
-		newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - showHotspot");
-	}
+	// } catch(e) {
+		// newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - showHotspot");
+	// }
 }
 
 function showIcons() {
