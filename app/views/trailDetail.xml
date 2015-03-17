@@ -3,12 +3,9 @@
 	<Collection src="hotspotModel"></Collection>
 	<Collection src="infospotModel"></Collection>
 	<Window id="hikeDetailWin" class="container" title="Vandring">
-		<!-- <RightNavButton platform="ios">
-			<Button title="Back" />
-		</RightNavButton> -->
+		
 		<Button id="btnBack" onClick="close">Tillbaka</Button>
 			
-		
 		<ScrollView class="headView">
 			<ScrollableView id="slideShowTrails" showPagingControl="true" />
 			<View id="iconrow"></View>

@@ -21,7 +21,7 @@ function showinfoDetails(info) {
 
 		var infoDetail = Alloy.createController("infoDetail", args).getView();
 		infoDetail.open();
-		$.infoList.close();
+		// $.infoList.close();
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "infoDetail - showInfoDetail");
 	}

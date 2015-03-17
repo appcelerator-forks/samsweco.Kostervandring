@@ -9,6 +9,10 @@ try {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "Hotspots - create hotspotCollection");
 }
 
+function close(){
+	$.hotspotList.close();
+}
+
 function showHotspotDetails(hotspot) {
 	try {
 		var selectedHotspot = hotspot.row;
