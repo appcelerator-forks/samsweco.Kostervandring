@@ -1,6 +1,6 @@
 <Alloy>
 	<Collection src="hotspotModel" />
-	<TabGroup backgroundColor="#fff" height="100%" tintColor="#FF9966">
+	<TabGroup id="tabs" backgroundColor="#fff" height="100%" tintColor="#FF9966">
 		<Tab id="koster" class="btn" title="Koster" icon="/images/kosterStarMenuCopy.png" >
 			<Window id="koster" class="container" backgroundImage="/pics/front.png" navBarHidden="true">
 				<ScrollView class="headView">

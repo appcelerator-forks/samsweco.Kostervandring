@@ -8,7 +8,7 @@
 		</RightNavButton> -->
 		<ScrollView class="headView">
 			
-			<Button id="btn" title="Bakåt" top="10">Tillbaka</Button>
+			<Button id="btn" title="Bakåt" onClick="close" top="10">Tillbaka</Button>
 			
 			<ScrollableView id="slideShowTrails" showPagingControl="true" />
 			<View id="iconrow"></View>

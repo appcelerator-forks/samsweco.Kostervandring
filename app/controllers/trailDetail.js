@@ -23,10 +23,10 @@ showHotspots();
 // setNavBar();
 showIcons();
 
-$.btn.addEventListner('click', close);
-
+// $.btn.addEventListner('click', close);
+// 
 function close(){
-	$.trailDetail.close();
+	$.trails.open();
 }
 
 function selectTrailPics() {
