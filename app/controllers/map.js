@@ -19,7 +19,7 @@ function showMap() {
 				latitudeDelta : 0.1,
 				longitudeDelta : 0.1
 			},
-			height : '85%',
+			height : Ti.UI.FILL,
 			width : Ti.UI.FILL
 		});
 
