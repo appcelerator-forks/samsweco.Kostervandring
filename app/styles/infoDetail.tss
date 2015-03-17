@@ -10,11 +10,6 @@
 	height: '100%'
 }
 
-"#btnBack": {
-	top: 15,
-	left: 2
-}
-
 "#infoImg": {
 	width : '100%',
 	height: '40%'
@@ -27,7 +22,7 @@
 }
 
 "Label": {
-	top : '2dp',
+	top : '5dp',
 	left: 10,
 	right: 10,
 	font: {
@@ -47,6 +42,6 @@
 
 "#lblInfoLink" : {
 	left : '10dp',
-	top : '10dp'
+	top : '0dp'
 }
 

@@ -5,8 +5,8 @@
 			<ImageView id="infoImg"></ImageView>
 			<Label class="lblInfoDetail" id="lblInfoTitle"></Label>
 			<Label class="lblInfoDetail" id="lblInfoText"></Label>
+			<Label class="lbltxt" text="Gå till websida: "/>
 			<Label class="lblInfoDetail" id="lblInfoLink"></Label>
 		</ScrollView>
-
 	</Window>
 </Alloy>
