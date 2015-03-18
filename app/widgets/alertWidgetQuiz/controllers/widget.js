@@ -11,9 +11,7 @@ function closeDialog(){
 };
 
 function openQuestion(e){
-    Ti.API.info('e.text: ' + e.text);
-    var quizDetail = Alloy.createController('quizDetail').getView();
-	$.quizWin.add(quizDetail);
+$.index.toQuiz();
 };
 
 
