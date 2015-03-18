@@ -3,6 +3,13 @@
 	<Collection src="coordinates"></Collection>
 	<View class="container">
 		<View id="mapView"></View>
+		
+		<View id="btnView">
+		<Button id="btnNormal" class="btnChange">Normal</Button>
+		<Button id="btnHybrid" class="btnChange">Hybrid</Button>
+		<Button id="btnSatellit" class="btnChange">Satellit</Button>
+		</View>
+		
 		<View id="visaKoord">
 			<Label id="lblLong"></Label>
 			<Label id="lblLat"></Label>

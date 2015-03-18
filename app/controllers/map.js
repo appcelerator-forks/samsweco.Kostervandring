@@ -156,6 +156,18 @@ function showMap() {
 	$.mapView.add(map3);
 };
 
+$.btnNormal.addEventListener('click', function(){
+	map3.mapType = MapModule.NORMAL_TYPE;
+});
+
+$.btnHybrid.addEventListener('click', function(){
+	map3.mapType = MapModule.HYBRID_TYPE;
+});
+
+$.btnSatellit.addEventListener('click', function(){
+	map3.mapType = MapModule.SATELLITE_TYPE;
+});
+
 function addRoutes(){
 	addYellowRoute();
 	addGreenRoute();

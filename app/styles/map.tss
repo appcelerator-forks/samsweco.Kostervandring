@@ -1,4 +1,4 @@
-".container" : {
+".container": {
 	layout : 'vertical'
 }
 
@@ -7,7 +7,15 @@
 	width: '100%'
 }
 
-"#visaKoord" : {
+"#btnView": {
+	layout: 'horizontal'
+}
+
+".btnChange": {
+	left: '5%'
+}
+
+"#visaKoord": {
 	height : '10%',
 	layout : 'vertical',
 	font : {
