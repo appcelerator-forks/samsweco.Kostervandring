@@ -40,9 +40,9 @@ function showDialog(){
     	closeDialog();
     }
     else{
-    	// var interactiveWin = Alloy.createController("interactive").getView();
-		// Alloy.CFG.tabs.activeTab.open(interactiveWin);
-		openInteractive();
+    	var interactiveWin = Alloy.createController("interactive").getView();
+		Alloy.CFG.tabs.activeTab.open(interactiveWin);
+		//$.infoDetail.openInteractive();
     }
   });
   dialog.show();  
