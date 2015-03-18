@@ -1,5 +1,14 @@
 
-".container" : {
-	backgroundColor : 'white'
-  
+"#quizQuestion" : {
+	backgroundColor : 'white',
+	layout : 'vertical'
+}
+
+"#viewFraga" : {
+	layout : 'vertical'
+}
+
+"#letter" : {
+	borderColor : '#CCCCCC',
+	width : 150	
 }

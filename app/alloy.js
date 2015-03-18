@@ -18,7 +18,6 @@ function newError(errorMsg, pageName) {
 	} catch (e) {
 
 		alert("Error:[" + e.message + "] has occured on " + e.myObject+ " page." 
-		//On line " + e.line + " SourceID : " + " \nsourceID:" + e.sourceId + "\nsourceURL:" + e.sourceURL
 		);
 	}
 }
@@ -42,18 +41,13 @@ function showDialog(){
     }
     else{
     	var quizQuestion = Alloy.createController("quizQuestion").getView();
-		quizQuestion.open();
+		//quizQuestion.open();
+		Alloy.CFG.tabs.activeTab.open(quizQuestion);
     }
   });
   dialog.show();  
 };
 
-//exports.showDialog = showDialog;
-
 function closeDialog(){
 	$.dialog.close();
 };
-
-// function openQuestion(e){
-// $.hotspotDetail.open();
-// };

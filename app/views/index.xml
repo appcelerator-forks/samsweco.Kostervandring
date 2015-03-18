@@ -22,7 +22,7 @@
 			<Window id="mapWin" onOpen="toMap" navBarHidden="true" />
 		</Tab>
 		<Tab id="quiz" title="Quiz" icon="/images/quizMenuCopy.png">
-			<Window id="quizWin" onOpen="toQuiz" navBarHidden="true" />
+			<Window id="quizWin" onOpen="toQuiz" />
 		</Tab>
 		<Tab id="info" title="Turistinformation" icon="/images/infoMenuCopy.png">
 			<Window id="infoWin" title="Information" onOpen="toInfo" />

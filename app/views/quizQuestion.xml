@@ -3,14 +3,8 @@
 	<Window id="quizQuestion">
 		<ScrollView class="headView">
 			<View id="viewFraga" class="views">
-				<Label id="visaFraga"></Label>
-				<ListView id="lista">
-					<ListSection id="section" dataCollection="quizModel" >
-						<ListItem class="row" title="{alt1}"/>
-						<ListItem class="row" title="{alt2}"/>
-						<ListItem class="row" title="{alt3}"/>
-					</ListSection>
-				</ListView>
+				<Label id="visaFraga" text="Här ska första bokstaven matas in!"></Label>
+				<TextField id="letter" borderColor="#000" ></TextField>
 			</View>
 		</ScrollView>
 	</Window>
