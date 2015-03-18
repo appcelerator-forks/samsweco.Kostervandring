@@ -4,15 +4,6 @@ Alloy.CFG.tabs = $.tabs;
 
 exports.toQuiz = toQuiz;
 
-// function nextPage() {
-	// try {
-		// var trails = Alloy.createController("trails").getView();
-		// trails.open();
-	// } catch(e) {
-		// newError("Något gick fel när sidan skulle laddas, prova igen!", "Index - nextPage");
-	// }
-// }
-
 function hotspotView() {
 	try {
 		var hotspots = Alloy.createController("hotspots").getView();
@@ -21,10 +12,7 @@ function hotspotView() {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "Index - hotspotView");
 	}
  }
-// 
-// function showError() {
-	// newError("Nu gick något fel när du tryckte på knappen!", "Index - showError");
-// }
+ exports.hotspotView = hotspotView;
 
 function aboutNaturum() {
 	try {

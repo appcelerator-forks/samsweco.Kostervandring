@@ -25,3 +25,35 @@ function newError(errorMsg, pageName) {
 
 var gLat = 0;
 var gLon = 0;
+
+function showDialog(){
+
+  var dialog = Ti.UI.createAlertDialog({
+    cancel: 1,
+    buttonNames: ['OK', 'Cancel'],
+    message: 'Gå till nästa fråga?',
+    title: 'Quizfråga i närheten!'
+  });
+  
+  dialog.addEventListener('click', function(e){
+  	
+    if (e.index === e.source.cancel){
+    	closeDialog();
+    }
+    else{
+    	var hotspots = Alloy.createController("hotspots").getView();
+		hotspots.open();
+    }
+  });
+  dialog.show();  
+};
+
+//exports.showDialog = showDialog;
+
+function closeDialog(){
+	$.dialog.close();
+};
+
+// function openQuestion(e){
+// $.hotspotDetail.open();
+// };
