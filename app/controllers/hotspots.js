@@ -9,8 +9,8 @@ try {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "Hotspots - create hotspotCollection");
 }
 
-function close(){
-	$.hotspotList.close();
+function back(){
+	$.navwin.close();
 }
 
 function showHotspotDetails(hotspot) {

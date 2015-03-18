@@ -3,7 +3,7 @@
 	<NavigationWindow id="navwin" platform="ios">
 		<Window id="hotspotList" title="Hotspots" class="container">
 			<LeftNavButton>
-				<Button id="btnNav">Tillbaka</Button>
+				<Button id="btnNav" onClick="back">Tillbaka</Button>
 			</LeftNavButton>
 			<ScrollView class="headView">
 				<TableView id="table" onClick="getHotspotInfo">
