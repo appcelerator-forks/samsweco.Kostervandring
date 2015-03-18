@@ -7,15 +7,15 @@ try {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "quizDetail - create quizCollection");
 }
 
-function openQuizQuestion() {
-	// try {
-			var quizQuestion = Alloy.createController("quizQuestion").getView();
-			Alloy.CFG.tabs.activeTab.open(quizQuestion);
+function openInteractive() {
+	 try {
+			var interactiveWin = Alloy.createController("interactive").getView();
+			Alloy.CFG.tabs.activeTab.open(interactiveWin);
 			//quizQuestion.open();
-	// } catch(e) {
-		// newError("Något gick fel när sidan skulle laddas, prova igen!", "quizDetail - openQuiz");
-	// }
+	} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "quizDetail - openQuiz");
+	}
 }
 
-exports.openQuizQuestion = openQuizQuestion;
+exports.openInteractive = openInteractive;
 

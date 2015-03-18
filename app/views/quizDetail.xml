@@ -3,9 +3,9 @@
 	<View class="container">
 		<ScrollView class="headView">
 			<View id="spela" class="views">
-				<Label id="lblValkommen">Välkommen till quizet</Label>
-				<Label id="lblInfoQuiz"> Utmana dig själv och familjen i Kosterquizet, du kan spela detta om du går den röda slingan.</Label>
-				<Button id="btnVisaFraga" onClick="openQuizQuestion">Starta bokstavsjakten!</Button>
+				<Label id="lblValkommen">Välkommen till Kosterhavets bokstavsjakt!</Label>
+				<Label id="lblInfoQuiz"> Utmana dig själv och familjen i Kosterhavets bokstavsjakt, du kan delta om du går den röda slingan.</Label>
+				<Button id="startInteractive" onClick="openInteractive">Starta bokstavsjakten!</Button>
 			</View>
 		</ScrollView>
 	</View>

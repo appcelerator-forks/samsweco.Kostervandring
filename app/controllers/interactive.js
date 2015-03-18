@@ -18,4 +18,3 @@ function openNextQuestion() {
 	}
 }
 exports.openNextQuestion = openNextQuestion;
-

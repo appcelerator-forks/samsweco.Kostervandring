@@ -31,7 +31,7 @@ function showDialog(){
     cancel: 1,
     buttonNames: ['OK', 'Cancel'],
     message: 'Gå till nästa fråga?',
-    title: 'Quizfråga i närheten!'
+    title: 'Bokstav i närheten!'
   });
   
   dialog.addEventListener('click', function(e){
@@ -40,9 +40,9 @@ function showDialog(){
     	closeDialog();
     }
     else{
-    	var quizQuestion = Alloy.createController("quizQuestion").getView();
-		//quizQuestion.open();
-		Alloy.CFG.tabs.activeTab.open(quizQuestion);
+    	// var interactiveWin = Alloy.createController("interactive").getView();
+		// Alloy.CFG.tabs.activeTab.open(interactiveWin);
+		openInteractive();
     }
   });
   dialog.show();  
