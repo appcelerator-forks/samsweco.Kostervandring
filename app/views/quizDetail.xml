@@ -24,8 +24,5 @@
 
 		</ScrollView>
 		<Widget id="alert" src="alertWidgetQuiz" name="widget" />
-		<!-- <View id="menuView">
-			<Widget id="menuBar" src="menuWidget" name="widget"/>
-		</View> -->
 	</View>
 </Alloy>

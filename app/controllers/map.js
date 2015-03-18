@@ -79,10 +79,9 @@ function isNearPoint() {
 
 		if (isInsideRadius(lat, lon, radius)) {
 			alert("Du är framme nu!");
-			openQuiz();
+			$.showDialog();
 		}
 	}
-
 }
 
 function showMap() {

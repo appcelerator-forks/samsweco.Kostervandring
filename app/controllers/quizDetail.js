@@ -2,6 +2,9 @@ var args = arguments[0] || {};
 try {
 	var quizCollection = Alloy.Collections.quizModel;
 	quizCollection.fetch();
+	
+	openQuiz();
+	
 } catch(e) {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "quizDetail - create quizCollection");
 }
@@ -27,8 +30,9 @@ function openQuiz() {
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "quizDetail - openQuiz");
 	}
-
 }
+
+exports.openQuiz = openQuiz;
 
 function showQuiz() {
 	try {

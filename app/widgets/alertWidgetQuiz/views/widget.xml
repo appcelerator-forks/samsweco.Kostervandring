@@ -1,8 +1,5 @@
 <Alloy>
-
-	<Button onClick="showDialog" title="Click">Öppna alert</Button>
-
-		<AlertDialog id="dialog" onClick="doClick" title="Quiz" message="Du närmar dig fråga 2!" cancel="1">
+		<AlertDialog id="dialog" onClick="openQuestion" title="Quiz" message="Du närmar dig nästa fråga!" cancel="1">
 			<ButtonNames>
 				<ButtonName>Stäng</ButtonName>
 				<ButtonName>Gå till fråga</ButtonName>

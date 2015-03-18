@@ -1,69 +1,21 @@
+
+
 function showDialog(){
     $.dialog.show();
 };
+exports.showDialog = showDialog;
+
 
 function closeDialog(){
 	$.dialog.close();
 };
 
-function doClick(e){
+function openQuestion(e){
     Ti.API.info('e.text: ' + e.text);
+    var quizDetail = Alloy.createController('quizDetail').getView();
+	$.quizWin.add(quizDetail);
 };
 
-
-
-
-
-var latitude = " ";
-var longitude = " ";
-
-// function getLoc(e){    
-// 
-    	// if(e.success){
-        // Ti.API.info("Hittade dig!");
-        // Ti.API.info(e);        
-       // }
-        // latitude = e.coords.latitude;
-    	// longitude = e.coords.longitude;
-//     
-    	// Ti.API.info(latitude, longitude);
-// };
-
-// Ti.Geolocation.getCurrentPosition(getLat);
-// Ti.Geolocation.getCurrentPosition(getLon);
-// 
-// 
-// function getLat(e){
-	// if(e.success){
-        // Ti.API.info("Hittade dig!");
-        // Ti.API.info(e);        
-      // }
-//       
-        // latitude = e.coords.latitude;
-//     
-    	// Ti.API.info(latitude);
-    	// $.lblLat.text = latitude;
-// };
-// 
-// function getLon(e){
-	// if(e.success){
-        // Ti.API.info("Hittade dig!");
-        // Ti.API.info(e);        
-      // }
-//       
-        // longitude = e.coords.longitude;
-//     
-    	// Ti.API.info(longitude);
-    	// $.lblLon.text = longitude;
-// };
-
-// function writePlace(){
-	// var lati = Ti.Geolocation.getCurrentPosition(getLat);
-	// var longi = Ti.Geolocation.getCurrentPosition(getLon);
-// 	
-// 	
-// 	
-// }
 
 
 
