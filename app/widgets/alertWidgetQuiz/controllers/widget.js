@@ -10,5 +10,5 @@ function closeDialog(){
 };
 
 function openQuestion(e){
-$.index.toQuiz();
+$.toQuiz();
 };

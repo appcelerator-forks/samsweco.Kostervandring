@@ -82,7 +82,6 @@ function isNearPoint() {
 		var lon = jsonCollection[i].longitude;
 
 		if (isInsideRadius(lat, lon, radius)) {
-			alert("Du är framme nu!");
 			$.question.showDialog();
 		}
 	}
