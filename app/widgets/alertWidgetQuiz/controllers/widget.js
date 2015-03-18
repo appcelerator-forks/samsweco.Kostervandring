@@ -5,7 +5,6 @@ function showDialog(){
 };
 exports.showDialog = showDialog;
 
-
 function closeDialog(){
 	$.dialog.close();
 };
@@ -13,9 +12,3 @@ function closeDialog(){
 function openQuestion(e){
 $.index.toQuiz();
 };
-
-
-
-
-
-

@@ -87,6 +87,7 @@ function toQuiz() {
 	var quizDetail = Alloy.createController('quizDetail').getView();
 	$.quizWin.add(quizDetail);
 }
+exports.toQuiz = toQuiz;
 
 function toTrails() {
 	var trails = Alloy.createController('trails').getView();
