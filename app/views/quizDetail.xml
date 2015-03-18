@@ -19,7 +19,7 @@
 						<ListItem class="row" title="{alt3}"/>
 					</ListSection>
 				</ListView>
-				<Button id="btnSvara">Svara</Button>
+				<!-- <Button id="btnSvara">Svara</Button> -->
 			</View>
 
 		</ScrollView>
