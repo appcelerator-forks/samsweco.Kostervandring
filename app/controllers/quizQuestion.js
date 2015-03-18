@@ -1,9 +1,12 @@
 var args = arguments[0] || {};
+
+var args = arguments[0] || {};
 try {
 	var quizCollection = Alloy.Collections.quizModel;
 	quizCollection.fetch();
 	
-	openQuiz();
+	//EXPORTA DENNA!!
+	openNextQuestion();
 	
 } catch(e) {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "quizDetail - create quizCollection");
@@ -22,17 +25,14 @@ $.lista.addEventListener('itemclick', function(e) {
 	$.section.updateItemAt(e.itemIndex, item);
 });
 
-function openQuiz() {
+function openNextQuestion() {
 	try {
-		$.viewFraga.visible = true;
-		$.spela.visible = false;
-		showQuiz();
+		//showQuiz();
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "quizDetail - openQuiz");
 	}
 }
-
-exports.openQuiz = openQuiz;
+exports.openNextQuestion = openNextQuestion;
 
 function showQuiz() {
 	try {

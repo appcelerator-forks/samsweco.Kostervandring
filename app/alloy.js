@@ -41,8 +41,8 @@ function showDialog(){
     	closeDialog();
     }
     else{
-    	var hotspots = Alloy.createController("hotspots").getView();
-		hotspots.open();
+    	var quizQuestion = Alloy.createController("quizQuestion").getView();
+		quizQuestion.open();
     }
   });
   dialog.show();  

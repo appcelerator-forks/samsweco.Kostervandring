@@ -28,7 +28,7 @@ if (Ti.Geolocation.locationServicesEnabled) {
 		if (e.error) {
 			alert('Add eventlistener!' + e.error);
 		} else {
-			Ti.API.info(JSON.stringify(e.coords));
+		//	Ti.API.info(JSON.stringify(e.coords));
 			getPosition(e.coords);
 		}
 	});

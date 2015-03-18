@@ -11,6 +11,7 @@
 				<Label id="lblTrailLength" class="lbltrailDetail"></Label>
 				<Label id="lblTrailColor" class="lbltrailDetail"></Label>
 				<Label id="lblTrailInfo" class="lbltrailDetail"></Label>
+				<Button id="trailOnMap"> Visa led på kartan!</Button>
 			</View>
 			<Label id="lblLangsVagen">Det här kan du se längs vägen:</Label>
 			<View id="hotspotView">
@@ -18,7 +19,6 @@
 					<TableView id="hotspotTable" onClick="showHotspot" />
 				</View>
 			</View>
-			
 		</ScrollView>
 
 	</Window>

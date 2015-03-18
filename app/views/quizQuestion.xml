@@ -1,0 +1,17 @@
+<Alloy>
+	<Collection src="quizModel"/>
+	<Window id="quizQuestion">
+		<ScrollView class="headView">
+			<View id="viewFraga" class="views">
+				<Label id="visaFraga"></Label>
+				<ListView id="lista">
+					<ListSection id="section" dataCollection="quizModel" >
+						<ListItem class="row" title="{alt1}"/>
+						<ListItem class="row" title="{alt2}"/>
+						<ListItem class="row" title="{alt3}"/>
+					</ListSection>
+				</ListView>
+			</View>
+		</ScrollView>
+	</Window>
+</Alloy>
