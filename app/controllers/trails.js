@@ -66,7 +66,7 @@ function setRowData() {
 			coverimg.image = "/pics/" + rows[i].cover_img;
 			lblName.text = rows[i].name;
 			lblDistance.text = 'Sträcka : ' + rows[i].length + " km";
-			lblColor.text = 'Färgmarkering : ' + rows[i].color;
+			lblColor.text = rows[i].area;
 
 			verticalView.add(lblName);
 			verticalView.add(lblColor);
@@ -98,14 +98,14 @@ function showTrailDetails(e) {
 		var name = jsonObj[0].name;
 		var traillength = jsonObj[0].length;
 		var infoText = jsonObj[0].infoTxt;
-		var trailcolor = jsonObj[0].color;
+		var trailcolor = jsonObj[0].area;
 
 	var args = {
 		id : id,
 		title : name,
 		length : traillength,
 		infoTxt : infoText,
-		color : trailcolor
+		area : trailcolor
 	};
 
 	// Ti.API.info("Traildetaljer : " + JSON.stringify(args));

@@ -8,7 +8,7 @@ try {
 	//"Vandringsled : " +
 	$.lblTrailLength.text = args.length + " kilometer" || 'Default Length';
 	//"Distans: " +
-	$.lblTrailColor.text = args.color || 'Default Color';
+	$.lblTrailColor.text = args.area || 'Default Color';
 	//"Färgmarkering: " +
 	$.lblTrailInfo.text = args.infoTxt || 'Default infoText';
 	// "Beskrivning : " +
