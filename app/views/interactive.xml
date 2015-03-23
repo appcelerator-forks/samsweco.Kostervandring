@@ -1,5 +1,5 @@
 <Alloy>
-	<Collection src="letterGameModel"/>
+	<Collection src="gameLetterModel"></Collection>
 	<Window id="quizQuestion">
 		<ScrollView class="headView">
 			<View id="viewFraga" class="views">

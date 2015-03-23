@@ -1,5 +1,5 @@
 <Alloy>
-	<Collection src="letterGameModel"/>
+	<Collection src="gameLetterModel"></Collection>
 	<View class="container">
 		<ScrollView class="headView">
 			<View id="spela" class="views">
