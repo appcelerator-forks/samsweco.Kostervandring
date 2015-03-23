@@ -4,41 +4,49 @@ var radius = 10;
 var map3;
 var MapModule = require('ti.map');
 showMap();
-//createMapRoutes();
+createMapRoutes('adventureroute.json', 'Äventyrsleden', 'purple');
+createMapRoutes('blueroute.json', 'Blåa leden', 'blue');
+createMapRoutes('blueshortcut.json', 'Genväg blåa leden', 'blue');
+createMapRoutes('greenroute.json', 'Gröna leden', 'green');
+createMapRoutes('orangeroute.json', 'Orange leden', 'orange');
+createMapRoutes('redroute.json', 'Röda leden', 'red');
+createMapRoutes('redrouteeasy.json', 'Lättare led, röda leden', 'red');
+createMapRoutes('redrouteeasy2.json', 'Lättare led, röda leden', 'red');
+createMapRoutes('whiteroute.json', 'Vita leden', 'white');
+createMapRoutes('yellowroute.json', 'Gula leden', 'yellow');
 // addRoutes();
 
-function createMapRoutes() {
+function createMapRoutes(file, name, color) {
 
-//FUNKAR EJ, går ej in i loopen, se alerts... vill skapa en array med geometries och sedan loopan genom dem?
-//Som det är nu kommer den ju bara ta första geometry'n eftersom indexet styrs av u, som aldrig blir mer än 0 eftersom det 
-//bara finns ett objekt som loopas...?
-	var fu = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "rutter/" + "adventureroute.json").read().text;
-	var v = JSON.parse(fu);
-	var geoArray = [];
-	alert("i create map!");
-	for (var u = 0; u < v.length; u++) {
-		alert("i loopen!");
-		var coords = v[u].features[0].geometry[u].paths;
+	var adventureRoute = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "rutter/" + file).read().text;
+	var v = JSON.parse(adventureRoute);
+	
+	var array = [];
+	array.push(v);
+
+	for (var u = 0; u < array.length; u++) {
+		var coords = array[0].features[0].geometry.paths[u];
+		
 		var j = new Array();
 
 		for (var i = 0; i < coords.length; i++) {
+
 			var c = {
 				latitude : coords[i][1],
 				longitude : coords[i][0]
 			};
-			
-			j.push(c);
+
+			j.push(c);	
 		}
 
 		var route = {
-			name : "Vandringsleder",
+			name : name,
 			points : j,
-			color : "red",
-			width : 3
+			color : color,
+			width : 2
 		};
-		
+
 		map3.addRoute(MapModule.createRoute(route));
-		// mapview.addRoute(Map.createRoute(route));
 	}
 }
 
