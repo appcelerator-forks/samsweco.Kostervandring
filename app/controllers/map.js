@@ -16,17 +16,26 @@ createMapRoutes('whiteroute.json', 'Vita leden', 'white');
 createMapRoutes('yellowroute.json', 'Gula leden', 'yellow');
 // addRoutes();
 
+function checkJSON(coordArray, lat, lon, file) {
+
+	for (var c = 0; c < coordArray.length; c++) {
+		if (coordArray[c].latitude == lat && coordArray[c].longitude == lon) {
+			Ti.API.info("fel i " + file + ": " + JSON.stringify(coordArray[c]));
+		}
+	}
+}
+
 function createMapRoutes(file, name, color) {
 
 	var adventureRoute = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "rutter/" + file).read().text;
 	var v = JSON.parse(adventureRoute);
-	
+
 	var array = [];
 	array.push(v);
 
 	for (var u = 0; u < array.length; u++) {
 		var coords = array[0].features[0].geometry.paths[u];
-		
+
 		var j = new Array();
 
 		for (var i = 0; i < coords.length; i++) {
@@ -36,7 +45,10 @@ function createMapRoutes(file, name, color) {
 				longitude : coords[i][0]
 			};
 
-			j.push(c);	
+			if (!checkJSON(j, c.latitude, c.longitude, file)) 
+			{
+				j.push(c);
+			}
 		}
 
 		var route = {
