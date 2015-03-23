@@ -1,28 +1,51 @@
 
-"#quizQuestion" : {
-	backgroundColor : 'white',
-	layout : 'vertical'
-}
-
-"#ViewChooseLetter" : {
-	layout : 'vertical',
-	top : 200
-}
-
-"#letter" : {
-	borderColor : '#CCCCCC',
-	width : 150	
-}
-
-"#btnSaveLetter" : {
-	height: 100,
-	width: 150,
-}
-
-"#ViewClue" : {
+"#quizQuestion": {
+	backgroundColor: '#fff3e5',
 	layout: 'vertical'
 }
 
-"#lblClue" : {
+"#ViewChooseLetter": {
+	layout: 'vertical',
+	top: 200
+}
+
+"#letter": {
+	borderColor: '#CCCCCC',
+	width: 150
+}
+
+"#btnSaveLetter": {
+	height: 30,
+	width: 100,
+	backgroundColor: '#FFD6AD',
+	top: 20,
+	radius: 30,
+	borderRadius: 7.5
+}
+
+"#ViewClue": {
 	layout: 'vertical'
+}
+
+"#lblClue": {
+	layout: 'vertical',
+	right: 20,
+	left: 20,
+	top: 30,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+"#lblVisaFraga": {
+	color: '#FF9966'
+}
+
+"#lblInfo" : {
+	font: {
+		fontSize: 12,
+		fontStyle: 'italic'
+	},
+	right: 20,
+	left: 20,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	top: 25
 }

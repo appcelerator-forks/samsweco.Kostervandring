@@ -6,9 +6,10 @@
 				<Label id="lblClue"></Label>
 			</View>
 			<View id="ViewChooseLetter" class="views">
-				<Label id="visaFraga" text="Här ska första bokstaven matas in!"></Label>
+				<Label id="lblVisaFraga" text="Fyll i den bokstav du hittat: "></Label>
 				<TextField id="letter" borderColor="#000" ></TextField>
-				<Button id="btnSaveLetter" onClick="saveLetter">välja bokstav</Button>
+				<Button id="btnSaveLetter" onClick="saveLetter">OK</Button>
+				<Label id="lblInfo">Nedan kan du se de bokstäver du hittat än så länge: </Label>
 				<Label id="lblSavedLetters"></Label>
 			</View>
 		</ScrollView>

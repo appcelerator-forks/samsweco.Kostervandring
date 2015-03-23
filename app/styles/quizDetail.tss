@@ -71,3 +71,12 @@
 			
 		}
 }
+
+'#startInteractive' : {
+	height: 30,
+	width: 200,
+	backgroundColor: '#FFD6AD',
+	top: 20,
+	radius: 30,
+	borderRadius: 7.5
+}
