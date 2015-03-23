@@ -13,7 +13,8 @@ createMapRoutes('redroute.json', 'Röda leden', 'red');
 createMapRoutes('redrouteeasy.json', 'Lättare led, röda leden', 'red');
 createMapRoutes('redrouteeasy2.json', 'Lättare led, röda leden', 'red');
 createMapRoutes('whiteroute.json', 'Vita leden', 'white');
-createMapRoutes('yellowroute.json', 'Gula leden', 'yellow');
+//createMapRoutes('yellowroute.json', 'Gula leden', 'yellow');
+createMapRoutesGul();
 // addRoutes();
 
 function createMapRoutes(file, name, color) {
@@ -49,6 +50,44 @@ function createMapRoutes(file, name, color) {
 		map3.addRoute(MapModule.createRoute(route));
 	}
 }
+
+function createMapRoutesGul() {
+
+	var adventureRoute = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "rutter/" + "gul2.json").read().text;
+	var v = JSON.parse(adventureRoute);
+	
+	var array = [];
+	array.push(v);
+
+	for (var u = 0; u < array.length; u++) {
+		var coords = array[0].features[0].geometry.coordinates[u];
+		
+		var j = new Array();
+
+		for (var i = 0; i < coords.length; i++) {
+
+			var c = {
+				latitude : coords[i][1],
+				longitude : coords[i][0]
+			};
+
+			j.push(c);	
+		}
+
+		var route = {
+			name : "name",
+			points : j,
+			color : "pink",
+			width : 2
+		};
+
+		map3.addRoute(MapModule.createRoute(route));
+	}
+}
+
+
+
+
 
 Ti.Geolocation.getCurrentPosition(function(e) {
 	if (e.error) {
