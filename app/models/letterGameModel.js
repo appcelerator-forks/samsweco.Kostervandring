@@ -3,7 +3,7 @@ exports.definition = {
 
 		adapter: {
 			type: "sql",
-			collection_name: "quizModel",
+			collection_name: "letterGameModel",
 			db_file : "/dbKostervandring.sqlite"
 		}
 	},
