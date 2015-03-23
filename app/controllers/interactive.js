@@ -23,8 +23,13 @@ exports.openNextQuestion = openNextQuestion;
 
 function saveLetter() {
 	var save = $.letter.value;
-	Titanium.API.info('bokstaven: ' + save);
-	$.lblSavedLetters.text = save;
+	lettersArray.push(save);
+	 // for (i=0; i < lettersArray; i++)
+	 // {
+	 // // HÄT BÖR DU SKRIVA NÅGOT!!!!!
+	 // }
+	Titanium.API.info('detta finns i arrayen: ' + lettersArray);
+	$.lblSavedLetters.text = lettersArray;
 }
 
 function getClue() {
@@ -42,42 +47,6 @@ function getClue() {
 
 $.lblClue.text = txt;
 	};
-	// var ledtrad = clueCollection.toJSON();
-	
-	// Titanium.API.info('HÄR SER DU: ' + JSON.stringify(ledtrad));}
 
 
 
-// function getClue(e) {
-//
-// try {
-// //var id = e.rowData.id;
-//
-// var clueCollection = Alloy.Collections.gameLetterModel;
-// clueCollection.fetch({
-// query : 'SELECT infoText from gameLetterModel where id = 1'
-// });
-//
-// var jsonObj = clueCollection.toJSON();
-// var txt = jsonObj[0].infoText;
-// // var name = jsonObj[0].name;
-//
-// var hotspotTxt = {
-// // title : name,
-// infoText : txt
-// // id : id
-// };
-//
-//
-//
-// //
-// // var hotspotDetail = Alloy.createController("hotspotDetail", hotspotTxt).getView();
-// // // hotspotDetail.open();
-// // $.navwin.openWindow(hotspotDetail);
-// //
-// } catch(e) {
-// newError("Något gick fel när sidan skulle laddas, prova igen!", "Index");
-// }
-//
-//
-// }

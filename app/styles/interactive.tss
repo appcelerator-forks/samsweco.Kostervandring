@@ -20,7 +20,8 @@
 	backgroundColor: '#FFD6AD',
 	top: 20,
 	radius: 30,
-	borderRadius: 7.5
+	borderRadius: 7.5,
+	layout: 'vetical'
 }
 
 "#ViewClue": {

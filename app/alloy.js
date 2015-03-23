@@ -51,3 +51,6 @@ function showDialog(){
 function closeDialog(){
 	$.dialog.close();
 };
+
+var lettersArray =[];
+
