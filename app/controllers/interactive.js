@@ -18,3 +18,10 @@ function openNextQuestion() {
 	}
 }
 exports.openNextQuestion = openNextQuestion;
+
+function saveLetter()
+{
+	var save = $.letter.value;
+	Titanium.API.info('bokstaven: ' + save);
+	$.lblSavedLetters.text = save;
+}

@@ -12,3 +12,8 @@
 	borderColor : '#CCCCCC',
 	width : 150	
 }
+
+"#btnSaveLetter" : {
+	height: 100,
+	width: 150,
+}

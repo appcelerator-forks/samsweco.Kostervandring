@@ -5,6 +5,10 @@
 			<View id="viewFraga" class="views">
 				<Label id="visaFraga" text="Här ska första bokstaven matas in!"></Label>
 				<TextField id="letter" borderColor="#000" ></TextField>
+				<Label id="test">dfdfghj</Label>
+				<Button id="btnSaveLetter" onClick="saveLetter">välja bokstav</Button>
+				
+				<Label id="lblSavedLetters"></Label>
 			</View>
 		</ScrollView>
 	</Window>
