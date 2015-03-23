@@ -4,8 +4,9 @@
 	layout : 'vertical'
 }
 
-"#viewFraga" : {
-	layout : 'vertical'
+"#ViewChooseLetter" : {
+	layout : 'vertical',
+	top : 200
 }
 
 "#letter" : {
@@ -16,4 +17,12 @@
 "#btnSaveLetter" : {
 	height: 100,
 	width: 150,
+}
+
+"#ViewClue" : {
+	layout: 'vertical'
+}
+
+"#lblClue" : {
+	layout: 'vertical'
 }

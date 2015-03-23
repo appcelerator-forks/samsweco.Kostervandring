@@ -1,11 +1,11 @@
 var args = arguments[0] || {};
-try {
-	var letterCollection = Alloy.Collections.letterGameModel;
-	letterCollection.fetch();
-	
-} catch(e) {
-	newError("Något gick fel när sidan skulle laddas, prova igen!", "quizDetail - create quizCollection");
-}
+// try {
+	// var letterCollection = Alloy.Collections.letterGameModel;
+	// letterCollection.fetch();
+// 	
+// } catch(e) {
+	// newError("Något gick fel när sidan skulle laddas, prova igen!", "quizDetail - create quizCollection");
+// }
 
 function openInteractive() {
 	 try {
