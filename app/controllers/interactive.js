@@ -24,12 +24,14 @@ exports.openNextQuestion = openNextQuestion;
 function saveLetter() {
 	var save = $.letter.value;
 	lettersArray.push(save);
-	 // for (i=0; i < lettersArray; i++)
-	 // {
-	 // // HÄT BÖR DU SKRIVA NÅGOT!!!!!
-	 // }
-	Titanium.API.info('detta finns i arrayen: ' + lettersArray);
-	$.lblSavedLetters.text = lettersArray;
+	Titanium.API.info('sveret är: ' + lettersArray);
+
+	for (var i = 0; i < lettersArray.length; i++) {
+		var bok = lettersArray[i];
+		// var bok = jsonObj[0];
+		i++;
+	}
+	$.lblSavedLetters.text = bok;
 }
 
 function getClue() {
@@ -40,13 +42,11 @@ function getClue() {
 
 	var jsonObj = clueCollection.toJSON();
 	var txt = jsonObj[0].infoText;
-	
-	var clue = {
- infoText : txt
- };
 
-$.lblClue.text = txt;
+	var clue = {
+		infoText : txt
 	};
 
-
+	$.lblClue.text = txt;
+};
 

@@ -9,7 +9,7 @@
 				<Label id="lblVisaFraga" text="Fyll i den bokstav du hittat: "></Label>
 				<TextField id="letter" borderColor="#000" ></TextField>
 				<Button id="btnSaveLetter" onClick="saveLetter">OK</Button>
-				<Label id="lblInfo">Nedan kan du se de bokstäver du hittat än så länge: </Label>
+				<Label id="lblInfo">Nedan kan du se de bokstäver du hittat än så länge:</Label>
 				<Label id="lblSavedLetters"></Label>
 			</View>
 		</ScrollView>
