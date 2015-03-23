@@ -1,17 +1,10 @@
 var args = arguments[0] || {};
 
-// $.trailDetail.open();
-
 try {
-	// $.hikeDetailWin.title = args.title;
 	$.lblTrailName.text = args.title || 'Default Name';
-	//"Vandringsled : " +
 	$.lblTrailLength.text = args.length + " kilometer" || 'Default Length';
-	//"Distans: " +
 	$.lblTrailColor.text = args.area || 'Default Color';
-	//"Färgmarkering: " +
 	$.lblTrailInfo.text = args.infoTxt || 'Default infoText';
-	// "Beskrivning : " +
 
 	var trailId = args.id;
 
@@ -47,7 +40,7 @@ function selectTrailPics() {
 }
 
 function showHotspots() {
-	// try {
+	try {
 		var tableViewData = [];
 		var rows = getHotspotData();
 
@@ -84,9 +77,9 @@ function showHotspots() {
 
 		$.hotspotTable.data = tableViewData;
 
-	// } catch(e) {
-		// newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - showHotspots");
-	// }
+	} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - showHotspots");
+	}
 }
 
 function getHotspotData() {
@@ -107,7 +100,7 @@ function getHotspotData() {
 }
 
 function showHotspot(e){
-	// try {
+	 try {
 		var name = e.rowData.id;
 
 		var hotspotCollection = Alloy.Collections.hotspotModel;
@@ -130,9 +123,9 @@ function showHotspot(e){
 		var hotspotDetail = Alloy.createController("hotspotDetail", hotspotTxt).getView();
 		Alloy.CFG.tabs.activeTab.open(hotspotDetail);
 
-	// } catch(e) {
-		// newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - showHotspot");
-	// }
+	} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - showHotspot");
+	}
 }
 
 function showIcons() {

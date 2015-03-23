@@ -22,7 +22,6 @@ function setPics() {
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "HotspotDetail - setPics");
 	}
-
 }
 
 function selectHotspotPics() {
@@ -47,7 +46,6 @@ function selectHotspotPics() {
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "HotspotDetail - selectHotspotPics");
 	}
-
 }
 
 function selectNaturumPics() {
@@ -70,7 +68,6 @@ function selectNaturumPics() {
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "HotspotDetail - selectNaturumPics");
 	}
-
 }
 
 function selectKosterPics() {
@@ -93,7 +90,6 @@ function selectKosterPics() {
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "HotspotDetail - selectKosterPics");
 	}
-
 }
 
 function setNaturumInfo() {
@@ -103,5 +99,3 @@ function setNaturumInfo() {
 function setKosterInfo() {
 	$.lblHotspotInfoTxt.text = args.informationKoster;
 }
-
-// $.hotspotDetail.open();
