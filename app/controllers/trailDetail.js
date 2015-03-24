@@ -21,9 +21,6 @@ function zoomMapTrail() {
 		zoomlat : args.zoomlat,
 		zoomlon : args.zoomlon
 	};
-
-	Ti.API.info("Traildetaljer : " + JSON.stringify(trail));
-
 	var mapDetail = Alloy.createController("mapDetail", trail).getView();
 	Alloy.CFG.tabs.activeTab.open(mapDetail);
 }
@@ -181,6 +178,4 @@ function getIcons() {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - getIcons");
 	}
 }
-
-// zoomMap(4);
 

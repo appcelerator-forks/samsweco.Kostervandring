@@ -1,10 +1,10 @@
 <Alloy>
 	<Collection src="hotspotModel" />
-	<Collection src="coordinates"></Collection>
-	<Collection src="trailsModel"></Collection>
+	<Collection src="coordinates" />
+	<Collection src="trailsModel" />
+	<Collection src="jsonFilesModel" />
 	<Window class="container">
-		<View id="mapDetailView">
-			
+		<View id="mapDetailView">		
 		</View>
 		<View id="btnView">
 			<Button id="btnNormal" class="btnChange">Normal</Button>

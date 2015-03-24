@@ -25,7 +25,7 @@ createMapRoutes('yellowroute.json', 'Gula leden', 'yellow');
 
 function createMapRoutes(file, name, color) {
 
-	var adventureRoute = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "rutter/" + file).read().text;
+	var adventureRoute = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "/routes/" + file).read().text;
 	var v = JSON.parse(adventureRoute);
 
 	var array = [];

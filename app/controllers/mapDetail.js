@@ -1,47 +1,19 @@
 var args = arguments[0] || {};
 
-var zoomedName = args.name;
+var zoomName = args.title;
 var zoomColor = args.color;
 var zoomLat = args.zoomlat;
+var zoomLon = args.zoomlon;
+var zoomId = args.id;
 
 Ti.API.info(JSON.stringify(args));
 
 var radius = 10;
 var zoomedMap;
 var MapModule = require('ti.map');
+
 showMap();
-
-function createMapRoutes(file, name, color) {
-
-	var adventureRoute = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "rutter/" + file).read().text;
-	var v = JSON.parse(adventureRoute);
-
-	var array = [];
-	array.push(v);
-
-	for (var u = 0; u < array.length; u++) {
-		var coords = array[0].features[0].geometry.paths[u];
-
-		var j = new Array();
-
-		for (var i = 0; i < coords.length; i++) {
-
-			var c = {
-				latitude : coords[i][1],
-				longitude : coords[i][0]
-			};
-			j.push(c);
-		}
-
-		var route = {
-			name : name,
-			points : j,
-			color : color,
-			width : 2
-		};
-		zoomedMap.addRoute(MapModule.createRoute(route));
-	}
-}
+createMapRoutes(getFile(), zoomName, zoomColor);
 
 function showMap() {
 	try {
@@ -84,12 +56,57 @@ function showMap() {
 		} catch(e) {
 			newError("Något gick fel när sidan skulle laddas, prova igen!", "Map - displayMarkers");
 		}
-
 	}
 
 
 	$.mapDetailView.add(zoomedMap);
 };
+
+	function createMapRoutes(file, name, color) {
+		Ti.API.info(file);
+		
+		var zoomedRoute = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "/routes/" + file).read().text;
+		var v = JSON.parse(zoomedRoute);
+		
+		// var adventureRoute = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "/routes/" + file).read().text;
+		// var v = JSON.parse(adventureRoute);
+
+		var array = [];
+		array.push(v);
+
+		for (var u = 0; u < array.length; u++) {
+			var coords = array[0].features[0].geometry.paths[u];
+
+			var j = new Array();
+
+			for (var i = 0; i < coords.length; i++) {
+
+				var c = {
+					latitude : coords[i][1],
+					longitude : coords[i][0]
+				};
+				j.push(c);
+			}
+
+			var route = {
+				name : name,
+				points : j,
+				color : color,
+				width : 2
+			};
+			zoomedMap.addRoute(MapModule.createRoute(route));
+		}
+	}
+
+function getFile() {
+	var jsonFileCollection = Alloy.Collections.jsonFilesModel;
+	jsonFileCollection.fetch({
+		query : 'SELECT filename FROM jsonFilesModel WHERE trailID ="' + zoomId + '"'
+	});
+
+	var filename = jsonFileCollection.toJSON();
+	return filename[0].filename;
+}
 
 $.btnNormal.addEventListener('click', function() {
 	zoomedMap.mapType = MapModule.NORMAL_TYPE;
