@@ -16,6 +16,10 @@ selectTrailPics();
 showHotspots();
 showIcons();
 
+function showMapDetail(){
+	zoomMap();
+}
+
 function selectTrailPics() {
 	try {
 		var id = trailId;
@@ -165,6 +169,6 @@ function getIcons() {
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - getIcons");
 	}
-
 }
+
 

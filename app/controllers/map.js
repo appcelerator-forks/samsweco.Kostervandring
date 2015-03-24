@@ -168,6 +168,16 @@ function showMap() {
 	$.mapView.add(map3);
 };
 
+function zoomMap(){
+	
+  map3.region = {
+		latitude : 58.89277,
+		longitude : 11.04113,
+		latitudeDelta : 0.1,
+		longitudeDelta : 0.1
+  };
+}
+
 $.btnNormal.addEventListener('click', function() {
 	map3.mapType = MapModule.NORMAL_TYPE;
 });
