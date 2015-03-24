@@ -1,5 +1,5 @@
 var args = arguments[0] || {};
-getClue();
+var id = 1;
 // try {
 // var letterCollection = Alloy.Collections.letterGameModel;
 // letterCollection.fetch();
@@ -25,7 +25,6 @@ function saveLetter() {
 
 	var save = $.letter.value;
 	stor = save.toUpperCase();
-	//lettersArray.push(save);
 	$.lblSavedLetters.text = '';
 
 	if (save == "") {
@@ -36,16 +35,17 @@ function saveLetter() {
 	} else {
 		lettersArray.push(stor);
 		for (var i = 0; i < lettersArray.length; i++) {
-			
+
 			$.lblSavedLetters.text += lettersArray[i];
 		}
 	}
 }
 
 function getClue() {
+
 	var clueCollection = Alloy.Collections.gameLetterModel;
 	clueCollection.fetch({
-		query : 'SELECT infoText from gameLetterModel where id = 1'
+		query : 'SELECT infoText from gameLetterModel where id ="' + id + '"'
 	});
 
 	var jsonObj = clueCollection.toJSON();
@@ -56,5 +56,5 @@ function getClue() {
 	};
 
 	$.lblClue.text = txt;
+	id++;
 };
-

@@ -4,6 +4,7 @@
 		<ScrollView class="headView">
 			<View id="ViewClue">
 				<Label id="lblClue"></Label>
+				<Button id="btnNext" onClick="getClue">Nästa fråga</Button>
 			</View>
 			<View id="ViewChooseLetter" class="views">
 				<Label id="lblVisaFraga" text="Fyll i den bokstav du hittat: "></Label>
