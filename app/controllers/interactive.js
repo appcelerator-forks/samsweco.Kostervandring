@@ -24,28 +24,22 @@ exports.openNextQuestion = openNextQuestion;
 function saveLetter() {
 
 	var save = $.letter.value;
-	lettersArray.push(save);
+	//lettersArray.push(save);
 	$.lblSavedLetters.text = '';
 
 	if (save == "") {
 		alert("Fyll i den bokstav du hittat");
 	}
-	if (save.length > 1)
-	{	
-	alert ("Du får enbart fylla i en bokstav");
-	}
-	else {
+	if (save.length > 1) {
+		alert("Du får enbart fylla i en bokstav");
+	} else {
+		lettersArray.push(save);
 		for (var i = 0; i < lettersArray.length; i++) {
-
+			
 			$.lblSavedLetters.text += lettersArray[i];
 		}
 	}
-	// $.lblSavedLetters.text = '';
-// 
-	// for (var i = 0; i < lettersArray.length; i++) {
-		// $.lblSavedLetters.text += lettersArray[i];
-	}
-
+}
 
 function getClue() {
 	var clueCollection = Alloy.Collections.gameLetterModel;
