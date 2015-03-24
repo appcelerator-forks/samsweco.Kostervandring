@@ -4,6 +4,8 @@ var zoomedName = args.name;
 var zoomColor = args.color;
 var zoomLat = args.zoomlat;
 
+Ti.API.info(JSON.stringify(zoomedName));
+
 var route;
 var radius = 10;
 var map3;

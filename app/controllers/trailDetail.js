@@ -16,14 +16,13 @@ try {
 function zoomMapTrail(){
 		var trail = {
 		id : args.id,
-		title : args.name,
+		title : args.title,
 		color : args.color,
 		zoomlat : args.zoomlat,
-		zoomlon : args.zoomlon,
-		jsonfile : args.jsonfile
+		zoomlon : args.zoomlon
 	};
 
-	 Ti.API.info("Traildetaljer : " + JSON.stringify(args));
+	 Ti.API.info("Traildetaljer : " + JSON.stringify(trail));
 
 	var mapDetail = Alloy.createController("map", trail).getView();
 	Alloy.CFG.tabs.activeTab.open(mapDetail);
