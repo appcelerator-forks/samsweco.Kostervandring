@@ -22,51 +22,31 @@ function openNextQuestion() {
 exports.openNextQuestion = openNextQuestion;
 
 function saveLetter() {
-	// var save = $.letter.value;
-	// lettersArray.push(save);
-	// Titanium.API.info('svaret är: ' + lettersArray);
-// 
-// $.lblSavedLetters.text = lettersArray;
 
-// function oneLetter()
-// {
-var textfields = $.letter;
- if(textfields == '')
- {
- 	alert ('heheheheh');
- 	
- }
+	var save = $.letter.value;
+	lettersArray.push(save);
+	$.lblSavedLetters.text = '';
+
+	if ($.letter.value == "") {
+		alert("Fyll i den bokstav du hittat");
+	}
+	else if ($.letter.value >= 2)
+	{	
+	alert ("Du får enbart fylla i en bokstav");
+	}
+	else {
+		for (var i = 0; i < lettersArray.length; i++) {
+
+			$.lblSavedLetters.text += lettersArray[i];
+		}
+	}
+	$.lblSavedLetters.text = '';
+
+	for (var i = 0; i < lettersArray.length; i++) {
+		$.lblSavedLetters.text += lettersArray[i];
+	}
+
 }
-// function checkTextfield(event) {
-    // if (this.value !== '') {
-        // alert("tooooom");
-    // } else {
-        // for (var i in textfields) {
-            // if (textfields[i].value !== '') {
-                // return;
-            // }
-        // }
-        // $.button.visible = false;
-    // }
-// }
-// 
-// for (var i in textfields) {
-    // textfields[i].addEventListener('change', checkTextfield);
-// }
-	// for (var i = 0; i < lettersArray.length; i++) {
-		// var bok = lettersArray[i];
-	// }
-	// $.lblSavedLetters.text = bok;
-// }
-
-// function oneLetter()
-// {
-// 	
-	// if (letter.value = '')
-	// {
-		// alert ("field is empty");
-	// }
-// }
 
 function getClue() {
 	var clueCollection = Alloy.Collections.gameLetterModel;

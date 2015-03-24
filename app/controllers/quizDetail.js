@@ -8,12 +8,12 @@ var args = arguments[0] || {};
 // }
 
 function openInteractive() {
-	 try {
+	 // try {
 			var interactiveWin = Alloy.createController("interactive").getView();
 			Alloy.CFG.tabs.activeTab.open(interactiveWin);
-	} catch(e) {
-		newError("Något gick fel när sidan skulle laddas, prova igen!", "quizDetail - openQuiz");
-	}
+	// } catch(e) {
+		// newError("Något gick fel när sidan skulle laddas, prova igen!", "quizDetail - openQuiz");
+	// }
 }
 
 exports.openInteractive = openInteractive;
