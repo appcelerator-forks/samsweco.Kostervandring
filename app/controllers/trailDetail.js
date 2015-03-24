@@ -170,4 +170,5 @@ function getIcons() {
 	}
 }
 
+zoomMap(4);
 

@@ -73,10 +73,7 @@ if (Ti.Geolocation.locationServicesEnabled) {
 
 function getPosition(coordinatesObj) {
 	gLat = coordinatesObj.latitude;
-	$.lblLat.text = gLat;
-
 	gLon = coordinatesObj.longitude;
-	$.lblLong.text = gLon;
 
 	isNearPoint();
 };
@@ -168,26 +165,34 @@ function showMap() {
 	$.mapView.add(map3);
 };
 
-function zoomMap(){
+function zoomMap(trailID){
 	id = trailID;
 	
-	// var zoomCords = Alloy.Collections.trails;
-	// zoomCords.fetch({
-		// query : 'SELECT zoomLat, zoomLon FROM trailModel where id = ' + id  
-	// }); 
-// 	
-	// var zoomJSON = zoomCords.toJSON();
-	// var lat = zoomJSON.zoomLat;
-	// var lon = zoomJSON.zoomLon;
+	var zoomCordCollection = Alloy.Collections.trailsModel;
+	zoomCordCollection.fetch({
+		query : 'SELECT zoomLat, zoomLon FROM trailsModel where id = ' + id  
+	}); 
+	
+	Ti.API.info(JSON.stringify(zoomCordCollection));
+	
+	var zoomJSON = zoomCordCollection.toJSON();
+	Ti.API.info(JSON.stringify(zoomJSON));
+	var lat = zoomJSON[0].zoomLat;
+	var lon = zoomJSON[0].zoomLon;
+	
+	alert("lat :" + lat);
 	
 	map3.region = {
 				latitude : lat,
 				longitude : lon,
-				latitudeDelta : 0.05,
-				longitudeDelta : 0.05
+				latitudeDelta : 0.02,
+				longitudeDelta : 0.02
 			};
 }
-exports.zoomMap = zoomMap;
+
+$.testZoom.addEventListener('click', function() {
+zoomMap(4);
+});
 
 $.btnNormal.addEventListener('click', function() {
 	map3.mapType = MapModule.NORMAL_TYPE;

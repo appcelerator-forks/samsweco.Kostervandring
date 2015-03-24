@@ -95,17 +95,17 @@ function showTrailDetails(e) {
 		});
 
 		var jsonObj = trailsCollection.toJSON();
-		var name = jsonObj[0].name;
-		var traillength = jsonObj[0].length;
-		var infoText = jsonObj[0].infoTxt;
-		var trailcolor = jsonObj[0].area;
 
 	var args = {
 		id : id,
-		title : name,
-		length : traillength,
-		infoTxt : infoText,
-		area : trailcolor
+		title : jsonObj[0].name,
+		length : jsonObj[0].length,
+		infoTxt : jsonObj[0].infoTxt,
+		area : jsonObj[0].area,
+		zoomlat : jsonObj[0].zoomLat,
+		zoomlon : jsonObj[0].zoomLon,
+		color : jsonObj[0].color,
+		jsonfile : jsonObj[0].JSONfile
 	};
 
 	// Ti.API.info("Traildetaljer : " + JSON.stringify(args));
