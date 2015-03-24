@@ -1,4 +1,9 @@
 var args = arguments[0] || {};
+
+var zoomedName = args.name;
+var zoomColor = args.color;
+var zoomLat = args.zoomlat;
+
 var route;
 var radius = 10;
 var map3;

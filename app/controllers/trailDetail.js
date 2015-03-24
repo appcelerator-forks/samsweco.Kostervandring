@@ -13,6 +13,22 @@ try {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - set labels");
 }
 
+function zoomMapTrail(){
+		var trail = {
+		id : args.id,
+		title : args.name,
+		color : args.color,
+		zoomlat : args.zoomlat,
+		zoomlon : args.zoomlon,
+		jsonfile : args.jsonfile
+	};
+
+	 Ti.API.info("Traildetaljer : " + JSON.stringify(args));
+
+	var mapDetail = Alloy.createController("map", trail).getView();
+	Alloy.CFG.tabs.activeTab.open(mapDetail);
+}
+
 selectTrailPics();
 showHotspots();
 showIcons();
@@ -21,7 +37,6 @@ showIcons();
 
 function selectTrailPics() {
 	try {
-		var id = trailId;
 		var mediaCollection = Alloy.Collections.mediaModel;
 		mediaCollection.fetch({
 			query : 'SELECT filename from mediaModel where trail_id="' + trailId + '"'
@@ -170,5 +185,5 @@ function getIcons() {
 	}
 }
 
-zoomMap(4);
+// zoomMap(4);
 
