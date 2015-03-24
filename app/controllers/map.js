@@ -168,12 +168,23 @@ function showMap() {
 	$.mapView.add(map3);
 };
 
-function zoomMap(lat, lon, trailID, delta){
+function zoomMap(){
+	id = trailID;
+	
+	// var zoomCords = Alloy.Collections.trails;
+	// zoomCords.fetch({
+		// query : 'SELECT zoomLat, zoomLon FROM trailModel where id = ' + id  
+	// }); 
+// 	
+	// var zoomJSON = zoomCords.toJSON();
+	// var lat = zoomJSON.zoomLat;
+	// var lon = zoomJSON.zoomLon;
+	
 	map3.region = {
-				latitude : 58.89265,
-				longitude : 11.04104,
-				latitudeDelta : 0.1,
-				longitudeDelta : 0.1
+				latitude : lat,
+				longitude : lon,
+				latitudeDelta : 0.05,
+				longitudeDelta : 0.05
 			};
 }
 exports.zoomMap = zoomMap;
