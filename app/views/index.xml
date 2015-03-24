@@ -15,8 +15,8 @@
 				</ScrollView>
 			</Window>
 		</Tab>
-		<Tab id="hikeTab" title="Vandringleder" icon="/images/hikeMenuCopy.png" onClick="toTrails">
-			<Window id="hikeWin" title="Vandringleder" onOpen="toTrails" />
+		<Tab id="hikeTab" title="Vandringleder" icon="/images/hikeMenuCopy.png">
+			<Window id="hikeWin" title="Vandringleder" onOpen="toTrails" /> <!--  onClick="toTrails" -->
 		</Tab>
 		<Tab id="maptab" title="Karta" icon="/images/mapMenuCopy.png">
 			<Window id="mapWin" onOpen="toMap" navBarHidden="true" />

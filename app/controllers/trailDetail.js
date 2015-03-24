@@ -7,6 +7,7 @@ try {
 	$.lblTrailInfo.text = args.infoTxt || 'Default infoText';
 
 	var trailId = args.id;
+	globalTrailID = trailId;
 
 } catch(e) {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - set labels");
@@ -16,9 +17,7 @@ selectTrailPics();
 showHotspots();
 showIcons();
 
-function showMapDetail(){
-	map.zoomMap();
-}
+
 
 function selectTrailPics() {
 	try {
