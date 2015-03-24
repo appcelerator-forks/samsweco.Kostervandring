@@ -17,7 +17,7 @@ showHotspots();
 showIcons();
 
 function showMapDetail(){
-	zoomMap();
+	map.zoomMap();
 }
 
 function selectTrailPics() {

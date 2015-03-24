@@ -54,3 +54,5 @@ function closeDialog(){
 
 var lettersArray =[];
 
+var globalTrailID = 0;
+
