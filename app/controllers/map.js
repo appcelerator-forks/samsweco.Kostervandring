@@ -42,7 +42,7 @@ function createMapRoutes(file, name, color) {
 				latitude : coords[i][1],
 				longitude : coords[i][0]
 			};
-				j.push(c);
+			j.push(c);
 		}
 
 		var route = {
@@ -169,36 +169,38 @@ function showMap() {
 		}
 
 	}
+
+
 	$.mapView.add(map3);
 };
 
-function zoomMap(trailID){
+function zoomMap(trailID) {
 	id = trailID;
-	
+
 	var zoomCordCollection = Alloy.Collections.trailsModel;
 	zoomCordCollection.fetch({
-		query : 'SELECT zoomLat, zoomLon FROM trailsModel where id = ' + id  
-	}); 
-	
+		query : 'SELECT zoomLat, zoomLon FROM trailsModel where id = ' + id
+	});
+
 	Ti.API.info(JSON.stringify(zoomCordCollection));
-	
+
 	var zoomJSON = zoomCordCollection.toJSON();
 	Ti.API.info(JSON.stringify(zoomJSON));
 	var lat = zoomJSON[0].zoomLat;
 	var lon = zoomJSON[0].zoomLon;
-	
+
 	alert("lat :" + lat);
-	
+
 	map3.region = {
-				latitude : lat,
-				longitude : lon,
-				latitudeDelta : 0.02,
-				longitudeDelta : 0.02
-			};
+		latitude : lat,
+		longitude : lon,
+		latitudeDelta : 0.02,
+		longitudeDelta : 0.02
+	};
 }
 
 $.testZoom.addEventListener('click', function() {
-zoomMap(4);
+	zoomMap(4);
 });
 
 $.btnNormal.addEventListener('click', function() {

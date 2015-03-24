@@ -4,14 +4,12 @@
 	<Collection src="trailsModel"></Collection>
 	<View class="container">
 		<View id="mapView"></View>
-		
 		<View id="btnView">
 			<Button id="testZoom">Zooma</Button>
-		<Button id="btnNormal" class="btnChange">Normal</Button>
-		<Button id="btnHybrid" class="btnChange">Hybrid</Button>
-		<Button id="btnSatellit" class="btnChange">Satellit</Button>
+			<Button id="btnNormal" class="btnChange">Normal</Button>
+			<Button id="btnHybrid" class="btnChange">Hybrid</Button>
+			<Button id="btnSatellit" class="btnChange">Satellit</Button>
 		</View>
-		
 
 	</View>
 	<Widget id="question" src="alertWidgetQuiz" name="widget"></Widget>

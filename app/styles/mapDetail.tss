@@ -1,4 +1,16 @@
 
-".container" : {
-  
+".container": {
+	layout: 'vertical'
+}
+
+"#btnView": {
+	layout: 'horizontal'
+}
+
+"#mapDetailView": {
+	height: '90%'
+}
+
+".btnChange": {
+	left: '5%'
 }

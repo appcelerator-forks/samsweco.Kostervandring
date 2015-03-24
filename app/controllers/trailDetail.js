@@ -13,8 +13,8 @@ try {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - set labels");
 }
 
-function zoomMapTrail(){
-		var trail = {
+function zoomMapTrail() {
+	var trail = {
 		id : args.id,
 		title : args.title,
 		color : args.color,
@@ -22,17 +22,15 @@ function zoomMapTrail(){
 		zoomlon : args.zoomlon
 	};
 
-	 Ti.API.info("Traildetaljer : " + JSON.stringify(trail));
+	Ti.API.info("Traildetaljer : " + JSON.stringify(trail));
 
-	var mapDetail = Alloy.createController("map", trail).getView();
+	var mapDetail = Alloy.createController("mapDetail", trail).getView();
 	Alloy.CFG.tabs.activeTab.open(mapDetail);
 }
 
 selectTrailPics();
 showHotspots();
 showIcons();
-
-
 
 function selectTrailPics() {
 	try {
@@ -110,14 +108,14 @@ function getHotspotData() {
 
 		var hotTrails = hotstrailCollection.toJSON();
 		return hotTrails;
-		
+
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - getHotspotData");
 	}
 }
 
-function showHotspot(e){
-	 try {
+function showHotspot(e) {
+	try {
 		var name = e.rowData.id;
 
 		var hotspotCollection = Alloy.Collections.hotspotModel;

@@ -15,10 +15,3 @@
 	left: '5%'
 }
 
-"#visaKoord": {
-	height : '10%',
-	layout : 'vertical',
-	font : {
-		fontSize : 10
-	}
-}
