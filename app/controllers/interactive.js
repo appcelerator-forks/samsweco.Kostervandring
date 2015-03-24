@@ -22,18 +22,51 @@ function openNextQuestion() {
 exports.openNextQuestion = openNextQuestion;
 
 function saveLetter() {
-	var save = $.letter.value;
-	lettersArray.push(save);
-	Titanium.API.info('svaret är: ' + lettersArray);
+	// var save = $.letter.value;
+	// lettersArray.push(save);
+	// Titanium.API.info('svaret är: ' + lettersArray);
+// 
+// $.lblSavedLetters.text = lettersArray;
 
-	for (var i = 0; i < lettersArray.length; i++) {
-	
-	var bok = lettersArray[i];
-		
-		
-	}
-		$.lblSavedLetters.text = bok + bok;
+// function oneLetter()
+// {
+var textfields = $.letter;
+ if(textfields == '')
+ {
+ 	alert ('heheheheh');
+ 	
+ }
 }
+// function checkTextfield(event) {
+    // if (this.value !== '') {
+        // alert("tooooom");
+    // } else {
+        // for (var i in textfields) {
+            // if (textfields[i].value !== '') {
+                // return;
+            // }
+        // }
+        // $.button.visible = false;
+    // }
+// }
+// 
+// for (var i in textfields) {
+    // textfields[i].addEventListener('change', checkTextfield);
+// }
+	// for (var i = 0; i < lettersArray.length; i++) {
+		// var bok = lettersArray[i];
+	// }
+	// $.lblSavedLetters.text = bok;
+// }
+
+// function oneLetter()
+// {
+// 	
+	// if (letter.value = '')
+	// {
+		// alert ("field is empty");
+	// }
+// }
 
 function getClue() {
 	var clueCollection = Alloy.Collections.gameLetterModel;
