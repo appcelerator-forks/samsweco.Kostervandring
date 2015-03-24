@@ -27,10 +27,10 @@ function saveLetter() {
 	lettersArray.push(save);
 	$.lblSavedLetters.text = '';
 
-	if ($.letter.value == "") {
+	if (save == "") {
 		alert("Fyll i den bokstav du hittat");
 	}
-	else if ($.letter.value >= 2)
+	if (save.length > 1)
 	{	
 	alert ("Du får enbart fylla i en bokstav");
 	}
@@ -40,13 +40,12 @@ function saveLetter() {
 			$.lblSavedLetters.text += lettersArray[i];
 		}
 	}
-	$.lblSavedLetters.text = '';
-
-	for (var i = 0; i < lettersArray.length; i++) {
-		$.lblSavedLetters.text += lettersArray[i];
+	// $.lblSavedLetters.text = '';
+// 
+	// for (var i = 0; i < lettersArray.length; i++) {
+		// $.lblSavedLetters.text += lettersArray[i];
 	}
 
-}
 
 function getClue() {
 	var clueCollection = Alloy.Collections.gameLetterModel;
