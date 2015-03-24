@@ -24,14 +24,15 @@ exports.openNextQuestion = openNextQuestion;
 function saveLetter() {
 	var save = $.letter.value;
 	lettersArray.push(save);
-	Titanium.API.info('sveret är: ' + lettersArray);
+	Titanium.API.info('svaret är: ' + lettersArray);
 
 	for (var i = 0; i < lettersArray.length; i++) {
-		var bok = lettersArray[i];
-		// var bok = jsonObj[0];
-		i++;
+	
+	var bok = lettersArray[i];
+		
+		
 	}
-	$.lblSavedLetters.text = bok;
+		$.lblSavedLetters.text = bok + bok;
 }
 
 function getClue() {
