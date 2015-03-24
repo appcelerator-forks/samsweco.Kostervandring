@@ -24,6 +24,7 @@ exports.openNextQuestion = openNextQuestion;
 function saveLetter() {
 
 	var save = $.letter.value;
+	stor = save.toUpperCase();
 	//lettersArray.push(save);
 	$.lblSavedLetters.text = '';
 
@@ -33,7 +34,7 @@ function saveLetter() {
 	if (save.length > 1) {
 		alert("Du får enbart fylla i en bokstav");
 	} else {
-		lettersArray.push(save);
+		lettersArray.push(stor);
 		for (var i = 0; i < lettersArray.length; i++) {
 			
 			$.lblSavedLetters.text += lettersArray[i];
