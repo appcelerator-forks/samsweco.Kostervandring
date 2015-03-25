@@ -12,6 +12,8 @@ var map3;
 var MapModule = require('ti.map');
 showMap();
 
+
+
 createMapRoutes('adventureroute.json', 'Äventyrsleden', 'purple');
 createMapRoutes('blueroute.json', 'Blåa leden', 'blue');
 createMapRoutes('blueshortcut.json', 'Genväg blåa leden', 'blue');
