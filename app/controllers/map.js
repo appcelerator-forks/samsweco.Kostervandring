@@ -24,6 +24,7 @@ createMapRoutes('redrouteeasy.json', 'Lättare led, röda leden', 'red');
 createMapRoutes('redrouteeasy2.json', 'Lättare led, röda leden', 'red');
 createMapRoutes('whiteroute.json', 'Vita leden', 'white');
 createMapRoutes('yellowroute.json', 'Gula leden', 'yellow');
+// createMapRoutes('yellow_1.json', 'Gula leden', 'yellow');
 
 function createMapRoutes(file, name, color) {
 
