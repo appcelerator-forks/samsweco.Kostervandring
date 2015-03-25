@@ -61,18 +61,18 @@ function showHotspots() {
 				id : rows[i].name,
 				layout : 'horizontal',
 				height : '60dp',
-				top : 0,
+				top : '0dp',
 				hasChild : true
 			});
 
 			var coverimg = Ti.UI.createImageView({
 				height : '60dp',
 				width : '90dp',
-				left : 10
+				left : '10dp'
 			});
 
 			var lblName = Ti.UI.createLabel({
-				left : 10,
+				left : '10dp',
 				font : {
 					fontSize : 12
 				}
@@ -149,7 +149,7 @@ function showIcons() {
 			var covericon = Ti.UI.createImageView({
 				height : '30dp',
 				width : '30dp',
-				left : 10
+				left : '10dp'
 			});
 
 			covericon.image = "/piktogram/" + selectedIcons[i].icon;

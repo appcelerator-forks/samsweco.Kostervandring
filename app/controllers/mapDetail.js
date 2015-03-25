@@ -67,9 +67,6 @@ function showMap() {
 		
 		var zoomedRoute = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "/routes/" + file).read().text;
 		var v = JSON.parse(zoomedRoute);
-		
-		// var adventureRoute = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "/routes/" + file).read().text;
-		// var v = JSON.parse(adventureRoute);
 
 		var array = [];
 		array.push(v);
@@ -92,7 +89,7 @@ function showMap() {
 				name : name,
 				points : j,
 				color : color,
-				width : 2
+				width : '2dp'
 			};
 			zoomedMap.addRoute(MapModule.createRoute(route));
 		}

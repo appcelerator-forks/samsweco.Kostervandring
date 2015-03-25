@@ -22,7 +22,7 @@ function setRowData() {
 			var row = Ti.UI.createTableViewRow({
 				id : i + 1,
 				height : '80dp',
-				top : 0,
+				top : '0dp',
 				hasChild : true
 			});
 
@@ -36,10 +36,10 @@ function setRowData() {
 
 			var coverimg = Ti.UI.createImageView({
 				width : '110dp',
-				left : 10
+				left : '10dp''
 			});
 			var lblName = Ti.UI.createLabel({
-				left : 10,
+				left : '10dp',
 				top : '2dp',
 				color : '#FF9966',
 				font : {
@@ -48,15 +48,15 @@ function setRowData() {
 				}
 			});
 			var lblDistance = Ti.UI.createLabel({
-				left : 10,
-				top : 0,
+				left : '10dp',
+				top : '0dp',
 				font : {
 					fontSize : 11
 				}
 			});
 			var lblColor = Ti.UI.createLabel({
-				left : 10,
-				top : 0,
+				left : '10dp',
+				top : '0dp',
 				font : {
 					fontSize : 11
 				}
@@ -85,7 +85,7 @@ function setRowData() {
 
 function showTrailDetails(e) {
 
-	// try {
+	 try {
 		var id = e.rowData.id;
 		// Ti.API.info("trailid : " + id);
 
@@ -113,9 +113,9 @@ function showTrailDetails(e) {
 	var trailDetail = Alloy.createController("trailDetail", args).getView();
 	Alloy.CFG.tabs.activeTab.open(trailDetail);
 
-	// } catch(e) {
-	// newError("Något gick fel när sidan skulle laddas, prova igen!", "Trails - showTrailDetails");
-	// }
+	} catch(e) {
+	newError("Något gick fel när sidan skulle laddas, prova igen!", "Trails - showTrailDetails");
+	}
 }
 
 
@@ -126,6 +126,7 @@ function showIcons(id) {
 	var iconView = Ti.UI.createView({
 		layout : 'horizontal',
 		height : '30dp',
+		width : Ti.UI.SIZE,
 		top : '5dp'
 
 	});
@@ -135,7 +136,7 @@ function showIcons(id) {
 		var iconImgView = Ti.UI.createImageView({
 			height : '25dp',
 			width : '25dp',
-			left : 10
+			left : '10dp'
 		});
 
 		iconImgView.image = "/piktogram/" + selectedIcons[i].icon;

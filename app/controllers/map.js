@@ -51,7 +51,7 @@ function createMapRoutes(file, name, color) {
 			name : name,
 			points : j,
 			color : color,
-			width : 2
+			width : '2dp'
 		};
 		map3.addRoute(MapModule.createRoute(route));
 	}

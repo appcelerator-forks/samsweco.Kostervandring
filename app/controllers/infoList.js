@@ -71,7 +71,7 @@ function setRowData() {
 			});
 			
 			var lblDesc = Ti.UI.createLabel({
-				left : 10,
+				left : '10dp',
 				top : '2dp',
 				font : {
 					fontSize : 11,
