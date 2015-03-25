@@ -36,7 +36,7 @@ function setRowData() {
 
 			var coverimg = Ti.UI.createImageView({
 				width : '110dp',
-				left : '10dp''
+				left : '10dp'
 			});
 			var lblName = Ti.UI.createLabel({
 				left : '10dp',
