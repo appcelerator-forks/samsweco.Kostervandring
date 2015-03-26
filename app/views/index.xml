@@ -4,7 +4,7 @@
 		<Tab id="koster" class="btn" title="Koster" icon="/images/kosterStarMenuCopy.png" >
 			<Window id="koster" class="container" backgroundImage="/pics/front.png" navBarHidden="true">
 				<ScrollView class="headView">
-					<ImageView class="imgKoster" image="/pics/logga.png"></ImageView>
+					<ImageView class="imgKoster" image="/pics/kosterhavet_logga.png"></ImageView>
 					<Label id="lblheadInfo"></Label>
 					<View class="buttonView">
 						<!-- <Button class="btnIndex" onClick="aboutKoster">Mer om Nationalparken</Button>

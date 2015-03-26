@@ -21,16 +21,8 @@
 ".imgKoster": {
 	top: 20,
 	center: '50%',
-	height : '80dp',
-	width : '80dp'
-}
-
-"#menuView": {
-	layout: 'horizontal',
-	bottom: 0,
-	height: Titanium.UI.SIZE,
-	width: Ti.UI.FILL,
-	backgroundColor: 'transparent'
+	height : '90dp',
+	width : Titanium.UI.SIZE
 }
 
 ".headView": {
