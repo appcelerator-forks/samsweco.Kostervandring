@@ -23,12 +23,12 @@ function showMap() {
 			userLocation : true,
 			mapType : MapModule.SATELLITE_TYPE,
 			animate : true,
-			region : calculateMapRegion(trailCoordinates),
+			region : calculateMapRegion(getFile()),
 			// {
-				// latitude : 58.893539,
-				// longitude : 11.012579,
-				// latitudeDelta : 0.03,
-				// longitudeDelta : 0.03
+			// latitude : 58.893539,
+			// longitude : 11.012579,
+			// latitudeDelta : 0.03,
+			// longitudeDelta : 0.03
 			// },
 			height : '90%',
 			width : Ti.UI.FILL
@@ -125,25 +125,49 @@ function getID() {
 	return idArray;
 }
 
-function calculateMapRegion(trailCoordinates) {
+function calculateMapRegion(file) {
+
+	Ti.API.info(file);
+
+	var zoomedRoute = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "/routes/" + file).read().text;
+	var v = JSON.parse(zoomedRoute);
+
+	var array = [];
+	array.push(v);
+
+	for (var u = 0; u < array.length; u++) {
+		var coords = array[0].features[0].geometry.paths[u];
+
+		//var j = new Array();
+
+		for (var i = 0; i < coords.length; i++) {
+
+			var c = {
+				latitude : coords[i][1],
+				longitude : coords[i][0]
+			};
+			coordinatesArray.push(c);
+		}
+	}
+
 	var region = {
 		latitude : 58.893539,
 		longitude : 11.012579,
 		latitudeDelta : 0.1,
 		longitudeDelta : 0.1
 	};
-	if (trailCoordinates.length != 0) {
+	if (coordinatesArray.length != 0) {
 		var poiCenter = {};
 		var delta = 0.02;
-		var minLat = trailCoordinates[0].latitude,
-		    maxLat = trailCoordinates[0].latitude,
-		    minLon = trailCoordinates[0].longitude,
-		    maxLon = trailCoordinates[0].longitude;
-		for (var i = 0; i < trailCoordinates.length - 1; i++) {
-			minLat = Math.min(trailCoordinates[i + 1].latitude, minLat);
-			maxLat = Math.max(trailCoordinates[i + 1].latitude, maxLat);
-			minLon = Math.min(trailCoordinates[i + 1].longitude, minLon);
-			maxLon = Math.max(trailCoordinates[i + 1].longitude, maxLon);
+		var minLat = coordinatesArray[0].latitude,
+		    maxLat = coordinatesArray[0].latitude,
+		    minLon = coordinatesArray[0].longitude,
+		    maxLon = coordinatesArray[0].longitude;
+		for (var i = 0; i < coordinatesArray.length - 1; i++) {
+			minLat = Math.min(coordinatesArray[i + 1].latitude, minLat);
+			maxLat = Math.max(coordinatesArray[i + 1].latitude, maxLat);
+			minLon = Math.min(coordinatesArray[i + 1].longitude, minLon);
+			maxLon = Math.max(coordinatesArray[i + 1].longitude, maxLon);
 		}
 
 		var deltaLat = maxLat - minLat;
@@ -151,11 +175,19 @@ function calculateMapRegion(trailCoordinates) {
 
 		delta = Math.max(deltaLat, deltaLon);
 		//Change multiplier if it's too close
-		delta = delta * 1.2;
+		
+		if(zoomColor == 'green' || zoomColor == 'blue' || zoomColor == 'yellow'){
+			delta = delta * 0.7;
+		}
+		
+		else{
+			delta = delta * 1.2;
+		}
+		
 
 		poiCenter.lat = maxLat - parseFloat((maxLat - minLat) / 2);
 		poiCenter.lon = maxLon - parseFloat((maxLon - minLon) / 2);
-		
+
 		region = {
 			latitude : poiCenter.lat,
 			longitude : poiCenter.lon,
@@ -164,7 +196,7 @@ function calculateMapRegion(trailCoordinates) {
 		};
 	}
 	return region;
-};
+}
 
 $.btnNormal.addEventListener('click', function() {
 	zoomedMap.mapType = MapModule.NORMAL_TYPE;
