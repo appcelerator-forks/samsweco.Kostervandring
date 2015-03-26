@@ -184,21 +184,18 @@ pinCollection.fetch({
 
 
 var jsonObj = pinCollection.toJSON();
-Ti.API.info('INFORMATION :' + JSON.stringify(jsonObj));
-
 	for(var i = 0; i<jsonObj.length; i++){
 			var markerAnnotation = MapModule.createAnnotation({
 				latitude : jsonObj[i].pinLat,
 				longitude : jsonObj[i].pinLon,
 				title : jsonObj[i].name,
-				subtitle : 'Läs mer om '+ jsonObj[i].name+' leden här!',
-				image : jsonObj[i].pin,
+				subtitle : 'Läs mer om '+ jsonObj[i].name+' här!',
+				image : '/pics/'+jsonObj[i].pin,
 				centerOffset : {
 					x : 0,
 					y : -25
 				}
 			});
-			Ti.API.info('INFORMATION2 :' + JSON.stringify(markerAnnotation));
 			baseMap.addAnnotation(markerAnnotation);
 		}	
 	}
