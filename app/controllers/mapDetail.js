@@ -23,7 +23,7 @@ function showMap() {
 			userLocation : true,
 			mapType : MapModule.SATELLITE_TYPE,
 			animate : true,
-			region : calculateMapRegion(trailCoordinates),
+			region : calculateMapRegion(getFile()),
 			height : '90%',
 			width : Ti.UI.FILL
 		});
@@ -142,7 +142,15 @@ function calculateMapRegion(trailCoordinates) {
 
 		delta = Math.max(deltaLat, deltaLon);
 		//Change multiplier if it's too close
-		delta = delta * 1.2;
+				
+		if(zoomColor == 'green' || zoomColor == 'blue' || zoomColor == 'yellow'){
+			delta = delta * 0.7;
+		}
+		
+		else{
+			delta = delta * 1.2;
+		}
+		
 
 		poiCenter.lat = maxLat - parseFloat((maxLat - minLat) / 2);
 		poiCenter.lon = maxLon - parseFloat((maxLon - minLon) / 2);
@@ -154,8 +162,9 @@ function calculateMapRegion(trailCoordinates) {
 			longitudeDelta : delta
 		};
 	}
+	
 	return region;
-};
+}
 
 $.btnNormal.addEventListener('click', function() {
 	zoomedMap.mapType = MapModule.NORMAL_TYPE;
