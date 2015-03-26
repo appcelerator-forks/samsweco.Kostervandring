@@ -7,6 +7,8 @@ var route;
 var radius = 10;
 var baseMap;
 var MapModule = require('ti.map');
+var infospotsNotVisible = true;
+var hotspotsNotVisible = true;
 
 showMap();
 createMapRoutes('adventureroute.json', 'Äventyrsleden', 'purple');
@@ -19,11 +21,8 @@ createMapRoutes('redrouteeasy.json', 'Lättare led, röda leden', 'red');
 createMapRoutes('redrouteeasy2.json', 'Lättare led, röda leden', 'red');
 createMapRoutes('whiteroute.json', 'Vita leden', 'white');
 createMapRoutes('yellowroute.json', 'Gula leden', 'yellow');
-displayMarkers();
-displayTrailMarkers();
 
 function createMapRoutes(file, name, color) {
-
 	var adventureRoute = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "/routes/" + file).read().text;
 	var v = JSON.parse(adventureRoute);
 
@@ -85,7 +84,6 @@ function getPosition(coordinatesObj) {
 };
 
 function distanceInM(lat1, lon1, GLat, GLon) {
-
 	if (lat1 == null || lon1 == null || GLat == null || GLat == null) {
 		alert("Det finns inga koordinater att titta efter");
 	}
@@ -109,7 +107,6 @@ function isInsideRadius(lat1, lon1, rad) {
 }
 
 function isNearPoint() {
-
 	var coordCollection = Alloy.Collections.coordinates;
 	coordCollection.fetch();
 
@@ -149,33 +146,7 @@ function showMap() {
 
 };
 
-function displayMarkers() {
-	var markerArray = [];
-	var markersCollection = Alloy.Collections.hotspotModel;
-	markersCollection.fetch();
-
-	var markersJSON = markersCollection.toJSON();
-	for (var u = 0; u < markersJSON.length; u++) {
-		var marker = MapModule.createAnnotation({
-			latitude : markersJSON[u].ykoord,
-			longitude : markersJSON[u].xkoord,
-			title : markersJSON[u].name,
-			subtitle : 'Läs mer om ' + markersJSON[u].name + ' här!',
-			image : 'pics/blue_pin.png',
-			centerOffset : {
-				x : 0,
-				y : -25
-			}
-		});
-
-		markerArray.push(marker);
-	}
-
-	baseMap.addAnnotations(markerArray);
-}
-
 function displayTrailMarkers() {
-
 	var pinCollection = Alloy.Collections.trailsModel;
 	pinCollection.fetch({
 		query : 'SELECT name, pin, pinLon, pinLat FROM trailsModel'
@@ -197,6 +168,66 @@ function displayTrailMarkers() {
 		baseMap.addAnnotation(markerAnnotation);
 	}
 }
+
+function displayMarkers() {
+	var markerArray = [];
+	var markersCollection = Alloy.Collections.hotspotModel;
+	markersCollection.fetch();
+
+	var markersJSON = markersCollection.toJSON();
+	for (var u = 0; u < markersJSON.length; u++) {
+		var marker = MapModule.createAnnotation({
+			latitude : markersJSON[u].ykoord,
+			longitude : markersJSON[u].xkoord,
+			title : markersJSON[u].name,
+			subtitle : 'Läs mer om ' + markersJSON[u].name + ' här!'
+		});
+
+		markerArray.push(marker);
+	}
+
+	baseMap.addAnnotations(markerArray);
+	hotspotsNotVisible = false;
+}
+
+function displayInfoSpots() {
+	var infoArray = [];
+	var markerArray = [];
+	
+	var infoSpotCollection = Alloy.Collections.infospotModel;
+	infoSpotCollection.fetch({
+		query : 'select infospotModel.name, infospotModel.icon, infospotCoordinatesModel.latitude, infospotCoordinatesModel.longitude from infospotCoordinatesModel join infospotModel on infospotCoordinatesModel.infospotID = infospotModel.id'
+	});
+
+	var infoJSON = infoSpotCollection.toJSON();
+	Ti.API.info("infoJSON : " + JSON.stringify(infoJSON));
+	
+	for (var u = 0; u < infoJSON.length; u++) {
+		var marker = MapModule.createAnnotation({
+			latitude : infoJSON[u].latitude,
+			longitude : infoJSON[u].longitude,
+			image : '/piktogram/' + infoJSON[u].icon
+		});
+
+		markerArray.push(marker);
+	}
+	
+	Ti.API.info("markerArray : " + JSON.stringify(markerArray));
+	baseMap.addAnnotations(markerArray);
+	infospotsNotVisible = false;
+}
+
+$.btnShowInfo.addEventListener('click', function(){
+	if(infospotsNotVisible){
+		displayInfoSpots();
+	}
+});
+
+$.btnShowHot.addEventListener('click', function(){
+	if(hotspotsNotVisible){
+		displayMarkers();
+	}
+});
 
 $.btnNormal.addEventListener('click', function() {
 	baseMap.mapType = MapModule.NORMAL_TYPE;
