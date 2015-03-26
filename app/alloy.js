@@ -37,7 +37,7 @@ function showDialog(){
   dialog.addEventListener('click', function(e){
   	
     if (e.index === e.source.cancel){
-    	closeDialog();
+    	// closeDialog();
     }
     else{
     	var interactiveWin = Alloy.createController("interactive").getView();
@@ -48,9 +48,9 @@ function showDialog(){
   dialog.show();  
 };
 
-function closeDialog(){
-	$.dialog.close();
-};
+// function closeDialog(){
+	// $.dialog.close();
+// };
 
 var lettersArray =[];
 
