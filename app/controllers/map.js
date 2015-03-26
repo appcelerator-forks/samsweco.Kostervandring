@@ -12,8 +12,6 @@ var map3;
 var MapModule = require('ti.map');
 showMap();
 
-
-
 createMapRoutes('adventureroute.json', 'Äventyrsleden', 'purple');
 createMapRoutes('blueroute.json', 'Blåa leden', 'blue');
 createMapRoutes('blueshortcut.json', 'Genväg blåa leden', 'blue');
@@ -157,20 +155,25 @@ function showMap() {
 	}
 
 	function displayMarkers() {
-		try {
-			markers.each(function(marker) {
-				var markerAnnotation = MapModule.createAnnotation({
-					latitude : marker.get('xkoord'),
-					longitude : marker.get('ykoord'),
-					title : marker.get('name')
-				});
 
-				map3.addAnnotation(markerAnnotation);
+		markers.each(function(marker) {
+			var markerAnnotation_blue = MapModule.createAnnotation({
+				latitude : 58.89378,
+				longitude : 11.03,
+				title : 'Äventyrsleden',
+				Subtitle : 'spännande led',
+				image : 'pics/blue_pin.png',
+				centerOffset : {
+					x : 0,
+					y : -25
+				}
+				//latitude : marker.get('xkoord'),
+				//longitude : marker.get('ykoord'),
+				//	title : marker.get('name')
 			});
-		} catch(e) {
-			newError("Något gick fel när sidan skulle laddas, prova igen!", "Map - displayMarkers");
-		}
 
+			map3.addAnnotation(markerAnnotation_blue);
+		});
 	}
 
 
