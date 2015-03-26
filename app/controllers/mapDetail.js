@@ -13,6 +13,7 @@ var MapModule = require('ti.map');
 showMap();
 createMapRoutes(getFile(), zoomName, zoomColor);
 addAnnotations();
+displayTrailMarkers();
 
 function showMap() {
 	try {
@@ -103,6 +104,29 @@ function addAnnotations() {
 	}
 
 	zoomedMap.addAnnotations(markerArray);
+}
+
+function displayTrailMarkers() {
+	var pinCollection = Alloy.Collections.trailsModel;
+	pinCollection.fetch({
+		query : 'SELECT name, pin, pinLon, pinLat FROM trailsModel where id ="' + zoomId + '"'
+	});
+
+	var jsonObj = pinCollection.toJSON();
+	for (var i = 0; i < jsonObj.length; i++) {
+		var markerAnnotation = MapModule.createAnnotation({
+			latitude : jsonObj[i].pinLat,
+			longitude : jsonObj[i].pinLon,
+			title : jsonObj[i].name,
+			subtitle : 'Läs mer om ' + jsonObj[i].name + ' här!',
+			image : '/pins/' + jsonObj[i].pin,
+			centerOffset : {
+				x : 0,
+				y : -25
+			}
+		});
+		zoomedMap.addAnnotation(markerAnnotation);
+	}
 }
 
 function getID() {
