@@ -8,9 +8,5 @@
     "os:ios": {},
     "os:mobileweb": {},
     "dependencies": {
-        "menuWidget": "1.0",
-        "alertWidgetHotspot": "1.0",
-        "alertWidgetQuiz": "1.0",
-        "slideMenuWidget": "1.0"
     }
 }

@@ -7,11 +7,7 @@
 					<ImageView class="imgKoster" image="/pics/logga.png"></ImageView>
 					<Label id="lblheadInfo"></Label>
 					<View class="buttonView">
-						<!-- <Button class="btnIndex" onClick="aboutKoster">Mer om Nationalparken</Button>
-						<Button class="btnIndex" onClick="aboutNaturum">Mer om Naturum</Button>
-						<Button class="btnIndex" onClick="hotspotView">Mer om Hotspots</Button> -->
 					</View>
-					<Widget id="alertHotspot" src="alertWidgetHotspot" name="widget" />
 				</ScrollView>
 			</Window>
 		</Tab>
