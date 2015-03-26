@@ -190,7 +190,7 @@ var jsonObj = pinCollection.toJSON();
 				longitude : jsonObj[i].pinLon,
 				title : jsonObj[i].name,
 				subtitle : 'Läs mer om '+ jsonObj[i].name+' här!',
-				image : '/pics/'+jsonObj[i].pin,
+				image : '/pins/'+jsonObj[i].pin,
 				centerOffset : {
 					x : 0,
 					y : -25
