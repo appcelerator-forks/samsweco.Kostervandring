@@ -6,8 +6,6 @@ var zoomLat = args.zoomlat;
 var zoomLon = args.zoomlon;
 var zoomId = args.id;
 
-Ti.API.info(JSON.stringify(args));
-
 var coordinatesArray = [];
 var radius = 10;
 var zoomedMap;
@@ -116,25 +114,46 @@ function getID() {
 	return idArray;
 }
 
-function calculateMapRegion(trailCoordinates) {
+function calculateMapRegion(file) {
+	var zoomedRoute = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "/routes/" + file).read().text;
+	var v = JSON.parse(zoomedRoute);
+	
+	var regionArray = [];
+
+	var array = [];
+	array.push(v);
+
+	for (var u = 0; u < array.length; u++) {
+		var coords = array[0].features[0].geometry.paths[u];
+
+		for (var i = 0; i < coords.length; i++) {
+
+			var c = {
+				latitude : coords[i][1],
+				longitude : coords[i][0]
+			};
+			regionArray.push(c);
+		}
+	}
+
 	var region = {
 		latitude : 58.893539,
 		longitude : 11.012579,
 		latitudeDelta : 0.1,
 		longitudeDelta : 0.1
 	};
-	if (trailCoordinates.length != 0) {
+	if (regionArray.length != 0) {
 		var poiCenter = {};
 		var delta = 0.02;
-		var minLat = trailCoordinates[0].latitude,
-		    maxLat = trailCoordinates[0].latitude,
-		    minLon = trailCoordinates[0].longitude,
-		    maxLon = trailCoordinates[0].longitude;
+		var minLat = regionArray[0].latitude,
+		    maxLat = regionArray[0].latitude,
+		    minLon = regionArray[0].longitude,
+		    maxLon = regionArray[0].longitude;
 		for (var i = 0; i < trailCoordinates.length - 1; i++) {
-			minLat = Math.min(trailCoordinates[i + 1].latitude, minLat);
-			maxLat = Math.max(trailCoordinates[i + 1].latitude, maxLat);
-			minLon = Math.min(trailCoordinates[i + 1].longitude, minLon);
-			maxLon = Math.max(trailCoordinates[i + 1].longitude, maxLon);
+			minLat = Math.min(regionArray[i + 1].latitude, minLat);
+			maxLat = Math.max(regionArray[i + 1].latitude, maxLat);
+			minLon = Math.min(regionArray[i + 1].longitude, minLon);
+			maxLon = Math.max(regionArray[i + 1].longitude, maxLon);
 		}
 
 		var deltaLat = maxLat - minLat;
@@ -142,19 +161,16 @@ function calculateMapRegion(trailCoordinates) {
 
 		delta = Math.max(deltaLat, deltaLon);
 		//Change multiplier if it's too close
-				
-		if(zoomColor == 'green' || zoomColor == 'blue' || zoomColor == 'yellow'){
+
+		if (zoomColor == 'green' || zoomColor == 'blue' || zoomColor == 'yellow') {
 			delta = delta * 0.7;
-		}
-		
-		else{
+		} else {
 			delta = delta * 1.2;
 		}
-		
 
 		poiCenter.lat = maxLat - parseFloat((maxLat - minLat) / 2);
 		poiCenter.lon = maxLon - parseFloat((maxLon - minLon) / 2);
-		
+
 		region = {
 			latitude : poiCenter.lat,
 			longitude : poiCenter.lon,
@@ -162,7 +178,7 @@ function calculateMapRegion(trailCoordinates) {
 			longitudeDelta : delta
 		};
 	}
-	
+
 	return region;
 }
 
