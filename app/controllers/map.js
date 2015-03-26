@@ -22,7 +22,6 @@ createMapRoutes('yellowroute.json', 'Gula leden', 'yellow');
 displayMarkers();
 displayTrailMarkers();
 
-
 function createMapRoutes(file, name, color) {
 
 	var adventureRoute = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "/routes/" + file).read().text;
@@ -177,28 +176,27 @@ function displayMarkers() {
 
 function displayTrailMarkers() {
 
-var pinCollection = Alloy.Collections.trailsModel;
-pinCollection.fetch({
-			query : 'SELECT name, pin, pinLon, pinLat FROM trailsModel'
+	var pinCollection = Alloy.Collections.trailsModel;
+	pinCollection.fetch({
+		query : 'SELECT name, pin, pinLon, pinLat FROM trailsModel'
+	});
+
+	var jsonObj = pinCollection.toJSON();
+	for (var i = 0; i < jsonObj.length; i++) {
+		var markerAnnotation = MapModule.createAnnotation({
+			latitude : jsonObj[i].pinLat,
+			longitude : jsonObj[i].pinLon,
+			title : jsonObj[i].name,
+			subtitle : 'Läs mer om ' + jsonObj[i].name + ' här!',
+			image : '/pins/' + jsonObj[i].pin,
+			centerOffset : {
+				x : 0,
+				y : -25
+			}
 		});
-
-
-var jsonObj = pinCollection.toJSON();
-	for(var i = 0; i<jsonObj.length; i++){
-			var markerAnnotation = MapModule.createAnnotation({
-				latitude : jsonObj[i].pinLat,
-				longitude : jsonObj[i].pinLon,
-				title : jsonObj[i].name,
-				subtitle : 'Läs mer om '+ jsonObj[i].name+' här!',
-				image : '/pins/'+jsonObj[i].pin,
-				centerOffset : {
-					x : 0,
-					y : -25
-				}
-			});
-			baseMap.addAnnotation(markerAnnotation);
-		}	
+		baseMap.addAnnotation(markerAnnotation);
 	}
+}
 
 $.btnNormal.addEventListener('click', function() {
 	baseMap.mapType = MapModule.NORMAL_TYPE;
