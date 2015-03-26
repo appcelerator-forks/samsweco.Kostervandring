@@ -1,0 +1,26 @@
+"Label": {
+	color: '#000',
+	font: {
+		fontSize: 18,
+		fontWeight: 'bold'
+	},
+	height: Ti.UI.SIZE,
+	width: Ti.UI.SIZE
+}
+
+"#alertView": {
+	layout: 'vertical',
+	//top: '30%',
+	backgroundColor: '#d9d9d9',
+	borderRadius: 10,
+	opacity: 0.9,
+	width: '70%',
+	height: Titanium.UI.SIZE,
+	visible: false
+}
+
+"#image": {
+	height: 100,
+	width: 200,
+	borderRadius: 10
+}

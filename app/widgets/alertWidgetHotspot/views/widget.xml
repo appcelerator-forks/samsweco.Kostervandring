@@ -1,0 +1,12 @@
+<Alloy>
+	
+	<Button onClick="showDialog" title="Click">Öppna alert</Button>
+
+		<AlertDialog id="dialog" onClick="doClick" title="Hotspot" message="Du närmar dig någonting intressant!" cancel="1">
+			<ButtonNames>
+				<ButtonName id="btnClose">Stäng</ButtonName>
+				<ButtonName id="btnOpen">Läs mer</ButtonName>
+			</ButtonNames>
+		</AlertDialog>
+	
+</Alloy>
