@@ -3,6 +3,7 @@
 	<Collection src="coordinates" />
 	<Collection src="trailsModel" />
 	<Collection src="jsonFilesModel" />
+	<Collection src="hotspot_trailsModel" />
 	<Window class="container">
 		<View id="mapDetailView">		
 		</View>
