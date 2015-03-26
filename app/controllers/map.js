@@ -3,15 +3,12 @@ var args = arguments[0] || {};
 var zoomedName = args.name;
 var zoomColor = args.color;
 var zoomLat = args.zoomlat;
-
-Ti.API.info(JSON.stringify(zoomedName));
-
 var route;
 var radius = 10;
-var map3;
+var baseMap;
 var MapModule = require('ti.map');
-showMap();
 
+showMap();
 createMapRoutes('adventureroute.json', 'Äventyrsleden', 'purple');
 createMapRoutes('blueroute.json', 'Blåa leden', 'blue');
 createMapRoutes('blueshortcut.json', 'Genväg blåa leden', 'blue');
@@ -22,7 +19,8 @@ createMapRoutes('redrouteeasy.json', 'Lättare led, röda leden', 'red');
 createMapRoutes('redrouteeasy2.json', 'Lättare led, röda leden', 'red');
 createMapRoutes('whiteroute.json', 'Vita leden', 'white');
 createMapRoutes('yellowroute.json', 'Gula leden', 'yellow');
-// createMapRoutes('yellow_1.json', 'Gula leden', 'yellow');
+displayMarkers();
+
 
 function createMapRoutes(file, name, color) {
 
@@ -52,7 +50,7 @@ function createMapRoutes(file, name, color) {
 			color : color,
 			width : '2dp'
 		};
-		map3.addRoute(MapModule.createRoute(route));
+		baseMap.addRoute(MapModule.createRoute(route));
 	}
 }
 
@@ -129,7 +127,7 @@ function isNearPoint() {
 
 function showMap() {
 	try {
-		map3 = MapModule.createView({
+		baseMap = MapModule.createView({
 			userLocation : true,
 			mapType : MapModule.SATELLITE_TYPE,
 			animate : true,
@@ -143,80 +141,47 @@ function showMap() {
 			width : Ti.UI.FILL
 		});
 
-		var markers = Alloy.Collections.hotspotModel;
-
-		markers.fetch({
-			success : displayMarkers,
-			error : Ti.API.error
-		});
+		$.mapView.add(baseMap);
 
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "Map - showMap");
 	}
 
-	function displayMarkers() {
-
-		markers.each(function(marker) {
-			var markerAnnotation_blue = MapModule.createAnnotation({
-				latitude : 58.89378,
-				longitude : 11.03,
-				title : 'Äventyrsleden',
-				Subtitle : 'spännande led',
-				image : 'pics/blue_pin.png',
-				centerOffset : {
-					x : 0,
-					y : -25
-				}
-				//latitude : marker.get('xkoord'),
-				//longitude : marker.get('ykoord'),
-				//	title : marker.get('name')
-			});
-
-			map3.addAnnotation(markerAnnotation_blue);
-		});
-	}
-
-
-	$.mapView.add(map3);
 };
 
-function zoomMap(trailID) {
-	id = trailID;
+function displayMarkers() {
+	var markerArray = [];
+	var markersCollection = Alloy.Collections.hotspotModel;
+	markersCollection.fetch();
 
-	var zoomCordCollection = Alloy.Collections.trailsModel;
-	zoomCordCollection.fetch({
-		query : 'SELECT zoomLat, zoomLon FROM trailsModel where id = ' + id
-	});
+	var markersJSON = markersCollection.toJSON();
+	for (var u = 0; u < markersJSON.length; u++) {
+		var marker = MapModule.createAnnotation({
+			latitude : markersJSON[u].ykoord,
+			longitude : markersJSON[u].xkoord,
+			title : markersJSON[u].name,
+			subtitle : 'Läs mer om ' + markersJSON[u].name + ' här!',
+			image : 'pics/blue_pin.png',
+			centerOffset : {
+				x : 0,
+				y : -25
+			}
+		});
 
-	Ti.API.info(JSON.stringify(zoomCordCollection));
+		markerArray.push(marker);
+	}
 
-	var zoomJSON = zoomCordCollection.toJSON();
-	Ti.API.info(JSON.stringify(zoomJSON));
-	var lat = zoomJSON[0].zoomLat;
-	var lon = zoomJSON[0].zoomLon;
-
-	alert("lat :" + lat);
-
-	map3.region = {
-		latitude : lat,
-		longitude : lon,
-		latitudeDelta : 0.02,
-		longitudeDelta : 0.02
-	};
+	baseMap.addAnnotations(markerArray);
 }
 
-$.testZoom.addEventListener('click', function() {
-	zoomMap(4);
-});
-
 $.btnNormal.addEventListener('click', function() {
-	map3.mapType = MapModule.NORMAL_TYPE;
+	baseMap.mapType = MapModule.NORMAL_TYPE;
 });
 
 $.btnHybrid.addEventListener('click', function() {
-	map3.mapType = MapModule.HYBRID_TYPE;
+	baseMap.mapType = MapModule.HYBRID_TYPE;
 });
 
 $.btnSatellit.addEventListener('click', function() {
-	map3.mapType = MapModule.SATELLITE_TYPE;
+	baseMap.mapType = MapModule.SATELLITE_TYPE;
 });
