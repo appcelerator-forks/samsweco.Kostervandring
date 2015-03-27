@@ -207,7 +207,8 @@ function displayInfoSpots() {
 		var marker = MapModule.createAnnotation({
 			latitude : infoJSON[u].latitude,
 			longitude : infoJSON[u].longitude,
-			image : '/piktogram/' + infoJSON[u].icon
+			image : '/piktogram/' + infoJSON[u].icon,
+			imageHeight : '20dp'
 		});
 
 		markerArray.push(marker);
