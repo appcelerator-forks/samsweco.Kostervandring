@@ -92,11 +92,12 @@ function addAnnotations() {
 		var markersJSON = markersCollection.toJSON();
 		for (var u = 0; u < markersJSON.length; u++) {
 			var marker = MapModule.createAnnotation({
+				id : markersJSON[u].name,
 				latitude : markersJSON[u].ykoord,
 				longitude : markersJSON[u].xkoord,
 				title : markersJSON[u].name,
 				rightButton : '/images/arrow.png',
-				id : markersJSON[u].name
+				image : '/pins/map_hotspot.png'
 			});
 
 			markerArray.push(marker);
@@ -108,11 +109,22 @@ function addAnnotations() {
 
 zoomedMap.addEventListener('click', function(evt) {
     if (evt.clicksource == 'rightButton') {
-        Titanium.API.info('Right button clicked');
-        //add code for button click activity here
+        var hotspotCollection = Alloy.Collections.hotspotModel;
+		hotspotCollection.fetch({
+			query : 'SELECT id, infoTxt from hotspotModel where name = "' + evt.annotation.id + '"'
+		});
+
+		var jsonObj = hotspotCollection.toJSON();
+		
+		var hotspotTxt = {
+			title : evt.annotation.id,
+			infoTxt : jsonObj[0].infoTxt,
+			id : jsonObj[0].id
+		};
+
+		var hotspotDetail = Alloy.createController("hotspotDetail", hotspotTxt).getView();
+		Alloy.CFG.tabs.activeTab.open(hotspotDetail);
     };
-    var myid = (evt.annotation.id)?evt.annotation.myid:-1;
-    Titanium.API.info('Anotation id = ' + myid);
 });
 
 function displayTrailMarkers() {

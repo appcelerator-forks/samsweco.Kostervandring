@@ -102,12 +102,10 @@ function getHotspotInfo(e) {
 		});
 
 		var jsonObj = hotspotCollection.toJSON();
-		var txt = jsonObj[0].infoTxt;
-		var name = jsonObj[0].name;
-
+		
 		var hotspotTxt = {
-			title : name,
-			infoTxt : txt,
+			title : jsonObj[0].name,
+			infoTxt : jsonObj[0].infoTxt,
 			id : id
 		};
 
