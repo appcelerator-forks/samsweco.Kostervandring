@@ -175,11 +175,11 @@ function displayTrailMarkers() {
 			longitude : jsonObj[i].pinLon,
 			title : jsonObj[i].name,
 			subtitle : 'Läs mer om ' + jsonObj[i].name + ' här!',
-			image : '/pins/' + jsonObj[i].pin
-			// centerOffset : {
-				// x : 0,
-				// y : -25
-			// }
+			image : '/pins/' + jsonObj[i].pin,
+			centerOffset : {
+				x : 0,
+				y : -15
+			}
 		});
 		baseMap.addAnnotation(markerAnnotation);
 	}
