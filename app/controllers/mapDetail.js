@@ -97,7 +97,8 @@ function addAnnotations() {
 				longitude : markersJSON[u].xkoord,
 				title : markersJSON[u].name,
 				rightButton : '/images/arrow.png',
-				image : '/pins/map_hotspot.png'
+				image : '/pins/map_hotspot.png',
+				name : 'hotspot'
 			});
 
 			markerArray.push(marker);
@@ -106,26 +107,6 @@ function addAnnotations() {
 
 	zoomedMap.addAnnotations(markerArray);
 }
-
-zoomedMap.addEventListener('click', function(evt) {
-    if (evt.clicksource == 'rightButton') {
-        var hotspotCollection = Alloy.Collections.hotspotModel;
-		hotspotCollection.fetch({
-			query : 'SELECT id, infoTxt from hotspotModel where name = "' + evt.annotation.id + '"'
-		});
-
-		var jsonObj = hotspotCollection.toJSON();
-		
-		var hotspotTxt = {
-			title : evt.annotation.id,
-			infoTxt : jsonObj[0].infoTxt,
-			id : jsonObj[0].id
-		};
-
-		var hotspotDetail = Alloy.createController("hotspotDetail", hotspotTxt).getView();
-		Alloy.CFG.tabs.activeTab.open(hotspotDetail);
-    };
-});
 
 function displayTrailMarkers() {
 	var pinCollection = Alloy.Collections.trailsModel;
@@ -136,6 +117,7 @@ function displayTrailMarkers() {
 	var jsonObj = pinCollection.toJSON();
 	for (var i = 0; i < jsonObj.length; i++) {
 		var markerAnnotation = MapModule.createAnnotation({
+			id : jsonObj[i].name,
 			latitude : jsonObj[i].pinLat,
 			longitude : jsonObj[i].pinLon,
 			title : jsonObj[i].name,
@@ -144,8 +126,11 @@ function displayTrailMarkers() {
 			centerOffset : {
 				x : 0,
 				y : -15
-			}
+			},
+			rightButton : '/images/arrow.png',
+			name : 'trail'
 		});
+
 		zoomedMap.addAnnotation(markerAnnotation);
 	}
 }
@@ -163,9 +148,60 @@ function getID() {
 	for (var i = 0; i < jsonObj.length; i++) {
 		idArray.push(jsonObj[i].hotspotID);
 	}
-	
+
 	return idArray;
 }
+
+function showTrail(myId){
+	var trailsCollection = Alloy.Collections.trailsModel;
+		trailsCollection.fetch({
+			query : 'SELECT * FROM trailsModel where name ="' + myId + '"'
+		});
+
+		var jsonObjTr = trailsCollection.toJSON();
+		Ti.API.info(JSON.stringify(jsonObjTr[0].id));
+
+		var args = {
+			id : jsonObjTr[0].id,
+			title : myId,
+			length : jsonObjTr[0].length,
+			infoTxt : jsonObjTr[0].infoTxt,
+			area : jsonObjTr[0].area,
+			color : jsonObjTr[0].color
+		};
+
+		var trailDetail = Alloy.createController("trailDetail", args).getView();
+		Alloy.CFG.tabs.activeTab.open(trailDetail);
+}
+
+function showHotspot(myId){
+	var hotspotCollection = Alloy.Collections.hotspotModel;
+		hotspotCollection.fetch({
+			query : 'SELECT id, infoTxt from hotspotModel where name = "' + myId + '"'
+		});
+
+		var jsonObjHot = hotspotCollection.toJSON();
+
+		var hotspotTxt = {
+			title : myId,
+			infoTxt : jsonObjHot[0].infoTxt,
+			id : jsonObjHot[0].id
+		};
+
+		var hotspotDetail = Alloy.createController("hotspotDetail", hotspotTxt).getView();
+		Alloy.CFG.tabs.activeTab.open(hotspotDetail);
+}
+
+zoomedMap.addEventListener('click', function(evt) {
+	// id :  evt.annotation.id
+	if (evt.clicksource == 'rightButton') {
+		if(evt.annotation.name == 'hotspot'){
+			showHotspot(evt.annotation.id);
+		}else{
+			showTrail(evt.annotation.id);
+		}
+	}
+});
 
 $.btnNormal.addEventListener('click', function() {
 	zoomedMap.mapType = MapModule.NORMAL_TYPE;

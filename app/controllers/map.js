@@ -171,11 +171,13 @@ function displayTrailMarkers() {
 	var jsonObj = pinCollection.toJSON();
 	for (var i = 0; i < jsonObj.length; i++) {
 		var markerAnnotation = MapModule.createAnnotation({
+			id : jsonObj[i].name,
 			latitude : jsonObj[i].pinLat,
 			longitude : jsonObj[i].pinLon,
 			title : jsonObj[i].name,
 			subtitle : 'Läs mer om ' + jsonObj[i].name + ' här!',
 			image : '/pins/' + jsonObj[i].pin,
+			rightButton : '/images/arrow.png',
 			centerOffset : {
 				x : 0,
 				y : -15
@@ -198,7 +200,8 @@ function displayMarkers() {
 			longitude : markersJSON[u].xkoord,
 			title : markersJSON[u].name,
 			subtitle : 'Läs mer om ' + markersJSON[u].name + ' här!',
-			image : '/pins/map_hotspot.png'
+			image : '/pins/map_hotspot.png',
+			rightButton : '/images/arrow.png'
 		});
 
 		markerArray.push(marker);
@@ -207,6 +210,26 @@ function displayMarkers() {
 	baseMap.addAnnotations(markerArray);
 	hotspotsNotVisible = false;
 }
+
+baseMap.addEventListener('click', function(evt) {
+    if (evt.clicksource == 'rightButton') {
+        var hotspotCollection = Alloy.Collections.hotspotModel;
+		hotspotCollection.fetch({
+			query : 'SELECT id, infoTxt from hotspotModel where name = "' + evt.annotation.id + '"'
+		});
+
+		var jsonObj = hotspotCollection.toJSON();
+		
+		var hotspotTxt = {
+			title : evt.annotation.id,
+			infoTxt : jsonObj[0].infoTxt,
+			id : jsonObj[0].id
+		};
+
+		var hotspotDetail = Alloy.createController("hotspotDetail", hotspotTxt).getView();
+		Alloy.CFG.tabs.activeTab.open(hotspotDetail);
+    };
+});
 
 function displayInfoSpots() {
 	if (infospotsNotVisible) {
