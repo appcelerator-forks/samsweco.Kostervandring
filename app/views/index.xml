@@ -7,16 +7,13 @@
 					<ImageView class="imgKoster" image="/pics/kosterhavet_logga.png"></ImageView>
 					<Label id="lblheadInfo"></Label>
 					<View class="buttonView">
-						<!-- <Button class="btnIndex" onClick="aboutKoster">Mer om Nationalparken</Button>
-						<Button class="btnIndex" onClick="aboutNaturum">Mer om Naturum</Button>
-						<Button class="btnIndex" onClick="hotspotView">Mer om Hotspots</Button> -->
 					</View>
 					<Widget id="alertHotspot" src="alertWidgetHotspot" name="widget" />
 				</ScrollView>
 			</Window>
 		</Tab>
 		<Tab id="hikeTab" title="Vandringsleder" icon="/images/hikeMenuCopy.png">
-			<Window id="hikeWin" title="Vandringsleder" onOpen="toTrails" /> <!--  onClick="toTrails" -->
+			<Window id="hikeWin" title="Vandringsleder" onOpen="toTrails" />
 		</Tab>
 		<Tab id="maptab" title="Karta" icon="/images/mapMenuCopy.png">
 			<Window id="mapWin" onOpen="toMap" navBarHidden="true" />
