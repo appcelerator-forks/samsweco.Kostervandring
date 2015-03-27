@@ -3,13 +3,12 @@
 	<TabGroup id="tabs" backgroundColor="#fff" height="100%" tintColor="#FF9966">
 		<Tab id="koster" class="btn" title="Koster" icon="/images/kosterStarMenuCopy.png" >
 			<Window id="koster" class="container" backgroundImage="/pics/front.png" navBarHidden="true">
-				<ScrollView class="headView">
+				<View class="headView">
 					<ImageView class="imgKoster" image="/pics/kosterhavet_logga.png"></ImageView>
 					<Label id="lblheadInfo"></Label>
 					<View class="buttonView">
 					</View>
-					<Widget id="alertHotspot" src="alertWidgetHotspot" name="widget" />
-				</ScrollView>
+				</View>
 			</Window>
 		</Tab>
 		<Tab id="hikeTab" title="Vandringsleder" icon="/images/hikeMenuCopy.png">
