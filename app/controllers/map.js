@@ -202,7 +202,13 @@ function displayMarkers() {
 			title : markersJSON[u].name,
 			subtitle : 'Läs mer om ' + markersJSON[u].name + ' här!',
 			image : '/pins/map_hotspot.png',
-			rightButton : '/images/arrow.png',
+			rightButton : Ti.UI.createButton({
+					title : 'aButton',
+					height : '25dp',
+					width : '20dp',
+					image : '/images/arrow.png'
+					// backgroundColor : 'black'
+				}),
 			name : 'hotspot'
 		});
 
