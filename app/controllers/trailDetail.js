@@ -1,6 +1,7 @@
 var args = arguments[0] || {};
 
 try {
+	$.hikeDetailWin.title = args.title;
 	$.lblTrailName.text = args.title || 'Default Name';
 	$.lblTrailLength.text = args.length + " kilometer" || 'Default Length';
 	$.lblTrailColor.text = args.area || 'Default Color';

@@ -39,8 +39,6 @@ function showMap() {
 };
 
 function createMapRoutes(file, name, color) {
-	Ti.API.info(file);
-
 	var zoomedRoute = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "/routes/" + file).read().text;
 	var v = JSON.parse(zoomedRoute);
 
@@ -138,12 +136,11 @@ function getID() {
 	});
 
 	var jsonObj = hotspot_trailsCollection.toJSON();
-	Ti.API.info("Json obh : " + JSON.stringify(jsonObj));
 
 	for (var i = 0; i < jsonObj.length; i++) {
 		idArray.push(jsonObj[i].hotspotID);
 	}
-	Ti.API.info("IdArray: " + JSON.stringify(idArray));
+	
 	return idArray;
 }
 

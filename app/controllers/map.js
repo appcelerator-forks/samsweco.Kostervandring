@@ -204,7 +204,6 @@ function displayInfoSpots() {
 		});
 
 		var infoJSON = infoSpotCollection.toJSON();
-		Ti.API.info("infoJSON : " + JSON.stringify(infoJSON));
 
 		for (var u = 0; u < infoJSON.length; u++) {
 			var marker = MapModule.createAnnotation({
