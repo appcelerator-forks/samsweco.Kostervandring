@@ -143,7 +143,7 @@ function displayTrailMarkers() {
 			image : '/pins/' + jsonObj[i].pin,
 			centerOffset : {
 				x : 0,
-				y : -25
+				y : -15
 			}
 		});
 		zoomedMap.addAnnotation(markerAnnotation);
