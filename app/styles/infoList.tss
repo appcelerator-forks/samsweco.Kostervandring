@@ -14,38 +14,12 @@
 	top: 0
 }
 
-".listItem": {
-	height: '90dp',
-	layout: 'horizontal',
-	top: 0
-}
-
-".listImg": {
-	left: 10,
-	height: '90dp',
-	width: '110dp'
-}
-
-"#menuView": {
-	layout: 'horizontal',
-	bottom: 0,
-	height: Titanium.UI.SIZE,
-	width: Ti.UI.FILL,
-	backgroundColor: 'transparent'
-}
-
 ".row": {
 	layout: 'vertical',
 	backgroundColor: '#fff3e5',
 	height: '90dp',
 	width: Ti.UI.FILL,
 	right: 10
-}
-
-".lblListTitle": {
-	right: 10,
-	top: 0,
-	color: '#FF9966'
 }
 
 "#table" : {

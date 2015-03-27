@@ -20,27 +20,12 @@
 	backgroundColor: 'white'
 }
 
-"#menuView": {
-	layout: 'horizontal',
-	bottom: 0,
-	height: Titanium.UI.SIZE,
-	width: Ti.UI.FILL,
-	backgroundColor: 'transparent'
-}
-
 "Label": {
 	left: 10,
 	font: {
 		fontSize: 12
 	}
 }
-
-// "#lblhotspotDetail": {
-	// left: 10,
-	// font: {
-		// fontSize: 12
-	// }
-// }
 
 "#lblHotspotName": {
 	left: 10,
