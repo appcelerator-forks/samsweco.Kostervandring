@@ -94,7 +94,8 @@ function addAnnotations() {
 			var marker = MapModule.createAnnotation({
 				latitude : markersJSON[u].ykoord,
 				longitude : markersJSON[u].xkoord,
-				title : markersJSON[u].name
+				title : markersJSON[u].name,
+				rightButton : '/images/arrow.png'
 			});
 
 			markerArray.push(marker);
