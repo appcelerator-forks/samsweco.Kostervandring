@@ -13,16 +13,6 @@ var infospotsAnnotation;
 var hotspotAnnotation;
 
 showMap();
-// createMapRoutes('adventureroute.json', 'Äventyrsleden', 'purple');
-// createMapRoutes('blueroute.json', 'Blåa leden', 'blue');
-// createMapRoutes('blueshortcut.json', 'Genväg blåa leden', 'blue');
-// createMapRoutes('greenroute.json', 'Gröna leden', 'green');
-// createMapRoutes('orangeroute.json', 'Orange leden', 'orange');
-// createMapRoutes('redroute.json', 'Röda leden', 'red');
-// createMapRoutes('redrouteeasy.json', 'Lättare led, röda leden', 'red');
-// createMapRoutes('redrouteeasy2.json', 'Lättare led, röda leden', 'red');
-// createMapRoutes('whiteroute.json', 'Vita leden', 'white');
-// createMapRoutes('yellowroute.json', 'Gula leden', 'yellow');
 setRoutes();
 displayTrailMarkers();
 
