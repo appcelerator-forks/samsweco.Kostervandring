@@ -1,7 +1,8 @@
 <Alloy>
 	<Collection src="hotspotModel" />
-	<Collection src="coordinates"></Collection>
-	<Collection src="trailsModel"></Collection>
+	<Collection src="coordinates" />
+	<Collection src="trailsModel" />
+	<Collection src="jsonFilesModel" />
 	<View class="container">
 		<View id="mapView"></View>
 		<View id="btnView">

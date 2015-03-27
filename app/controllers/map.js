@@ -13,17 +13,40 @@ var infospotsAnnotation;
 var hotspotAnnotation;
 
 showMap();
-createMapRoutes('adventureroute.json', 'Äventyrsleden', 'purple');
-createMapRoutes('blueroute.json', 'Blåa leden', 'blue');
-createMapRoutes('blueshortcut.json', 'Genväg blåa leden', 'blue');
-createMapRoutes('greenroute.json', 'Gröna leden', 'green');
-createMapRoutes('orangeroute.json', 'Orange leden', 'orange');
-createMapRoutes('redroute.json', 'Röda leden', 'red');
-createMapRoutes('redrouteeasy.json', 'Lättare led, röda leden', 'red');
-createMapRoutes('redrouteeasy2.json', 'Lättare led, röda leden', 'red');
-createMapRoutes('whiteroute.json', 'Vita leden', 'white');
-createMapRoutes('yellowroute.json', 'Gula leden', 'yellow');
+// createMapRoutes('adventureroute.json', 'Äventyrsleden', 'purple');
+// createMapRoutes('blueroute.json', 'Blåa leden', 'blue');
+// createMapRoutes('blueshortcut.json', 'Genväg blåa leden', 'blue');
+// createMapRoutes('greenroute.json', 'Gröna leden', 'green');
+// createMapRoutes('orangeroute.json', 'Orange leden', 'orange');
+// createMapRoutes('redroute.json', 'Röda leden', 'red');
+// createMapRoutes('redrouteeasy.json', 'Lättare led, röda leden', 'red');
+// createMapRoutes('redrouteeasy2.json', 'Lättare led, röda leden', 'red');
+// createMapRoutes('whiteroute.json', 'Vita leden', 'white');
+// createMapRoutes('yellowroute.json', 'Gula leden', 'yellow');
+setRoutes();
 displayTrailMarkers();
+
+function setRoutes(){
+	var trailCollection = Alloy.Collections.trailsModel;
+	trailCollection.fetch({
+		query : 'SELECT id, name, color FROM trailsModel'
+	});
+	
+	var jsonObj = trailCollection.toJSON();
+	for(var i = 0; i<jsonObj.length; i++){
+		createMapRoutes(getFile(jsonObj[i].id), jsonObj[i].name, jsonObj[i].color);
+	}
+}
+
+function getFile(id) {
+	var jsonFileCollection = Alloy.Collections.jsonFilesModel;
+	jsonFileCollection.fetch({
+		query : 'SELECT filename FROM jsonFilesModel WHERE trailID ="' + id + '"'
+	});
+
+	var filename = jsonFileCollection.toJSON();
+	return filename[0].filename;
+}
 
 function createMapRoutes(file, name, color) {
 	var adventureRoute = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "/routes/" + file).read().text;
