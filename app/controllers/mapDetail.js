@@ -95,7 +95,8 @@ function addAnnotations() {
 				latitude : markersJSON[u].ykoord,
 				longitude : markersJSON[u].xkoord,
 				title : markersJSON[u].name,
-				rightButton : '/images/arrow.png'
+				rightButton : '/images/arrow.png',
+				id : markersJSON[u].name
 			});
 
 			markerArray.push(marker);
@@ -104,6 +105,15 @@ function addAnnotations() {
 
 	zoomedMap.addAnnotations(markerArray);
 }
+
+zoomedMap.addEventListener('click', function(evt) {
+    if (evt.clicksource == 'rightButton') {
+        Titanium.API.info('Right button clicked');
+        //add code for button click activity here
+    };
+    var myid = (evt.annotation.id)?evt.annotation.myid:-1;
+    Titanium.API.info('Anotation id = ' + myid);
+});
 
 function displayTrailMarkers() {
 	var pinCollection = Alloy.Collections.trailsModel;
