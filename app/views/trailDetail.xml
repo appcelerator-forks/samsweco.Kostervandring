@@ -2,7 +2,7 @@
 	<Collection src="mediaModel"></Collection>
 	<Collection src="hotspotModel"></Collection>
 	<Collection src="infospotModel"></Collection>
-	<Window id="hikeDetailWin" class="container" title="Vandring">
+	<Window id="hikeDetailWin" class="container">
 		<ScrollView class="headView">
 			<ScrollableView id="slideShowTrails" showPagingControl="true" />
 			<View id="iconrow"></View>

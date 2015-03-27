@@ -9,6 +9,8 @@ var baseMap;
 var MapModule = require('ti.map');
 var infospotsNotVisible = true;
 var hotspotsNotVisible = true;
+var infospotsAnnotation;
+var hotspotAnnotation;
 
 showMap();
 createMapRoutes('adventureroute.json', 'Äventyrsleden', 'purple');
@@ -192,41 +194,44 @@ function displayMarkers() {
 }
 
 function displayInfoSpots() {
-	var infoArray = [];
-	var markerArray = [];
-	
-	var infoSpotCollection = Alloy.Collections.infospotModel;
-	infoSpotCollection.fetch({
-		query : 'select infospotModel.name, infospotModel.icon, infospotCoordinatesModel.latitude, infospotCoordinatesModel.longitude from infospotCoordinatesModel join infospotModel on infospotCoordinatesModel.infospotID = infospotModel.id'
-	});
+	if (infospotsNotVisible) {
+		var infoArray = [];
+		var markerArray = [];
 
-	var infoJSON = infoSpotCollection.toJSON();
-	Ti.API.info("infoJSON : " + JSON.stringify(infoJSON));
-	
-	for (var u = 0; u < infoJSON.length; u++) {
-		var marker = MapModule.createAnnotation({
-			latitude : infoJSON[u].latitude,
-			longitude : infoJSON[u].longitude,
-			image : '/piktogram/' + infoJSON[u].icon,
-			imageHeight : '20dp'
+		var infoSpotCollection = Alloy.Collections.infospotModel;
+		infoSpotCollection.fetch({
+			query : 'select infospotModel.name, infospotModel.icon, infospotCoordinatesModel.latitude, infospotCoordinatesModel.longitude from infospotCoordinatesModel join infospotModel on infospotCoordinatesModel.infospotID = infospotModel.id'
 		});
 
-		markerArray.push(marker);
+		var infoJSON = infoSpotCollection.toJSON();
+		Ti.API.info("infoJSON : " + JSON.stringify(infoJSON));
+
+		for (var u = 0; u < infoJSON.length; u++) {
+			var marker = MapModule.createAnnotation({
+				latitude : infoJSON[u].latitude,
+				longitude : infoJSON[u].longitude,
+				image : '/piktogram/map_' + infoJSON[u].icon
+			});
+
+			markerArray.push(marker);
+		}
+
+		baseMap.addAnnotations(markerArray);
+		infospotsNotVisible = false;
+
+	} else if (!infospotsNotVisible) {
+		baseMap.removeAnnotation(markerArray);
 	}
-	
-	Ti.API.info("markerArray : " + JSON.stringify(markerArray));
-	baseMap.addAnnotations(markerArray);
-	infospotsNotVisible = false;
 }
 
-$.btnShowInfo.addEventListener('click', function(){
-	if(infospotsNotVisible){
+$.btnShowInfo.addEventListener('click', function() {
+	if (infospotsNotVisible) {
 		displayInfoSpots();
 	}
 });
 
-$.btnShowHot.addEventListener('click', function(){
-	if(hotspotsNotVisible){
+$.btnShowHot.addEventListener('click', function() {
+	if (hotspotsNotVisible) {
 		displayMarkers();
 	}
 });
