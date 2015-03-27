@@ -193,10 +193,12 @@ function displayMarkers() {
 	var markersJSON = markersCollection.toJSON();
 	for (var u = 0; u < markersJSON.length; u++) {
 		var marker = MapModule.createAnnotation({
+			id : markersJSON[u].name,
 			latitude : markersJSON[u].ykoord,
 			longitude : markersJSON[u].xkoord,
 			title : markersJSON[u].name,
-			subtitle : 'Läs mer om ' + markersJSON[u].name + ' här!'
+			subtitle : 'Läs mer om ' + markersJSON[u].name + ' här!',
+			image : '/pins/map_hotspot.png'
 		});
 
 		markerArray.push(marker);
