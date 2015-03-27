@@ -120,7 +120,7 @@ function displayTrailMarkers() {
 			id : jsonObj[i].name,
 			latitude : jsonObj[i].pinLat,
 			longitude : jsonObj[i].pinLon,
-			// title : jsonObj[i].name,
+			title : jsonObj[i].name,
 			subtitle : jsonObj[i].name + ' startar här!',
 			image : '/pins/' + jsonObj[i].pin,
 			centerOffset : {
