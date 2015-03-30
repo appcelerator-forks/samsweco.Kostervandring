@@ -31,7 +31,7 @@ function setRoutes(){
 		}
 	}
 }
-//Returnerar bara en fil. Därför kommer bara en slinga per id ut på kartan...
+
 function getFile(id) {
 	var jsonFileCollection = Alloy.Collections.jsonFilesModel;
 	jsonFileCollection.fetch({
@@ -39,8 +39,6 @@ function getFile(id) {
 	});
 
 	var filename = jsonFileCollection.toJSON();
-	// return filename[0].filename;
-	Ti.API.info(JSON.stringify(filename));
 	return filename;
 }
 

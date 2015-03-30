@@ -11,7 +11,7 @@ var zoomedMap;
 var MapModule = require('ti.map');
 
 showMap();
-createMapRoutes(getFile(), zoomName, zoomColor);
+setRoute();
 addAnnotations();
 displayTrailMarkers();
 
@@ -37,6 +37,15 @@ function showMap() {
 
 	$.mapDetailView.add(zoomedMap);
 };
+
+function setRoute(){
+
+		var file = getFile(zoomId);
+		
+		for( var u = 0; u<file.length; u++){
+			createMapRoutes(file[u].filename, zoomName, zoomColor);
+		}
+}
 
 function createMapRoutes(file, name, color) {
 	var zoomedRoute = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "/routes/" + file).read().text;
@@ -76,7 +85,7 @@ function getFile() {
 	});
 
 	var filename = jsonFileCollection.toJSON();
-	return filename[0].filename;
+	return filename;
 }
 
 function addAnnotations() {
