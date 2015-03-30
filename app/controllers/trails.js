@@ -23,19 +23,21 @@ function setRowData() {
 				id : i + 1,
 				height : '80dp',
 				top : '0dp',
+				layout : 'horizontal',
 				hasChild : true
 			});
 
-			var listItem = Ti.UI.createView({
-				layout : 'horizontal'
-
-			});
+			// var listItem = Ti.UI.createView({
+				// //layout : 'horizontal'
+// 
+			// });
 			var verticalView = Ti.UI.createView({
 				layout : 'vertical'
 			});
 
 			var coverimg = Ti.UI.createImageView({
-				width : '110dp',
+				width : '100dp',
+				height : '66dp',
 				left : '10dp'
 			});
 			var lblName = Ti.UI.createLabel({
@@ -71,10 +73,11 @@ function setRowData() {
 			verticalView.add(lblName);
 			verticalView.add(lblColor);
 			verticalView.add(lblDistance);
-			listItem.add(coverimg);
+			//listItem.add(coverimg);
 			verticalView.add(iconView);
-			listItem.add(verticalView);
-			row.add(listItem);
+			//listItem.add(verticalView);
+			row.add(coverimg);
+			row.add(verticalView);
 			tableViewData.push(row);
 		}
 		$.table.data = tableViewData;
@@ -123,7 +126,8 @@ function showIcons(id) {
 	var iconView = Ti.UI.createView({
 		layout : 'horizontal',
 		height : '30dp',
-		width : Ti.UI.SIZE,
+		width : '200dp',
+		backgroundColor : 'black',
 		top : '5dp'
 
 	});

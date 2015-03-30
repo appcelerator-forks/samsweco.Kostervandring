@@ -66,7 +66,7 @@
             <application>
                 <!-- Replace "PASTE YOUR GOOGLE MAPS API KEY HERE" with the Google API key you obtained -->
                 <meta-data
-                    android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAvc_MS1OxpuMc-ojkaq2Uzrrr-AwYJybs"/>
+                    android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBuHC59LJ7S2fwPg8bbIv-QcWGX_SR8jAk"/>
             </application>
         </manifest>
     </android>

@@ -4,7 +4,10 @@
 	<Collection src="infospotModel"></Collection>
 	<Window id="hikeDetailWin" class="container">
 		<ScrollView class="headView">
-			<ScrollableView id="slideShowTrails" showPagingControl="true" />
+			<View id="slideView">
+				<ScrollableView id="slideShowTrails" showPagingControl="true" />
+			</View>
+			
 			<View id="iconrow"></View>
 			<View class="lbls">
 				<Label id="lblTrailName" class="lbltrailDetail"></Label>

@@ -2,7 +2,11 @@
 	<Window id="infoDetail" class="container">
 
 		<ScrollView class="headView" showVerticalScrollIndicator="true">
-			<ImageView id="infoImg"></ImageView>
+			<View id="slideView">
+				<ImageView id="infoImg">
+					
+				</ImageView></View>
+			
 			<Label class="lblInfoDetail" id="lblInfoTitle"></Label>
 			<Label class="lblInfoDetail" id="lblInfoText"></Label>
 			<Label class="lbltxt" text="Gå till websida: "/>

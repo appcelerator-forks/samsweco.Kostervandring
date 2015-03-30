@@ -10,10 +10,16 @@
 	height: '100%'
 }
 
-"#slideShowHotspotDetail": {
-		height: '40%'
+"#slideView": {
+	backgroundColor: '#000000',
+	height: '225dp',
+	width: '100%'
 }
 
+"#slideShowHotspotDetail": {
+	width: '300dp',
+	height: '200dp'
+}
 ".headView": {
 	height: '93%',
 	layout: 'vertical',

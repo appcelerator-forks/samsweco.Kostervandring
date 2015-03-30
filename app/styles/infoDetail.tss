@@ -11,8 +11,14 @@
 }
 
 "#infoImg": {
-	width : '100%',
-	height: '40%'
+	width : '300dp',
+	height: '200dp'
+}
+
+"#slideView": {
+	backgroundColor: '#000000',
+	height: '225dp',
+	width: '100%'
 }
 
 ".headView": {
@@ -43,5 +49,11 @@
 "#lblInfoLink" : {
 	left : '10dp',
 	top : '0dp'
+}
+
+"#slideView": {
+	backgroundColor: '#000000',
+	height: '225dp',
+	width: '100%'
 }
 

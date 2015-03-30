@@ -3,13 +3,8 @@
 	height: '100%'
 }
 
-".buttonView": {
-	bottom: 0,
-	layout : 'vertical'
-}
-
 ".imgKoster": {
-	top: 20,
+	top: '20dp',
 	center: '50%',
 	height : '90dp',
 	width : Titanium.UI.SIZE
@@ -21,11 +16,4 @@
 	height: '93%'
 }
 
-"#lblheadInfo": {
-	color: '#FFFFFF',
-	width: 275,
-	left: 30,
-	font: {
-		fontSize: 12
-	}
-}
+

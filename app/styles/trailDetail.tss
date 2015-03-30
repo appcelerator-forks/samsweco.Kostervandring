@@ -5,7 +5,14 @@
 }
 
 "#slideShowTrails": {
-	height: '40%'
+	width : '300dp',
+	height : '200dp'
+}
+
+"#slideView": {
+	backgroundColor: '#000000',
+	height: '225dp',
+	width: '100%'
 }
 
 "Label": {
