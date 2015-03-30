@@ -22,10 +22,10 @@ function showMap() {
 			mapType : MapModule.SATELLITE_TYPE,
 			animate : true,
 			region : {
-				latitude : zoomLat,
-				longitude : zoomLon,
-				latitudeDelta : 0.03,
-				longitudeDelta : 0.03
+			latitude : zoomLat,
+			longitude : zoomLon,
+			latitudeDelta : 0.03,
+			longitudeDelta : 0.03
 			},
 			height : '90%',
 			width : Ti.UI.FILL
@@ -38,13 +38,54 @@ function showMap() {
 	$.mapDetailView.add(zoomedMap);
 };
 
-function setRoute(){
-
-		var file = getFile(zoomId);
-		
-		for( var u = 0; u<file.length; u++){
-			createMapRoutes(file[u].filename, zoomName, zoomColor);
+function calculateMapRegion(trailCoordinates) {
+	// var region = {
+		// latitude : 59.27866,
+		// longitude : 15.21042,
+		// latitudeDelta : 9,
+		// longitudeDelta : 9
+	// };
+	if (trailCoordinates.length != 0) {
+		var poiCenter = {};
+		var delta = 0.02;
+		var minLat = trailCoordinates[0].latitude,
+		    maxLat = trailCoordinates[0].latitude,
+		    minLon = trailCoordinates[0].longitude,
+		    maxLon = trailCoordinates[0].longitude;
+		for (var i = 0; i < trailCoordinates.length - 1; i++) {
+			minLat = Math.min(trailCoordinates[i + 1].latitude, minLat);
+			maxLat = Math.max(trailCoordinates[i + 1].latitude, maxLat);
+			minLon = Math.min(trailCoordinates[i + 1].longitude, minLon);
+			maxLon = Math.max(trailCoordinates[i + 1].longitude, maxLon);
 		}
+
+		var deltaLat = maxLat - minLat;
+		var deltaLon = maxLon - minLon;
+
+		delta = Math.max(deltaLat, deltaLon);
+		//Change multiplier if it's too close
+		delta = delta * 1.2;
+
+		poiCenter.lat = maxLat - parseFloat((maxLat - minLat) / 2);
+		poiCenter.lon = maxLon - parseFloat((maxLon - minLon) / 2);
+
+		region = {
+			latitude : poiCenter.lat,
+			longitude : poiCenter.lon,
+			latitudeDelta : delta,
+			longitudeDelta : delta
+		};
+	}
+	return region;
+};
+
+function setRoute() {
+
+	var file = getFile(zoomId);
+
+	for (var u = 0; u < file.length; u++) {
+		createMapRoutes(file[u].filename, zoomName, zoomColor);
+	}
 }
 
 function createMapRoutes(file, name, color) {
@@ -54,10 +95,10 @@ function createMapRoutes(file, name, color) {
 	var array = [];
 	array.push(v);
 
+	var coordArray = [];
+
 	for (var u = 0; u < array.length; u++) {
 		var coords = array[0].features[0].geometry.paths[u];
-
-		var j = new Array();
 
 		for (var i = 0; i < coords.length; i++) {
 
@@ -65,17 +106,19 @@ function createMapRoutes(file, name, color) {
 				latitude : coords[i][1],
 				longitude : coords[i][0]
 			};
-			j.push(c);
+			coordArray.push(c);
 		}
 
 		var route = {
 			name : name,
-			points : j,
+			points : coordArray,
 			color : color,
 			width : '2dp'
 		};
 		zoomedMap.addRoute(MapModule.createRoute(route));
 	}
+
+	zoomedMap.region = calculateMapRegion(coordArray);
 }
 
 function getFile() {
@@ -161,13 +204,13 @@ function getID() {
 
 zoomedMap.addEventListener('click', function(evt) {
 	if (evt.clicksource == 'rightButton') {
-        var hotspotCollection = Alloy.Collections.hotspotModel;
+		var hotspotCollection = Alloy.Collections.hotspotModel;
 		hotspotCollection.fetch({
 			query : 'SELECT id, infoTxt from hotspotModel where name = "' + evt.annotation.id + '"'
 		});
 
 		var jsonObj = hotspotCollection.toJSON();
-		
+
 		var hotspotTxt = {
 			title : evt.annotation.id,
 			infoTxt : jsonObj[0].infoTxt,
@@ -176,7 +219,7 @@ zoomedMap.addEventListener('click', function(evt) {
 
 		var hotspotDetail = Alloy.createController("hotspotDetail", hotspotTxt).getView();
 		Alloy.CFG.tabs.activeTab.open(hotspotDetail);
-    };
+	};
 });
 
 $.btnNormal.addEventListener('click', function() {
