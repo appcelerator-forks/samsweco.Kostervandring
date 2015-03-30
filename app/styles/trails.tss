@@ -11,8 +11,3 @@
 	height: '93%'
 }
 
-".row": {
-	layout: 'vertical',
-	backgroundColor: '#fff3e5'
-}
-

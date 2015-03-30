@@ -19,17 +19,17 @@ function setRowData() {
 		var rows = trailsCollection.toJSON();
 
 		for (var i = 0; i < rows.length; i++) {
+			
 			var row = Ti.UI.createTableViewRow({
-				id : i + 1,
-				height : '80dp',
-				top : '0dp',
 				layout : 'horizontal',
+				id : i + 1,
+				height : '200dp',
+				top : '0dp',
 				hasChild : true
 			});
 
 			// var listItem = Ti.UI.createView({
-				// //layout : 'horizontal'
-// 
+				// layout : 'horizontal'
 			// });
 			var verticalView = Ti.UI.createView({
 				layout : 'vertical'
@@ -65,21 +65,23 @@ function setRowData() {
 			});
 
 			var iconView = showIcons(rows[i].id);
+			
 			coverimg.image = "/pics/" + rows[i].cover_img;
 			lblName.text = rows[i].name;
 			lblDistance.text = 'Sträcka : ' + rows[i].length + " km";
 			lblColor.text = rows[i].area;
-
+			
+			verticalView.add(iconView);
 			verticalView.add(lblName);
 			verticalView.add(lblColor);
 			verticalView.add(lblDistance);
-			//listItem.add(coverimg);
-			verticalView.add(iconView);
-			//listItem.add(verticalView);
+			
 			row.add(coverimg);
 			row.add(verticalView);
+
 			tableViewData.push(row);
 		}
+		
 		$.table.data = tableViewData;
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "trails - setRowData");
@@ -126,9 +128,9 @@ function showIcons(id) {
 	var iconView = Ti.UI.createView({
 		layout : 'horizontal',
 		height : '30dp',
-		width : '200dp',
 		backgroundColor : 'black',
-		top : '5dp'
+		top : '5dp',
+		left : '10dp'
 
 	});
 
@@ -137,14 +139,12 @@ function showIcons(id) {
 		var iconImgView = Ti.UI.createImageView({
 			height : '25dp',
 			width : '25dp',
-			left : '10dp'
+			left : '0dp'
 		});
 
 		iconImgView.image = "/piktogram/" + selectedIcons[i].icon;
 		iconView.add(iconImgView);
-
 	}
-
 	return iconView;
 }
 
