@@ -24,10 +24,14 @@ function setRoutes(){
 	
 	var jsonObj = trailCollection.toJSON();
 	for(var i = 0; i<jsonObj.length; i++){
-		createMapRoutes(getFile(jsonObj[i].id), jsonObj[i].name, jsonObj[i].color);
+		var file = getFile(jsonObj[i].id);
+		
+		for( var u = 0; u<file.length; u++){
+			createMapRoutes(file[u].filename, jsonObj[i].name, jsonObj[i].color);
+		}
 	}
 }
-
+//Returnerar bara en fil. Därför kommer bara en slinga per id ut på kartan...
 function getFile(id) {
 	var jsonFileCollection = Alloy.Collections.jsonFilesModel;
 	jsonFileCollection.fetch({
@@ -35,7 +39,9 @@ function getFile(id) {
 	});
 
 	var filename = jsonFileCollection.toJSON();
-	return filename[0].filename;
+	// return filename[0].filename;
+	Ti.API.info(JSON.stringify(filename));
+	return filename;
 }
 
 function createMapRoutes(file, name, color) {
