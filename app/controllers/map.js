@@ -271,10 +271,10 @@ baseMap.addEventListener('click', function(evt) {
 
 function displayInfoSpots() {
 	if (infospotsNotVisible) {
-		var infoArray = [];
 		var markerArray = [];
 
 		var infoSpotCollection = Alloy.Collections.infospotModel;
+		
 		infoSpotCollection.fetch({
 			query : 'select infospotModel.name, infospotModel.icon, infospotCoordinatesModel.latitude, infospotCoordinatesModel.longitude from infospotCoordinatesModel join infospotModel on infospotCoordinatesModel.infospotID = infospotModel.id'
 		});
