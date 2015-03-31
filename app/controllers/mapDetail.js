@@ -39,12 +39,6 @@ function showMap() {
 };
 
 function calculateMapRegion(trailCoordinates) {
-	// var region = {
-		// latitude : 59.27866,
-		// longitude : 15.21042,
-		// latitudeDelta : 9,
-		// longitudeDelta : 9
-	// };
 	if (trailCoordinates.length != 0) {
 		var poiCenter = {};
 		var delta = 0.02;
@@ -113,7 +107,7 @@ function createMapRoutes(file, name, color) {
 			name : name,
 			points : coordArray,
 			color : color,
-			width : '2dp'
+			width : 2.0
 		};
 		zoomedMap.addRoute(MapModule.createRoute(route));
 	}
