@@ -93,6 +93,6 @@ function showDialog() {
 // Array som håller bokstäverna från bokstavsjakten.
 //-----------------------------------------------------------
 var lettersArray = [];
-var word = 'kosterhavet';
+var word = 'KOSTERHAVET';
 var globalTrailID = 0;
 

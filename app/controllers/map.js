@@ -23,6 +23,8 @@ var infospotCollection = getInfospotCollection();
 //-----------------------------------------------------------
 // Hämtar enhetens senaste GPS-position
 //-----------------------------------------------------------
+try{
+	
 Ti.Geolocation.getCurrentPosition(function(e) {
 	if (e.error) {
 		alert('Get current position' + e.error);
@@ -44,6 +46,9 @@ if (Ti.Geolocation.locationServicesEnabled) {
 	});
 } else {
 	alert('Tillåt gpsen, tack');
+}
+} catch(e) {
+	newError("Något gick fel när sidan skulle laddas, prova igen!", "Map - get current position GPS");
 }
 
 //-----------------------------------------------------------
