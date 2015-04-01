@@ -37,8 +37,8 @@
 		fontStyle: 'italic'
 	},
 	right: 20,
-	left: 20,
-	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+	left: 10,
+	// textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
 	top: 25
 }
 
@@ -47,15 +47,16 @@
 		fontSize: 20,
 		fontWeight: 'bold'
 	},
+	left : 10,
 	color: '#FF9966',
-	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+	// textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }
 
 '#startInteractive': {
-	height: 30,
-	width: 200,
-	backgroundColor: '#FFD6AD',
+	height: Titanium.UI.SIZE,
+	width: Titanium.UI.SIZE,
+	// backgroundColor: '#FFD6AD',
 	top: 20,
-	radius: 30,
-	borderRadius: 7.5
+	radius: 30
+	// borderRadius: 7.5
 }

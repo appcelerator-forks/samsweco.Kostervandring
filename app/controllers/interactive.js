@@ -46,4 +46,17 @@ function getClue() {
 
 	$.lblClue.text = txt;
 	id++;
-};
+}
+
+function checkWord(){
+	var check = $.word.value;
+	check.toLowerCase();
+	
+	if(check == word){
+		alert("Bra jobbat!");
+	}else{
+		alert("Nej du, nu blev det fel... Tänkt på att skriva med små bokstäver");
+	}
+	
+	Ti.API.info(check);
+}
