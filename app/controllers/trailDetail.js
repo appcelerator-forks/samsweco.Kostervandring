@@ -69,7 +69,7 @@ function showHotspots() {
 			var img = Ti.UI.createImageView({
 				height : '80dp',
 				width : '120dp',
-				image : rows[i].cover_pic,
+				image : '/pics/'+rows[i].cover_pic,
 				left : '5dp'
 			});
 			
@@ -144,8 +144,6 @@ function showHotspot(e) {
 		var jsonObj = hotspotCollection.toJSON();
 		var txt = jsonObj[0].infoTxt;
 		var idnr = jsonObj[0].id;
-
-		Ti.API.info("hotspot : " + JSON.stringify(jsonObj));
 
 		var hotspotTxt = {
 			title : name,

@@ -5,8 +5,8 @@
 }
 
 "#slideShowTrails": {
-	width : '300dp',
-	height : '200dp'
+	width: '300dp',
+	height: '200dp'
 }
 
 "#slideView": {
@@ -55,7 +55,7 @@
 
 "#hotspotTable": {
 	height: Titanium.UI.SIZE,
-	footerTitle:''
+	footerTitle: ''
 }
 
 ".headView": {
@@ -92,5 +92,9 @@
 		fontStyle: 'Italic'
 	},
 	top: 10
+}
+
+"#btnTrailOnMap": {
+	left: '10dp'
 }
 
