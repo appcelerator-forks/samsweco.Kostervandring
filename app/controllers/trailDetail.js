@@ -168,11 +168,11 @@ function showIcons() {
 			var covericon = Ti.UI.createImageView({
 				height : '30dp',
 				width : '30dp',
-				left : '10dp'
+				left : '0dp',
+				image : "/piktogram/map_" + selectedIcons[i].icon
 			});
 
-			covericon.image = "/piktogram/map_" + selectedIcons[i].icon;
-
+			Ti.API.info('covericon : ' + covericon.image);
 			$.iconrow.add(covericon);
 		}
 
