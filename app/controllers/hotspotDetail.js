@@ -10,15 +10,15 @@ setPics();
 function setPics() {
 
 	try {
-		if (args.informationNaturum != null) {
-			setNaturumInfo();
-			selectNaturumPics();
-		} else if (args.informationKoster != null) {
-			setKosterInfo();
-			selectKosterPics();
-		} else {
+		// if (args.informationNaturum != null) {
+			// setNaturumInfo();
+			// selectNaturumPics();
+		// } else if (args.informationKoster != null) {
+			// setKosterInfo();
+			// selectKosterPics();
+		// } else {
 			selectHotspotPics();
-		}
+//		}
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "HotspotDetail - setPics");
 	}
@@ -27,8 +27,11 @@ function setPics() {
 function selectHotspotPics() {
 	try {
 
-		var media = getMediaCollection();
-		var jsonMedia = media.toJSON();
+		var mediaCollection = getMediaCollection();
+			mediaCollection.fetch({
+		query : 'SELECT * FROM mediaModel WHERE hotspot_id = "' + hotspotId + '"'
+	});
+		var jsonMedia = mediaCollection.toJSON();
 		
 		for (var i = 0; i < jsonMedia.length; i++) {
 			var view_args = {

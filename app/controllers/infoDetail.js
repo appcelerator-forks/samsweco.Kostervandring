@@ -1,17 +1,19 @@
 var args = arguments[0] || {};
+
 try {
 	$.lblInfoTitle.text = args.name || "Title";
 	$.lblInfoText.text = args.infoTxt || "Info";
 	$.lblInfoLink.text = args.desc || "url";
 	$.infoImg.image = "/pics/" + args.img;
+	
 	var infoid = args.id;
-
 	var url = args.link;
 
 	var link = $.lblInfoLink;
 	link.addEventListener('click', function(e) {
 		openLink(url);
 	});
+	
 } catch(e) {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "infoDetail - load data into labels");
 }

@@ -3,7 +3,7 @@ var args = arguments[0] || {};
 setRowData();
 
 try {
-	var hotspotCollection = Alloy.Collections.hotspotModel;
+	var hotspotCollection = getHotspotCollection();
 	hotspotCollection.fetch();
 } catch(e) {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "Hotspots - create hotspotCollection");
@@ -30,10 +30,6 @@ function showHotspotDetails(hotspot) {
 }
 
 function setRowData() {
-
-	var hotspotCollection = Alloy.Collections.hotspotModel;
-	hotspotCollection.fetch();
-
 	var tableViewData = [];
 	var rows = hotspotCollection.toJSON();
 
@@ -95,8 +91,6 @@ function getHotspotInfo(e) {
 
 	try {
 		var id = e.rowData.id;
-
-		var hotspotCollection = Alloy.Collections.hotspotModel;
 		hotspotCollection.fetch({
 			query : 'SELECT name, infoTxt from hotspotModel where id = "' + id + '"'
 		});

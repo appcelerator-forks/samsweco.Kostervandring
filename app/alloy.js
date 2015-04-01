@@ -16,16 +16,22 @@
 
 function getHotspotCollection() {
 	var hotspotCollection = Alloy.Collections.hotspotModel;
-	hotspotCollection.fetch();
-
 	return hotspotCollection;
 }
 
 function getMediaCollection(){
-	var mediaCollection = Alloy.Collections.mediaModel;
-	mediaCollection.fetch();
-	
+	var mediaCollection = Alloy.Collections.mediaModel;	
 	return mediaCollection;
+}
+
+function getTrailsCollection(){
+	var trailCollection = Alloy.Collections.trailsModel;	
+	return trailCollection;
+}
+
+function getInfoCollection(){
+	var infoCollection = Alloy.Collections.infoModel;	
+	return infoCollection;
 }
 
 //-----------------------------------------------------------
@@ -77,5 +83,6 @@ function showDialog() {
 // Array som håller bokstäverna från bokstavsjakten.
 //-----------------------------------------------------------
 var lettersArray = [];
+var word = 'kosterhavet';
 var globalTrailID = 0;
 
