@@ -11,82 +11,162 @@ setRowData();
 
 function setRowData() {
 
-	try {
 		var trailsCollection = Alloy.Collections.trailsModel;
 		trailsCollection.fetch();
 
 		var tableViewData = [];
 		var rows = trailsCollection.toJSON();
-
-		for (var i = 0; i < rows.length; i++) {
+		
+		for(var i = 0; i<rows.length; i++){
 			
-			var row = Ti.UI.createTableViewRow({
+				var row = Ti.UI.createTableViewRow({
 				layout : 'horizontal',
 				id : i + 1,
-				height : '200dp',
+				height : '100dp',
 				top : '0dp',
 				hasChild : true
 			});
-
-			// var listItem = Ti.UI.createView({
-				// layout : 'horizontal'
-			// });
-			var verticalView = Ti.UI.createView({
+			
+			var listItem = Ti.UI.createView({
+				layout : 'vertical'
+			});
+			
+			var img = Ti.UI.createImageView({
+				height : '66dp',
+				width : '100dp',
+				image : "/pics/" + rows[i].cover_img
+			});
+			
+			var labelView = Ti.UI.createView({
+				height : '66dp',
+				width : '100dp',
+				backgroundColor : 'white',
 				layout : 'vertical'
 			});
 
-			var coverimg = Ti.UI.createImageView({
-				width : '100dp',
-				height : '66dp',
-				left : '10dp'
-			});
+			
 			var lblName = Ti.UI.createLabel({
-				left : '10dp',
-				top : '2dp',
 				color : '#FF9966',
+				left : '10dp',
 				font : {
 					fontSize : 13,
 					fontWeight : 'bold'
-				}
+				},
+				text : rows[i].name
 			});
+			
 			var lblDistance = Ti.UI.createLabel({
 				left : '10dp',
 				top : '0dp',
 				font : {
 					fontSize : 11
-				}
+				},
+				text : 'Sträcka : ' + rows[i].length + " km"
 			});
-			var lblColor = Ti.UI.createLabel({
+			
+			var lblArea = Ti.UI.createLabel({
 				left : '10dp',
 				top : '0dp',
 				font : {
 					fontSize : 11
-				}
+				},
+				text : rows[i].area
 			});
-
+		
 			var iconView = showIcons(rows[i].id);
 			
-			coverimg.image = "/pics/" + rows[i].cover_img;
-			lblName.text = rows[i].name;
-			lblDistance.text = 'Sträcka : ' + rows[i].length + " km";
-			lblColor.text = rows[i].area;
-			
-			verticalView.add(iconView);
-			verticalView.add(lblName);
-			verticalView.add(lblColor);
-			verticalView.add(lblDistance);
-			
-			row.add(coverimg);
-			row.add(verticalView);
-
-			tableViewData.push(row);
-		}
+		labelView.add(lblName);	
+		labelView.add(lblDistance);
+		labelView.add(lblArea);
+		listItem.add(iconView);
+		listItem.add(labelView);
 		
-		$.table.data = tableViewData;
-	} catch(e) {
-		newError("Något gick fel när sidan skulle laddas, prova igen!", "trails - setRowData");
-	}
+		row.add(img);
+		row.add(listItem);	
+		
+		tableViewData.push(row);
+		}
+	$.table.data = tableViewData;
 }
+
+// function setRowData() {
+// 
+	// try {
+		// var trailsCollection = Alloy.Collections.trailsModel;
+		// trailsCollection.fetch();
+// 
+		// var tableViewData = [];
+		// var rows = trailsCollection.toJSON();
+// 
+		// for (var i = 0; i < rows.length; i++) {
+// 			
+			// var row = Ti.UI.createTableViewRow({
+				// layout : 'horizontal',
+				// id : i + 1,
+				// height : '200dp',
+				// top : '0dp',
+				// hasChild : true
+			// });
+// 
+			// // var listItem = Ti.UI.createView({
+				// // layout : 'horizontal'
+			// // });
+			// var verticalView = Ti.UI.createView({
+				// layout : 'vertical'
+			// });
+// 
+			// var coverimg = Ti.UI.createImageView({
+				// width : '100dp',
+				// height : '66dp',
+				// left : '10dp'
+			// });
+			// var lblName = Ti.UI.createLabel({
+				// left : '10dp',
+				// top : '2dp',
+				// color : '#FF9966',
+				// font : {
+					// fontSize : 13,
+					// fontWeight : 'bold'
+				// }
+			// });
+			// var lblDistance = Ti.UI.createLabel({
+				// left : '10dp',
+				// top : '0dp',
+				// font : {
+					// fontSize : 11
+				// }
+			// });
+			// var lblColor = Ti.UI.createLabel({
+				// left : '10dp',
+				// top : '0dp',
+				// font : {
+					// fontSize : 11
+				// }
+			// });
+// 
+			// var iconView = showIcons(rows[i].id);
+// 			
+			// coverimg.image = "/pics/" + rows[i].cover_img;
+			// lblName.text = rows[i].name;
+			// lblDistance.text = 'Sträcka : ' + rows[i].length + " km";
+			// lblColor.text = rows[i].area;
+// 			
+			// verticalView.add(iconView);
+			// verticalView.add(lblName);
+			// verticalView.add(lblColor);
+			// verticalView.add(lblDistance);
+// 			
+			// row.add(coverimg);
+			// row.add(verticalView);
+// 
+			// tableViewData.push(row);
+		// }
+// 		
+		// $.table.data = tableViewData;
+	// } catch(e) {
+		// newError("Något gick fel när sidan skulle laddas, prova igen!", "trails - setRowData");
+	// }
+// }
 
 function showTrailDetails(e) {
 
@@ -127,9 +207,8 @@ function showIcons(id) {
 
 	var iconView = Ti.UI.createView({
 		layout : 'horizontal',
-		height : '30dp',
-		backgroundColor : 'black',
-		top : '5dp',
+		height : '34dp',
+		backgroundColor : 'yellow',
 		left : '10dp'
 
 	});
