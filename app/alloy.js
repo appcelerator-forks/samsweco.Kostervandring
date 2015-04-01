@@ -34,6 +34,16 @@ function getInfoCollection(){
 	return infoCollection;
 }
 
+function getJSONfiles(){
+	var jsonFileCollection = Alloy.Collections.jsonFilesModel;
+	return jsonFileCollection;
+}
+
+function getInfospotCollection(){
+	var infospotCollection = Alloy.Collections.infospotModel;
+	return infospotCollection;
+}
+
 //-----------------------------------------------------------
 // Felhantering
 //-----------------------------------------------------------

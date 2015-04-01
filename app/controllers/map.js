@@ -3,75 +3,23 @@ var args = arguments[0] || {};
 var zoomedName = args.name;
 var zoomColor = args.color;
 var zoomLat = args.zoomlat;
+
 var route;
 var radius = 10;
 var baseMap;
 var MapModule = require('ti.map');
+
 var infospotsNotVisible = true;
 var hotspotsNotVisible = true;
+
 var infospotsAnnotation;
 var hotspotAnnotation;
 
-showMap();
-setRoutes();
-displayTrailMarkers();
+var trailsCollection = getTrailsCollection();
+var hotspotCollection = getHotspotCollection();
+var jsonFileCollection = getJSONfiles();
+var infospotCollection = getInfospotCollection();
 
-function setRoutes(){
-	var trailCollection = Alloy.Collections.trailsModel;
-	trailCollection.fetch({
-		query : 'SELECT id, name, color FROM trailsModel'
-	});
-	
-	var jsonObj = trailCollection.toJSON();
-	for(var i = 0; i<jsonObj.length; i++){
-		var file = getFile(jsonObj[i].id);
-		
-		for( var u = 0; u<file.length; u++){
-			createMapRoutes(file[u].filename, jsonObj[i].name, jsonObj[i].color);
-		}
-	}
-}
-
-function getFile(id) {
-	var jsonFileCollection = Alloy.Collections.jsonFilesModel;
-	jsonFileCollection.fetch({
-		query : 'SELECT filename FROM jsonFilesModel WHERE trailID ="' + id + '"'
-	});
-
-	var filename = jsonFileCollection.toJSON();
-	return filename;
-}
-
-function createMapRoutes(file, name, color) {
-	var adventureRoute = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "/routes/" + file).read().text;
-	var v = JSON.parse(adventureRoute);
-
-	var array = [];
-	array.push(v);
-
-	for (var u = 0; u < array.length; u++) {
-		var coords = array[0].features[0].geometry.paths[u];
-
-		var j = new Array();
-
-		for (var i = 0; i < coords.length; i++) {
-
-			var c = {
-				latitude : coords[i][1],
-				longitude : coords[i][0]
-			};
-			j.push(c);
-		}
-
-		var route = {
-			name : name,
-			points : j,
-			color : color,
-			width : 2.0
-		};
-		baseMap.addRoute(MapModule.createRoute(route));
-	}
-}
 
 Ti.Geolocation.getCurrentPosition(function(e) {
 	if (e.error) {
@@ -96,14 +44,97 @@ if (Ti.Geolocation.locationServicesEnabled) {
 	alert('Tillåt gpsen, tack');
 }
 
+try {
+	showMap();
+	setRoutes();
+	displayTrailMarkers();
+} catch(e) {
+	newError("Något gick fel när sidan skulle laddas, prova igen!", "Map - load page");
+}
+
+function setRoutes() {
+	try {
+		trailsCollection.fetch({
+			query : 'SELECT id, name, color FROM trailsModel'
+		});
+
+		var jsonObj = trailsCollection.toJSON();
+		for (var i = 0; i < jsonObj.length; i++) {
+			var file = getFile(jsonObj[i].id);
+
+			for (var u = 0; u < file.length; u++) {
+				createMapRoutes(file[u].filename, jsonObj[i].name, jsonObj[i].color);
+			}
+		}
+	} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "infoList - getInfoDetails");
+	}
+
+}
+
+function getFile(id) {
+	try {
+		jsonFileCollection.fetch({
+			query : 'SELECT filename FROM jsonFilesModel WHERE trailID ="' + id + '"'
+		});
+
+		var filename = jsonFileCollection.toJSON();
+		return filename;
+	} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - getFile");
+	}
+
+}
+
+function createMapRoutes(file, name, color) {
+	try {
+		var routes = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "/routes/" + file).read().text;
+		var parsedRoute = JSON.parse(routes);
+
+		var geoArray = [];
+		geoArray.push(parsedRoute);
+
+		for (var u = 0; u < geoArray.length; u++) {
+			var coords = geoArray[0].features[0].geometry.paths[u];
+
+			var points = new Array();
+
+			for (var i = 0; i < coords.length; i++) {
+
+				var c = {
+					latitude : coords[i][1],
+					longitude : coords[i][0]
+				};
+				points.push(c);
+			}
+
+			var route = {
+				name : name,
+				points : points,
+				color : color,
+				width : 2.0
+			};
+			baseMap.addRoute(MapModule.createRoute(route));
+		}
+	} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - createMapRoutes");
+	}
+}
+
+
 function getPosition(coordinatesObj) {
+	try{
 	gLat = coordinatesObj.latitude;
 	gLon = coordinatesObj.longitude;
 
 	isNearPoint();
+		} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - getPosition");
+	}
 };
 
 function distanceInM(lat1, lon1, GLat, GLon) {
+	try{
 	if (lat1 == null || lon1 == null || GLat == null || GLat == null) {
 		alert("Det finns inga koordinater att titta efter");
 	}
@@ -113,10 +144,16 @@ function distanceInM(lat1, lon1, GLat, GLon) {
 	var distance = (R * 2 * Math.asin(Math.sqrt(a))) * 1000;
 
 	return distance;
+		} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - distanceInM");
+	}
 
 }
 
 function isInsideRadius(lat1, lon1, rad) {
+	try{
+		
+	
 	var isInside = false;
 	var distance = distanceInM(lat1, lon1, gLat, gLon);
 
@@ -124,9 +161,13 @@ function isInsideRadius(lat1, lon1, rad) {
 		isInside = true;
 	}
 	return isInside;
+		} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - isInsideRadius");
+	}
 }
 
 function isNearPoint() {
+	try{
 	var coordCollection = Alloy.Collections.coordinates;
 	coordCollection.fetch();
 
@@ -139,6 +180,9 @@ function isNearPoint() {
 		if (isInsideRadius(lat, lon, radius)) {
 			showDialog();
 		}
+	}
+		} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - isNearPoint");
 	}
 }
 
@@ -167,12 +211,12 @@ function showMap() {
 };
 
 function displayTrailMarkers() {
-	var pinCollection = Alloy.Collections.trailsModel;
-	pinCollection.fetch({
+	try{
+	trailsCollection.fetch({
 		query : 'SELECT name, pin, pinLon, pinLat FROM trailsModel'
 	});
 
-	var jsonObj = pinCollection.toJSON();
+	var jsonObj = trailsCollection.toJSON();
 	for (var i = 0; i < jsonObj.length; i++) {
 		var markerAnnotation = MapModule.createAnnotation({
 			id : jsonObj[i].name,
@@ -190,14 +234,17 @@ function displayTrailMarkers() {
 		});
 		baseMap.addAnnotation(markerAnnotation);
 	}
+		} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - displayTrailMarkers");
+	}
 }
 
 function displayMarkers() {
+	try{
 	var markerArray = [];
-	var markersCollection = Alloy.Collections.hotspotModel;
-	markersCollection.fetch();
+	hotspotCollection.fetch();
 
-	var markersJSON = markersCollection.toJSON();
+	var markersJSON = hotspotCollection.toJSON();
 	for (var u = 0; u < markersJSON.length; u++) {
 		var marker = MapModule.createAnnotation({
 			id : markersJSON[u].name,
@@ -215,55 +262,63 @@ function displayMarkers() {
 
 	baseMap.addAnnotations(markerArray);
 	hotspotsNotVisible = false;
+		} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - displayMarkers");
+	}
 }
 
-function showTrail(myId){
-	var trailsCollection = Alloy.Collections.trailsModel;
-		trailsCollection.fetch({
-			query : 'SELECT * FROM trailsModel where name ="' + myId + '"'
-		});
+function showTrail(myId) {
+	try{
+	trailsCollection.fetch({
+		query : 'SELECT * FROM trailsModel where name ="' + myId + '"'
+	});
 
-		var jsonObjTr = trailsCollection.toJSON();
+	var jsonObjTr = trailsCollection.toJSON();
 
-		var args = {
-			id : jsonObjTr[0].id,
-			title : myId,
-			length : jsonObjTr[0].length,
-			infoTxt : jsonObjTr[0].infoTxt,
-			area : jsonObjTr[0].area,
-			color : jsonObjTr[0].color,
-			zoomlat : jsonObjTr[0].zoomLat,
-			zoomlon : jsonObjTr[0].zoomLon
-		};
+	var args = {
+		id : jsonObjTr[0].id,
+		title : myId,
+		length : jsonObjTr[0].length,
+		infoTxt : jsonObjTr[0].infoTxt,
+		area : jsonObjTr[0].area,
+		color : jsonObjTr[0].color,
+		zoomlat : jsonObjTr[0].zoomLat,
+		zoomlon : jsonObjTr[0].zoomLon
+	};
 
-		var trailDetail = Alloy.createController("trailDetail", args).getView();
-		Alloy.CFG.tabs.activeTab.open(trailDetail);
+	var trailDetail = Alloy.createController("trailDetail", args).getView();
+	Alloy.CFG.tabs.activeTab.open(trailDetail);
+		} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - showTrail");
+	}
 }
 
+function showHotspot(myId) {
+	try{
+	hotspotCollection.fetch({
+		query : 'SELECT id, infoTxt from hotspotModel where name = "' + myId + '"'
+	});
 
-function showHotspot(myId){
-	var hotspotCollection = Alloy.Collections.hotspotModel;
-		hotspotCollection.fetch({
-			query : 'SELECT id, infoTxt from hotspotModel where name = "' + myId + '"'
-		});
+	var jsonObjHot = hotspotCollection.toJSON();
 
-		var jsonObjHot = hotspotCollection.toJSON();
+	var hotspotTxt = {
+		title : myId,
+		infoTxt : jsonObjHot[0].infoTxt,
+		id : jsonObjHot[0].id
+	};
 
-		var hotspotTxt = {
-			title : myId,
-			infoTxt : jsonObjHot[0].infoTxt,
-			id : jsonObjHot[0].id
-		};
-
-		var hotspotDetail = Alloy.createController("hotspotDetail", hotspotTxt).getView();
-		Alloy.CFG.tabs.activeTab.open(hotspotDetail);
+	var hotspotDetail = Alloy.createController("hotspotDetail", hotspotTxt).getView();
+	Alloy.CFG.tabs.activeTab.open(hotspotDetail);
+		} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - showHotspot");
+	}
 }
 
 baseMap.addEventListener('click', function(evt) {
-    if (evt.clicksource == 'rightButton') {
-		if(evt.annotation.name == 'hotspot'){
+	if (evt.clicksource == 'rightButton') {
+		if (evt.annotation.name == 'hotspot') {
 			showHotspot(evt.annotation.id);
-		}else{
+		} else {
 			showTrail(evt.annotation.id);
 		}
 	}
@@ -272,14 +327,11 @@ baseMap.addEventListener('click', function(evt) {
 function displayInfoSpots() {
 	if (infospotsNotVisible) {
 		var markerArray = [];
-
-		var infoSpotCollection = Alloy.Collections.infospotModel;
-		
-		infoSpotCollection.fetch({
+		infospotCollection.fetch({
 			query : 'select infospotModel.name, infospotModel.icon, infospotCoordinatesModel.latitude, infospotCoordinatesModel.longitude from infospotCoordinatesModel join infospotModel on infospotCoordinatesModel.infospotID = infospotModel.id'
 		});
 
-		var infoJSON = infoSpotCollection.toJSON();
+		var infoJSON = infospotCollection.toJSON();
 
 		for (var u = 0; u < infoJSON.length; u++) {
 			var marker = MapModule.createAnnotation({
