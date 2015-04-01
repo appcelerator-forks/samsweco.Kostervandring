@@ -61,29 +61,49 @@ function showHotspots() {
 			var row = Ti.UI.createTableViewRow({
 				id : rows[i].name,
 				layout : 'horizontal',
-				height : '60dp',
+				height : '80dp',
 				top : '0dp',
 				hasChild : true
 			});
 
-			var coverimg = Ti.UI.createImageView({
-				height : '60dp',
-				width : '90dp',
-				left : '10dp'
+			var img = Ti.UI.createImageView({
+				height : '80dp',
+				width : '120dp',
+				image : rows[i].cover_pic,
+				left : '5dp'
+			});
+			
+			var labelView = Ti.UI.createView({
+				height : Ti.UI.SIZE,
+				width : Ti.UI.FILL,
+				backgroundColor : 'white',
+				layout : 'vertical'
 			});
 
 			var lblName = Ti.UI.createLabel({
-				left : '10dp',
+				color : '#FF9966',
+				left : '5dp',
 				font : {
-					fontSize : 12
-				}
+					fontSize : 13,
+					fontWeight : 'bold'
+				},
+				text : rows[i].name
+			});
+			
+			var lblDesc = Ti.UI.createLabel({
+				left : '5dp',
+				top : '0dp',
+				font : {
+					fontSize : 10
+				},
+				text : 'Läs mer om ' + rows[i].name + " här!"
 			});
 
-			coverimg.image = rows[i].cover_pic;
-			lblName.text = rows[i].name;
-
-			row.add(coverimg);
-			row.add(lblName);
+			labelView.add(lblName);
+			labelView.add(lblDesc);
+			
+			row.add(img);
+			row.add(labelView);
 
 			tableViewData.push(row);
 		}
