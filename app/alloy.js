@@ -10,6 +10,27 @@
 //
 // Alloy.Globals.someGlobalFunction = function(){};
 
+//-----------------------------------------------------------
+// Metoder för alla collections
+//-----------------------------------------------------------
+
+function getHotspotCollection() {
+	var hotspotCollection = Alloy.Collections.hotspotModel;
+	hotspotCollection.fetch();
+
+	return hotspotCollection;
+}
+
+function getMediaCollection(){
+	var mediaCollection = Alloy.Collections.mediaModel;
+	mediaCollection.fetch();
+	
+	return mediaCollection;
+}
+
+//-----------------------------------------------------------
+// Felhantering
+//-----------------------------------------------------------
 function newError(errorMsg, pageName) {
 	try {
 		var er = new Error(errorMsg);
@@ -17,42 +38,44 @@ function newError(errorMsg, pageName) {
 		throw er;
 	} catch (e) {
 
-		alert("Error:[" + e.message + "] has occured on " + e.myObject+ " page." 
-		);
+		alert("Error:[" + e.message + "] has occured on " + e.myObject + " page.");
 	}
 }
 
+//-----------------------------------------------------------
+// Globala variabler för geofencing.
+//-----------------------------------------------------------
 var gLat = 0;
 var gLon = 0;
 
-function showDialog(){
+//-----------------------------------------------------------
+// Alertbox som visas när man börjar närma sig en punkt.
+//-----------------------------------------------------------
+function showDialog() {
 
-  var dialog = Ti.UI.createAlertDialog({
-    cancel: 1,
-    buttonNames: ['OK', 'Cancel'],
-    message: 'Gå till nästa fråga?',
-    title: 'Bokstav i närheten!'
-  });
-  
-  dialog.addEventListener('click', function(e){
-  	
-    if (e.index === e.source.cancel){
-    	// closeDialog();
-    }
-    else{
-    	var interactiveWin = Alloy.createController("interactive").getView();
-		Alloy.CFG.tabs.activeTab.open(interactiveWin);
-		//$.infoDetail.openInteractive();
-    }
-  });
-  dialog.show();  
+	var dialog = Ti.UI.createAlertDialog({
+		cancel : 1,
+		buttonNames : ['OK', 'Cancel'],
+		message : 'Gå till nästa fråga?',
+		title : 'Bokstav i närheten!'
+	});
+
+	dialog.addEventListener('click', function(e) {
+
+		if (e.index === e.source.cancel) {
+			// closeDialog();
+		} else {
+			var interactiveWin = Alloy.createController("interactive").getView();
+			Alloy.CFG.tabs.activeTab.open(interactiveWin);
+			//$.infoDetail.openInteractive();
+		}
+	});
+	dialog.show();
 };
 
-// function closeDialog(){
-	// $.dialog.close();
-// };
-
-var lettersArray =[];
-
+//-----------------------------------------------------------
+// Array som håller bokstäverna från bokstavsjakten.
+//-----------------------------------------------------------
+var lettersArray = [];
 var globalTrailID = 0;
 
