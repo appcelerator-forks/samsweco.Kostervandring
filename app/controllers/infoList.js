@@ -40,24 +40,24 @@ function setRowData() {
 	for (var i = 0; i < rows.length; i++) {
 		var row = Ti.UI.createTableViewRow({
 			id : i + 1,
+			layout : 'horizontal',
 			height : '80dp',
 			top : 0,
 			hasChild : true
 		});
 
-		var listItem = Ti.UI.createView({
-			height : '80dp',
-			layout : 'horizontal'
-		});
-
-		var verticalView = Ti.UI.createView({
-			layout : 'vertical'
-		});
+		var labelView = Ti.UI.createView({
+				height : Ti.UI.SIZE,
+				width : Ti.UI.FILL,
+				backgroundColor : 'white',
+				layout : 'vertical'
+			});
 
 		var coverimg = Ti.UI.createImageView({
 			height : '80dp',
-			width : '90dp',
-			left : 10
+			width : '120dp',
+			left : '5dp',
+			image : "/pics/" + rows[i].cover_img
 		});
 
 		var lblName = Ti.UI.createLabel({
@@ -67,27 +67,25 @@ function setRowData() {
 				font : {
 					fontSize : 13,
 					fontWeight : 'bold'
-				}
+				},
+				text : rows[i].name
 			});
 			
 			var lblDesc = Ti.UI.createLabel({
 				left : '10dp',
 				top : '2dp',
 				font : {
-					fontSize : 11,
-				}
+					fontSize : 10,
+				},
+				text : rows[i].desc
 			});
-			
-		coverimg.image = "/pics/" + rows[i].cover_img;
-		lblName.text = rows[i].name;
-		lblDesc.text = rows[i].desc;
+		
+		labelView.add(lblName);
+		labelView.add(lblDesc);
+		
+		row.add(coverimg);
+		row.add(labelView);
 
-		verticalView.add(lblName);
-		verticalView.add(lblDesc);
-		listItem.add(coverimg);
-		listItem.add(verticalView);
-
-		row.add(listItem);
 		tableViewData.push(row);
 	}
 	$.table.data = tableViewData;

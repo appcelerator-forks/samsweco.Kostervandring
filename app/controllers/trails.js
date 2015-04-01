@@ -22,7 +22,7 @@ function setRowData() {
 				var row = Ti.UI.createTableViewRow({
 				layout : 'horizontal',
 				id : i + 1,
-				height : '100dp',
+				height : '80dp',
 				top : '0dp',
 				hasChild : true
 			});
