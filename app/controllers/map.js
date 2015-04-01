@@ -20,7 +20,9 @@ var hotspotCollection = getHotspotCollection();
 var jsonFileCollection = getJSONfiles();
 var infospotCollection = getInfospotCollection();
 
-
+//-----------------------------------------------------------
+// Hämtar enhetens senaste GPS-position
+//-----------------------------------------------------------
 Ti.Geolocation.getCurrentPosition(function(e) {
 	if (e.error) {
 		alert('Get current position' + e.error);
@@ -44,6 +46,9 @@ if (Ti.Geolocation.locationServicesEnabled) {
 	alert('Tillåt gpsen, tack');
 }
 
+//-----------------------------------------------------------
+// Onload-funktioner för kartan
+//-----------------------------------------------------------
 try {
 	showMap();
 	setRoutes();
@@ -52,6 +57,9 @@ try {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "Map - load page");
 }
 
+//-----------------------------------------------------------
+// Sätter ut alla vandringsleder på kartan
+//-----------------------------------------------------------
 function setRoutes() {
 	try {
 		trailsCollection.fetch({
@@ -72,6 +80,9 @@ function setRoutes() {
 
 }
 
+//-----------------------------------------------------------
+// Hämtar JSON-fil för en vandringsled
+//-----------------------------------------------------------
 function getFile(id) {
 	try {
 		jsonFileCollection.fetch({
@@ -86,6 +97,9 @@ function getFile(id) {
 
 }
 
+//-----------------------------------------------------------
+// Skapar en vandringsled på kartan
+//-----------------------------------------------------------
 function createMapRoutes(file, name, color) {
 	try {
 		var routes = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "/routes/" + file).read().text;
@@ -121,71 +135,81 @@ function createMapRoutes(file, name, color) {
 	}
 }
 
-
+//-----------------------------------------------------------
+// Hämtar enhetens position och kontrollerar mot punkter
+//-----------------------------------------------------------
 function getPosition(coordinatesObj) {
-	try{
-	gLat = coordinatesObj.latitude;
-	gLon = coordinatesObj.longitude;
+	try {
+		gLat = coordinatesObj.latitude;
+		gLon = coordinatesObj.longitude;
 
-	isNearPoint();
-		} catch(e) {
+		isNearPoint();
+	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - getPosition");
 	}
-};
+}
 
+//-----------------------------------------------------------
+// Beräknar avståndet mellan enhetens koordinater och de punkter som håller info
+//-----------------------------------------------------------
 function distanceInM(lat1, lon1, GLat, GLon) {
-	try{
-	if (lat1 == null || lon1 == null || GLat == null || GLat == null) {
-		alert("Det finns inga koordinater att titta efter");
-	}
+	try {
+		if (lat1 == null || lon1 == null || GLat == null || GLat == null) {
+			alert("Det finns inga koordinater att titta efter");
+		}
 
-	var R = 6371;
-	var a = 0.5 - Math.cos((GLat - lat1) * Math.PI / 180) / 2 + Math.cos(lat1 * Math.PI / 180) * Math.cos(GLat * Math.PI / 180) * (1 - Math.cos((GLon - lon1) * Math.PI / 180)) / 2;
-	var distance = (R * 2 * Math.asin(Math.sqrt(a))) * 1000;
+		var R = 6371;
+		var a = 0.5 - Math.cos((GLat - lat1) * Math.PI / 180) / 2 + Math.cos(lat1 * Math.PI / 180) * Math.cos(GLat * Math.PI / 180) * (1 - Math.cos((GLon - lon1) * Math.PI / 180)) / 2;
+		var distance = (R * 2 * Math.asin(Math.sqrt(a))) * 1000;
 
-	return distance;
-		} catch(e) {
+		return distance;
+	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - distanceInM");
 	}
 
 }
-
+//-----------------------------------------------------------
+// Kontrollerar om enhetens position är inom radien för en utsatt punkt
+//-----------------------------------------------------------
 function isInsideRadius(lat1, lon1, rad) {
-	try{
-		
-	
-	var isInside = false;
-	var distance = distanceInM(lat1, lon1, gLat, gLon);
+	try {
 
-	if (distance <= rad) {
-		isInside = true;
-	}
-	return isInside;
-		} catch(e) {
+		var isInside = false;
+		var distance = distanceInM(lat1, lon1, gLat, gLon);
+
+		if (distance <= rad) {
+			isInside = true;
+		}
+		return isInside;
+	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - isInsideRadius");
 	}
 }
-
+//-----------------------------------------------------------
+// Kontrollerar om enheten är innanför en punkt, sänder ut dialog om true
+//-----------------------------------------------------------
 function isNearPoint() {
-	try{
-	var coordCollection = Alloy.Collections.coordinates;
-	coordCollection.fetch();
+	try {
+		var coordCollection = Alloy.Collections.coordinates;
+		coordCollection.fetch();
 
-	var jsonCollection = coordCollection.toJSON();
+		var jsonCollection = coordCollection.toJSON();
 
-	for (var i = 0; i < jsonCollection.length; i++) {
-		var lat = jsonCollection[i].latitude;
-		var lon = jsonCollection[i].longitude;
+		for (var i = 0; i < jsonCollection.length; i++) {
+			var lat = jsonCollection[i].latitude;
+			var lon = jsonCollection[i].longitude;
 
-		if (isInsideRadius(lat, lon, radius)) {
-			showDialog();
+			if (isInsideRadius(lat, lon, radius)) {
+				showDialog();
+			}
 		}
-	}
-		} catch(e) {
+	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - isNearPoint");
 	}
 }
-
+//-----------------------------------------------------------
+// Läser in kartvyn
+//-----------------------------------------------------------
 function showMap() {
 	try {
 		baseMap = MapModule.createView({
@@ -210,110 +234,125 @@ function showMap() {
 
 };
 
+//-----------------------------------------------------------
+// Visar markers för vandringslederna
+//-----------------------------------------------------------
 function displayTrailMarkers() {
-	try{
-	trailsCollection.fetch({
-		query : 'SELECT name, pin, pinLon, pinLat FROM trailsModel'
-	});
-
-	var jsonObj = trailsCollection.toJSON();
-	for (var i = 0; i < jsonObj.length; i++) {
-		var markerAnnotation = MapModule.createAnnotation({
-			id : jsonObj[i].name,
-			latitude : jsonObj[i].pinLat,
-			longitude : jsonObj[i].pinLon,
-			title : jsonObj[i].name,
-			subtitle : 'Läs mer om ' + jsonObj[i].name + ' här!',
-			image : '/pins/' + jsonObj[i].pin,
-			rightButton : '/images/arrow.png',
-			centerOffset : {
-				x : 0,
-				y : -15
-			},
-			name : 'trail'
+	try {
+		trailsCollection.fetch({
+			query : 'SELECT name, pin, pinLon, pinLat FROM trailsModel'
 		});
-		baseMap.addAnnotation(markerAnnotation);
-	}
-		} catch(e) {
+
+		var jsonObj = trailsCollection.toJSON();
+		for (var i = 0; i < jsonObj.length; i++) {
+			var markerAnnotation = MapModule.createAnnotation({
+				id : jsonObj[i].name,
+				latitude : jsonObj[i].pinLat,
+				longitude : jsonObj[i].pinLon,
+				title : jsonObj[i].name,
+				subtitle : 'Läs mer om ' + jsonObj[i].name + ' här!',
+				image : '/pins/' + jsonObj[i].pin,
+				rightButton : '/images/arrow.png',
+				centerOffset : {
+					x : 0,
+					y : -15
+				},
+				name : 'trail'
+			});
+			baseMap.addAnnotation(markerAnnotation);
+		}
+	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - displayTrailMarkers");
 	}
 }
 
+//-----------------------------------------------------------
+// Visar markers för hotspots
+//-----------------------------------------------------------
 function displayMarkers() {
-	try{
-	var markerArray = [];
-	hotspotCollection.fetch();
+	try {
+		var markerArray = [];
+		hotspotCollection.fetch();
 
-	var markersJSON = hotspotCollection.toJSON();
-	for (var u = 0; u < markersJSON.length; u++) {
-		var marker = MapModule.createAnnotation({
-			id : markersJSON[u].name,
-			latitude : markersJSON[u].ykoord,
-			longitude : markersJSON[u].xkoord,
-			title : markersJSON[u].name,
-			subtitle : 'Läs mer om ' + markersJSON[u].name + ' här!',
-			image : '/pins/map_hotspot.png',
-			rightButton : '/images/arrow.png',
-			name : 'hotspot'
-		});
+		var markersJSON = hotspotCollection.toJSON();
+		for (var u = 0; u < markersJSON.length; u++) {
+			var marker = MapModule.createAnnotation({
+				id : markersJSON[u].name,
+				latitude : markersJSON[u].ykoord,
+				longitude : markersJSON[u].xkoord,
+				title : markersJSON[u].name,
+				subtitle : 'Läs mer om ' + markersJSON[u].name + ' här!',
+				image : '/pins/map_hotspot.png',
+				rightButton : '/images/arrow.png',
+				name : 'hotspot'
+			});
 
-		markerArray.push(marker);
-	}
+			markerArray.push(marker);
+		}
 
-	baseMap.addAnnotations(markerArray);
-	hotspotsNotVisible = false;
-		} catch(e) {
+		baseMap.addAnnotations(markerArray);
+		hotspotsNotVisible = false;
+	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - displayMarkers");
 	}
 }
 
+//-----------------------------------------------------------
+// Öppnar trailDetail med info om vald vandringsled
+//-----------------------------------------------------------
 function showTrail(myId) {
-	try{
-	trailsCollection.fetch({
-		query : 'SELECT * FROM trailsModel where name ="' + myId + '"'
-	});
+	try {
+		trailsCollection.fetch({
+			query : 'SELECT * FROM trailsModel where name ="' + myId + '"'
+		});
 
-	var jsonObjTr = trailsCollection.toJSON();
+		var jsonObjTr = trailsCollection.toJSON();
 
-	var args = {
-		id : jsonObjTr[0].id,
-		title : myId,
-		length : jsonObjTr[0].length,
-		infoTxt : jsonObjTr[0].infoTxt,
-		area : jsonObjTr[0].area,
-		color : jsonObjTr[0].color,
-		zoomlat : jsonObjTr[0].zoomLat,
-		zoomlon : jsonObjTr[0].zoomLon
-	};
+		var args = {
+			id : jsonObjTr[0].id,
+			title : myId,
+			length : jsonObjTr[0].length,
+			infoTxt : jsonObjTr[0].infoTxt,
+			area : jsonObjTr[0].area,
+			color : jsonObjTr[0].color,
+			zoomlat : jsonObjTr[0].zoomLat,
+			zoomlon : jsonObjTr[0].zoomLon
+		};
 
-	var trailDetail = Alloy.createController("trailDetail", args).getView();
-	Alloy.CFG.tabs.activeTab.open(trailDetail);
-		} catch(e) {
+		var trailDetail = Alloy.createController("trailDetail", args).getView();
+		Alloy.CFG.tabs.activeTab.open(trailDetail);
+	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - showTrail");
 	}
 }
 
+//-----------------------------------------------------------
+// Öppnar hotspotDetail med info om vald hotspot
+//-----------------------------------------------------------
 function showHotspot(myId) {
-	try{
-	hotspotCollection.fetch({
-		query : 'SELECT id, infoTxt from hotspotModel where name = "' + myId + '"'
-	});
+	try {
+		hotspotCollection.fetch({
+			query : 'SELECT id, infoTxt from hotspotModel where name = "' + myId + '"'
+		});
 
-	var jsonObjHot = hotspotCollection.toJSON();
+		var jsonObjHot = hotspotCollection.toJSON();
 
-	var hotspotTxt = {
-		title : myId,
-		infoTxt : jsonObjHot[0].infoTxt,
-		id : jsonObjHot[0].id
-	};
+		var hotspotTxt = {
+			title : myId,
+			infoTxt : jsonObjHot[0].infoTxt,
+			id : jsonObjHot[0].id
+		};
 
-	var hotspotDetail = Alloy.createController("hotspotDetail", hotspotTxt).getView();
-	Alloy.CFG.tabs.activeTab.open(hotspotDetail);
-		} catch(e) {
+		var hotspotDetail = Alloy.createController("hotspotDetail", hotspotTxt).getView();
+		Alloy.CFG.tabs.activeTab.open(hotspotDetail);
+	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - showHotspot");
 	}
 }
 
+//-----------------------------------------------------------
+// Eventlistener för klick på trail eller hotspot.
+//-----------------------------------------------------------
 baseMap.addEventListener('click', function(evt) {
 	if (evt.clicksource == 'rightButton') {
 		if (evt.annotation.name == 'hotspot') {
@@ -324,6 +363,9 @@ baseMap.addEventListener('click', function(evt) {
 	}
 });
 
+//-----------------------------------------------------------
+// Visar ikoner för alla informationsobjekt
+//-----------------------------------------------------------
 function displayInfoSpots() {
 	if (infospotsNotVisible) {
 		var markerArray = [];
