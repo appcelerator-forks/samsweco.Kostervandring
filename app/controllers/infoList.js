@@ -1,5 +1,8 @@
 var args = arguments[0] || {};
 
+//-----------------------------------------------------------
+// Hämtar infoCollection
+//-----------------------------------------------------------
 try {
 	var infoCollection = getInfoCollection();
 	infoCollection.fetch();
@@ -9,6 +12,9 @@ try {
 
 setRowData();
 
+//-----------------------------------------------------------
+// Visar info för valt item i listvyn
+//-----------------------------------------------------------
 function showinfoDetails(info) {
 	try {
 		var selectedInfo = info.row;
@@ -28,6 +34,9 @@ function showinfoDetails(info) {
 
 }
 
+//-----------------------------------------------------------
+// sätter alla items i listan
+//-----------------------------------------------------------
 function setRowData() {
 	try {
 
@@ -92,6 +101,9 @@ function setRowData() {
 	}
 }
 
+//-----------------------------------------------------------
+// Hämtar all info som ska läsas in i listan
+//-----------------------------------------------------------
 function getInfoDetails(e) {
 	try {
 		var id = e.rowData.id;

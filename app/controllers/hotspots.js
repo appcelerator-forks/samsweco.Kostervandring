@@ -12,7 +12,9 @@ try {
 function back(){
 	$.navwin.close();
 }
-
+//-----------------------------------------------------------
+// Visar detaljVy för en vald hotspot
+//-----------------------------------------------------------
 function showHotspotDetails(hotspot) {
 	try {
 		var selectedHotspot = hotspot.row;
@@ -29,6 +31,9 @@ function showHotspotDetails(hotspot) {
 	}
 }
 
+//-----------------------------------------------------------
+// Läser in alla items till en lista.
+//-----------------------------------------------------------
 function setRowData() {
 	var tableViewData = [];
 	var rows = hotspotCollection.toJSON();
@@ -87,6 +92,9 @@ function setRowData() {
 	$.table.data = tableViewData;
 }
 
+//-----------------------------------------------------------
+// Hämtar info för en hotspot
+//-----------------------------------------------------------
 function getHotspotInfo(e) {
 
 	try {

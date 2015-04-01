@@ -7,23 +7,20 @@ var hotspotId = args.id || "Id";
 
 setPics();
 
+//-----------------------------------------------------------
+// Sätter bilder till bildspelet
+//-----------------------------------------------------------
 function setPics() {
-
 	try {
-		// if (args.informationNaturum != null) {
-			// setNaturumInfo();
-			// selectNaturumPics();
-		// } else if (args.informationKoster != null) {
-			// setKosterInfo();
-			// selectKosterPics();
-		// } else {
 			selectHotspotPics();
 //		}
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "HotspotDetail - setPics");
 	}
 }
-
+//-----------------------------------------------------------
+// Hämtar bilder för bildspelet
+//-----------------------------------------------------------
 function selectHotspotPics() {
 	try {
 

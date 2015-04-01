@@ -1,5 +1,8 @@
 var args = arguments[0] || {};
 
+//-----------------------------------------------------------
+// Args skickade från listvy
+//-----------------------------------------------------------
 try {
 	$.lblInfoTitle.text = args.name || "Title";
 	$.lblInfoText.text = args.infoTxt || "Info";
@@ -17,7 +20,9 @@ try {
 } catch(e) {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "infoDetail - load data into labels");
 }
-
+//-----------------------------------------------------------
+// Öppnar url'en i en webView.
+//-----------------------------------------------------------
 function openLink(link) {
 	try {
 		var webview = Titanium.UI.createWebView({

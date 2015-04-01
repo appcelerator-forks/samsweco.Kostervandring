@@ -1,5 +1,8 @@
 var args = arguments[0] || {};
 
+//-----------------------------------------------------------
+// Args från trails - klick på item i listan
+//-----------------------------------------------------------
 try {
 	$.hikeDetailWin.title = args.title;
 	$.lblTrailName.text = args.title || 'Default Name';
@@ -14,6 +17,9 @@ try {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - set labels");
 }
 
+//-----------------------------------------------------------
+// hämtar info för den vandringsled som ska öppnas i detaljvy
+//-----------------------------------------------------------
 function zoomMapTrail() {
 	var trail = {
 		id : args.id,
@@ -30,6 +36,9 @@ selectTrailPics();
 showHotspots();
 showIcons();
 
+//-----------------------------------------------------------
+// Hämtar bilder till bildspel för den valda vandringsleder
+//-----------------------------------------------------------
 function selectTrailPics() {
 	try {
 		var mediaCollection = Alloy.Collections.mediaModel;
@@ -52,6 +61,9 @@ function selectTrailPics() {
 
 }
 
+//-----------------------------------------------------------
+// Visar hotspots för en vald vandringsled
+//-----------------------------------------------------------
 function showHotspots() {
 	try {
 		var tableViewData = [];
@@ -115,6 +127,9 @@ function showHotspots() {
 	}
 }
 
+//-----------------------------------------------------------
+// Hämtar data för hotspots som hör till den valda vandringsleden
+//-----------------------------------------------------------
 function getHotspotData() {
 	try {
 		var id = trailId;
@@ -132,6 +147,9 @@ function getHotspotData() {
 	}
 }
 
+//-----------------------------------------------------------
+// Öppnar detaljvy med vald hotspot - klickad på i kartvyn
+//-----------------------------------------------------------
 function showHotspot(e) {
 	try {
 		var name = e.rowData.id;
@@ -159,6 +177,9 @@ function showHotspot(e) {
 	}
 }
 
+//-----------------------------------------------------------
+// Sätter ut ikoner i kartvyn.
+//-----------------------------------------------------------
 function showIcons() {
 	try {
 		var selectedIcons = getIcons();
@@ -181,6 +202,9 @@ function showIcons() {
 	}
 }
 
+//-----------------------------------------------------------
+// Hämtar ikoner till vald vandringsled
+//-----------------------------------------------------------
 function getIcons() {
 	try {
 		var id = trailId;

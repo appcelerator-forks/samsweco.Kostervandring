@@ -1,5 +1,8 @@
 var args = arguments[0] || {};
 
+//-----------------------------------------------------------
+// args från annan controller
+//-----------------------------------------------------------
 var zoomName = args.title;
 var zoomColor = args.color;
 var zoomLat = args.zoomlat;
@@ -11,12 +14,17 @@ var zoomedMap;
 var MapModule = require('ti.map');
 
 var trailsCollection = getTrailsCollection();
-
+//-----------------------------------------------------------
+// Onload
+//-----------------------------------------------------------
 showMap();
 setRoute();
 addAnnotations();
 displayTrailMarkers();
 
+//-----------------------------------------------------------
+// Läsa in kartvyn
+//-----------------------------------------------------------
 function showMap() {
 	try {
 		zoomedMap = MapModule.createView({
@@ -40,6 +48,9 @@ function showMap() {
 	}
 };
 
+//-----------------------------------------------------------
+// Beräknar nivån av inzoomning på en vald led
+//-----------------------------------------------------------
 function calculateMapRegion(trailCoordinates) {
 	try {
 		if (trailCoordinates.length != 0) {
@@ -78,8 +89,11 @@ function calculateMapRegion(trailCoordinates) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "MapDetail - calculateMapRegion");
 	}
 
-};
+}
 
+//-----------------------------------------------------------
+// sätter en vald vandingsled
+//-----------------------------------------------------------
 function setRoute() {
 	try {
 
@@ -93,6 +107,9 @@ function setRoute() {
 	}
 }
 
+//-----------------------------------------------------------
+// skapar vandringsleden och sätter den på kartan
+//-----------------------------------------------------------
 function createMapRoutes(file, name, color) {
 	try {
 		var zoomedRoute = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory + "/routes/" + file).read().text;
@@ -130,6 +147,9 @@ function createMapRoutes(file, name, color) {
 	}
 }
 
+//-----------------------------------------------------------
+// Hämtar JSON-filen för den valda vandringsleden
+//-----------------------------------------------------------
 function getFile() {
 	try {
 
@@ -145,6 +165,9 @@ function getFile() {
 	}
 }
 
+//-----------------------------------------------------------
+// Sätter ut markers för hotspots som hör till den valda vandringsleden
+//-----------------------------------------------------------
 function addAnnotations() {
 	try {
 		var markerArray = [];
@@ -178,6 +201,9 @@ function addAnnotations() {
 	}
 }
 
+//-----------------------------------------------------------
+// Sätter ut en marker för den valda vandringsleden
+//-----------------------------------------------------------
 function displayTrailMarkers() {
 	try {
 		trailsCollection.fetch({
@@ -206,6 +232,9 @@ function displayTrailMarkers() {
 	}
 }
 
+//-----------------------------------------------------------
+// Hämtar id'n på hotspots som hör till den valda leden
+//-----------------------------------------------------------
 function getID() {
 	try {
 		var idArray = [];
@@ -227,6 +256,9 @@ function getID() {
 	}
 }
 
+//-----------------------------------------------------------
+// Lägger till eventlistener för klick på hotspot
+//-----------------------------------------------------------
 try {
 	zoomedMap.addEventListener('click', function(evt) {
 		if (evt.clicksource == 'rightButton') {
