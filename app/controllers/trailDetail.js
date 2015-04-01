@@ -153,7 +153,7 @@ function showIcons() {
 				left : '10dp'
 			});
 
-			covericon.image = "/piktogram/" + selectedIcons[i].icon;
+			covericon.image = "/piktogram/map_" + selectedIcons[i].icon;
 
 			$.iconrow.add(covericon);
 		}

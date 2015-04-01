@@ -28,18 +28,21 @@ function setRowData() {
 			});
 			
 			var listItem = Ti.UI.createView({
-				layout : 'vertical'
+				layout : 'vertical',
+				height : Ti.UI.SIZE,
+				width : Ti.UI.FILL,
 			});
 			
 			var img = Ti.UI.createImageView({
-				height : '66dp',
-				width : '100dp',
-				image : "/pics/" + rows[i].cover_img
+				height : '80dp',
+				width : '120dp',
+				image : "/pics/" + rows[i].cover_img,
+				left : '5dp'
 			});
 			
 			var labelView = Ti.UI.createView({
-				height : '66dp',
-				width : '100dp',
+				height : Ti.UI.SIZE,
+				width : Ti.UI.FILL,
 				backgroundColor : 'white',
 				layout : 'vertical'
 			});
@@ -47,7 +50,7 @@ function setRowData() {
 			
 			var lblName = Ti.UI.createLabel({
 				color : '#FF9966',
-				left : '10dp',
+				left : '5dp',
 				font : {
 					fontSize : 13,
 					fontWeight : 'bold'
@@ -56,117 +59,38 @@ function setRowData() {
 			});
 			
 			var lblDistance = Ti.UI.createLabel({
-				left : '10dp',
+				left : '5dp',
 				top : '0dp',
 				font : {
-					fontSize : 11
+					fontSize : 10
 				},
 				text : 'Sträcka : ' + rows[i].length + " km"
 			});
 			
 			var lblArea = Ti.UI.createLabel({
-				left : '10dp',
+				left : '5dp',
 				top : '0dp',
 				font : {
-					fontSize : 11
+					fontSize : 10
 				},
 				text : rows[i].area
 			});
 		
 			var iconView = showIcons(rows[i].id);
 			
+		labelView.add(iconView);	
 		labelView.add(lblName);	
 		labelView.add(lblDistance);
 		labelView.add(lblArea);
-		listItem.add(iconView);
-		listItem.add(labelView);
 		
 		row.add(img);
-		row.add(listItem);	
+		row.add(labelView);	
 		
 		tableViewData.push(row);
 		}
 	$.table.data = tableViewData;
 }
 
-// function setRowData() {
-// 
-	// try {
-		// var trailsCollection = Alloy.Collections.trailsModel;
-		// trailsCollection.fetch();
-// 
-		// var tableViewData = [];
-		// var rows = trailsCollection.toJSON();
-// 
-		// for (var i = 0; i < rows.length; i++) {
-// 			
-			// var row = Ti.UI.createTableViewRow({
-				// layout : 'horizontal',
-				// id : i + 1,
-				// height : '200dp',
-				// top : '0dp',
-				// hasChild : true
-			// });
-// 
-			// // var listItem = Ti.UI.createView({
-				// // layout : 'horizontal'
-			// // });
-			// var verticalView = Ti.UI.createView({
-				// layout : 'vertical'
-			// });
-// 
-			// var coverimg = Ti.UI.createImageView({
-				// width : '100dp',
-				// height : '66dp',
-				// left : '10dp'
-			// });
-			// var lblName = Ti.UI.createLabel({
-				// left : '10dp',
-				// top : '2dp',
-				// color : '#FF9966',
-				// font : {
-					// fontSize : 13,
-					// fontWeight : 'bold'
-				// }
-			// });
-			// var lblDistance = Ti.UI.createLabel({
-				// left : '10dp',
-				// top : '0dp',
-				// font : {
-					// fontSize : 11
-				// }
-			// });
-			// var lblColor = Ti.UI.createLabel({
-				// left : '10dp',
-				// top : '0dp',
-				// font : {
-					// fontSize : 11
-				// }
-			// });
-// 
-			// var iconView = showIcons(rows[i].id);
-// 			
-			// coverimg.image = "/pics/" + rows[i].cover_img;
-			// lblName.text = rows[i].name;
-			// lblDistance.text = 'Sträcka : ' + rows[i].length + " km";
-			// lblColor.text = rows[i].area;
-// 			
-			// verticalView.add(iconView);
-			// verticalView.add(lblName);
-			// verticalView.add(lblColor);
-			// verticalView.add(lblDistance);
-// 			
-			// row.add(coverimg);
-			// row.add(verticalView);
-// 
-			// tableViewData.push(row);
-		// }
-// 		
-		// $.table.data = tableViewData;
-	// } catch(e) {
-		// newError("Något gick fel när sidan skulle laddas, prova igen!", "trails - setRowData");
-	// }
-// }
 
 function showTrailDetails(e) {
 
@@ -207,9 +131,11 @@ function showIcons(id) {
 
 	var iconView = Ti.UI.createView({
 		layout : 'horizontal',
-		height : '34dp',
-		backgroundColor : 'yellow',
-		left : '10dp'
+		height : '30dp',
+		width : '125dp',
+		backgroundColor : 'white',
+		left : '5dp',
+		top : '5dp'
 
 	});
 
@@ -221,7 +147,7 @@ function showIcons(id) {
 			left : '0dp'
 		});
 
-		iconImgView.image = "/piktogram/" + selectedIcons[i].icon;
+		iconImgView.image = '/piktogram/map_' + selectedIcons[i].icon;
 		iconView.add(iconImgView);
 	}
 	return iconView;
