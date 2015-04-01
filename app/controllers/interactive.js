@@ -57,6 +57,4 @@ function checkWord(){
 	}else{
 		alert("Nej du, nu blev det fel... Tänkt på att skriva med små bokstäver");
 	}
-	
-	Ti.API.info(check);
 }
