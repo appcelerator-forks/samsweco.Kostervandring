@@ -8,7 +8,9 @@ try {
 }
 
 setRowData();
-
+//-----------------------------------------------------------
+// Läser in data till alla listitems
+//-----------------------------------------------------------
 function setRowData() {
 
 		var trailsCollection = Alloy.Collections.trailsModel;
@@ -91,7 +93,9 @@ function setRowData() {
 	$.table.data = tableViewData;
 }
 
-
+//-----------------------------------------------------------
+// Öppnar trail detail med args för den valda leden
+//-----------------------------------------------------------
 function showTrailDetails(e) {
 
 	 try {
@@ -124,7 +128,9 @@ function showTrailDetails(e) {
 	}
 }
 
-
+//-----------------------------------------------------------
+// Sätter ikoner för varje vandringsled
+//-----------------------------------------------------------
 function showIcons(id) {
 	var trail_id = id;
 	var selectedIcons = getIcons(trail_id);
@@ -153,6 +159,9 @@ function showIcons(id) {
 	return iconView;
 }
 
+//-----------------------------------------------------------
+// Hämtar ikoner för varje vandringsled
+//-----------------------------------------------------------
 function getIcons(trail_id) {
 	try {
 		var id = trail_id;
