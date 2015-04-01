@@ -1,5 +1,5 @@
 var args = arguments[0] || {};
-var id = 1;
+//var id = 1;
 
 function openNextQuestion() {
 	try {
@@ -10,27 +10,27 @@ function openNextQuestion() {
 
 exports.openNextQuestion = openNextQuestion;
 
-function saveLetter() {
+// function saveLetter() {
+// 
+	// var save = $.letter.value;
+	// stor = save.toUpperCase();
+	// $.lblSavedLetters.text = '';
+// 
+	// if (save == "") {
+		// alert("Fyll i den bokstav du hittat");
+	// }
+	// if (save.length > 1) {
+		// alert("Du får enbart fylla i en bokstav");
+	// } else {
+		// lettersArray.push(stor);
+		// for (var i = 0; i < lettersArray.length; i++) {
+// 
+			// $.lblSavedLetters.text += lettersArray[i];
+		// }
+	// }
+// }
 
-	var save = $.letter.value;
-	stor = save.toUpperCase();
-	$.lblSavedLetters.text = '';
-
-	if (save == "") {
-		alert("Fyll i den bokstav du hittat");
-	}
-	if (save.length > 1) {
-		alert("Du får enbart fylla i en bokstav");
-	} else {
-		lettersArray.push(stor);
-		for (var i = 0; i < lettersArray.length; i++) {
-
-			$.lblSavedLetters.text += lettersArray[i];
-		}
-	}
-}
-
-function getClue() {
+function getClue(id) {
 
 	var clueCollection = Alloy.Collections.gameLetterModel;
 	clueCollection.fetch({
@@ -44,17 +44,62 @@ function getClue() {
 		infoText : txt
 	};
 
-	$.lblClue.text = txt;
-	id++;
+	var returnclue = JSON.stringify(txt);
+	return returnclue;
+	// $.lblClue.text = txt;
+	// id++;
 }
 
-function checkWord(){
+
+//MAN MÅSTE KUNNA KLICKA STÄNG
+function showAlert() {
+	var dialog;
+	$.lblSavedLetters.text = '';
+
+	if (OS_IOS) {
+		dialog = Ti.UI.createAlertDialog({
+			title : getClue(1),
+			style : Ti.UI.iPhone.AlertDialogStyle.PLAIN_TEXT_INPUT,
+			buttonNames : ['OK', 'stäng']
+		});
+
+		dialog.addEventListener('click', function(e) {
+			if (e.text == "") {
+				alert("Fyll i den bokstav du hittat");
+				dialog.show();
+			}
+			if (e.text.length > 1) {
+				alert("Du får enbart fylla i en bokstav");
+				dialog.show();
+			} else {
+				lettersArray.push(e.text);
+				
+				for (var i = 0; i < lettersArray.length; i++) {
+
+					$.lblSavedLetters.text += lettersArray[i];
+				}
+			}
+		});
+	}
+	if (OS_ANDROID) {
+		var textfield = Ti.UI.createTextField();
+		dialog = Ti.UI.createAlertDialog({
+			title : 'Skriv in din bokstav',
+			androidView : textfield,
+			buttonNames : ['OK', 'stäng']
+		});
+	}
+
+	dialog.show();
+}
+
+function checkWord() {
 	var check = $.word.value;
 	check.toLowerCase();
-	
-	if(check == word){
+
+	if (check == word) {
 		alert("Bra jobbat!");
-	}else{
-		alert("Nej du, nu blev det fel... Tänkt på att skriva med små bokstäver");
+	} else {
+		alert("Nej du, nu blev det fel...");
 	}
 }
