@@ -4,6 +4,7 @@
 		<ScrollView class="headView">
 			<View id="slideView">
 				<ScrollableView id="slideShowHotspotDetail" showPagingControl="true"/>	
+				<Label id="bildText"> dfgh</Label>
 			</View>
 			<Label id="lblHotspotName" class="lblhotspotDetail"></Label>
 			<Label id="lblHotspotInfoTxt" class="lblhotspotDetail"></Label>

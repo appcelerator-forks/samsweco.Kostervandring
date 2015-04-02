@@ -13,7 +13,8 @@
 "#slideView": {
 	backgroundColor: '#000000',
 	height: '225dp',
-	width: '100%'
+	width: '100%',
+	layout : 'vertical'
 }
 
 "#slideShowHotspotDetail": {
@@ -40,6 +41,14 @@
 	}
 }
 
-"#lblHotspotInfoTxt" : {
-	backgroundColor : 'white'
+"#bildText" : {
+	color: 'white',
+	layout: 'vertical',
+	font: {
+		fontSize: 12,
+		fontStyle: 'italic'
+	},
+	right: 20,
+	left: 20,
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 }

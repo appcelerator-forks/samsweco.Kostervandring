@@ -7,6 +7,7 @@ var hotspotId = args.id || "Id";
 var picId = args.filename || "filename";
 
 setPics();
+setPicText();
 
 //-----------------------------------------------------------
 // Sätter bilder till bildspelet
@@ -48,3 +49,17 @@ function selectHotspotPics() {
 //---------------------------------------------------------
 //Sätter bildtexter till hotspotsen
 //---------------------------------------------------------
+function setPicText()
+{
+
+	var textCollection = Alloy.Collections.mediaModel;
+	textCollection.fetch(
+		'SELECT img_txt FROM mediaModel where filename = anemon.png'
+	);
+
+	txt = textCollection.toJSON();
+	text = JSON.stringify(txt);
+	Ti.API.info('HÄR ÄR INFORMATION SOM VI VILL SE : ' + text);
+}
+
+
