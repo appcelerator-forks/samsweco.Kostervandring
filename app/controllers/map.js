@@ -283,8 +283,8 @@ function displayMarkers() {
 		for (var u = 0; u < markersJSON.length; u++) {
 			var marker = MapModule.createAnnotation({
 				id : markersJSON[u].name,
-				latitude : markersJSON[u].ykoord,
-				longitude : markersJSON[u].xkoord,
+				latitude : markersJSON[u].xkoord,
+				longitude : markersJSON[u].ykoord,
 				title : markersJSON[u].name,
 				subtitle : 'Läs mer om ' + markersJSON[u].name + ' här!',
 				image : '/pins/map_hotspot.png',
@@ -337,7 +337,7 @@ function showTrail(myId) {
 function showHotspot(myId) {
 	try {
 		hotspotCollection.fetch({
-			query : 'SELECT id, infoTxt from hotspotModel where name = "' + myId + '"'
+			query : 'SELECT id, infoTxt FROM hotspotModel where name = "' + myId + '"'
 		});
 
 		var jsonObjHot = hotspotCollection.toJSON();
