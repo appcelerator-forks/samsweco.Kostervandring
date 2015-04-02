@@ -39,3 +39,7 @@
 		fontSize: 14
 	}
 }
+
+"#lblHotspotInfoTxt" : {
+	backgroundColor : 'white'
+}

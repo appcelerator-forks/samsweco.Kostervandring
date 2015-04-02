@@ -2,8 +2,8 @@ exports.definition = {
 	config: {
 
 		adapter: {
-			type : "sql",
-			collection_name : "hotspotModel",
+			type: "sql",
+			collection_name: "hotspotModel",
 			db_file : "/dbKostervandring.sqlite"
 		}
 	},

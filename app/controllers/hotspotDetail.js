@@ -4,6 +4,7 @@ $.lblHotspotName.text = args.title || "Name";
 $.lblHotspotInfoTxt.text = args.infoTxt || "Info";
 
 var hotspotId = args.id || "Id";
+var picId = args.filename || "filename";
 
 setPics();
 
@@ -43,3 +44,7 @@ function selectHotspotPics() {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "HotspotDetail - selectHotspotPics");
 	}
 }
+
+//---------------------------------------------------------
+//Sätter bildtexter till hotspotsen
+//---------------------------------------------------------
