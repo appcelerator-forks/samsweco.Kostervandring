@@ -23,8 +23,8 @@
 ".headView": {
 	height: Titanium.UI.SIZE,
 	width: Titanium.UI.FILL,
-	showHorizontalScrollIndicator: true,
-	height: '88%'
+	showHorizontalScrollIndicator: true
+	// height: '88%'
 }
 
 ".views": {

@@ -1,5 +1,5 @@
 <Alloy>
-	<Collection src="hotspotModel" />
+	<!-- <Collection src="hotspotModel" />
 	<NavigationWindow id="navwin" platform="ios">
 		<Window id="hotspotList" title="Hotspots" class="container">
 			<LeftNavButton>
@@ -11,5 +11,5 @@
 				</TableView>
 			</ScrollView>
 		</Window>
-	</NavigationWindow>
+	</NavigationWindow> -->
 </Alloy>

@@ -70,7 +70,6 @@
 }
 
 ".headView": {
-	height: '93%',
 	layout: 'vertical',
 	backgroundColor: 'white'
 }

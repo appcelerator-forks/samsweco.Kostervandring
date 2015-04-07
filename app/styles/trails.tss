@@ -6,8 +6,3 @@
 	layout: 'vertical',
 	top: 0
 }
-
-".headView": {
-	height: '93%'
-}
-
