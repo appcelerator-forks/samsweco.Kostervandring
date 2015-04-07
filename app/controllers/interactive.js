@@ -1,6 +1,9 @@
 var args = arguments[0] || {};
 //var id = 1;
 
+//-----------------------------------------------------------
+// Öppnar vy och läser in nästa fråga
+//-----------------------------------------------------------
 function openNextQuestion() {
 	try {
 	} catch(e) {
@@ -30,6 +33,9 @@ exports.openNextQuestion = openNextQuestion;
 	// }
 // }
 
+//-----------------------------------------------------------
+// Hämta nästa ledtråd
+//-----------------------------------------------------------
 function getClue(id) {
 
 	var clueCollection = Alloy.Collections.gameLetterModel;
@@ -50,6 +56,9 @@ function getClue(id) {
 	// id++;
 }
 
+//-----------------------------------------------------------
+// Visar en alert-box med validering
+//-----------------------------------------------------------
 
 //MAN MÅSTE KUNNA KLICKA STÄNG
 function showAlert() {
@@ -93,6 +102,9 @@ function showAlert() {
 	dialog.show();
 }
 
+//-----------------------------------------------------------
+// Kontrollerar det inskickade ordet mot "facit"
+//-----------------------------------------------------------
 function checkWord() {
 	var check = $.word.value;
 	check.toLowerCase();
