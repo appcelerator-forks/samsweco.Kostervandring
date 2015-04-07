@@ -51,15 +51,17 @@ function selectHotspotPics() {
 //---------------------------------------------------------
 function setPicText()
 {
-
 	var textCollection = Alloy.Collections.mediaModel;
-	textCollection.fetch(
-		'SELECT img_txt FROM mediaModel where filename = anemon.png'
-	);
+	textCollection.fetch({
+		query : 'SELECT * FROM mediaModel where id = 9'
+	});
 
 	txt = textCollection.toJSON();
-	text = JSON.stringify(txt);
-	Ti.API.info('HÄR ÄR INFORMATION SOM VI VILL SE : ' + text);
+	
+	imgTxt = txt[0].img_txt;
+	
+	$.lblImgTxt.text = imgTxt;
+//	Ti.API.info('HÄR ÄR INFORMATION SOM VI VILL SE : ' + imgTxt);
 }
 
 

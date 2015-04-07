@@ -41,7 +41,7 @@
 	}
 }
 
-"#bildText" : {
+"#lblImgTxt" : {
 	color: 'white',
 	layout: 'vertical',
 	font: {
