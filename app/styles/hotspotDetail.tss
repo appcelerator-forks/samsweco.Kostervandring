@@ -12,14 +12,16 @@
 
 "#slideView": {
 	backgroundColor: '#000000',
-	height: '225dp',
+	height: Titanium.UI.SIZE,
 	width: '100%',
-	layout : 'vertical'
+	layout: 'vertical'
 }
 
 "#slideShowHotspotDetail": {
+	top : '10dp',
 	width: '300dp',
-	height: '200dp'
+	height: '235dp',
+	backgroundColor : 'black'
 }
 ".headView": {
 	height: '93%',
@@ -41,14 +43,3 @@
 	}
 }
 
-"#lblImgTxt" : {
-	color: 'white',
-	layout: 'vertical',
-	font: {
-		fontSize: 12,
-		fontStyle: 'italic'
-	},
-	right: 20,
-	left: 20,
-	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
-}
