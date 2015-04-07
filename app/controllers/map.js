@@ -23,30 +23,30 @@ var infospotCollection = getInfospotCollection();
 //-----------------------------------------------------------
 // Hämtar enhetens senaste GPS-position
 //-----------------------------------------------------------
-try{
-	
-Ti.Geolocation.getCurrentPosition(function(e) {
-	if (e.error) {
-		alert('Get current position' + e.error);
-	} else {
-	}
-});
+try {
 
-if (Ti.Geolocation.locationServicesEnabled) {
-	Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_BEST;
-	Ti.Geolocation.distanceFilter = 10;
-	Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_GPS;
-
-	Ti.Geolocation.addEventListener('location', function(e) {
+	Ti.Geolocation.getCurrentPosition(function(e) {
 		if (e.error) {
-			alert('Add eventlistener!' + e.error);
+			alert('Get current position' + e.error);
 		} else {
-			getPosition(e.coords);
 		}
 	});
-} else {
-	alert('Tillåt gpsen, tack');
-}
+
+	if (Ti.Geolocation.locationServicesEnabled) {
+		Ti.Geolocation.accuracy = Ti.Geolocation.ACCURACY_BEST;
+		Ti.Geolocation.distanceFilter = 10;
+		Ti.Geolocation.preferredProvider = Ti.Geolocation.PROVIDER_GPS;
+
+		Ti.Geolocation.addEventListener('location', function(e) {
+			if (e.error) {
+				alert('Add eventlistener!' + e.error);
+			} else {
+				getPosition(e.coords);
+			}
+		});
+	} else {
+		alert('Tillåt gpsen, tack');
+	}
 } catch(e) {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "Map - get current position GPS");
 }
@@ -173,6 +173,7 @@ function distanceInM(lat1, lon1, GLat, GLon) {
 	}
 
 }
+
 //-----------------------------------------------------------
 // Kontrollerar om enhetens position är inom radien för en utsatt punkt
 //-----------------------------------------------------------
@@ -190,6 +191,7 @@ function isInsideRadius(lat1, lon1, rad) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - isInsideRadius");
 	}
 }
+
 //-----------------------------------------------------------
 // Kontrollerar om enheten är innanför en punkt, sänder ut dialog om true
 //-----------------------------------------------------------
@@ -212,6 +214,7 @@ function isNearPoint() {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - isNearPoint");
 	}
 }
+
 //-----------------------------------------------------------
 // Läser in kartvyn
 //-----------------------------------------------------------
@@ -257,7 +260,7 @@ function displayTrailMarkers() {
 				title : jsonObj[i].name,
 				subtitle : 'Läs mer om ' + jsonObj[i].name + ' här!',
 				image : '/pins/' + jsonObj[i].pin,
-				rightButton : '/images/arrow.png',
+				rightButton : '/pins/arrow.png',
 				centerOffset : {
 					x : 0,
 					y : -15
@@ -281,22 +284,39 @@ function displayMarkers() {
 
 		var markersJSON = hotspotCollection.toJSON();
 		for (var u = 0; u < markersJSON.length; u++) {
-			var marker = MapModule.createAnnotation({
-				id : markersJSON[u].name,
-				latitude : markersJSON[u].xkoord,
-				longitude : markersJSON[u].ykoord,
-				title : markersJSON[u].name,
-				subtitle : 'Läs mer om ' + markersJSON[u].name + ' här!',
-				image : '/pins/map_hotspot.png',
-				rightButton : '/images/arrow.png',
-				name : 'hotspot'
-			});
 
+			if (OS_IOS) {
+				var marker = MapModule.createAnnotation({
+					id : markersJSON[u].name,
+					latitude : markersJSON[u].xkoord,
+					longitude : markersJSON[u].ykoord,
+					title : markersJSON[u].name,
+					subtitle : 'Läs mer om ' + markersJSON[u].name + ' här!',
+					image : '/pins/map_hotspot.png',
+					rightButton : '/pins/arrow.png',
+					name : 'hotspot'
+				});
+			}
+			
+			if(OS_ANDROID){
+				var marker = MapModule.createAnnotation({
+					id : markersJSON[u].name,
+					latitude : markersJSON[u].xkoord,
+					longitude : markersJSON[u].ykoord,
+					title : markersJSON[u].name,
+					subtitle : 'Läs mer om ' + markersJSON[u].name + ' här!',
+					image : '/pins/map_hotspot.png',
+					rightButton : '/pins/androidarrow.png',
+					name : 'hotspot'
+				});
+			}
+			
 			markerArray.push(marker);
 		}
 
 		baseMap.addAnnotations(markerArray);
 		hotspotsNotVisible = false;
+		
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - displayMarkers");
 	}
@@ -359,13 +379,25 @@ function showHotspot(myId) {
 // Eventlistener för klick på trail eller hotspot.
 //-----------------------------------------------------------
 baseMap.addEventListener('click', function(evt) {
-	if (evt.clicksource == 'rightButton') {
-		if (evt.annotation.name == 'hotspot') {
-			showHotspot(evt.annotation.id);
-		} else {
-			showTrail(evt.annotation.id);
+	if (OS_IOS) {
+		if (evt.clicksource == 'rightButton') {
+			if (evt.annotation.name == 'hotspot') {
+				showHotspot(evt.annotation.id);
+			} else {
+				showTrail(evt.annotation.id);
+			}
 		}
 	}
+	if (OS_ANDROID) {
+		if (evt.clicksource == 'rightPane') {
+			if (evt.annotation.name == 'hotspot') {
+				showHotspot(evt.annotation.id);
+			} else {
+				showTrail(evt.annotation.id);
+			}
+		}
+	}
+
 });
 
 //-----------------------------------------------------------
