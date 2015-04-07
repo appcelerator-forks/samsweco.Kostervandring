@@ -7,7 +7,7 @@ try {
 	$.hikeDetailWin.title = args.title;
 	$.lblTrailName.text = args.title || 'Default Name';
 	$.lblTrailLength.text = args.length + " kilometer" || 'Default Length';
-	$.lblTrailColor.text = args.area || 'Default Color';
+	$.lblTrailArea.text = args.area || 'Default Color';
 	$.lblTrailInfo.text = args.infoTxt || 'Default infoText';
 
 	var trailId = args.id;
@@ -217,10 +217,10 @@ function showIcons() {
 				height : '30dp',
 				width : '30dp',
 				left : '0dp',
+				top: '10dp',
 				image : "/piktogram/map_" + selectedIcons[i].icon
 			});
 
-			Ti.API.info('covericon : ' + covericon.image);
 			$.iconrow.add(covericon);
 		}
 

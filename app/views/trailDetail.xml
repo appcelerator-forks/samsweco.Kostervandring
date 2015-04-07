@@ -11,8 +11,8 @@
 			<View id="iconrow"></View>
 			<View class="lbls">
 				<Label id="lblTrailName" class="lbltrailDetail"></Label>
+				<Label id="lblTrailArea" class="lbltrailDetail"></Label>
 				<Label id="lblTrailLength" class="lbltrailDetail"></Label>
-				<Label id="lblTrailColor" class="lbltrailDetail"></Label>
 				<Label id="lblTrailInfo" class="lbltrailDetail"></Label>
 				<Button id="btnTrailOnMap" onClick="zoomMapTrail">Visa led på kartan!</Button>
 			</View>

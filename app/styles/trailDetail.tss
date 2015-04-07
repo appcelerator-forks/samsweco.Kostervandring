@@ -32,12 +32,20 @@
 }
 
 "#lblTrailName": {
-	left: 10,
+	left: 15,
 	font: {
 		fontSize: 16,
 		fontWeight: 'bold'
 	},
 	color: '#FF9966'
+}
+
+"#lblTrailArea": {
+	left: 15,
+	font: {
+		fontSize: 12,
+		fontWeight: 'bold'
+	}
 }
 
 ".lbls": {
@@ -68,7 +76,7 @@
 }
 
 "#lblTrailInfo": {
-	left: 10,
+	left: 15,
 	font: {
 		fontSize: 12
 	},
@@ -88,14 +96,15 @@
 "#iconrow": {
 	layout: 'horizontal',
 	height: '40dp',
-	left: '5dp'
+	left: '15dp',
 }
 
 "#lblTrailLength": {
 	font: {
 		fontStyle: 'Italic'
 	},
-	top: 10
+	top: 10,
+	left :15
 }
 
 "#btnTrailOnMap": {
