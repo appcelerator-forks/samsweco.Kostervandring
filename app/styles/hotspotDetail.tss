@@ -23,6 +23,7 @@
 	height: '235dp',
 	backgroundColor : 'black'
 }
+
 ".headView": {
 	height: '93%',
 	layout: 'vertical',

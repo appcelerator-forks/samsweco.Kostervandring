@@ -43,17 +43,44 @@ function selectTrailPics() {
 	try {
 		var mediaCollection = Alloy.Collections.mediaModel;
 		mediaCollection.fetch({
-			query : 'SELECT filename from mediaModel where trail_id="' + trailId + '"'
+			query : 'SELECT * from mediaModel where trail_id="' + trailId + '"'
 		});
 
-		var jsonObj = mediaCollection.toJSON();
-		for (var i = 0; i < jsonObj.length; i++) {
-			var view_args = {
-				backgroundImage : '/pics/' + jsonObj[i].filename
-			};
+		var jsonMedia = mediaCollection.toJSON();
+		for (var i = 0; i < jsonMedia.length; i++) {
 
-			var img_view = Ti.UI.createView(view_args);
-			$.slideShowTrails.addView(img_view);
+			var img_view = Ti.UI.createView({
+				backgroundImage : "/pics/" + jsonMedia[i].filename,
+				height : '200dp',
+				width : '300dp',
+				top : '0dp'
+				});
+
+			var lblImgTxt = Ti.UI.createLabel({
+				left : '5dp',
+				top : '0dp',
+				text : jsonMedia[i].img_txt,
+				color : 'white',
+				font : {
+					fontSize : 12,
+					fontStyle : 'italic',
+					textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER
+				},
+				
+			});
+
+			var backgroundView = Ti.UI.createView({
+				layout : 'vertical',
+				backgroundColor : 'black',
+				height : Ti.UI.SIZE,
+				width : Ti.UI.SIZE
+			});
+
+			backgroundView.add(img_view);
+			backgroundView.add(lblImgTxt);
+			
+			$.slideShowTrails.addView(backgroundView);
+			//$.slideShowHotspotDetail.add(lblImgTxt);
 		}
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "trailDetail - selectTrailPics");

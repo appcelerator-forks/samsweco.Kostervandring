@@ -34,10 +34,6 @@ function selectHotspotPics() {
 		var jsonMedia = mediaCollection.toJSON();
 
 		for (var i = 0; i < jsonMedia.length; i++) {
-			// var view_args = {
-// 
-				// //imgTxt : jsonMedia[i].img_txt
-			// };
 
 			var img_view = Ti.UI.createView({
 				backgroundImage : "/pics/" + jsonMedia[i].filename,
