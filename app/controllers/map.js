@@ -248,10 +248,10 @@ function showMap() {
 function displayTrailMarkers() {
 	try {
 		trailsCollection.fetch({
-			query : 'SELECT name, pin, pinLon, pinLat FROM trailsModel'
+			query : 'SELECT name, pinLon, pinLat, color FROM trailsModel'
 		});
 
-		var jsonObj = trailsCollection.toJSON();
+		var jsonObj = trailsCollection.toJSON();		
 		for (var i = 0; i < jsonObj.length; i++) {
 			var markerAnnotation = MapModule.createAnnotation({
 				id : jsonObj[i].name,
@@ -259,14 +259,21 @@ function displayTrailMarkers() {
 				longitude : jsonObj[i].pinLon,
 				title : jsonObj[i].name,
 				subtitle : 'Läs mer om ' + jsonObj[i].name + ' här!',
-				image : '/pins/' + jsonObj[i].pin,
+				pincolor : Titanium.Map.ANNOTATION_PURPLE,  // jsonObj[i].color,
 				rightButton : '/pins/arrow.png',
-				centerOffset : {
-					x : 0,
-					y : -15
-				},
+				// centerOffset : {
+					// x : 0,
+					// y : -15
+				// },
 				name : 'trail'
 			});
+			
+			// if(jsonObj[i].color != 'white'){
+				// markerAnnotation.pincolor = jsonObj[i].color;
+			// }else{
+				// markerAnnotation.pincolor = 'purple';
+			// }
+			
 			baseMap.addAnnotation(markerAnnotation);
 		}
 	} catch(e) {
@@ -278,7 +285,7 @@ function displayTrailMarkers() {
 // Visar markers för hotspots
 //-----------------------------------------------------------
 function displayMarkers() {
-	try {
+	// try {
 		var markerArray = [];
 		hotspotCollection.fetch();
 
@@ -292,7 +299,8 @@ function displayMarkers() {
 					longitude : markersJSON[u].ykoord,
 					title : markersJSON[u].name,
 					subtitle : 'Läs mer om ' + markersJSON[u].name + ' här!',
-					image : '/pins/map_hotspot.png',
+					// image : '/pins/map_hotspot.png',
+					pincolor : 'red',
 					rightButton : '/pins/arrow.png',
 					name : 'hotspot'
 				});
@@ -305,7 +313,8 @@ function displayMarkers() {
 					longitude : markersJSON[u].ykoord,
 					title : markersJSON[u].name,
 					subtitle : 'Läs mer om ' + markersJSON[u].name + ' här!',
-					image : '/pins/map_hotspot.png',
+					// image : '/pins/map_hotspot.png',
+					pincolor : Titanium.Map.ANNOTATION_ORANGE,
 					rightButton : '/pins/androidarrow.png',
 					name : 'hotspot'
 				});
@@ -317,9 +326,9 @@ function displayMarkers() {
 		baseMap.addAnnotations(markerArray);
 		hotspotsNotVisible = false;
 		
-	} catch(e) {
-		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - displayMarkers");
-	}
+	// } catch(e) {
+		// newError("Något gick fel när sidan skulle laddas, prova igen!", "map - displayMarkers");
+	// }
 }
 
 //-----------------------------------------------------------
