@@ -218,7 +218,7 @@ function showIcons() {
 				width : '30dp',
 				left : '0dp',
 				top: '10dp',
-				image : "/piktogram/map_" + selectedIcons[i].icon
+				image : '/piktogram/' + selectedIcons[i].icon
 			});
 
 			$.iconrow.add(covericon);

@@ -153,7 +153,7 @@ function showIcons(id) {
 			left : '0dp'
 		});
 
-		iconImgView.image = '/piktogram/map_' + selectedIcons[i].icon;
+		iconImgView.image = '/piktogram/' + selectedIcons[i].icon;
 		iconView.add(iconImgView);
 	}
 	return iconView;

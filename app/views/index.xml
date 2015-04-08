@@ -21,5 +21,4 @@
 			<Window id="infoWin" title="Information" onOpen="toInfo" />
 		</Tab>
 	</TabGroup>
-
 </Alloy>

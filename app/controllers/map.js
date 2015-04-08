@@ -259,7 +259,7 @@ function displayTrailMarkers() {
 				longitude : jsonObj[i].pinLon,
 				title : jsonObj[i].name,
 				subtitle : 'Läs mer om ' + jsonObj[i].name + ' här!',
-				pincolor : Titanium.Map.ANNOTATION_PURPLE,  // jsonObj[i].color,
+				// pincolor : Titanium.Map.ANNOTATION_PURPLE,  // jsonObj[i].color,
 				rightButton : '/pins/arrow.png',
 				// centerOffset : {
 					// x : 0,
