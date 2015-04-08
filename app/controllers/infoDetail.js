@@ -20,6 +20,7 @@ try {
 } catch(e) {
 	newError("Något gick fel när sidan skulle laddas, prova igen!", "infoDetail - load data into labels");
 }
+
 //-----------------------------------------------------------
 // Öppnar url'en i en webView.
 //-----------------------------------------------------------
@@ -30,9 +31,8 @@ function openLink(link) {
 		});
 		var window = Titanium.UI.createWindow();
 		window.add(webview);
-		window.open({
-			modal : true
-		});
+		Alloy.CFG.tabs.activeTab.open(window);
+		
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "infoDetail - openLink");
 	}
