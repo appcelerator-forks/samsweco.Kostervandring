@@ -54,7 +54,7 @@ function selectTrailPics() {
 				height : '200dp',
 				width : '300dp',
 				top : '0dp'
-				});
+			});
 
 			var lblImgTxt = Ti.UI.createLabel({
 				left : '5dp',
@@ -66,7 +66,7 @@ function selectTrailPics() {
 					fontStyle : 'italic',
 					textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER
 				},
-				
+
 			});
 
 			var backgroundView = Ti.UI.createView({
@@ -78,7 +78,7 @@ function selectTrailPics() {
 
 			backgroundView.add(img_view);
 			backgroundView.add(lblImgTxt);
-			
+
 			$.slideShowTrails.addView(backgroundView);
 			//$.slideShowHotspotDetail.add(lblImgTxt);
 		}
@@ -108,10 +108,10 @@ function showHotspots() {
 			var img = Ti.UI.createImageView({
 				height : '80dp',
 				width : '120dp',
-				image : '/pics/'+rows[i].cover_pic,
+				image : '/pics/' + rows[i].cover_pic,
 				left : '5dp'
 			});
-			
+
 			var labelView = Ti.UI.createView({
 				height : Ti.UI.SIZE,
 				width : Ti.UI.FILL,
@@ -128,7 +128,7 @@ function showHotspots() {
 				},
 				text : rows[i].name
 			});
-			
+
 			var lblDesc = Ti.UI.createLabel({
 				left : '5dp',
 				top : '0dp',
@@ -140,7 +140,7 @@ function showHotspots() {
 
 			labelView.add(lblName);
 			labelView.add(lblDesc);
-			
+
 			row.add(img);
 			row.add(labelView);
 
@@ -217,9 +217,15 @@ function showIcons() {
 				height : '30dp',
 				width : '30dp',
 				left : '0dp',
-				top: '10dp',
-				image : '/piktogram/' + selectedIcons[i].icon
+				top : '10dp'
 			});
+
+			if (OS_ANDROID) {
+				covericon.image = '/images/' + selectedIcons[i].icon;
+			}
+			if (OS_IOS) {
+				covericon.image = '/piktogram/' + selectedIcons[i].icon;
+			}
 
 			$.iconrow.add(covericon);
 		}
