@@ -1,7 +1,7 @@
 <Alloy>
 	<Window id="infoDetail" class="container">
 
-		<ScrollView class="headView" showVerticalScrollIndicator="true">
+		<ScrollView class="headView" scrollType="vertical" showVerticalScrollIndicator="true">
 			<View id="slideView">
 				<ImageView id="infoImg">
 					

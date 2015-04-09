@@ -3,18 +3,25 @@
 	<Collection src="hotspotModel"></Collection>
 	<Collection src="infospotModel"></Collection>
 	<Window id="hikeDetailWin" class="container">
-		<ScrollView class="headView">
+		<ScrollView class="headView" scrollType="vertical">
 			<View id="slideView">
 				<ScrollableView id="slideShowTrails" showPagingControl="true" />
 			</View>
-			<View id="iconrow"></View>
+			
+			<View id="horizontalView">
+				<View id="iconrow"></View>
+				<View id="btnView">
+					<Button id="btnTrailOnMap" onClick="zoomMapTrail">Visa leden på kartan!</Button>
+				</View>
+			</View>
+			
 			<View class="lbls">
 				<Label id="lblTrailName" class="lbltrailDetail"></Label>
 				<Label id="lblTrailArea" class="lbltrailDetail"></Label>
 				<Label id="lblTrailLength" class="lbltrailDetail"></Label>
 				<Label id="lblTrailInfo" class="lbltrailDetail"></Label>
-				<Button id="btnTrailOnMap" onClick="zoomMapTrail">Visa led på kartan!</Button>
 			</View>
+			
 			<Label id="lblLangsVagen">Det här kan du se längs vägen:</Label>
 			<View id="trail_hotspotView">
 				<TableView id="hotspotTable" onClick="showHotspot" />

@@ -5,10 +5,22 @@
 }
 
 "#slideShowTrails": {
-		top : '10dp',
+	top : '10dp',
 	width: '300dp',
 	height: '235dp',
 	backgroundColor : 'black'
+}
+
+"#horizontalView": {
+	layout : 'horizontal',
+	height : '40dp',
+	width : '100%'
+}
+
+"#btnView": {
+	width : '47%',
+	height : '40dp',
+	right : 0
 }
 
 "#slideView": {
@@ -19,7 +31,7 @@
 }
 
 "Label": {
-	left: 10,
+	left: '10dp',
 	font: {
 		fontSize: 12
 	}
@@ -32,7 +44,7 @@
 }
 
 "#lblTrailName": {
-	left: 15,
+	left: '15dp',
 	font: {
 		fontSize: 16,
 		fontWeight: 'bold'
@@ -41,7 +53,7 @@
 }
 
 "#lblTrailArea": {
-	left: 15,
+	left: '15dp',
 	font: {
 		fontSize: 12,
 		fontWeight: 'bold'
@@ -50,8 +62,8 @@
 
 ".lbls": {
 	layout: 'vertical',
-	right: 10,
-	top: 5,
+	right: '10dp',
+	top: '5dp',
 	height: Titanium.UI.SIZE
 }
 
@@ -59,7 +71,7 @@
 	layout: 'vertical',
 	backgroundColor: "white",
 	borderColor: "#e8e8e8",
-	borderWidth: 1,
+	borderWidth: '1dp',
 	top: 0,
 	height: Titanium.UI.SIZE
 }
@@ -75,38 +87,40 @@
 }
 
 "#lblTrailInfo": {
-	left: 15,
+	left: '15dp',
 	font: {
 		fontSize: 12
 	},
-	top: 10
+	top: '10dp'
 }
 
 "#lblLangsVagen": {
-	top: 20,
-	left: 10,
+	top: '20dp',
+	left: '10dp',
 	font: {
 		fontSize: 13,
 		fontWeight: 'bold'
 	},
-	top: 10
+	top: '10dp'
 }
 
 "#iconrow": {
 	layout: 'horizontal',
 	height: '40dp',
-	left: '15dp',
+	left: '10dp',
+	width : '47%'
 }
 
 "#lblTrailLength": {
-	font: {
+	font : {
 		fontStyle: 'Italic'
 	},
-	top: 10,
-	left :15
+	top : '10dp',
+	left : '15dp'
 }
 
 "#btnTrailOnMap": {
-	left: '10dp'
+	right: 0,
+	width: Titanium.UI.SIZE
 }
 
