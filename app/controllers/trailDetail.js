@@ -106,10 +106,11 @@ function showHotspots() {
 			});
 
 			var img = Ti.UI.createImageView({
-				height : '80dp',
-				width : '120dp',
+				height : '70dp',
+				width : '110dp',
 				image : '/pics/' + rows[i].cover_pic,
-				left : '5dp'
+				left : '5dp',
+				top : '5dp'
 			});
 
 			var labelView = Ti.UI.createView({

@@ -60,10 +60,11 @@ function setRowData() {
 			});
 
 			var coverimg = Ti.UI.createImageView({
-				height : '80dp',
-				width : '120dp',
+				height : '70dp',
+				width : '110dp',
 				left : '5dp',
-				image : "/pics/" + rows[i].cover_img
+				image : "/pics/" + rows[i].cover_img,
+				top : '5dp'
 			});
 
 			var lblName = Ti.UI.createLabel({
