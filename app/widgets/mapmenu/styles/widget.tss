@@ -13,12 +13,6 @@
 	top : '0dp'
 }
 
-"#btnBar" : {
-	layout : 'horizontal',
-	width : Titanium.UI.FILL,
-	tintColor : '#33CCFF'
-}
-
 "#iconView" : {
 	layout : 'horizontal'
 }

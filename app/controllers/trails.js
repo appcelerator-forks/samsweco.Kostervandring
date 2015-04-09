@@ -175,7 +175,6 @@ function getIcons(trail_id) {
 		var id = trail_id;
 
 		var infotrailCollection = Alloy.Collections.infospotModel;
-		Ti.API.info('infocol : ' + JSON.stringify(infotrailCollection));
 		infotrailCollection.fetch({
 			query : 'SELECT icon from infospotModel join infospot_trailsModel on infospot_trailsModel.infospotID = infospotModel.id where trailsID ="' + id + '"'
 		});

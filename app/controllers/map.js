@@ -56,13 +56,14 @@ try {
 //-----------------------------------------------------------
 // Onload-funktioner för kartan
 //-----------------------------------------------------------
-try {
+// try {
 	showMap();
 	setRoutes();
 	displayTrailMarkers();
-} catch(e) {
-	newError("Något gick fel när sidan skulle laddas, prova igen!", "Map - load page");
-}
+	setIcons();
+// } catch(e) {
+	// newError("Något gick fel när sidan skulle laddas, prova igen!", "Map - load page");
+// }
 
 //-----------------------------------------------------------
 // Sätter ut alla vandringsleder på kartan
@@ -85,6 +86,29 @@ function setRoutes() {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "infoList - getInfoDetails");
 	}
 
+}
+
+function setIcons(){
+	infospotCollection.fetch();
+	var jsonCollection = infospotCollection.toJSON();
+	
+	for(var i = 0; i<jsonCollection.length; i++){
+		
+		var iconImgView = Ti.UI.createImageView({
+			height : '25dp',
+			width : '25dp',
+			left : '0dp'
+		});
+
+		if(OS_ANDROID){
+			iconImgView.image = '/images/' + jsonCollection[i].icon;
+		}
+		if(OS_IOS){
+			iconImgView.image = '/piktogram/' + jsonCollection[i].icon;
+		}
+		
+		$.selectIconView.add(iconImgView);
+	}
 }
 
 //-----------------------------------------------------------
@@ -463,14 +487,14 @@ $.btnShowHot.addEventListener('click', function() {
 	}
 });
 
-$.btnNormal.addEventListener('click', function() {
+function normalMap(){
 	baseMap.mapType = MapModule.NORMAL_TYPE;
-});
+}
 
-$.btnHybrid.addEventListener('click', function() {
+function hybridMap() {
 	baseMap.mapType = MapModule.HYBRID_TYPE;
-});
+}
 
-$.btnSatellit.addEventListener('click', function() {
+function satelliteMap() {
 	baseMap.mapType = MapModule.SATELLITE_TYPE;
-});
+}
