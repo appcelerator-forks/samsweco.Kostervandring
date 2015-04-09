@@ -6,7 +6,6 @@ var zoomLat = args.zoomlat;
 
 var route;
 var radius = 10;
-var baseMap;
 var MapModule = require('ti.map');
 
 var infospotsNotVisible = true;
@@ -20,7 +19,8 @@ var hotspotCollection = getHotspotCollection();
 var jsonFileCollection = getJSONfiles();
 var infospotCollection = getInfospotCollection();
 
-Ti.API.info(JSON.stringify(hotspotCollection));
+Ti.API.info('hotspots : ' + JSON.stringify(hotspotCollection));
+Ti.API.info('infospots : ' + JSON.stringify(infospotCollection));
 
 //-----------------------------------------------------------
 // Hämtar enhetens senaste GPS-position
@@ -253,7 +253,7 @@ function displayTrailMarkers() {
 			query : 'SELECT name, pinLon, pinLat, color FROM trailsModel'
 		});
 
-		var jsonObj = trailsCollection.toJSON();		
+		var jsonObj = trailsCollection.toJSON();
 		for (var i = 0; i < jsonObj.length; i++) {
 			var markerAnnotation = MapModule.createAnnotation({
 				id : jsonObj[i].name,
@@ -264,18 +264,18 @@ function displayTrailMarkers() {
 				// pincolor : Titanium.Map.ANNOTATION_PURPLE,  // jsonObj[i].color,
 				rightButton : '/pins/arrow.png',
 				// centerOffset : {
-					// x : 0,
-					// y : -15
+				// x : 0,
+				// y : -15
 				// },
 				name : 'trail'
 			});
-			
+
 			// if(jsonObj[i].color != 'white'){
-				// markerAnnotation.pincolor = jsonObj[i].color;
+			// markerAnnotation.pincolor = jsonObj[i].color;
 			// }else{
-				// markerAnnotation.pincolor = 'purple';
+			// markerAnnotation.pincolor = 'purple';
 			// }
-			
+
 			baseMap.addAnnotation(markerAnnotation);
 		}
 	} catch(e) {
@@ -287,7 +287,7 @@ function displayTrailMarkers() {
 // Visar markers för hotspots
 //-----------------------------------------------------------
 function displayMarkers() {
-	// try {
+	try {
 		var markerArray = [];
 		hotspotCollection.fetch();
 
@@ -307,8 +307,8 @@ function displayMarkers() {
 					name : 'hotspot'
 				});
 			}
-			
-			if(OS_ANDROID){
+
+			if (OS_ANDROID) {
 				var marker = MapModule.createAnnotation({
 					id : markersJSON[u].name,
 					latitude : markersJSON[u].xkoord,
@@ -321,16 +321,16 @@ function displayMarkers() {
 					name : 'hotspot'
 				});
 			}
-			
+
 			markerArray.push(marker);
 		}
 
 		baseMap.addAnnotations(markerArray);
 		hotspotsNotVisible = false;
-		
-	// } catch(e) {
-		// newError("Något gick fel när sidan skulle laddas, prova igen!", "map - displayMarkers");
-	// }
+
+	} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - displayMarkers");
+	}
 }
 
 //-----------------------------------------------------------
@@ -387,7 +387,7 @@ function showHotspot(myId) {
 }
 
 //-----------------------------------------------------------
-// Eventlistener för klick på trail eller hotspot.
+// Eventlistener för klick på trail eller hotspot
 //-----------------------------------------------------------
 baseMap.addEventListener('click', function(evt) {
 	if (OS_IOS) {
@@ -400,7 +400,7 @@ baseMap.addEventListener('click', function(evt) {
 		}
 	}
 	if (OS_ANDROID) {
-		if (evt.clicksource == 'rightPane') {
+		if (evt.clicksource == 'rightButton') {//'rightPane') {
 			if (evt.annotation.name == 'hotspot') {
 				showHotspot(evt.annotation.id);
 			} else {
@@ -414,35 +414,40 @@ baseMap.addEventListener('click', function(evt) {
 //-----------------------------------------------------------
 // Visar ikoner för alla informationsobjekt
 //-----------------------------------------------------------
-function displayInfoSpots() {
-	if (infospotsNotVisible) {
-		var markerArray = [];
-		infospotCollection.fetch({
-			query : 'select infospotModel.name, infospotModel.icon, infospotCoordinatesModel.latitude, infospotCoordinatesModel.longitude from infospotCoordinatesModel join infospotModel on infospotCoordinatesModel.infospotID = infospotModel.id'
-		});
-
-		var infoJSON = infospotCollection.toJSON();
-
-		for (var u = 0; u < infoJSON.length; u++) {
-			var marker = MapModule.createAnnotation({
-				latitude : infoJSON[u].latitude,
-				longitude : infoJSON[u].longitude
+function displayInfoSpots() {	
+	try {
+		if (infospotsNotVisible) {
+			var markerArray = [];
+			infospotCollection.fetch({
+				query : 'select infospotModel.name, infospotModel.icon, infospotCoordinatesModel.latitude, infospotCoordinatesModel.longitude from infospotCoordinatesModel join infospotModel on infospotCoordinatesModel.infospotID = infospotModel.id'
 			});
-			
-			if(OS_ANDROID){
-				marker.image = '/images/map_' + infoJSON[u].icon;
-			}
-			if(OS_IOS){
-				marker.image = '/piktogram/map_' + infoJSON[u].icon;
-			}
-			markerArray.push(marker);
-		}
 
-		baseMap.addAnnotations(markerArray);
-		infospotsNotVisible = false;
+			var infoJSON = infospotCollection.toJSON();
 
-	} else if (!infospotsNotVisible) {
-		baseMap.removeAnnotation(markerArray);
+			for (var u = 0; u < infoJSON.length; u++) {
+				var marker = MapModule.createAnnotation({
+					latitude : infoJSON[u].latitude,
+					longitude : infoJSON[u].longitude
+				});
+
+				if (OS_ANDROID) {
+					marker.image = '/images/map_' + infoJSON[u].icon;
+				}
+				if (OS_IOS) {
+					marker.image = '/piktogram/map_' + infoJSON[u].icon;
+				}
+
+				markerArray.push(marker);
+			}
+
+			baseMap.addAnnotations(markerArray);
+			infospotsNotVisible = false;
+
+		} //else if (!infospotsNotVisible) {
+			// baseMap.removeAnnotation(markerArray);
+		// }
+	} catch(e) {
+		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - displayInfoSpots");
 	}
 }
 
