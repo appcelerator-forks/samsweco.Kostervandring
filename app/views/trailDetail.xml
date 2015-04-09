@@ -7,7 +7,6 @@
 			<View id="slideView">
 				<ScrollableView id="slideShowTrails" showPagingControl="true" />
 			</View>
-			
 			<View id="iconrow"></View>
 			<View class="lbls">
 				<Label id="lblTrailName" class="lbltrailDetail"></Label>
@@ -17,10 +16,8 @@
 				<Button id="btnTrailOnMap" onClick="zoomMapTrail">Visa led på kartan!</Button>
 			</View>
 			<Label id="lblLangsVagen">Det här kan du se längs vägen:</Label>
-			<View id="hotspotView">
-				<View id="trail_hotspotView">
-					<TableView id="hotspotTable" onClick="showHotspot" />
-				</View>
+			<View id="trail_hotspotView">
+				<TableView id="hotspotTable" onClick="showHotspot" />
 			</View>
 		</ScrollView>
 	</Window>
