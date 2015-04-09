@@ -214,8 +214,8 @@ function showIcons() {
 		for (var i = 0; i < selectedIcons.length; i++) {
 
 			var covericon = Ti.UI.createImageView({
-				height : '30dp',
-				width : '30dp',
+				height : '25dp',
+				width : '25dp',
 				left : '0dp',
 				top : '10dp',
 				image : '/images/' + selectedIcons[i].icon
