@@ -217,15 +217,9 @@ function showIcons() {
 				height : '30dp',
 				width : '30dp',
 				left : '0dp',
-				top : '10dp'
+				top : '10dp',
+				image : '/images/' + selectedIcons[i].icon
 			});
-
-			if (OS_ANDROID) {
-				covericon.image = '/images/' + selectedIcons[i].icon;
-			}
-			if (OS_IOS) {
-				covericon.image = '/piktogram/' + selectedIcons[i].icon;
-			}
 
 			$.iconrow.add(covericon);
 		}
