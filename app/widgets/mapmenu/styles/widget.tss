@@ -1,9 +1,16 @@
-"Label": {
-	color: '#000',
-	font: {
-		fontSize: 18,
-		fontWeight: 'bold'
-	},
-	height: Ti.UI.SIZE,
-	width: Ti.UI.SIZE
+"#headView": {
+	height : '50dp',
+	width : Titanium.UI.FILL,
+	backgroundColor : 'black',
+	top : '0dp'
+}
+
+"#btnBar" : {
+	layout : 'horizontal',
+	width : Titanium.UI.FILL,
+	tintColor : '#33CCFF'
+}
+
+"#iconView" : {
+	layout : 'horizontal'
 }

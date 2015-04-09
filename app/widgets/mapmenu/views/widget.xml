@@ -1,3 +1,28 @@
 <Alloy>
-	<Label>I'm the default widget</Label>
+	<View id="headView">
+		<View id="buttonView">
+ 			<TabbedBar id="btnBar" platform="ios">
+            <!-- The Labels tag sets the TabbedBar.labels property. -->
+            <Labels>
+                <Label onClick="hybridMap">Hybrid</Label>
+                <Label onClick="normalMap">Normal</Label>
+                <Label onClick="satelliteMap">Satellit</Label>
+            </Labels>
+        </TabbedBar>
+			<!-- <Button id="btnHybrid">Hybrid</Button>
+			<Button id="btnSatelite">Satelit</Button>
+			<Button id="btnNormal">Normal</Button> -->
+		</View>
+		<View id="iconView">
+			<Button id="btnBadplats" class="icon"></Button>
+			<Button id="btnEldplats" class="icon"></Button>
+			<Button id="btnInformation" class="icon"></Button>
+			<Button id="btnRastplats" class="icon"></Button>
+			<Button id="btnSnorkelled" class="icon"></Button>
+			<Button id="btnTaltplats" class="icon"></Button>
+			<Button id="btnTorrdass" class="icon"></Button>
+			<Button id="btnUtkiksplats" class="icon"></Button>
+			<Button id="btnWC" class="icon"></Button>
+		</View>
+	</View>
 </Alloy>
