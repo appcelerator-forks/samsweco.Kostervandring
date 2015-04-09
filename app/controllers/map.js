@@ -20,6 +20,8 @@ var hotspotCollection = getHotspotCollection();
 var jsonFileCollection = getJSONfiles();
 var infospotCollection = getInfospotCollection();
 
+Ti.API.info(JSON.stringify(hotspotCollection));
+
 //-----------------------------------------------------------
 // Hämtar enhetens senaste GPS-position
 //-----------------------------------------------------------
@@ -424,10 +426,15 @@ function displayInfoSpots() {
 		for (var u = 0; u < infoJSON.length; u++) {
 			var marker = MapModule.createAnnotation({
 				latitude : infoJSON[u].latitude,
-				longitude : infoJSON[u].longitude,
-				image : '/piktogram/map_' + infoJSON[u].icon
+				longitude : infoJSON[u].longitude
 			});
-
+			
+			if(OS_ANDROID){
+				marker.image = '/images/map_' + infoJSON[u].icon;
+			}
+			if(OS_IOS){
+				marker.image = '/piktogram/map_' + infoJSON[u].icon;
+			}
 			markerArray.push(marker);
 		}
 
