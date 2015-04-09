@@ -20,7 +20,39 @@ var jsonFileCollection = getJSONfiles();
 var infospotCollection = getInfospotCollection();
 
 $.btnShowWC.addEventListener('click', function(){
-	displayInfoSpots(wc);
+	displayInfoSpots("wc");
+});
+
+$.btnShowEldplats.addEventListener('click', function(){
+	displayInfoSpots("eldplats");
+});
+
+$.btnShowSnorkelled.addEventListener('click', function(){
+	displayInfoSpots("snorkelled");
+});
+
+$.btnShowInformation.addEventListener('click', function(){
+	displayInfoSpots("information");
+});
+
+$.btnShowBadplats.addEventListener('click', function(){
+	displayInfoSpots("badplats");
+});
+
+$.btnShowRastplats.addEventListener('click', function(){
+	displayInfoSpots("rastplats");
+});
+
+$.btnShowTaltplats.addEventListener('click', function(){
+	displayInfoSpots("taltplats");
+});
+
+$.btnShowUtsiktsplats.addEventListener('click', function(){
+	displayInfoSpots("utkiksplats");
+});
+
+$.btnShowTorrdass.addEventListener('click', function(){
+	displayInfoSpots("torrdass");
 });
 
 //-----------------------------------------------------------

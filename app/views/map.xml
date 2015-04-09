@@ -27,7 +27,7 @@
 			<Button id="btnShowRastplats" class="btnChange" backgroundImage="/images/rastplats.png">r</Button>
 			<Button id="btnShowTaltplats" class="btnChange" backgroundImage="/images/taltplats.png">t</Button>
 			<Button id="btnShowUtsiktsplats" class="btnChange" backgroundImage="/images/utsiktsplats.png">u</Button>
-			<Button id="btnTorrdass" class="btnChange" backgroundImage="/images/torrdass.png">t</Button>
+			<Button id="btnShowTorrdass" class="btnChange" backgroundImage="/images/torrdass.png">t</Button>
 			<Button id="btnShowHot" class="btnChange">Hotspot</Button>
 		</View>
 		</View>
