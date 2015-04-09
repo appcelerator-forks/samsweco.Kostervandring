@@ -1,5 +1,4 @@
-<Alloy>
-
+<!-- <Alloy>
 	<Toolbar platform="ios" id="menuios">
 		<Items>
 			<Button class="btniOS" onClick="toHome" backgroundImage="/images/kosterStarMenu.png" />
@@ -17,19 +16,10 @@
 	<View id="menuandroid" platform="android">
 		<View class="btnView" >
 			<Button class="btnAndroid" backgroundImage="/images/kosterStarMenu.png" onClick="toHome" />
-		<!-- </View>
-		<View class="btnView"> -->
 			<Button class="btnAndroid" backgroundImage="/images/hikeMenu.png" onClick="toTrails" />
-		<!-- </View>
-		<View class="btnView"> -->
 			<Button class="btnAndroid" backgroundImage="/images/mapMenu.png" onClick="toMap" />
-		<!-- </View>
-		<View class="btnView"> -->
 			<Button class="btnAndroid" backgroundImage="/images/quizMenu.png" onClick="toQuiz" />
-		<!-- </View>
-		<View class="btnView"> -->
 			<Button class="btnAndroid" backgroundImage="/images/infoMenu.png" onClick="toInfo" />
 		</View>
 	</View>
-
-</Alloy>
+</Alloy> -->

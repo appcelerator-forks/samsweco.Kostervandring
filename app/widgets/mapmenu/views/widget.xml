@@ -1,17 +1,10 @@
 <Alloy>
 	<View id="headView">
 		<View id="buttonView">
- 			<TabbedBar id="btnBar" platform="ios">
-            <!-- The Labels tag sets the TabbedBar.labels property. -->
-            <Labels>
-                <Label onClick="hybridMap">Hybrid</Label>
-                <Label onClick="normalMap">Normal</Label>
-                <Label onClick="satelliteMap">Satellit</Label>
-            </Labels>
-        </TabbedBar>
-			<!-- <Button id="btnHybrid">Hybrid</Button>
+			<Button id="btnHybrid" onClick="test">Hybrid</Button>
 			<Button id="btnSatelite">Satelit</Button>
-			<Button id="btnNormal">Normal</Button> -->
+			<Button id="btnNormal" >Normal</Button>
+			<Label id="lblTest" text="Hello"></Label>
 		</View>
 		<View id="iconView">
 			<Button id="btnBadplats" class="icon"></Button>

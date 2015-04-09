@@ -5,16 +5,15 @@
 	<Collection src="jsonFilesModel" />
 	<Collection src="infospotModel"></Collection>
 	<View class="container">
-		<View id="mapView"></View>
+		<View id="mapView">
+		</View>
 		<View id="btnView">
-			<Widget src="mapmenu" id="mapmenu" name="widget"></Widget>
+			<Widget src="mapmenu" name="widget"></Widget>
 			<Button id="btnShowInfo" class="btnChange">Piktogr</Button>
 			<Button id="btnShowHot" class="btnChange">Hotspot</Button>
 			<Button id="btnNormal" class="btnChange">Normal</Button>
 			<Button id="btnHybrid" class="btnChange">Hybrid</Button>
-			<Button id="btnSatellit" class="btnChange">Satellite</Button> 
-			
+			<Button id="btnSatellit" class="btnChange">Satellite</Button> 	
 		</View>
-
 	</View>
 </Alloy>

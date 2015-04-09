@@ -5,6 +5,14 @@
 	top : '0dp'
 }
 
+"#buttonView": {
+	layout : 'horizontal',
+	height : '25dp',
+	width : Titanium.UI.FILL,
+	backgroundColor : 'yellow',
+	top : '0dp'
+}
+
 "#btnBar" : {
 	layout : 'horizontal',
 	width : Titanium.UI.FILL,
