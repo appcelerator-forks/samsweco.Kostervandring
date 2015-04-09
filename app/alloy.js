@@ -47,7 +47,6 @@ function getJSONfiles(){
 
 function getInfospotCollection(){
 	var infospotCollection = Alloy.Collections.infospotModel;
-	Ti.API.info('alloy : ' + JSON.stringify(infospotCollection));
 	return infospotCollection;
 }
 
@@ -102,4 +101,16 @@ function showDialog() {
 var lettersArray = [];
 var word = 'KOSTERHAVET';
 var globalTrailID = 0;
+
+
+var snorkel = true;
+var torrdass = true;
+var utsiktsplats = true;
+var wc = true;
+var rastplats = true;
+var taltplats = true;
+var badplats = true;
+var information = true;
+var eldplats = true;
+
 

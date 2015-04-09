@@ -17,43 +17,7 @@ var hotspotAnnotation;
 var trailsCollection = getTrailsCollection();
 var hotspotCollection = getHotspotCollection();
 var jsonFileCollection = getJSONfiles();
-var infospotCollection = getInfospotCollection();
-
-$.btnShowWC.addEventListener('click', function(){
-	displayInfoSpots("wc");
-});
-
-$.btnShowEldplats.addEventListener('click', function(){
-	displayInfoSpots("eldplats");
-});
-
-$.btnShowSnorkelled.addEventListener('click', function(){
-	displayInfoSpots("snorkelled");
-});
-
-$.btnShowInformation.addEventListener('click', function(){
-	displayInfoSpots("information");
-});
-
-$.btnShowBadplats.addEventListener('click', function(){
-	displayInfoSpots("badplats");
-});
-
-$.btnShowRastplats.addEventListener('click', function(){
-	displayInfoSpots("rastplats");
-});
-
-$.btnShowTaltplats.addEventListener('click', function(){
-	displayInfoSpots("taltplats");
-});
-
-$.btnShowUtsiktsplats.addEventListener('click', function(){
-	displayInfoSpots("utkiksplats");
-});
-
-$.btnShowTorrdass.addEventListener('click', function(){
-	displayInfoSpots("torrdass");
-});
+// var infospotCollection = getInfospotCollection();
 
 //-----------------------------------------------------------
 // Hämtar enhetens senaste GPS-position
@@ -446,9 +410,8 @@ baseMap.addEventListener('click', function(evt) {
 //-----------------------------------------------------------
 function displayInfoSpots(type) {	
 	// try {
-		if (infospotsNotVisible) {
 			var markerArray = [];
-			
+			var infospotCollection = getInfospotCollection();
 			infospotCollection.fetch({
 				query : 'select infospotModel.name, infospotModel.icon, infospotCoordinatesModel.latitude, infospotCoordinatesModel.longitude from infospotCoordinatesModel join infospotModel on infospotCoordinatesModel.infospotID = infospotModel.id WHERE infospotModel.name ="' + type + '"'
 			});
@@ -463,11 +426,10 @@ function displayInfoSpots(type) {
 					
 				markerArray.push(marker);
 			}
+			
+			return markerArray;
 
-			baseMap.addAnnotations(markerArray);
-			infospotsNotVisible = false;
-
-		} //else if (!infospotsNotVisible) {
+		//} //else if (!infospotsNotVisible) {
 			// baseMap.removeAnnotation(markerArray);
 		// }
 	// } catch(e) {
@@ -475,19 +437,7 @@ function displayInfoSpots(type) {
 	// }
 }
 
-$.btnShowInfo.addEventListener('click', function() {
-	if (infospotsNotVisible) {
-		displayInfoSpots();
-	}
-});
 
-
-
-$.btnShowHot.addEventListener('click', function() {
-	if (hotspotsNotVisible) {
-		displayMarkers();
-	}
-});
 
 function normalMap(){
 	baseMap.mapType = MapModule.NORMAL_TYPE;
@@ -499,4 +449,57 @@ function hybridMap() {
 
 function satelliteMap() {
 	baseMap.mapType = MapModule.SATELLITE_TYPE;
+}
+
+function showHotspots() {
+	if (hotspotsNotVisible) {
+		displayMarkers();
+	}
+}
+function showWC(){
+		baseMap.addAnnotations(displayInfoSpots("wc"));
+}
+
+function showEldplats(){
+	
+	baseMap.addAnnotations(displayInfoSpots("eldplats"));
+}
+
+function showSnorkelled(){
+	if(snorkel){
+	baseMap.addAnnotations(displayInfoSpots("snorkelled"));	
+	snorkel = false;
+	Ti.API.info(JSON.stringify(snorkel));
+	}
+	
+	if(!snorkel){
+		baseMap.removeAnnotations(displayInfoSpots("snorkelled"));
+		snorkel = true;
+		Ti.API.info(JSON.stringify(snorkel));
+	}
+	
+}
+
+function showInformation(){
+	baseMap.addAnnotations(displayInfoSpots("information"));
+}
+
+function showBadplats(){
+	baseMap.addAnnotations(displayInfoSpots("badplats"));
+}
+
+function showRastplats(){
+		baseMap.addAnnotations(displayInfoSpots("rastplats"));
+}
+
+function showTaltplats(){
+		baseMap.addAnnotations(displayInfoSpots("taltplats"));
+}
+
+function showUtkiksplats(){
+		baseMap.addAnnotations(displayInfoSpots("utsiktsplats"));
+}
+
+function showTorrdass(){
+		baseMap.addAnnotations(displayInfoSpots("torrdass"));
 }
