@@ -415,15 +415,15 @@ baseMap.addEventListener('click', function(evt) {
 // Visar ikoner för alla informationsobjekt
 //-----------------------------------------------------------
 function displayInfoSpots() {	
-	try {
+	// try {
 		if (infospotsNotVisible) {
 			var markerArray = [];
+			
 			infospotCollection.fetch({
 				query : 'select infospotModel.name, infospotModel.icon, infospotCoordinatesModel.latitude, infospotCoordinatesModel.longitude from infospotCoordinatesModel join infospotModel on infospotCoordinatesModel.infospotID = infospotModel.id'
 			});
 
 			var infoJSON = infospotCollection.toJSON();
-
 			for (var u = 0; u < infoJSON.length; u++) {
 				var marker = MapModule.createAnnotation({
 					latitude : infoJSON[u].latitude,
@@ -446,9 +446,9 @@ function displayInfoSpots() {
 		} //else if (!infospotsNotVisible) {
 			// baseMap.removeAnnotation(markerArray);
 		// }
-	} catch(e) {
-		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - displayInfoSpots");
-	}
+	// } catch(e) {
+		// newError("Något gick fel när sidan skulle laddas, prova igen!", "map - displayInfoSpots");
+	// }
 }
 
 $.btnShowInfo.addEventListener('click', function() {

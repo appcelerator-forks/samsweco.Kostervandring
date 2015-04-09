@@ -3,6 +3,7 @@
 	<Collection src="coordinates" />
 	<Collection src="trailsModel" />
 	<Collection src="jsonFilesModel" />
+	<Collection src="infospotModel"></Collection>
 	<View class="container">
 		<View id="mapView"></View>
 		<View id="btnView">

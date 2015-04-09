@@ -47,6 +47,7 @@ function getJSONfiles(){
 
 function getInfospotCollection(){
 	var infospotCollection = Alloy.Collections.infospotModel;
+	Ti.API.info('alloy : ' + JSON.stringify(infospotCollection));
 	return infospotCollection;
 }
 
