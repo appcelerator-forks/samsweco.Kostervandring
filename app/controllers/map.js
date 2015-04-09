@@ -19,8 +19,9 @@ var hotspotCollection = getHotspotCollection();
 var jsonFileCollection = getJSONfiles();
 var infospotCollection = getInfospotCollection();
 
-Ti.API.info('hotspots : ' + JSON.stringify(hotspotCollection));
-Ti.API.info('infospots : ' + JSON.stringify(infospotCollection));
+$.btnShowWC.addEventListener('click', function(){
+	displayInfoSpots(wc);
+});
 
 //-----------------------------------------------------------
 // Hämtar enhetens senaste GPS-position
@@ -60,7 +61,6 @@ try {
 	showMap();
 	setRoutes();
 	displayTrailMarkers();
-	setIcons();
 // } catch(e) {
 	// newError("Något gick fel när sidan skulle laddas, prova igen!", "Map - load page");
 // }
@@ -88,29 +88,6 @@ function setRoutes() {
 
 }
 
-function setIcons(){
-	infospotCollection.fetch();
-	var jsonCollection = infospotCollection.toJSON();
-	
-	for(var i = 0; i<jsonCollection.length; i++){
-		
-		var iconImgView = Ti.UI.createImageView({
-			height : '25dp',
-			width : '25dp',
-			left : '0dp'
-		});
-
-		if(OS_ANDROID){
-			iconImgView.image = '/images/' + jsonCollection[i].icon;
-		}
-		if(OS_IOS){
-			iconImgView.image = '/piktogram/' + jsonCollection[i].icon;
-		}
-		
-		$.selectIconView.add(iconImgView);
-	}
-}
-
 //-----------------------------------------------------------
 // Hämtar JSON-fil för en vandringsled
 //-----------------------------------------------------------
@@ -125,7 +102,6 @@ function getFile(id) {
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - getFile");
 	}
-
 }
 
 //-----------------------------------------------------------
@@ -197,7 +173,6 @@ function distanceInM(lat1, lon1, GLat, GLon) {
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "map - distanceInM");
 	}
-
 }
 
 //-----------------------------------------------------------
@@ -265,7 +240,6 @@ function showMap() {
 	} catch(e) {
 		newError("Något gick fel när sidan skulle laddas, prova igen!", "Map - showMap");
 	}
-
 };
 
 //-----------------------------------------------------------
@@ -438,29 +412,23 @@ baseMap.addEventListener('click', function(evt) {
 //-----------------------------------------------------------
 // Visar ikoner för alla informationsobjekt
 //-----------------------------------------------------------
-function displayInfoSpots() {	
+function displayInfoSpots(type) {	
 	// try {
 		if (infospotsNotVisible) {
 			var markerArray = [];
 			
 			infospotCollection.fetch({
-				query : 'select infospotModel.name, infospotModel.icon, infospotCoordinatesModel.latitude, infospotCoordinatesModel.longitude from infospotCoordinatesModel join infospotModel on infospotCoordinatesModel.infospotID = infospotModel.id'
+				query : 'select infospotModel.name, infospotModel.icon, infospotCoordinatesModel.latitude, infospotCoordinatesModel.longitude from infospotCoordinatesModel join infospotModel on infospotCoordinatesModel.infospotID = infospotModel.id WHERE infospotModel.name ="' + type + '"'
 			});
 
 			var infoJSON = infospotCollection.toJSON();
 			for (var u = 0; u < infoJSON.length; u++) {
 				var marker = MapModule.createAnnotation({
 					latitude : infoJSON[u].latitude,
-					longitude : infoJSON[u].longitude
+					longitude : infoJSON[u].longitude,
+					image : '/images/map_' + infoJSON[u].icon
 				});
-
-				if (OS_ANDROID) {
-					marker.image = '/images/map_' + infoJSON[u].icon;
-				}
-				if (OS_IOS) {
-					marker.image = '/piktogram/map_' + infoJSON[u].icon;
-				}
-
+					
 				markerArray.push(marker);
 			}
 
@@ -480,6 +448,8 @@ $.btnShowInfo.addEventListener('click', function() {
 		displayInfoSpots();
 	}
 });
+
+
 
 $.btnShowHot.addEventListener('click', function() {
 	if (hotspotsNotVisible) {

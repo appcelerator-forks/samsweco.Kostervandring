@@ -155,12 +155,7 @@ function showIcons(id) {
 			left : '0dp'
 		});
 
-		if(OS_ANDROID){
 			iconImgView.image = '/images/' + selectedIcons[i].icon;
-		}
-		if(OS_IOS){
-			iconImgView.image = '/piktogram/' + selectedIcons[i].icon;
-		}
 
 		iconView.add(iconImgView);
 	}
