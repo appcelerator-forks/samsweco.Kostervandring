@@ -8,6 +8,7 @@
     "os:ios": {},
     "os:mobileweb": {},
     "dependencies": {
-        "menuWidget": "1.0"
+        "menuWidget": "1.0",
+        "mapmenu": "1.0"
     }
 }
